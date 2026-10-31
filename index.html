@@ -2,7 +2,9 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#141724">
+  <script>try{var t=localStorage.getItem("mcx-theme");if(t==="white"||t==="halloween")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <title>Mcextreme.pl | Taryfikator Minecraft & Regulamin Administracji</title>
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFHUlEQVR4Xu2bW4scRRTH6zKT4BcQnwT1w/jgJxDUh5BsNG8xioiaIIKLinGFvZmL4+XBaMCA2XV1Q4wh0ayuSiCCrwo+iUR8UVChPf/uru2a01VnenumZzYzXfBjqqurTp3z77p1Z6NU/fQL8WcNHkTjSFpQ5fpVWEbjcafbRFKDh9A4klZVuX4Vemg87tQKoMqOVKEVAI0jqRVAletXoYfGY02aBCCSGkQFoHurgfpVaESA/cSPEW6d7+7/b912kk+tTdnIf1HmylHGyw90Oj8H7KW83unejrWLlYOFTvcPbsvjtKqZ7iL4UEuB6ldsN9lWJvmO8t8TPxDIbyvdVw6ycpPyBDnP7TlOUTCSPZRxe+AsteO2PC6pmmmAAHBWiw7vXgAr2gsJAB/eFmyqpgT4kjr1Ha2KJMDp3CZvM4iJCHCVOkXwuxXgiODsmdwmbyOB+j3BpmpKAIwA7kwVJAEwAnj9KkxkBBRrQLYOVEUSIFsDdmdvFGvAZyHu03rzg+6+5CMyfj4H+Q8p8HO0A7xmbPKqNjm6j6s6HsRFag8bsOVsu/xlAwGyBY9zIdAPeEXbZNGzx1nsdH/nsXmkWyRXLOUBMr6VOsRXc518S848Sffn6DrEZUEAPDHY8HcQ/15sBLwv9Lck9AeBeWweP4kCfGNMcFXepntHiUOUB9whWYB6xAQ4TCwL/TUqwEHKA+7U1AiwZcLzEQLUnwL1iAkAGpkC95PRG6Y47flAgGME1AfcoXEKcIj8W9LhBwVqC4ARMPMC1J0CJ8khzMsQkjgfC+1eFPprZAoMswhKrAnOrgpBxmh0EYQA3CAYtA1K3FEC3MgPQpxBU0Bi1AKARqYAdoGvByyCj1MecIckRi3AQTo6N7YIDhoBsV1AYtQCjGEXgMP4LTpxa4Bzwo2EKmKMWgDQyBS4l/iERsA6CbBGCmcgn/EeifMufhnYrzE9uJOOugLM57ZdP+jb9X/O9Pvms1JXgHuIJTK8Sr+ct4gtIZATQiB1BXiHtdvOQX6T7hX+IV9cn6AYeGyVBVg0vuFqAsCp40Igwwrggi7QuQBhX4cTwIaNTkKAnsZ3hJAAhgTASA37OpQAe3kKFGAENCTAcg0BcHRuQgAseP6XKZ/+NWCEAqxomwbLjUoC4DN1UwK4z/BchGEFwIfBEncr3TtmO8lTZIDzNHGR+Jw6BnBgE0ORuEScpe1zhcr6MSlfCALgbbDcLgNbHWyDtC/Xr862ZO6jY87aX3lsHi9BgFgSP4uftHC2GBGncnB9LXgyc4epuAAS6zr+lPFAuI8eAz+Lx1IrgCob2xHgDZMtkG6NwK/LXwsOc5SFyqux5wRYoE79p+4TFmA49pwAb866AJgC/rCfRgH2qezfzzY4JMDGM9b+c5w6DoE3xyvkcIgtFpjPdYLXd2Cr4/048q2u5GfOfBpNAyn6V2Ivm/AJEkjngAvCUz4iP+Ve6tGYUyuAKjvSCgBaAVoBZkOAr4hbIZ619u95cjgEtsjrFOgOqshjq+P1HQes/Y334yG+1U0i3fT+jncHKk+eN8VLFMBJ0h2mHqV7vI3Xds8FKaWbKg+YIwnwiBGH+XQI8ILpXx/8ozRGAK/vMR0C4Ojqvh/4QuD6sVkQAN/oQm+RMyOAGwH8LRLX0zQF6MWu9H/7Uugt8l98TAnxsLV/8foez6WW7/RklFojkhC03c3x+tOY1lR5eDsOe/WmNrUCqHLgrQA5rQBevalN66oc+MQE+B/BSCiwdHmGaAAAAABJRU5ErkJggg==">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,24 +49,24 @@ html {
   color-scheme: dark;
   background: var(--bg-page);
   scrollbar-width: thin;
-  scrollbar-color: #2c3348 var(--bg-page);
+  scrollbar-color: var(--scroll) var(--bg-page);
 }
-* { scrollbar-width: thin; scrollbar-color: #2c3348 transparent; }
+* { scrollbar-width: thin; scrollbar-color: var(--scroll) transparent; }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg-page); }
 .docs-sidebar::-webkit-scrollbar-track { background: var(--bg-sidebar); }
-::-webkit-scrollbar-thumb { background: #2c3348; border-radius: 6px; border: 2px solid transparent; background-clip: content-box; }
-::-webkit-scrollbar-thumb:hover { background: #3a4260; background-clip: content-box; }
+::-webkit-scrollbar-thumb { background: var(--scroll); border-radius: 6px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--scroll-hover); background-clip: content-box; }
 ::-webkit-scrollbar-corner { background: var(--bg-page); }
 
 body {
   font-family: var(--font-text);
   background-color: var(--bg-page);
   background-image: 
-    linear-gradient(45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%), 
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%), 
-    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%), 
-    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%);
+    linear-gradient(45deg, rgba(var(--ov-rgb), 0.015) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(var(--ov-rgb), 0.015) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(var(--ov-rgb), 0.015) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(var(--ov-rgb), 0.015) 75%);
   background-size: 32px 32px;
   background-position: 0 0, 0 16px, 16px -16px, -16px 0px;
   color: var(--text-body);
@@ -121,7 +123,7 @@ button {
 .brand-name {
   font-family: var(--font-pixel);
   font-size: 1.25rem;
-  color: #fff;
+  color: var(--text-pure);
   letter-spacing: 0.02em;
 }
 
@@ -152,19 +154,19 @@ button {
 
 .search-btn-trigger:hover {
   border-color: var(--red-main);
-  color: #fff;
-  box-shadow: 0 0 15px rgba(255, 51, 51, 0.25);
+  color: var(--text-pure);
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.25);
   transform: translateY(-1px);
 }
 
 .search-btn-trigger kbd {
   font-family: var(--font-pixel);
   font-size: 0.7rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(var(--ov-rgb), 0.1);
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-pure);
+  border: 1px solid rgba(var(--ov-rgb), 0.15);
 }
 
 /* Rank Badges - tinted pill with soft glow */
@@ -181,9 +183,9 @@ button {
   margin: 0 0.15rem;
   border-radius: 999px;
   letter-spacing: 0.02em;
-  color: #fff;
-  color: color-mix(in srgb, var(--rc) 55%, #fff);
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-pure);
+  color: color-mix(in srgb, var(--rc) 55%, var(--text-pure));
+  background: rgba(var(--ov-rgb), 0.06);
   background: color-mix(in srgb, var(--rc) 18%, transparent);
   border: 1px solid var(--rc);
   box-shadow: 0 0 10px color-mix(in srgb, var(--rc) 45%, transparent), inset 0 0 8px color-mix(in srgb, var(--rc) 18%, transparent);
@@ -236,13 +238,13 @@ button {
 .duty-card ul.bul { margin: 0.4rem 0 0; }
 .duty-card .sub-bul { margin: .3rem 0 .2rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: .25rem; list-style: circle; }
 
-.sidebar-author { display:flex; flex-direction:column; align-items:center; gap:.5rem; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--border-subtle); color:#fff; font-size:.7rem; }
+/*x*/.sidebar-author-old { display:flex; flex-direction:column; align-items:center; gap:.5rem; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--border-subtle); color: var(--text-pure); font-size:.7rem; }
 .sidebar-author img { width:40px; height:40px; image-rendering:pixelated; border-radius:4px; border:2px solid var(--border-sheet); box-shadow:0 0 12px var(--red-glow); }
 .problem-list{display:flex;flex-direction:column;gap:.8rem;margin:1.25rem 0 2rem}
 .problem-card{background:var(--bg-card);border:1px solid var(--border-sheet);border-left:4px solid var(--red-main);border-radius:8px;padding:.85rem 1.1rem 1rem}
-.pc-title{font-family:var(--font-pixel);font-size:.85rem;color:#fff;line-height:1.5;margin-bottom:.5rem}
+.pc-title{font-family:var(--font-pixel);font-size:.85rem;color: var(--text-pure);line-height:1.5;margin-bottom:.5rem}
 .pc-row{margin:.3rem 0 0;line-height:1.7;font-size:.98rem}
-.pc-label{display:inline-block;font-family:var(--font-pixel);font-size:.66rem;color:var(--red-main);background:rgba(255,51,51,.12);border:1px solid rgba(255,51,51,.25);border-radius:4px;padding:.05rem .45rem;margin-right:.5rem;text-transform:uppercase;vertical-align:middle}
+.pc-label{display:inline-block;font-family:var(--font-pixel);font-size:.66rem;color:var(--red-main);background:rgba(var(--accent-rgb),.12);border:1px solid rgba(var(--accent-rgb),.25);border-radius:4px;padding:.05rem .45rem;margin-right:.5rem;text-transform:uppercase;vertical-align:middle}
 /* Layout & Sidebar */
 .docs-layout {
   display: flex;
@@ -286,7 +288,7 @@ button {
 
 .sidebar-group-header:hover {
   background: var(--bg-card);
-  color: #fff;
+  color: var(--text-pure);
 }
 
 .sidebar-group-header-left {
@@ -345,14 +347,14 @@ button {
 }
 
 .sidebar-link:hover {
-  color: #fff;
+  color: var(--text-pure);
   background: var(--bg-card);
   border-color: var(--border-sheet);
 }
 
 .sidebar-link.active {
-  color: #fff;
-  background: #1d2233;
+  color: var(--text-pure);
+  background: var(--bg-active);
   border-color: var(--red-deep);
   box-shadow: inset 3px 0 0 var(--red-main);
   font-weight: 600;
@@ -382,7 +384,7 @@ button {
 }
 
 .breadcrumb-item.active {
-  color: #fff;
+  color: var(--text-pure);
   font-weight: 600;
 }
 
@@ -395,7 +397,7 @@ button {
 .doc-title {
   font-family: var(--font-pixel);
   font-size: 2.2rem;
-  color: #ffffff;
+  color: var(--text-pure);
   letter-spacing: 0.01em;
   line-height: 1.3;
   margin-bottom: 0.85rem;
@@ -412,7 +414,7 @@ button {
 .doc-h2 {
   font-family: var(--font-pixel);
   font-size: 1.45rem;
-  color: #ffffff;
+  color: var(--text-pure);
   margin: 3rem 0 1.25rem 0;
   padding-bottom: 0.6rem;
   border-bottom: 2px solid var(--border-sheet);
@@ -455,7 +457,7 @@ button {
 /* Code Block Styles with Copy Button */
 .code-block-container {
   position: relative;
-  background: #11141f;
+  background: var(--bg-code);
   border: 1px solid var(--border-sheet);
   border-radius: 8px;
   margin: 1.25rem 0;
@@ -467,7 +469,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0.4rem 1rem;
-  background: #181c2b;
+  background: var(--bg-card);
   border-bottom: 1px solid var(--border-sheet);
   font-family: var(--font-pixel);
   font-size: 0.72rem;
@@ -475,9 +477,9 @@ button {
 }
 
 .copy-code-btn {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(var(--ov-rgb), 0.08);
+  color: var(--text-pure);
+  border: 1px solid rgba(var(--ov-rgb), 0.15);
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -491,7 +493,7 @@ button {
 .copy-code-btn:hover {
   background: var(--red-main);
   border-color: var(--red-main);
-  box-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.4);
 }
 
 .code-block-container pre {
@@ -499,7 +501,7 @@ button {
   overflow-x: auto;
   font-family: 'Consolas', 'Courier New', monospace;
   font-size: 0.9rem;
-  color: #4ade80;
+  color: var(--code-text);
   line-height: 1.5;
   margin: 0;
   white-space: pre-wrap;
@@ -508,7 +510,7 @@ button {
 
 mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple { 
   background: transparent !important; 
-  color: #9aa5bc !important; 
+  color: var(--text-muted) !important; 
   font-size: 0.92rem;
   padding: 0; 
   display: block;
@@ -565,7 +567,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
 .btn-main {
   font-family: var(--font-pixel);
   font-size: 0.88rem;
-  color: #fff;
+  color: var(--text-pure);
 }
 
 /* Table of Contents */
@@ -612,7 +614,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
 .search-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(8, 10, 16, 0.82);
+  background: var(--overlay);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 100;
@@ -632,10 +634,10 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
 .search-modal-box {
   width: 92%;
   max-width: 680px;
-  background: rgba(20, 24, 38, 0.92);
-  border: 1px solid rgba(255, 51, 51, 0.35);
+  background: var(--modal-bg);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
   border-radius: 12px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 51, 51, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(var(--accent-rgb), 0.15);
   overflow: hidden;
   transform: translateY(-10px) scale(0.98);
   transition: transform 0.2s ease;
@@ -651,7 +653,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   gap: 1rem;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--border-sheet);
-  background: rgba(15, 17, 24, 0.5);
+  background: rgba(var(--ov-rgb),.03);
 }
 
 .search-modal-header i.search-icon {
@@ -663,7 +665,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   flex: 1;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--text-pure);
   font-size: 1.1rem;
   font-family: var(--font-text);
   outline: none;
@@ -678,13 +680,13 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   font-size: 0.85rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(var(--ov-rgb), 0.06);
   transition: all 0.15s ease;
 }
 
 .clear-search-btn:hover {
-  color: #fff;
-  background: rgba(255, 51, 51, 0.2);
+  color: var(--text-pure);
+  background: rgba(var(--accent-rgb), 0.2);
 }
 
 .search-results-list {
@@ -706,8 +708,8 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
 }
 
 .search-result-item:hover {
-  background: rgba(255, 51, 51, 0.08);
-  border-color: rgba(255, 51, 51, 0.25);
+  background: rgba(var(--accent-rgb), 0.08);
+  border-color: rgba(var(--accent-rgb), 0.25);
   transform: translateX(3px);
 }
 
@@ -722,10 +724,10 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   font-family: var(--font-pixel);
   font-size: 0.7rem;
   color: var(--red-main);
-  background: rgba(255, 51, 51, 0.12);
+  background: rgba(var(--accent-rgb), 0.12);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid rgba(255, 51, 51, 0.2);
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
 }
 
 .search-result-desc {
@@ -742,9 +744,9 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
 }
 
 .toast {
-  background: #1c202d;
+  background: var(--bg-card);
   border: 2px solid var(--red-main);
-  color: #fff;
+  color: var(--text-pure);
   padding: 0.75rem 1.25rem;
   font-family: var(--font-pixel);
   font-size: 0.8rem;
@@ -785,33 +787,163 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
 }
 
 /* Process pages */
-kbd{font-family:var(--font-pixel);font-size:.72rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-bottom-width:2px;border-radius:4px;padding:.1rem .4rem;color:#fff;white-space:nowrap}
-.doc-article-body code{font-family:Consolas,'Courier New',monospace;font-size:.88em;background:rgba(255,255,255,.07);border:1px solid var(--border-sheet);border-radius:4px;padding:.05rem .35rem;color:#ffb4b4;word-break:break-word}
+kbd{font-family:var(--font-pixel);font-size:.72rem;background:rgba(var(--ov-rgb),.1);border:1px solid rgba(var(--ov-rgb),.2);border-bottom-width:2px;border-radius:4px;padding:.1rem .4rem;color: var(--text-pure);white-space:nowrap}
+.doc-article-body code{font-family:Consolas,'Courier New',monospace;font-size:.88em;background:rgba(var(--ov-rgb),.07);border:1px solid var(--border-sheet);border-radius:4px;padding:.05rem .35rem;color:var(--code-inline);word-break:break-word}
 .code-block-container code{background:none;border:none;padding:0;color:inherit}
 .doc-article-body a{color:var(--red-main);text-decoration:underline}
-.doc-h3{font-family:var(--font-pixel);font-size:1.05rem;color:#fff;margin:2rem 0 .8rem}
+.doc-h3{font-family:var(--font-pixel);font-size:1.05rem;color: var(--text-pure);margin:2rem 0 .8rem}
 ol.steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:.6rem;margin:1rem 0 1.5rem}
 ol.steps>li{counter-increment:s;position:relative;padding:.65rem 1rem .65rem 3.1rem;background:var(--bg-card);border:1px solid var(--border-sheet);border-radius:6px;line-height:1.7}
-ol.steps>li::before{content:counter(s);position:absolute;left:.8rem;top:.7rem;width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;font-family:var(--font-pixel);font-size:.72rem;background:var(--red-deep);color:#fff;border-radius:4px}
+ol.steps>li::before{content:counter(s);position:absolute;left:.8rem;top:.7rem;width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;font-family:var(--font-pixel);font-size:.72rem;background:var(--red-deep);color: var(--text-pure);border-radius:4px}
 ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:column;gap:.4rem;line-height:1.7}
 .callout{border:1px solid var(--border-sheet);border-left:4px solid #5b8def;background:var(--bg-card);border-radius:6px;padding:.9rem 1.1rem;margin:1.25rem 0;line-height:1.7}
 .callout.warn{border-left-color:#ffaa00}.callout.ban{border-left-color:var(--red-main)}
-.callout-title{font-family:var(--font-pixel);font-size:.78rem;color:#fff;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.04em}
+.callout-title{font-family:var(--font-pixel);font-size:.78rem;color: var(--text-pure);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.04em}
 .callout ul.bul{margin:.3rem 0 0}
-.quote{margin:1rem 0 1.5rem;padding:.9rem 1.1rem;border-left:4px solid var(--red-main);background:#11141f;color:var(--text-lead);font-style:italic;border-radius:0 6px 6px 0}
+.quote{margin:1rem 0 1.5rem;padding:.9rem 1.1rem;border-left:4px solid var(--red-main);background:var(--bg-code);color:var(--text-lead);font-style:italic;border-radius:0 6px 6px 0}
 .tbl-wrap{overflow-x:auto;margin:1.25rem 0 1.75rem;border:1px solid var(--border-sheet);border-radius:8px}
 .doc-table{width:100%;border-collapse:collapse;font-size:.93rem;line-height:1.6}
-.doc-table th{text-align:left;font-family:var(--font-pixel);font-size:.72rem;background:#181c2b;color:var(--text-muted);padding:.6rem .9rem;border-bottom:1px solid var(--border-sheet)}
+.doc-table th{text-align:left;font-family:var(--font-pixel);font-size:.72rem;background:var(--bg-card);color:var(--text-muted);padding:.6rem .9rem;border-bottom:1px solid var(--border-sheet)}
 .doc-table td{padding:.6rem .9rem;border-bottom:1px solid var(--border-subtle);vertical-align:top}
 .doc-table tr:last-child td{border-bottom:none}
-  </style>
+  
+/* ===== THEMES ===== */
+:root{--accent-rgb:255,51,51;--ov-rgb:255,255,255;--bg-code:#11141f;--bg-active:#1d2233;--scroll:#2c3348;--scroll-hover:#3a4260;--code-text:#4ade80;--code-inline:#ffb4b4;--modal-bg:rgba(20,24,38,.94);--overlay:rgba(8,10,16,.82);--pattern:rgba(255,255,255,.015);--deco:"";--sw-a:#ff3333;--sw-b:#0f1118}
+html[data-theme="white"]{color-scheme:light;--red-main:#dc2626;--red-deep:#b91c1c;--accent-rgb:220,38,38;--red-glow:rgba(220,38,38,.25);--ov-rgb:15,20,40;--bg-page:#f3f5fa;--bg-sidebar:#fff;--bg-header:#fff;--bg-card:#fff;--border-sheet:#dde2ee;--text-pure:#0f1320;--text-body:#232a3b;--text-muted:#5d6779;--text-lead:#3a4356;--bg-code:#f0f3fa;--bg-active:#fdecec;--scroll:#c5ccdd;--scroll-hover:#a9b2c8;--code-text:#166534;--code-inline:#b91c1c;--modal-bg:rgba(255,255,255,.97);--overlay:rgba(30,35,55,.55);--pattern:transparent}
+html[data-theme="halloween"]{--red-main:#ff7a00;--red-deep:#d96200;--accent-rgb:255,122,0;--red-glow:rgba(255,122,0,.45);--bg-page:#120a1a;--bg-sidebar:#170d20;--bg-header:#1b1028;--bg-card:#211433;--border-sheet:#3b2456;--text-body:#f1e6ff;--text-muted:#b79fd1;--text-lead:#d9c6ef;--bg-code:#0d0714;--bg-active:#2c1a44;--scroll:#3b2456;--scroll-hover:#533377;--code-text:#b6ff5c;--code-inline:#ffb36b;--modal-bg:rgba(27,16,40,.95);--overlay:rgba(10,4,16,.85);--pattern:rgba(255,122,0,.03);--deco:"🎃"}
+body{background-image:linear-gradient(45deg,var(--pattern) 25%,transparent 25%),linear-gradient(-45deg,var(--pattern) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--pattern) 75%),linear-gradient(-45deg,transparent 75%,var(--pattern) 75%)}
+html,body{overflow-x:hidden}body{transition:background-color .25s,color .25s}
+
+:root{--red-main:#ff4d4d;--accent-rgb:255,77,77;--red-glow:rgba(255,77,77,.4);--bg-page:#000;--bg-sidebar:#050505;--bg-header:#0a0a0a;--bg-card:#0e0e0e;--border-sheet:#222;--bg-code:#070707;--bg-active:#161616;--scroll:#2a2a2a;--scroll-hover:#3a3a3a;--pattern:transparent;--modal-bg:rgba(10,10,10,.96);--overlay:rgba(0,0,0,.88);--text-body:#e8e8e8;--text-muted:#9a9a9a}
+/* ===== AESTHETICS ===== */
+:root{--header-h:calc(60px + env(safe-area-inset-top,0px))}
+*{-webkit-tap-highlight-color:transparent}
+.clean-header{height:var(--header-h);padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg-header) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-sheet)}
+.clean-header::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,transparent,var(--red-main),transparent);opacity:.7}
+.brand-name::after{content:var(--deco);margin-left:.45rem;font-family:sans-serif}
+.menu-btn{display:none;color:var(--text-pure);font-size:1.25rem;width:44px;height:44px;align-items:center;justify-content:center;border-radius:10px;border:1px solid var(--border-sheet);background:var(--bg-card)}
+.search-btn-trigger{border-radius:10px;min-height:40px}
+.docs-sidebar{border-right:1px solid var(--border-sheet)}
+.sidebar-link{border-radius:10px}
+.sidebar-link.active{background:linear-gradient(90deg,rgba(var(--accent-rgb),.16),var(--bg-active) 70%)}
+.sidebar-item.sub-item{position:relative;padding-left:1.7rem}
+.sidebar-item.sub-item::before{content:'';position:absolute;left:.8rem;top:-.4rem;height:calc(50% + .4rem);width:.75rem;border-left:2px solid var(--border-sheet);border-bottom:2px solid var(--border-sheet);border-bottom-left-radius:7px}
+.sidebar-item.sub-item::after{content:'';position:absolute;left:1.3rem;top:50%;width:6px;height:6px;border-top:2px solid var(--red-main);border-right:2px solid var(--red-main);transform:translateY(-50%) rotate(45deg)}
+.sidebar-item.sub-item .sidebar-link{font-size:.84rem}
+.doc-page-section{animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.doc-title{text-shadow:none;overflow-wrap:anywhere}
+.doc-title::after{content:'';display:block;width:64px;height:4px;margin-top:.9rem;background:var(--red-main);box-shadow:0 0 14px var(--red-glow);border-radius:2px}
+.doc-header{background:linear-gradient(135deg,rgba(var(--accent-rgb),.10),transparent 65%);border:1px solid var(--border-sheet);border-radius:16px;padding:1.6rem 1.7rem;margin-bottom:2rem}
+.doc-header .doc-title{margin-bottom:.8rem}
+.doc-h2{border-bottom:1px solid var(--border-sheet);display:flex;align-items:center;gap:.7rem;overflow-wrap:anywhere}
+.doc-h2::before{content:'';flex:0 0 auto;width:10px;height:10px;background:var(--red-main);box-shadow:0 0 10px var(--red-glow)}
+.doc-h3{overflow-wrap:anywhere}
+.perm-card,.problem-card,ol.steps>li,.callout{border-radius:12px;transition:transform .15s,border-color .15s,box-shadow .15s}
+@media(hover:hover){.perm-card:hover,.problem-card:hover{transform:translateY(-2px);border-color:rgba(var(--accent-rgb),.5)}}
+.problem-card{border-left-width:4px}
+.code-block-container,.tbl-wrap,.quote{border-radius:12px}
+.copy-code-btn{min-height:32px}.copy-code-btn:hover,ol.steps>li::before{color:#fff}
+.nav-prev-btn,.nav-next-btn{border-radius:12px;border-width:1px}
+.doc-p strong{color:var(--text-pure)}
+.doc-p mark{color:var(--text-muted)}
+:focus-visible{outline:2px solid var(--red-main);outline-offset:2px}
+
+/* ===== FOOTER + THEMES UI ===== */
+.site-footer{border-top:1px solid var(--border-sheet);background:var(--bg-sidebar);padding:2rem 1.5rem calc(2rem + env(safe-area-inset-bottom,0px))}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.75rem 3rem;align-items:center;justify-content:space-between}
+.footer-label{font-family:var(--font-pixel);font-size:.68rem;color:var(--text-muted);letter-spacing:.06em;display:block;margin-bottom:.55rem}
+.theme-picker{display:flex;flex-wrap:wrap;gap:.5rem}
+.theme-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .85rem .45rem .5rem;min-height:40px;border-radius:999px;border:1px solid var(--border-sheet);background:var(--bg-card);color:var(--text-body);font-size:.82rem;font-weight:500;transition:all .15s}
+.theme-btn:hover{border-color:var(--red-main)}
+.theme-btn[aria-pressed="true"]{border-color:var(--red-main);box-shadow:0 0 0 2px rgba(var(--accent-rgb),.3);color:var(--text-pure)}
+.theme-btn .sw{width:20px;height:20px;border-radius:50%;border:1px solid rgba(var(--ov-rgb),.25);background:linear-gradient(135deg,var(--b) 50%,var(--a) 50%)}
+.footer-author{display:flex;align-items:center;gap:.75rem;font-size:.9rem}
+.footer-author img{width:40px;height:40px;image-rendering:pixelated;border-radius:6px;border:2px solid var(--border-sheet)}
+.footer-author strong{color:var(--text-pure)}
+.footer-copy{width:100%;text-align:center;font-family:var(--font-pixel);font-size:.62rem;color:var(--text-muted);padding-top:1.25rem;border-top:1px solid var(--border-subtle)}
+#toTop{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;background:var(--red-deep);color:#fff;font-size:1rem;z-index:40;box-shadow:0 6px 18px rgba(0,0,0,.4);opacity:0;pointer-events:none;transform:translateY(10px);transition:all .2s}
+#toTop.show{opacity:1;pointer-events:auto;transform:none}
+#navBackdrop{display:none}
+@media(max-width:1200px){.docs-toc{display:none!important}}
+
+/* ===== MOBILE ===== */
+@media(max-width:860px){
+  .menu-btn{display:inline-flex}
+  .clean-header{padding-left:.75rem;padding-right:.75rem}
+  .header-left{gap:.5rem}.brand-name{font-size:1rem}.brand-logo{width:30px;height:30px}
+  .search-btn-trigger{width:44px;height:44px;padding:0;justify-content:center;border-radius:10px}
+  .search-btn-trigger span,.search-btn-trigger kbd{display:none}
+  .docs-sidebar{position:fixed;left:-105%;top:var(--header-h);bottom:0;height:auto;width:min(320px,86vw);z-index:50;padding-bottom:calc(3rem + env(safe-area-inset-bottom,0px));transition:left .25s ease;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  .docs-sidebar.open{left:0;box-shadow:0 0 40px rgba(0,0,0,.6)}
+  #navBackdrop{position:fixed;inset:var(--header-h) 0 0 0;background:var(--overlay);z-index:45}
+  body:has(#sidebar.open){overflow:hidden}
+  body:has(#sidebar.open) #navBackdrop{display:block}
+  .docs-content{padding:1.25rem 1rem 3rem}
+  .breadcrumbs{flex-wrap:wrap;font-size:.74rem;margin-bottom:1.1rem}
+  .doc-title{font-size:1.45rem}.doc-h2{font-size:1.1rem;margin-top:2.2rem}.doc-h3{font-size:.95rem}
+  .doc-header{padding:1.1rem 1.1rem;border-radius:14px}
+  .doc-p,.doc-lead{font-size:1rem}
+    .perm-card,.problem-card{padding:.8rem .9rem}
+  ol.steps>li{padding-left:2.9rem}
+  .doc-table{min-width:520px}
+  .code-block-header{flex-wrap:wrap;gap:.4rem}
+  .code-block-container pre{font-size:.8rem}
+  .doc-pagination{flex-direction:column;margin-top:2.5rem;gap:.75rem}
+  .doc-pagination>div:empty{display:none}
+  .nav-prev-btn,.nav-next-btn{min-width:0;width:100%;padding:.85rem 1rem}
+  .nav-next-btn{margin-left:0}
+  .search-modal-overlay{padding-top:calc(env(safe-area-inset-top,0px) + 1rem)}
+  .search-modal-box{width:94%}
+  .search-modal-header{padding:.9rem 1rem}.search-modal-header input{font-size:16px}
+  .search-results-list{max-height:calc(100dvh - 8rem)}
+  .toast-box{left:1rem;right:1rem;bottom:calc(5rem + env(safe-area-inset-bottom,0px))}
+  .site-footer{padding:1.75rem 1rem calc(1.75rem + env(safe-area-inset-bottom,0px))}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .theme-picker{width:100%}.theme-btn{flex:1 1 calc(50% - .5rem);justify-content:flex-start}
+}
+
+/* ===== RANGI ===== */
+.rank-cmd,.perm-card.rank-cmd,.rank-badge.rank-cmd{--rc:#c53f06}
+.rank-cmdplus,.perm-card.rank-cmdplus,.rank-badge.rank-cmdplus{--rc:#994006}
+.rank-gcmd,.perm-card.rank-gcmd,.rank-badge.rank-gcmd{--rc:#c27c0e}
+.rank-stazysta,.perm-card.rank-stazysta,.rank-badge.rank-stazysta{--rc:#14cf5a}
+.rank-support,.perm-card.rank-support,.rank-badge.rank-support{--rc:#06bef1}
+.rank-pomocnik,.perm-card.rank-pomocnik,.rank-badge.rank-pomocnik{--rc:#7628f3}
+.rank-jrmod,.perm-card.rank-jrmod,.rank-badge.rank-jrmod{--rc:#5dc733}
+.rank-mod,.perm-card.rank-mod,.rank-badge.rank-mod{--rc:#0f740b}
+.rank-jradmin,.perm-card.rank-jradmin,.rank-badge.rank-jradmin{--rc:#d34516}
+.rank-admin,.perm-card.rank-admin,.rank-badge.rank-admin{--rc:#f50a0a}
+.rank-head,.perm-card.rank-head,.rank-badge.rank-head{--rc:#a8372d}
+.rank-doknes,.perm-card.rank-doknes,.rank-badge.rank-doknes{--rc:#d1a514}
+.rank-badge{background:none;border:none;box-shadow:none;border-radius:0;padding:0 .12rem;color:var(--rc);text-shadow:0 0 12px var(--rc);font-weight:700;font-size:.82em;letter-spacing:.04em}
+.rank-badge.rank-cmd{background-image:url("https://files.catbox.moe/29zxc3.gif")}
+.rank-badge.rank-cmdplus{background-image:url("https://files.catbox.moe/toatu8.gif")}
+.rank-badge.rank-gcmd{background-image:url("https://files.catbox.moe/9s5fj7.gif")}
+.rank-badge.rank-stazysta{background-image:url("https://files.catbox.moe/nuy2n2.gif")}
+.rank-badge.rank-support{background-image:url("https://files.catbox.moe/t6fyhu.gif")}
+.rank-badge.rank-pomocnik{background-image:url("https://files.catbox.moe/czrny0.gif")}
+.rank-badge.rank-jrmod{background-image:url("https://files.catbox.moe/aoyypr.gif")}
+.rank-badge.rank-mod{background-image:url("https://files.catbox.moe/uoysi6.gif")}
+.rank-badge.rank-jradmin{background-image:url("https://files.catbox.moe/fd2efm.gif")}
+.rank-badge.rank-admin{background-image:url("https://files.catbox.moe/r8ytte.gif")}
+.rank-badge.rank-head{background-image:url("https://files.catbox.moe/mzxmbl.gif")}
+.rank-badge.rank-doknes{background-image:url("https://files.catbox.moe/c9xg8u.gif")}
+html[data-theme="white"] .rank-adminrole{--rc:#64748b}
+
+/* naglowki stron jednolite (jak Taryfikator Discord) */
+.doc-header{background:none;border:none;border-radius:0;padding:0;margin-bottom:1.25rem}
+.doc-header .doc-title{margin-bottom:.85rem}
+.doc-header .doc-lead{font-size:1.05rem;color:var(--text-body);line-height:1.85;margin-bottom:1.25rem}
+@media(max-width:860px){.doc-header{padding:0}.doc-header .doc-lead{font-size:1rem}}
+</style>
 </head>
 <body>
 
   <!-- Clean Header -->
   <header class="clean-header">
     <div class="header-left">
-      <button id="mobileMenuBtn" style="color: #fff; font-size: 1.3rem; margin-right: 0.5rem; display: none;">
+      <button id="mobileMenuBtn" class="menu-btn" aria-label="Menu">
         <i class="fa-solid fa-bars"></i>
       </button>
 
@@ -875,12 +1007,6 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
               <span class="item-title">Obowiązki i permisje</span>
             </a>
           </li>
-          <li class="sidebar-item">
-            <a href="#formulki" class="sidebar-link" data-target="formulki">
-              <i class="fa-solid fa-comment-dots" style="color: #f5a623;"></i>
-              <span class="item-title">Formułki</span>
-            </a>
-          </li>
         </ul>
       </div>
 
@@ -894,9 +1020,27 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
         </div>
         <ul class="sidebar-group-list">
           <li class="sidebar-item">
+            <a href="#podstawowe-informacje" class="sidebar-link" data-target="podstawowe-informacje">
+              <i class="fa-solid fa-circle-info" style="color: #5b8def;"></i>
+              <span class="item-title">Podstawowe informacje</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
+            <a href="#mentorstwo" class="sidebar-link" data-target="mentorstwo">
+              <i class="fa-solid fa-user-graduate" style="color: #c084fc;"></i>
+              <span class="item-title">Mentorstwo</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
             <a href="#problemy-graczy-i-obsluga" class="sidebar-link" data-target="problemy-graczy-i-obsluga">
               <i class="fa-solid fa-headset" style="color: #ffaa00;"></i>
               <span class="item-title">Problemy graczy i obsługa</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
+            <a href="#formulki" class="sidebar-link" data-target="formulki">
+              <i class="fa-solid fa-comment-dots" style="color: #f5a623;"></i>
+              <span class="item-title">Formułki</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -905,6 +1049,19 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
               <span class="item-title">Pomoc graczom serwera</span>
             </a>
           </li>
+          
+        </ul>
+      </div>
+
+      <div class="sidebar-group" id="group-sprawdzanie">
+        <div class="sidebar-group-header" onclick="toggleSidebarGroup('group-sprawdzanie')">
+          <div class="sidebar-group-header-left">
+            <i class="fa-solid fa-user-check" style="color: #ffff55;"></i>
+            <span class="group-title">Strefa sprawdzania</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sidebar-group-toggle"></i>
+        </div>
+        <ul class="sidebar-group-list">
           <li class="sidebar-item">
             <a href="#proces-sprawdzania" class="sidebar-link" data-target="proces-sprawdzania">
               <i class="fa-solid fa-magnifying-glass-chart" style="color: #ffff55;"></i>
@@ -932,14 +1089,9 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
         </ul>
       </div>
 
-      <div style="margin-top: 2.5rem; padding: 1rem 0.5rem; border-top: 2px solid var(--border-sheet); font-family: var(--font-pixel); font-size: 0.65rem; color: var(--text-muted); text-align: center;">
-        MCEXTREME.PL &copy; 2026
-        <div class="sidebar-author">
-          <img src="https://mc-heads.net/avatar/nveisk/64" onerror="this.onerror=null;this.src='https://minotar.net/avatar/nveisk/64';" alt="Głowa nveisk" width="40" height="40">
-          <span>Autor: nveisk</span>
-        </div>
-      </div>
-    </aside>
+
+      </aside>
+    <div id="navBackdrop"></div>
 
     <!-- Center Content -->
     <main class="docs-content">
@@ -1193,7 +1345,7 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
 
     <footer class="doc-pagination">
       <a href="#regulamin-backupow" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin backupów</span></a>
-      <a href="#problemy-graczy-i-obsluga" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Problemy graczy i obsługa <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="#podstawowe-informacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Podstawowe informacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
 
@@ -1202,7 +1354,9 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
       <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-item">Zasady administracyjne</span>
+      <span class="breadcrumb-item">Informacje administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Problemy graczy i obsługa</span>
       <span class="breadcrumb-sep">/</span>
       <span class="breadcrumb-item active">Formułki</span>
     </div>
@@ -1221,7 +1375,40 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
     </article>
 
     <footer class="doc-pagination">
+      <a href="#problemy-graczy-i-obsluga" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Problemy graczy i obsługa</span></a>
+      <a href="#pomoc-graczom-serwera" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Pomoc graczom serwera <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <!-- PAGE: Podstawowe informacje -->
+  <section id="podstawowe-informacje" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Podstawowe informacje</span></div>
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">PODSTAWOWE INFORMACJE</h1>
+        <p class="doc-lead">Podstawowe informacje dla członków administracji.</p>
+      </header>
+      <div class="callout warn"><div class="callout-title">W trakcie tworzenia</div>Ta sekcja jest jeszcze w budowie – treść pojawi się tutaj niebawem.</div>
+    </article>
+    <footer class="doc-pagination">
       <a href="#obowiazki-i-permisje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Obowiązki i permisje</span></a>
+      <a href="#mentorstwo" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Mentorstwo <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <!-- PAGE: Mentorstwo -->
+  <section id="mentorstwo" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Podstawowe informacje</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Mentorstwo</span></div>
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">MENTORSTWO</h1>
+        <p class="doc-lead">Zasady mentorstwa i wprowadzania nowych osób do administracji.</p>
+      </header>
+      <div class="callout warn"><div class="callout-title">W trakcie tworzenia</div>Ta sekcja jest jeszcze w budowie – treść pojawi się tutaj niebawem.</div>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#podstawowe-informacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Podstawowe informacje</span></a>
+      <a href="#problemy-graczy-i-obsluga" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Problemy graczy i obsługa <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
 
@@ -1240,7 +1427,7 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
       <p class="doc-p">Wszelkie podstawowe informacje, które pomogą wam w lepszy sposób interpretować sprawy zgłaszane do nas przez graczy.</p>
 
       <h2 class="doc-h2" id="pgio-1">Problemy z kontem graczy</h2>
-      <div class="problem-list"><div class="problem-card"><div class="pc-title">„Weryfikacja odrzuciła twoje połączenie”</div><p class="pc-row"><span class="pc-label">Opis</span>Błąd ten zazwyczaj wynika z problemów z łączem internetowym lub stabilnością połączenia z serwerem.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>błąd</strong>, gdzie otrzyma formułkę do wypełnienia.</p></div><div class="problem-card"><div class="pc-title">„Brak możliwości wejścia na serwer pomimo konta premium”</div><p class="pc-row"><span class="pc-label">Opis</span>Jeśli gracz posiada konto Premium, ale nie może się zalogować, wymagany jest ręczny reset przez administrację.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia (<strong>Instrukcja resetu konta</strong>).</p></div><div class="problem-card"><div class="pc-title">„Wymóg wpisywania hasła pomimo konta premium”</div><p class="pc-row"><span class="pc-label">Opis</span>Gracz może wejść na serwer (do lobby), ale gra prosi go o hasło mimo posiadania konta Premium.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia (<strong>Instrukcja resetu konta</strong>).</p></div><div class="problem-card"><div class="pc-title">„Jesteś już aktywny na serwerze”</div><p class="pc-row"><span class="pc-label">Opis</span>Gracz widzi komunikat, że jego profil jest już zalogowany, mimo że nie może wejść do gry.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia.</p></div><div class="problem-card"><div class="pc-title">„Nie udało się połączyć z serwerem LIMBO”</div><p class="pc-row"><span class="pc-label">Opis</span>Ten komunikat oznacza, że gracz ma niepoprawną wersję gry. Serwer działa na wersjach <code>1.21.4</code> – <code>1.21.9</code>. Po aktualizacji Survivala będzie to <code>1.21.4</code> – <code>26.2</code>*.</p></div><div class="problem-card"><div class="pc-title">„Nie pamiętam hasła do konta nonpremium”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Haseł dla kont nonpremium nie resetujemy, ale istnieje możliwość odzyskania hasła w sposób plikowy w folderze <code>.minecraft</code>. Trzeba wysłać graczowi formułkę „zapomnianego hasła”.</p></div><div class="problem-card"><div class="pc-title">„Twój nick jest niepoprawny, zmień z doknes na Doknes!”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Należy poinformować gracza, że ten komunikat pojawia się, gdy zmienia nick, a nowy nick grał już na serwerze na nonpremium. Gdy zresetujemy takie konto, gracz nie utraci postępu, tylko odzyska go na nowym nicku (nie dajemy gwarancji odzyskania postępu konta).</p></div><div class="problem-card"><div class="pc-title">„Twój adres IP jest zablokowany”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Trzeba zapytać, czy gracz mieszka w Polsce lub czy gra na VPN. Jeśli się zgadza, oznaczcie kosiare, a on spróbuje rozwiązać problem. Nie możemy jednak zapewnić, że gracz wróci na serwer.</p></div><div class="problem-card"><div class="pc-title">„Gracz otrzymał mute na zawsze na voicechacie za brak weryfikacji wieku”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Zaleca się wysłanie formułki przypisanej w sekcji „formułki”.</p></div><div class="problem-card"><div class="pc-title">„Gracz chce otrzymać unbana, bo używał kiedyś cheatów”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Unbana można otrzymać tylko przez zgłoszenie się do projektu nadzórów na extremeplusie. Zaleca się wysłanie formułki z nadzorem.</p></div><div class="problem-card"><div class="pc-title">„Gracz nie widzi swojego skina i nie ma logowania premium / Gracz zakupił konto premium i nie ma skina ani logowania premium”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Trzeba poinformować gracza, że zalecany jest reset konta, który zresetuje wszystkie postępy. Następnie wysyłasz formułkę z instrukcją resetu konta.</p></div><div class="problem-card"><div class="pc-title">„Jak pobrać extremeplusa”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Informujemy gracza o stronie z instrukcją: <a href="https://extremeplus.pl/help">extremeplus.pl/help</a>. Możemy również wysłać formułkę.</p></div><div class="problem-card"><div class="pc-title">„Nie otrzymałem swojej rangi/klucza, mimo że pobrało mi pieniądze”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Prosimy gracza o wysłanie potwierdzenia zakupu z e-maila, podanie adresu e-mail oraz nicku z gry. Następnie oznaczamy <strong>w1eloo</strong> oraz <strong>xKredka</strong>.</p></div><div class="problem-card"><div class="pc-title">„Zakupiłem przedmiot z itemshopa na inny nick”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Prosimy o wysłanie potwierdzenia zakupu z e-maila, podanie adresu e-mail, nicku, na który został zakupiony przedmiot, oraz nicku, na który gracz chce go otrzymać. Oznaczamy <strong>w1eloo</strong> oraz <strong>xKredka</strong>.</p></div><div class="problem-card"><div class="pc-title">„Zbyt długo czekam na odpowiedź administratora, żeby dał mi klucz, chcę zwrot”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi napisać wiadomość na e-mail <a href="mailto:Mcextreme@spacehouse.pl">Mcextreme@spacehouse.pl</a> oraz zapoznać się z regulaminem zakupu: <a href="https://mcextreme.pl/dokumenty/regulamin-sklepu#sekcja-11">regulamin sklepu, sekcja 11</a>.</p></div></div>
+      <div class="problem-list"><div class="problem-card"><div class="pc-title">„Weryfikacja odrzuciła twoje połączenie”</div><p class="pc-row"><span class="pc-label">Opis</span>Błąd ten zazwyczaj wynika z problemów z łączem internetowym lub stabilnością połączenia z serwerem.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>błąd</strong>, gdzie otrzyma formułkę do wypełnienia.</p></div><div class="problem-card"><div class="pc-title">„Brak możliwości wejścia na serwer pomimo konta premium”</div><p class="pc-row"><span class="pc-label">Opis</span>Jeśli gracz posiada konto Premium, ale nie może się zalogować, wymagany jest ręczny reset przez administrację.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia (<strong>Instrukcja resetu konta</strong>).</p></div><div class="problem-card"><div class="pc-title">„Wymóg wpisywania hasła pomimo konta premium”</div><p class="pc-row"><span class="pc-label">Opis</span>Gracz może wejść na serwer (do lobby), ale gra prosi go o hasło mimo posiadania konta Premium.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia (<strong>Instrukcja resetu konta</strong>).</p></div><div class="problem-card"><div class="pc-title">„Jesteś już aktywny na serwerze”</div><p class="pc-row"><span class="pc-label">Opis</span>Gracz widzi komunikat, że jego profil jest już zalogowany, mimo że nie może wejść do gry.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia.</p></div><div class="problem-card"><div class="pc-title">„Nie udało się połączyć z serwerem LIMBO”</div><p class="pc-row"><span class="pc-label">Opis</span>Ten komunikat oznacza, że gracz ma niepoprawną wersję gry. Serwer działa na wersjach <code>1.21.4</code> – <code>1.21.9</code>. Po aktualizacji Survivala będzie to <code>1.21.4</code> – <code>26.2</code>*.</p></div><div class="problem-card"><div class="pc-title">„Nie pamiętam hasła do konta nonpremium”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Haseł dla kont nonpremium nie resetujemy, ale istnieje możliwość odzyskania hasła w sposób plikowy w folderze <code>.minecraft</code>. Trzeba wysłać graczowi formułkę „zapomnianego hasła”.</p></div><div class="problem-card"><div class="pc-title">„Twój nick jest niepoprawny, zmień z doknes na Doknes!”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Należy poinformować gracza, że ten komunikat pojawia się, gdy zmienia nick, a nowy nick grał już na serwerze na nonpremium. Gdy zresetujemy takie konto, gracz nie utraci postępu, tylko odzyska go na nowym nicku (nie dajemy gwarancji odzyskania postępu konta).</p></div><div class="problem-card"><div class="pc-title">„Twój adres IP jest zablokowany”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Trzeba zapytać, czy gracz mieszka w Polsce lub czy gra na VPN. Jeśli się zgadza, oznaczcie <span class="rank-badge rank-head">kosiare</span>, a on spróbuje rozwiązać problem. Nie możemy jednak zapewnić, że gracz wróci na serwer.</p></div><div class="problem-card"><div class="pc-title">„Gracz otrzymał mute na zawsze na voicechacie za brak weryfikacji wieku”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Zaleca się wysłanie formułki przypisanej w sekcji „formułki”.</p></div><div class="problem-card"><div class="pc-title">„Gracz chce otrzymać unbana, bo używał kiedyś cheatów”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Unbana można otrzymać tylko przez zgłoszenie się do projektu nadzórów na extremeplusie. Zaleca się wysłanie formułki z nadzorem.</p></div><div class="problem-card"><div class="pc-title">„Gracz nie widzi swojego skina i nie ma logowania premium / Gracz zakupił konto premium i nie ma skina ani logowania premium”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Trzeba poinformować gracza, że zalecany jest reset konta, który zresetuje wszystkie postępy. Następnie wysyłasz formułkę z instrukcją resetu konta.</p></div><div class="problem-card"><div class="pc-title">„Jak pobrać extremeplusa”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Informujemy gracza o stronie z instrukcją: <a href="https://extremeplus.pl/help">extremeplus.pl/help</a>. Możemy również wysłać formułkę.</p></div><div class="problem-card"><div class="pc-title">„Nie otrzymałem swojej rangi/klucza, mimo że pobrało mi pieniądze”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Prosimy gracza o wysłanie potwierdzenia zakupu z e-maila, podanie adresu e-mail oraz nicku z gry. Następnie oznaczamy <span class="rank-badge rank-admin">w1eloo</span> oraz <span class="rank-badge rank-admin">xKredka</span>.</p></div><div class="problem-card"><div class="pc-title">„Zakupiłem przedmiot z itemshopa na inny nick”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Prosimy o wysłanie potwierdzenia zakupu z e-maila, podanie adresu e-mail, nicku, na który został zakupiony przedmiot, oraz nicku, na który gracz chce go otrzymać. Oznaczamy <span class="rank-badge rank-admin">w1eloo</span> oraz <span class="rank-badge rank-admin">xKredka</span>.</p></div><div class="problem-card"><div class="pc-title">„Zbyt długo czekam na odpowiedź administratora, żeby dał mi klucz, chcę zwrot”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi napisać wiadomość na e-mail <a href="mailto:Mcextreme@spacehouse.pl">Mcextreme@spacehouse.pl</a> oraz zapoznać się z regulaminem zakupu: <a href="https://mcextreme.pl/dokumenty/regulamin-sklepu#sekcja-11">regulamin sklepu, sekcja 11</a>.</p></div></div>
 
       <h2 class="doc-h2" id="problemy-graczy-i-obsluga-h2-1">Problemy z itemkami gracza</h2>
       <p class="doc-p">Po sprawdzeniu wiarygodności problemu z itemkami eventowymi, sprawę przekazujemy do rang <span class="rank-badge rank-admin">ADMIN+</span>.</p>
@@ -1256,12 +1443,12 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
       <p class="doc-p">Kary tymczasowe nie podlegają skróceniu, jeśli blokada jest prawidłowa.</p>
 
       <h3 class="doc-h3">Kary od techników i Doknesa</h3>
-      <p class="doc-p">Kary nadane przez techników lub <span class="rank-badge rank-doknes">Doknesa</span> najlepiej kierować do <strong>xKredka</strong> lub <strong>w1eloo</strong>.</p>
+      <p class="doc-p">Kary nadane przez techników lub <span class="rank-badge rank-doknes">Doknesa</span> najlepiej kierować do <span class="rank-badge rank-admin">xKredka</span> lub <span class="rank-badge rank-admin">w1eloo</span>.</p>
     </article>
 
     <footer class="doc-pagination">
-      <a href="#obowiazki-i-permisje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Obowiązki i permisje</span></a>
-      <a href="#pomoc-graczom-serwera" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Pomoc graczom serwera <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="#mentorstwo" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Mentorstwo</span></a>
+      <a href="#formulki" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Formułki <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
 
@@ -1285,10 +1472,10 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
       <ul class="bul"><li>W czasie udzielanej pomocy administrator ma obowiązek zachować bezstronność w przypadku konfliktów dwóch stron, a także udzielić poprawnie i sprawiedliwie pomocy.</li><li>Traktuj graczy z szacunkiem i nie daj się sprowokować. Jeśli rozmowa przechodzi w poważniejszą wymianę zdań, warto opanować sytuację lub zakończyć udzielanie pomocy graczowi.</li><li>Oczekujemy, że administrator zwinnie radzi sobie z udzielaniem pomocy. Jakiekolwiek celowe olewanie spraw graczy czy długi brak odpowiedzi może mieć dla Ciebie konsekwencje.</li><li>Szanuj anonimowość zgłoszeń graczy (jeśli zostaniesz o to poproszony, a nawet jeśli nie). Tyczy się to wszelkich zgłoszeń: za cheaty, sprzedaż lub kupno w itemshopie, prośby o sprawdzenie i inne.</li><li>Gracze nie mają prawa widzieć jakiejkolwiek kłótni między osobami z zespołu administracji.</li></ul>
 
       <h2 class="doc-h2" id="pgs-2">Tickety oraz ich realizacja</h2>
-      <ul class="bul"><li>Tickety, które stoją bez odpowiedzi gracza, powinny zostać zamknięte w ciągu 48 godzin, by nie blokować linii ticketów.</li><li>Tickety o treści: screeny/rozmowy z właścicielami, podpis, podarowanie itemków lub podobne, powinny otrzymać wiadomość zwrotną o zaprzestaniu tworzenia ticketów w takich sprawach i zostać natychmiast zamknięte.</li><li>Jeśli gracz, z którym rozwiązałeś sprawę nadanego mu bana, natarczywie tworzy kolejne tickety, możesz ostrzec go przed karą i zamknąć ticket. Jeśli pojawi się trzeci ticket, należy mu się kara przerwy na Discordzie.</li><li>Gracz, który żąda pomocy techników na tickecie, nie otrzyma jej. Te sprawy są rozwiązywane przez rangi <span class="rank-badge rank-admin">ADMIN+</span>.</li><li>Jeśli gracz prosi o dowód, za który został zbanowany, nie musisz go ukazywać, chyba że wyższa administracja zażąda wysłania go w prywatnej wiadomości.</li><li>Wszelkie poważne sprawy związane z naszym itemshopem powinny być kierowane na odpowiedni adres e-mail: <a href="mailto:mcextreme@spacehouse.pl">mcextreme@spacehouse.pl</a>.</li><li>Wszelkie zgłoszenia na Media/YT/MiniYT powinny być przekazywane do wiela lub kredki w celu oceny stanu kanału, wstępnego przeglądu i ustalenia tego z odpowiednimi osobami.</li><li>Jakakolwiek skarga na administratora powinna zostać sprawdzona przez rangi <span class="rank-badge rank-admin">ADMIN+</span>. Najlepiej, by skarga posiadała uzasadnione argumenty w danym temacie oraz jakiekolwiek dowody.</li><li>Administrator sprawdzający apelacje o reset konta (screeny) powinien dokładnie sprawdzić ich wiarygodność, a następnie oznaczyć kosiare.</li><li>Gracz ma prawo wezwać wyższego administratora, który oceni sytuację, jeśli decyzja wydaje mu się nieprawidłowa. Gdy do tego dojdzie i okaże się to zwykłym sztucznym przedłużaniem i kłamstwem na tickecie, ticket powinien zostać zakończony.</li><li>Gracz nie ma prawa „zachować sobie ticketa na później”. Inni gracze także potrzebują pomocy, a czasami nie mogą założyć ticketa właśnie przez takie sytuacje.</li></ul>
+      <ul class="bul"><li>Tickety, które stoją bez odpowiedzi gracza, powinny zostać zamknięte w ciągu 48 godzin, by nie blokować linii ticketów.</li><li>Tickety o treści: screeny/rozmowy z właścicielami, podpis, podarowanie itemków lub podobne, powinny otrzymać wiadomość zwrotną o zaprzestaniu tworzenia ticketów w takich sprawach i zostać natychmiast zamknięte.</li><li>Jeśli gracz, z którym rozwiązałeś sprawę nadanego mu bana, natarczywie tworzy kolejne tickety, możesz ostrzec go przed karą i zamknąć ticket. Jeśli pojawi się trzeci ticket, należy mu się kara przerwy na Discordzie.</li><li>Gracz, który żąda pomocy techników na tickecie, nie otrzyma jej. Te sprawy są rozwiązywane przez rangi <span class="rank-badge rank-admin">ADMIN+</span>.</li><li>Jeśli gracz prosi o dowód, za który został zbanowany, nie musisz go ukazywać, chyba że wyższa administracja zażąda wysłania go w prywatnej wiadomości.</li><li>Wszelkie poważne sprawy związane z naszym itemshopem powinny być kierowane na odpowiedni adres e-mail: <a href="mailto:mcextreme@spacehouse.pl">mcextreme@spacehouse.pl</a>.</li><li>Wszelkie zgłoszenia na Media/YT/MiniYT powinny być przekazywane do <span class="rank-badge rank-admin">wiela</span> lub <span class="rank-badge rank-admin">kredki</span> w celu oceny stanu kanału, wstępnego przeglądu i ustalenia tego z odpowiednimi osobami.</li><li>Jakakolwiek skarga na administratora powinna zostać sprawdzona przez rangi <span class="rank-badge rank-admin">ADMIN+</span>. Najlepiej, by skarga posiadała uzasadnione argumenty w danym temacie oraz jakiekolwiek dowody.</li><li>Administrator sprawdzający apelacje o reset konta (screeny) powinien dokładnie sprawdzić ich wiarygodność, a następnie oznaczyć <span class="rank-badge rank-head">kosiare</span>.</li><li>Gracz ma prawo wezwać wyższego administratora, który oceni sytuację, jeśli decyzja wydaje mu się nieprawidłowa. Gdy do tego dojdzie i okaże się to zwykłym sztucznym przedłużaniem i kłamstwem na tickecie, ticket powinien zostać zakończony.</li><li>Gracz nie ma prawa „zachować sobie ticketa na później”. Inni gracze także potrzebują pomocy, a czasami nie mogą założyć ticketa właśnie przez takie sytuacje.</li></ul>
 
       <h2 class="doc-h2" id="pgs-3">Centrum pomocy głosowej i realizacja</h2>
-      <ul class="bul"><li>Administracja nie ma możliwości urządzania pogadanek ani grania na kanałach przeznaczonych do pomocy dla graczy.</li><li>Prosimy, by gracze odsyłani z centrum pomocy nie otrzymywali odpowiedzi „zrób ticket gdzie chcesz”. Wskaż mu po prostu odpowiednią kategorię.</li><li>Gdy na pomoc zawita jeden z rodziców gracza naszego serwera, najlepiej od razu wezwać kogoś wyższego (wielo lub kredka), by spokojnie opanował sytuację.</li><li>Gdy sprawdzasz podejrzanego o cheaty, gracz nie może być wtedy na kanale.</li></ul>
+      <ul class="bul"><li>Administracja nie ma możliwości urządzania pogadanek ani grania na kanałach przeznaczonych do pomocy dla graczy.</li><li>Prosimy, by gracze odsyłani z centrum pomocy nie otrzymywali odpowiedzi „zrób ticket gdzie chcesz”. Wskaż mu po prostu odpowiednią kategorię.</li><li>Gdy na pomoc zawita jeden z rodziców gracza naszego serwera, najlepiej od razu wezwać kogoś wyższego (<span class="rank-badge rank-admin">wielo</span> lub <span class="rank-badge rank-admin">kredka</span>), by spokojnie opanował sytuację.</li><li>Gdy sprawdzasz podejrzanego o cheaty, gracz nie może być wtedy na kanale.</li></ul>
 
       <h2 class="doc-h2" id="pgs-4">Jak prawidłowo przyjąć i zweryfikować skargę wraz z dowodami?</h2>
       <p class="doc-p">Jeśli chodzi o skargę na użytkownika, który łamie regulamin na czacie, zalecany jest:</p>
@@ -1299,13 +1486,13 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
     </article>
 
     <footer class="doc-pagination">
-      <a href="#problemy-graczy-i-obsluga" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Problemy graczy i obsługa</span></a>
+      <a href="#formulki" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Formułki</span></a>
       <a href="#proces-sprawdzania" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Proces sprawdzania <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
 
   <section id="proces-sprawdzania" class="doc-page-section" style="display: none;">
-    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Proces sprawdzania</span></div>
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Strefa sprawdzania</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Proces sprawdzania</span></div>
     <article class="doc-article-body">
       <h1 class="doc-title">Proces sprawdzania</h1>
 <p class="doc-p">Ten poradnik pokazuje krok po kroku, jak sprawdzić gracza podejrzanego o cheaty. Idź po kolei i nie pomijaj punktów.</p>
@@ -1389,7 +1576,7 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
   </section>
 
   <section id="komendy-powershell" class="doc-page-section" style="display: none;">
-    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Komendy PowerShell</span></div>
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Strefa sprawdzania</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Komendy PowerShell</span></div>
     <article class="doc-article-body">
       <h1 class="doc-title">Komendy PowerShell</h1>
 <p class="doc-p">Wszystkie komendy używane podczas sprawdzania w jednym miejscu. Każdą możesz skopiować przyciskiem „Kopiuj”. Komendy uruchamiasz na komputerze gracza, <strong>po tym jak gracz się zgodził i współpracuje</strong>.</p>
@@ -1486,7 +1673,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
   </section>
 
   <section id="linux" class="doc-page-section" style="display: none;">
-    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Linux</span></div>
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Strefa sprawdzania</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Linux</span></div>
     <article class="doc-article-body">
       <h1 class="doc-title">Linux</h1>
 <p class="doc-p">Sprawdzanie komputera z Linuxem. Zasady ogólne są takie same jak w Procesie sprawdzania.</p>
@@ -1520,7 +1707,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
   </section>
 
   <section id="mac" class="doc-page-section" style="display: none;">
-    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">MAC</span></div>
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Strefa sprawdzania</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">MAC</span></div>
     <article class="doc-article-body">
       <h1 class="doc-title">MAC</h1>
 <p class="doc-p">Sprawdzanie komputera z macOS. Zasady ogólne są takie same jak w Procesie sprawdzania.</p>
@@ -1567,6 +1754,23 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
 
   </div>
 
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><span class="footer-label">MOTYW STRONY</span>
+        <div class="theme-picker" id="themePicker">
+          <button class="theme-btn" data-theme="default" style="--a:#ff4d4d;--b:#000"><span class="sw"></span>Domyślny (czarny)</button>
+          <button class="theme-btn" data-theme="white" style="--a:#dc2626;--b:#f3f5fa"><span class="sw"></span>Biały</button>
+          <button class="theme-btn" data-theme="halloween" style="--a:#ff7a00;--b:#1b1028"><span class="sw"></span>Halloween</button>
+        </div></div>
+      <div class="footer-author">
+        <img src="https://mc-heads.net/avatar/nveisk/64" onerror="this.onerror=null;this.src='https://minotar.net/avatar/nveisk/64';" alt="nveisk" width="40" height="40">
+        <div><span class="footer-label" style="margin:0">AUTOR</span><strong>nveisk</strong></div>
+      </div>
+      <div class="footer-copy">MCEXTREME.PL &copy; 2026</div>
+    </div>
+  </footer>
+  <button id="toTop" aria-label="Do góry"><i class="fa-solid fa-chevron-up"></i></button>
+
   <!-- Search Modal -->
   <div class="search-modal-overlay" id="searchOverlay">
     <div class="search-modal-box">
@@ -1582,264 +1786,26 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
   <div class="toast-box" id="toastBox"></div>
 
   <script>
-function toggleSidebarGroup(groupId) {
-  const groupEl = document.getElementById(groupId);
-  if (groupEl) {
-    groupEl.classList.toggle('collapsed');
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  const toastBox = document.getElementById('toastBox');
-
-  function showToast(message, icon = 'fa-circle-check') {
-    if (!toastBox) return;
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.innerHTML = `<i class="fa-solid ${icon}" style="color: var(--red-main);"></i><span>${message}</span>`;
-    toastBox.appendChild(toast);
-
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(8px)';
-      toast.style.transition = 'all 0.25s ease';
-      setTimeout(() => toast.remove(), 250);
-    }, 2600);
-  }
-
-  document.querySelectorAll('.copy-code-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const container = btn.closest('.code-block-container');
-      const code = container.querySelector('code').innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        showToast('Skopiowano skrypt do schowka!');
-      });
-    });
+const MAPC={'ą':'a','ć':'c','ę':'e','ł':'l','ń':'n','ó':'o','ś':'s','ź':'z','ż':'z','Ą':'A','Ć':'C','Ę':'E','Ł':'L','Ń':'N','Ó':'O','Ś':'S','Ź':'Z','Ż':'Z','„':'"','”':'"','“':'"','’':"'",'–':'-','—':'-','…':'...','⚬':'-','→':'>'};
+function px(s){return s.replace(/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ„”“’–—…⚬→]/g,c=>MAPC[c]||c)}
+function nrm(s){return s.toLowerCase().replace(/[ąćęłńóśźż]/g,c=>MAPC[c])}
+(function(){
+  /* czcionka pikselowa nie ma polskich znakow -> zwykle litery */
+  document.querySelectorAll('.brand-name,.doc-title,.doc-h2,.doc-h3,.rank-badge,.perm-domain,.pc-title,.pc-label,.callout-title,.code-block-header span,.group-title,.toc-title,.btn-sub,.btn-main,.doc-table th,kbd,.footer-label,.footer-copy').forEach(el=>{
+    const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode())n.nodeValue=px(n.nodeValue);
   });
-
-  const pageSections = document.querySelectorAll('.doc-page-section');
-  const sidebarLinks = document.querySelectorAll('.sidebar-link');
-  const tocContainer = document.getElementById('docsTocContainer');
-  const tocLinks = document.getElementById('tocLinks');
-
-  function switchPage(pageId) {
-    if (!pageId) pageId = 'regulamin-administracji';
-
-    let found = false;
-    pageSections.forEach(sec => {
-      if (sec.id === pageId) {
-        sec.style.display = 'block';
-        found = true;
-      } else {
-        sec.style.display = 'none';
-      }
-    });
-
-    if (!found && pageSections.length > 0) {
-      pageSections[0].style.display = 'block';
-      pageId = pageSections[0].id;
-    }
-
-    sidebarLinks.forEach(link => {
-      if (link.getAttribute('href') === `#${pageId}`) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-
-    updateToc(pageId);
-    window.scrollTo({ top: 0, behavior: 'instant' });
+  /* motywy */
+  const btns=document.querySelectorAll('.theme-btn');
+  function setTheme(t,save){
+    document.documentElement.setAttribute('data-theme',t);
+    btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.theme===t));
+    if(save){try{localStorage.setItem('mcx-theme',t)}catch(e){}}
+    const m=document.querySelector('meta[name=theme-color]');
+    if(m)m.content=getComputedStyle(document.documentElement).getPropertyValue('--bg-header').trim()||'#141724';
   }
-
-  function updateToc(pageId) {
-    if (!tocLinks || !tocContainer) return;
-    tocLinks.innerHTML = '';
-
-    const activeSec = document.getElementById(pageId);
-    if (!activeSec) return;
-
-    const headings = activeSec.querySelectorAll('h2.doc-h2');
-    
-    if (headings.length === 0) {
-      tocContainer.style.display = 'none';
-      return;
-    } else {
-      tocContainer.style.display = 'block';
-    }
-
-    headings.forEach((h, idx) => {
-      if (!h.id) h.id = pageId + '-h2-' + idx;
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="#${h.id}" class="toc-item-link">${h.innerText}</a>`;
-      li.querySelector('a').addEventListener('click', (e) => {
-        e.preventDefault();
-        h.scrollIntoView({ behavior: 'smooth' });
-      });
-      tocLinks.appendChild(li);
-    });
-  }
-
-  function onHashChange() {
-    const rawHash = window.location.hash.replace('#', '');
-    if (!rawHash) {
-      switchPage('regulamin-administracji');
-      return;
-    }
-
-    const isPage = Array.from(pageSections).some(s => s.id === rawHash);
-    if (isPage) {
-      switchPage(rawHash);
-    } else {
-      const el = document.getElementById(rawHash);
-      if (el) {
-        const parentSec = el.closest('.doc-page-section');
-        if (parentSec) {
-          switchPage(parentSec.id);
-          setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
-        }
-      }
-    }
-  }
-
-  window.addEventListener('hashchange', onHashChange);
-
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-    const href = link.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      const targetId = href.replace('#', '');
-      const isPage = Array.from(pageSections).some(s => s.id === targetId);
-      if (isPage) {
-        e.preventDefault();
-        window.location.hash = targetId;
-        switchPage(targetId);
-        if (window.innerWidth <= 860) {
-          document.getElementById('sidebar')?.classList.remove('open');
-        }
-      }
-    }
-  });
-
-  onHashChange();
-
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const sidebar = document.getElementById('sidebar');
-
-  if (mobileMenuBtn && sidebar) {
-    mobileMenuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
-  }
-
-  const searchTrigger = document.getElementById('searchTrigger');
-  const searchOverlay = document.getElementById('searchOverlay');
-  const searchInput = document.getElementById('searchInput');
-  const searchResults = document.getElementById('searchResults');
-  const clearSearchBtn = document.getElementById('clearSearchBtn');
-
-  const searchIndex = [];
-  pageSections.forEach(sec => {
-    const pTitle = sec.querySelector('.doc-title')?.innerText || sec.id;
-    const bodyText = sec.querySelector('.doc-article-body')?.innerText || '';
-    const paragraphs = bodyText.split('\n').filter(t => t.trim().length > 15);
-
-    paragraphs.forEach(p => {
-      searchIndex.push({
-        pageId: sec.id,
-        pageTitle: pTitle,
-        snippet: p.trim()
-      });
-    });
-  });
-
-  function openSearch() {
-    if (!searchOverlay) return;
-    searchOverlay.classList.add('open');
-    searchInput.value = '';
-    searchInput.focus();
-    renderSearch('');
-  }
-
-  function closeSearch() {
-    if (!searchOverlay) return;
-    searchOverlay.classList.remove('open');
-  }
-
-  if (searchTrigger) searchTrigger.addEventListener('click', openSearch);
-  if (clearSearchBtn) clearSearchBtn.addEventListener('click', closeSearch);
-
-  if (searchOverlay) {
-    searchOverlay.addEventListener('click', (e) => {
-      if (e.target === searchOverlay) closeSearch();
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault();
-      if (searchOverlay?.classList.contains('open')) closeSearch();
-      else openSearch();
-    } else if (e.key === 'Escape' && searchOverlay?.classList.contains('open')) {
-      closeSearch();
-    }
-  });
-
-  function renderSearch(query) {
-    if (!searchResults) return;
-    const q = query.toLowerCase().trim();
-
-    if (!q) {
-      const sample = searchIndex.slice(0, 6);
-      searchResults.innerHTML = sample.map(item => `
-        <div class="search-result-item" data-page="${item.pageId}">
-          <div class="search-result-top">
-            <span class="search-result-cat">${item.pageTitle}</span>
-          </div>
-          <div class="search-result-desc">${item.snippet.slice(0, 140)}...</div>
-        </div>
-      `).join('');
-    } else {
-      const matches = searchIndex.filter(item => 
-        item.pageTitle.toLowerCase().includes(q) || 
-        item.snippet.toLowerCase().includes(q)
-      ).slice(0, 10);
-
-      if (matches.length === 0) {
-        searchResults.innerHTML = `
-          <div style="padding: 2.5rem; text-align: center; color: var(--text-muted);">
-            Nie znaleziono wyników dla frazy: "<strong>${query}</strong>"
-          </div>
-        `;
-        return;
-      }
-
-      searchResults.innerHTML = matches.map(item => `
-        <div class="search-result-item" data-page="${item.pageId}">
-          <div class="search-result-top">
-            <span class="search-result-cat">${item.pageTitle}</span>
-          </div>
-          <div class="search-result-desc">${item.snippet.slice(0, 150)}...</div>
-        </div>
-      `).join('');
-    }
-
-    searchResults.querySelectorAll('.search-result-item').forEach(el => {
-      el.addEventListener('click', () => {
-        const pageId = el.getAttribute('data-page');
-        closeSearch();
-        window.location.hash = pageId;
-        switchPage(pageId);
-      });
-    });
-  }
-
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => renderSearch(e.target.value));
-  }
-});
-  </script>
-</body>
-</html>
+  btns.forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.theme,true)));
+  let cur='default';try{cur=localStorage.getItem('mcx-theme')||'default'}catch(e){}
+  if(!['white','halloween'].includes(cur))cur='default';setTheme(cur,false);
+  /* mobile: tlo menu, ESC, przycisk do gory */
+  const sb=document.getElementById('sidebar');
+  docum
