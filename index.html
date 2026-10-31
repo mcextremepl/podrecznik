@@ -812,7 +812,7 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
 html[data-theme="white"]{color-scheme:light;--red-main:#dc2626;--red-deep:#b91c1c;--accent-rgb:220,38,38;--red-glow:rgba(220,38,38,.25);--ov-rgb:15,20,40;--bg-page:#f3f5fa;--bg-sidebar:#fff;--bg-header:#fff;--bg-card:#fff;--border-sheet:#dde2ee;--text-pure:#0f1320;--text-body:#232a3b;--text-muted:#5d6779;--text-lead:#3a4356;--bg-code:#f0f3fa;--bg-active:#fdecec;--scroll:#c5ccdd;--scroll-hover:#a9b2c8;--code-text:#166534;--code-inline:#b91c1c;--modal-bg:rgba(255,255,255,.97);--overlay:rgba(30,35,55,.55);--pattern:transparent}
 html[data-theme="halloween"]{--red-main:#ff7a00;--red-deep:#d96200;--accent-rgb:255,122,0;--red-glow:rgba(255,122,0,.45);--bg-page:#120a1a;--bg-sidebar:#170d20;--bg-header:#1b1028;--bg-card:#211433;--border-sheet:#3b2456;--text-body:#f1e6ff;--text-muted:#b79fd1;--text-lead:#d9c6ef;--bg-code:#0d0714;--bg-active:#2c1a44;--scroll:#3b2456;--scroll-hover:#533377;--code-text:#b6ff5c;--code-inline:#ffb36b;--modal-bg:rgba(27,16,40,.95);--overlay:rgba(10,4,16,.85);--pattern:rgba(255,122,0,.03);--deco:"🎃"}
 body{background-image:linear-gradient(45deg,var(--pattern) 25%,transparent 25%),linear-gradient(-45deg,var(--pattern) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--pattern) 75%),linear-gradient(-45deg,transparent 75%,var(--pattern) 75%)}
-html,body{overflow-x:hidden}body{transition:background-color .25s,color .25s}
+body{overflow-x:clip}body{transition:background-color .25s,color .25s}
 
 :root{--red-main:#ff4d4d;--accent-rgb:255,77,77;--red-glow:rgba(255,77,77,.4);--bg-page:#000;--bg-sidebar:#050505;--bg-header:#0a0a0a;--bg-card:#0e0e0e;--border-sheet:#222;--bg-code:#070707;--bg-active:#161616;--scroll:#2a2a2a;--scroll-hover:#3a3a3a;--pattern:transparent;--modal-bg:rgba(10,10,10,.96);--overlay:rgba(0,0,0,.88);--text-body:#e8e8e8;--text-muted:#9a9a9a}
 /* ===== AESTHETICS ===== */
@@ -1808,4 +1808,272 @@ function nrm(s){return s.toLowerCase().replace(/[ąćęłńóśźż]/g,c=>MAPC[c
   if(!['white','halloween'].includes(cur))cur='default';setTheme(cur,false);
   /* mobile: tlo menu, ESC, przycisk do gory */
   const sb=document.getElementById('sidebar');
-  docum
+  document.getElementById('navBackdrop').addEventListener('click',()=>sb.classList.remove('open'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')sb.classList.remove('open')});
+  const up=document.getElementById('toTop');
+  window.addEventListener('scroll',()=>up.classList.toggle('show',window.scrollY>700),{passive:true});
+  up.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+})();
+</script>
+<script>
+function toggleSidebarGroup(groupId) {
+  const groupEl = document.getElementById(groupId);
+  if (groupEl) {
+    groupEl.classList.toggle('collapsed');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const toastBox = document.getElementById('toastBox');
+
+  function showToast(message, icon = 'fa-circle-check') {
+    if (!toastBox) return;
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<i class="fa-solid ${icon}" style="color: var(--red-main);"></i><span>${message}</span>`;
+    toastBox.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(8px)';
+      toast.style.transition = 'all 0.25s ease';
+      setTimeout(() => toast.remove(), 250);
+    }, 2600);
+  }
+
+  document.querySelectorAll('.copy-code-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const container = btn.closest('.code-block-container');
+      const code = container.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Skopiowano skrypt do schowka!');
+      });
+    });
+  });
+
+  const pageSections = document.querySelectorAll('.doc-page-section');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const tocContainer = document.getElementById('docsTocContainer');
+  const tocLinks = document.getElementById('tocLinks');
+
+  function switchPage(pageId) {
+    if (!pageId) pageId = 'regulamin-administracji';
+
+    let found = false;
+    pageSections.forEach(sec => {
+      if (sec.id === pageId) {
+        sec.style.display = 'block';
+        found = true;
+      } else {
+        sec.style.display = 'none';
+      }
+    });
+
+    if (!found && pageSections.length > 0) {
+      pageSections[0].style.display = 'block';
+      pageId = pageSections[0].id;
+    }
+
+    sidebarLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${pageId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    updateToc(pageId);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function updateToc(pageId) {
+    if (!tocLinks || !tocContainer) return;
+    tocLinks.innerHTML = '';
+
+    const activeSec = document.getElementById(pageId);
+    if (!activeSec) return;
+
+    const headings = activeSec.querySelectorAll('h2.doc-h2');
+    
+    if (headings.length === 0) {
+      tocContainer.style.display = 'none';
+      return;
+    } else {
+      tocContainer.style.display = 'block';
+    }
+
+    headings.forEach((h, idx) => {
+      if (!h.id) h.id = pageId + '-h2-' + idx;
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#${h.id}" class="toc-item-link">${h.innerText}</a>`;
+      li.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth' });
+      });
+      tocLinks.appendChild(li);
+    });
+  }
+
+  function onHashChange() {
+    const rawHash = window.location.hash.replace('#', '');
+    if (!rawHash) {
+      switchPage('regulamin-administracji');
+      return;
+    }
+
+    const isPage = Array.from(pageSections).some(s => s.id === rawHash);
+    if (isPage) {
+      switchPage(rawHash);
+    } else {
+      const el = document.getElementById(rawHash);
+      if (el) {
+        const parentSec = el.closest('.doc-page-section');
+        if (parentSec) {
+          switchPage(parentSec.id);
+          setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
+        }
+      }
+    }
+  }
+
+  window.addEventListener('hashchange', onHashChange);
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const targetId = href.replace('#', '');
+      const isPage = Array.from(pageSections).some(s => s.id === targetId);
+      if (isPage) {
+        e.preventDefault();
+        window.location.hash = targetId;
+        switchPage(targetId);
+        if (window.innerWidth <= 860) {
+          document.getElementById('sidebar')?.classList.remove('open');
+        }
+      }
+    }
+  });
+
+  onHashChange();
+
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const sidebar = document.getElementById('sidebar');
+
+  if (mobileMenuBtn && sidebar) {
+    mobileMenuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  }
+
+  const searchTrigger = document.getElementById('searchTrigger');
+  const searchOverlay = document.getElementById('searchOverlay');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+
+  const searchIndex = [];
+  pageSections.forEach(sec => {
+    const pTitle = sec.querySelector('.doc-title')?.innerText || sec.id;
+    const bodyText = sec.querySelector('.doc-article-body')?.innerText || '';
+    const paragraphs = bodyText.split('\n').filter(t => t.trim().length > 15);
+
+    paragraphs.forEach(p => {
+      searchIndex.push({
+        pageId: sec.id,
+        pageTitle: pTitle,
+        snippet: p.trim()
+      });
+    });
+  });
+
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.add('open');
+    searchInput.value = '';
+    searchInput.focus();
+    renderSearch('');
+  }
+
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.remove('open');
+  }
+
+  if (searchTrigger) searchTrigger.addEventListener('click', openSearch);
+  if (clearSearchBtn) clearSearchBtn.addEventListener('click', closeSearch);
+
+  if (searchOverlay) {
+    searchOverlay.addEventListener('click', (e) => {
+      if (e.target === searchOverlay) closeSearch();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (searchOverlay?.classList.contains('open')) closeSearch();
+      else openSearch();
+    } else if (e.key === 'Escape' && searchOverlay?.classList.contains('open')) {
+      closeSearch();
+    }
+  });
+
+  function renderSearch(query) {
+    if (!searchResults) return;
+    const q = nrm(query).trim();
+
+    if (!q) {
+      const sample = searchIndex.slice(0, 6);
+      searchResults.innerHTML = sample.map(item => `
+        <div class="search-result-item" data-page="${item.pageId}">
+          <div class="search-result-top">
+            <span class="search-result-cat">${item.pageTitle}</span>
+          </div>
+          <div class="search-result-desc">${item.snippet.slice(0, 140)}...</div>
+        </div>
+      `).join('');
+    } else {
+      const matches = searchIndex.filter(item => 
+        nrm(item.pageTitle).includes(q) || 
+        nrm(item.snippet).includes(q)
+      ).slice(0, 10);
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = `
+          <div style="padding: 2.5rem; text-align: center; color: var(--text-muted);">
+            Nie znaleziono wyników dla frazy: "<strong>${query}</strong>"
+          </div>
+        `;
+        return;
+      }
+
+      searchResults.innerHTML = matches.map(item => `
+        <div class="search-result-item" data-page="${item.pageId}">
+          <div class="search-result-top">
+            <span class="search-result-cat">${item.pageTitle}</span>
+          </div>
+          <div class="search-result-desc">${item.snippet.slice(0, 150)}...</div>
+        </div>
+      `).join('');
+    }
+
+    searchResults.querySelectorAll('.search-result-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const pageId = el.getAttribute('data-page');
+        closeSearch();
+        window.location.hash = pageId;
+        switchPage(pageId);
+      });
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => renderSearch(e.target.value));
+  }
+});
+  </script>
+</body>
+</html>
