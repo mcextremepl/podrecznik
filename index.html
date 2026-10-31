@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mcextreme.pl | Taryfikator Minecraft & Regulamin Administracji</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFHUlEQVR4Xu2bW4scRRTH6zKT4BcQnwT1w/jgJxDUh5BsNG8xioiaIIKLinGFvZmL4+XBaMCA2XV1Q4wh0ayuSiCCrwo+iUR8UVChPf/uru2a01VnenumZzYzXfBjqqurTp3z77p1Z6NU/fQL8WcNHkTjSFpQ5fpVWEbjcafbRFKDh9A4klZVuX4Vemg87tQKoMqOVKEVAI0jqRVAletXoYfGY02aBCCSGkQFoHurgfpVaESA/cSPEW6d7+7/b912kk+tTdnIf1HmylHGyw90Oj8H7KW83unejrWLlYOFTvcPbsvjtKqZ7iL4UEuB6ldsN9lWJvmO8t8TPxDIbyvdVw6ycpPyBDnP7TlOUTCSPZRxe+AsteO2PC6pmmmAAHBWiw7vXgAr2gsJAB/eFmyqpgT4kjr1Ha2KJMDp3CZvM4iJCHCVOkXwuxXgiODsmdwmbyOB+j3BpmpKAIwA7kwVJAEwAnj9KkxkBBRrQLYOVEUSIFsDdmdvFGvAZyHu03rzg+6+5CMyfj4H+Q8p8HO0A7xmbPKqNjm6j6s6HsRFag8bsOVsu/xlAwGyBY9zIdAPeEXbZNGzx1nsdH/nsXmkWyRXLOUBMr6VOsRXc518S848Sffn6DrEZUEAPDHY8HcQ/15sBLwv9Lck9AeBeWweP4kCfGNMcFXepntHiUOUB9whWYB6xAQ4TCwL/TUqwEHKA+7U1AiwZcLzEQLUnwL1iAkAGpkC95PRG6Y47flAgGME1AfcoXEKcIj8W9LhBwVqC4ARMPMC1J0CJ8khzMsQkjgfC+1eFPprZAoMswhKrAnOrgpBxmh0EYQA3CAYtA1K3FEC3MgPQpxBU0Bi1AKARqYAdoGvByyCj1MecIckRi3AQTo6N7YIDhoBsV1AYtQCjGEXgMP4LTpxa4Bzwo2EKmKMWgDQyBS4l/iERsA6CbBGCmcgn/EeifMufhnYrzE9uJOOugLM57ZdP+jb9X/O9Pvms1JXgHuIJTK8Sr+ct4gtIZATQiB1BXiHtdvOQX6T7hX+IV9cn6AYeGyVBVg0vuFqAsCp40Igwwrggi7QuQBhX4cTwIaNTkKAnsZ3hJAAhgTASA37OpQAe3kKFGAENCTAcg0BcHRuQgAseP6XKZ/+NWCEAqxomwbLjUoC4DN1UwK4z/BchGEFwIfBEncr3TtmO8lTZIDzNHGR+Jw6BnBgE0ORuEScpe1zhcr6MSlfCALgbbDcLgNbHWyDtC/Xr862ZO6jY87aX3lsHi9BgFgSP4uftHC2GBGncnB9LXgyc4epuAAS6zr+lPFAuI8eAz+Lx1IrgCob2xHgDZMtkG6NwK/LXwsOc5SFyqux5wRYoE79p+4TFmA49pwAb866AJgC/rCfRgH2qezfzzY4JMDGM9b+c5w6DoE3xyvkcIgtFpjPdYLXd2Cr4/048q2u5GfOfBpNAyn6V2Ivm/AJEkjngAvCUz4iP+Ve6tGYUyuAKjvSCgBaAVoBZkOAr4hbIZ619u95cjgEtsjrFOgOqshjq+P1HQes/Y334yG+1U0i3fT+jncHKk+eN8VLFMBJ0h2mHqV7vI3Xds8FKaWbKg+YIwnwiBGH+XQI8ILpXx/8ozRGAK/vMR0C4Ojqvh/4QuD6sVkQAN/oQm+RMyOAGwH8LRLX0zQF6MWu9H/7Uugt8l98TAnxsLV/8foez6WW7/RklFojkhC03c3x+tOY1lR5eDsOe/WmNrUCqHLgrQA5rQBevalN66oc+MQE+B/BSCiwdHmGaAAAAABJRU5ErkJggg==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+  --font-pixel: 'Silkscreen', cursive, sans-serif;
+  --font-text: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --red-main: #ff3333;
+  --red-deep: #dc2626;
+  --red-dark: #991b1b;
+  --red-glow: rgba(255, 51, 51, 0.4);
+
+  --bg-page: #0f1118;
+  --bg-sidebar: #131722;
+  --bg-header: #141724;
+  --bg-card: #181c2b;
+  --border-sheet: #262c3e;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  --text-pure: #ffffff;
+  --text-body: #e4e8f2;
+  --text-muted: #9aa5bc;
+  --text-lead: #cbd5e1;
+
+  --header-h: 64px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--bg-page);
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.015) 75%);
+  background-size: 32px 32px;
+  background-position: 0 0, 0 16px, 16px -16px, -16px 0px;
+  color: var(--text-body);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Header Navbar */
+.clean-header {
+  height: var(--header-h);
+  background: var(--bg-header);
+  border-bottom: 2px solid var(--border-sheet);
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 8px var(--red-glow));
+}
+
+.brand-name {
+  font-family: var(--font-pixel);
+  font-size: 1.25rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.brand-name .red {
+  color: var(--red-main);
+  text-shadow: 0 0 12px var(--red-glow);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-btn-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-sheet);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-btn-trigger:hover {
+  border-color: var(--red-main);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 51, 51, 0.25);
+  transform: translateY(-1px);
+}
+
+.search-btn-trigger kbd {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Rank Badges - tinted pill with soft glow */
+.rank-badge {
+  --rc: #9aa5bc;
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.78em;
+  font-weight: 700;
+  padding: 0.12rem 0.55rem 0.16rem;
+  vertical-align: middle;
+  white-space: nowrap;
+  line-height: 1.3;
+  margin: 0 0.15rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  color: #fff;
+  color: color-mix(in srgb, var(--rc) 55%, #fff);
+  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--rc) 18%, transparent);
+  border: 1px solid var(--rc);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--rc) 45%, transparent), inset 0 0 8px color-mix(in srgb, var(--rc) 18%, transparent);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--rc) 70%, transparent);
+}
+
+.rank-stazysta  { --rc: #14cf5a; }
+.rank-support   { --rc: #06bef1; }
+.rank-pomocnik  { --rc: #7628f3; }
+.rank-jrmod     { --rc: #5dc733; }
+.rank-mod       { --rc: #0f740b; }
+.rank-jradmin   { --rc: #d34516; }
+.rank-admin     { --rc: #f50a0a; }
+.rank-admindc   { --rc: #007bff; }
+.rank-adminrole { --rc: #cbd5e1; }
+.rank-doknes    { --rc: #d1a514; }
+.rank-cmd       { --rc: #c25c0e; }
+.rank-cmdplus   { --rc: #ff7b00; }
+.rank-gcmd      { --rc: #c27c0e; }
+
+/* Permission / duties cards */
+.perm-grid { display: flex; flex-direction: column; gap: 0.9rem; margin: 1.25rem 0 2rem; }
+.perm-card {
+  --rc: #9aa5bc;
+  background: var(--bg-card);
+  border: 1px solid var(--border-sheet);
+  border-left: 4px solid var(--rc);
+  border-radius: 8px;
+  padding: 0.9rem 1.15rem 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.perm-card .perm-head { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.55rem; }
+.perm-card .perm-head .rank-badge { font-size: 0.85rem; margin: 0; }
+.perm-card .perm-domain { font-family: var(--font-pixel); font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.04em; }
+.perm-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; padding: 0; margin: 0; }
+.perm-card li { position: relative; padding-left: 1.1rem; line-height: 1.65; font-size: 0.97rem; }
+.perm-card li::before { content: ''; position: absolute; left: 0.1rem; top: 0.72em; width: 6px; height: 6px; background: var(--rc); box-shadow: 0 0 6px var(--rc); }
+.perm-card li.inherit { color: var(--text-muted); font-style: italic; }
+.perm-card li.inherit::before { background: var(--text-muted); box-shadow: none; opacity: .6; }
+.perm-card .perm-none { color: var(--text-muted); font-style: italic; font-size: 0.95rem; }
+.perm-card.rank-stazysta  { --rc: #14cf5a; } .perm-card.rank-support { --rc: #06bef1; }
+.perm-card.rank-pomocnik  { --rc: #7628f3; } .perm-card.rank-jrmod   { --rc: #5dc733; }
+.perm-card.rank-mod       { --rc: #0f740b; } .perm-card.rank-jradmin { --rc: #d34516; }
+.perm-card.rank-admin     { --rc: #f50a0a; } .perm-card.rank-admindc { --rc: #007bff; }
+.perm-card.rank-adminrole { --rc: #cbd5e1; } .perm-card.rank-cmd     { --rc: #c25c0e; }
+.perm-card.rank-cmdplus   { --rc: #ff7b00; } .perm-card.rank-gcmd    { --rc: #c27c0e; }
+.perm-card.rank-stazysta, .perm-card.rank-support, .perm-card.rank-pomocnik, .perm-card.rank-jrmod, .perm-card.rank-mod,
+.perm-card.rank-jradmin, .perm-card.rank-admin, .perm-card.rank-admindc, .perm-card.rank-adminrole,
+.perm-card.rank-cmd, .perm-card.rank-cmdplus, .perm-card.rank-gcmd { background: var(--bg-card); color: var(--text-body); border: 1px solid var(--border-sheet); border-left: 4px solid var(--rc); box-shadow: 0 4px 14px rgba(0,0,0,.25); text-shadow: none; padding: .9rem 1.15rem 1rem; border-radius: 8px; font-family: inherit; font-size: inherit; display: block; white-space: normal; }
+.duty-card ul.bul { margin: 0.4rem 0 0; }
+.duty-card .sub-bul { margin: .3rem 0 .2rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: .25rem; list-style: circle; }
+
+.sidebar-author { display:flex; flex-direction:column; align-items:center; gap:.5rem; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--border-subtle); color:#fff; font-size:.7rem; }
+.sidebar-author img { width:40px; height:40px; image-rendering:pixelated; border-radius:4px; border:2px solid var(--border-sheet); box-shadow:0 0 12px var(--red-glow); }
+.problem-list{display:flex;flex-direction:column;gap:.8rem;margin:1.25rem 0 2rem}
+.problem-card{background:var(--bg-card);border:1px solid var(--border-sheet);border-left:4px solid var(--red-main);border-radius:8px;padding:.85rem 1.1rem 1rem}
+.pc-title{font-family:var(--font-pixel);font-size:.85rem;color:#fff;line-height:1.5;margin-bottom:.5rem}
+.pc-row{margin:.3rem 0 0;line-height:1.7;font-size:.98rem}
+.pc-label{display:inline-block;font-family:var(--font-pixel);font-size:.66rem;color:var(--red-main);background:rgba(255,51,51,.12);border:1px solid rgba(255,51,51,.25);border-radius:4px;padding:.05rem .45rem;margin-right:.5rem;text-transform:uppercase;vertical-align:middle}
+/* Layout & Sidebar */
+.docs-layout {
+  display: flex;
+  max-width: 1560px;
+  margin: 0 auto;
+  min-height: calc(100vh - var(--header-h));
+}
+
+.docs-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: var(--bg-sidebar);
+  border-right: 2px solid var(--border-sheet);
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  overflow-y: auto;
+  padding: 1.75rem 1rem 3rem 1.25rem;
+}
+
+.sidebar-group {
+  margin-bottom: 1.6rem;
+}
+
+.sidebar-group-header {
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  padding: 0.4rem 0.5rem;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.sidebar-group-header:hover {
+  background: var(--bg-card);
+  color: #fff;
+}
+
+.sidebar-group-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-group-toggle {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-group.collapsed .sidebar-group-toggle {
+  transform: rotate(-90deg);
+}
+
+.sidebar-group-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out, opacity 0.2s ease;
+  max-height: 500px;
+  opacity: 1;
+}
+
+.sidebar-group.collapsed .sidebar-group-list {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.sidebar-item.sub-item {
+  padding-left: 1.35rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.sidebar-link i {
+  font-size: 0.95rem;
+  width: 18px;
+  text-align: center;
+}
+
+.sidebar-link:hover {
+  color: #fff;
+  background: var(--bg-card);
+  border-color: var(--border-sheet);
+}
+
+.sidebar-link.active {
+  color: #fff;
+  background: #1d2233;
+  border-color: var(--red-deep);
+  box-shadow: inset 3px 0 0 var(--red-main);
+  font-weight: 600;
+}
+
+/* Main Content Area */
+.docs-content {
+  flex: 1;
+  min-width: 0;
+  padding: 2.75rem 3.5rem 5rem 3.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.docs-content-inner {
+  width: 100%;
+  max-width: 860px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.breadcrumb-item.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.doc-header {
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-sheet);
+}
+
+.doc-title {
+  font-family: var(--font-pixel);
+  font-size: 2.2rem;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin-bottom: 0.85rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.doc-lead {
+  font-size: 1.05rem;
+  color: var(--text-lead);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.doc-h2 {
+  font-family: var(--font-pixel);
+  font-size: 1.45rem;
+  color: #ffffff;
+  margin: 3rem 0 1.25rem 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border-sheet);
+  scroll-margin-top: calc(var(--header-h) + 1.5rem);
+}
+
+.doc-p {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+/* Rules list */
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 1.02rem;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+
+.rule-num {
+  font-family: var(--font-pixel);
+  color: var(--red-main);
+  font-size: 0.95rem;
+  margin-right: 0.2rem;
+}
+
+/* Code Block Styles with Copy Button */
+.code-block-container {
+  position: relative;
+  background: #11141f;
+  border: 1px solid var(--border-sheet);
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  overflow: hidden;
+}
+
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: #181c2b;
+  border-bottom: 1px solid var(--border-sheet);
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.copy-code-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.copy-code-btn:hover {
+  background: var(--red-main);
+  border-color: var(--red-main);
+  box-shadow: 0 0 10px rgba(255, 51, 51, 0.4);
+}
+
+.code-block-container pre {
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #4ade80;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple { 
+  background: transparent !important; 
+  color: #9aa5bc !important; 
+  font-size: 0.92rem;
+  padding: 0; 
+  display: block;
+  margin-top: 0.25rem;
+  line-height: 1.6;
+  font-weight: 400;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+/* Navigation Buttons */
+.doc-pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border-sheet);
+}
+
+.nav-prev-btn, .nav-next-btn {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-sheet);
+  border-radius: 6px;
+  min-width: 240px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-prev-btn:hover, .nav-next-btn:hover {
+  border-color: var(--red-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.25);
+}
+
+.nav-next-btn {
+  text-align: right;
+  margin-left: auto;
+}
+
+.btn-sub {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.btn-main {
+  font-family: var(--font-pixel);
+  font-size: 0.88rem;
+  color: #fff;
+}
+
+/* Table of Contents */
+.docs-toc {
+  width: 250px;
+  flex-shrink: 0;
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  overflow-y: auto;
+  padding: 2.75rem 1rem 3rem 1.5rem;
+}
+
+.toc-title {
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toc-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.toc-item-link {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  transition: all 0.15s ease;
+  display: block;
+}
+
+.toc-item-link:hover {
+  color: var(--red-main);
+  padding-left: 4px;
+}
+
+/* Search Modal */
+.search-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 10, 16, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.search-modal-overlay.open {
+  display: flex;
+  opacity: 1;
+}
+
+.search-modal-box {
+  width: 92%;
+  max-width: 680px;
+  background: rgba(20, 24, 38, 0.92);
+  border: 1px solid rgba(255, 51, 51, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 51, 51, 0.15);
+  overflow: hidden;
+  transform: translateY(-10px) scale(0.98);
+  transition: transform 0.2s ease;
+}
+
+.search-modal-overlay.open .search-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.search-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-sheet);
+  background: rgba(15, 17, 24, 0.5);
+}
+
+.search-modal-header i.search-icon {
+  color: var(--red-main);
+  font-size: 1.25rem;
+}
+
+.search-modal-header input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: var(--font-text);
+  outline: none;
+}
+
+.search-modal-header input::placeholder {
+  color: var(--text-muted);
+}
+
+.clear-search-btn {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: all 0.15s ease;
+}
+
+.clear-search-btn:hover {
+  color: #fff;
+  background: rgba(255, 51, 51, 0.2);
+}
+
+.search-results-list {
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.search-result-item {
+  padding: 0.9rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.search-result-item:hover {
+  background: rgba(255, 51, 51, 0.08);
+  border-color: rgba(255, 51, 51, 0.25);
+  transform: translateX(3px);
+}
+
+.search-result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.search-result-cat {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--red-main);
+  background: rgba(255, 51, 51, 0.12);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 51, 51, 0.2);
+}
+
+.search-result-desc {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.toast-box {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+}
+
+.toast {
+  background: #1c202d;
+  border: 2px solid var(--red-main);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: toastIn 0.2s ease-out;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1200px) {
+  .docs-toc { display: none; }
+}
+
+@media (max-width: 860px) {
+  .docs-sidebar {
+    position: fixed;
+    left: -100%;
+    top: var(--header-h);
+    bottom: 0;
+    z-index: 50;
+    transition: left 0.25s ease;
+  }
+  .docs-sidebar.open { left: 0; }
+  .docs-content { padding: 1.5rem 1rem 4rem 1rem; }
+  .doc-title { font-size: 1.7rem; }
+  .clean-header { padding: 0 1rem; }
+}
+
+/* Process pages */
+kbd{font-family:var(--font-pixel);font-size:.72rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-bottom-width:2px;border-radius:4px;padding:.1rem .4rem;color:#fff;white-space:nowrap}
+.doc-article-body code{font-family:Consolas,'Courier New',monospace;font-size:.88em;background:rgba(255,255,255,.07);border:1px solid var(--border-sheet);border-radius:4px;padding:.05rem .35rem;color:#ffb4b4;word-break:break-word}
+.code-block-container code{background:none;border:none;padding:0;color:inherit}
+.doc-article-body a{color:var(--red-main);text-decoration:underline}
+.doc-h3{font-family:var(--font-pixel);font-size:1.05rem;color:#fff;margin:2rem 0 .8rem}
+ol.steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:.6rem;margin:1rem 0 1.5rem}
+ol.steps>li{counter-increment:s;position:relative;padding:.65rem 1rem .65rem 3.1rem;background:var(--bg-card);border:1px solid var(--border-sheet);border-radius:6px;line-height:1.7}
+ol.steps>li::before{content:counter(s);position:absolute;left:.8rem;top:.7rem;width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;font-family:var(--font-pixel);font-size:.72rem;background:var(--red-deep);color:#fff;border-radius:4px}
+ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:column;gap:.4rem;line-height:1.7}
+.callout{border:1px solid var(--border-sheet);border-left:4px solid #5b8def;background:var(--bg-card);border-radius:6px;padding:.9rem 1.1rem;margin:1.25rem 0;line-height:1.7}
+.callout.warn{border-left-color:#ffaa00}.callout.ban{border-left-color:var(--red-main)}
+.callout-title{font-family:var(--font-pixel);font-size:.78rem;color:#fff;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.04em}
+.callout ul.bul{margin:.3rem 0 0}
+.quote{margin:1rem 0 1.5rem;padding:.9rem 1.1rem;border-left:4px solid var(--red-main);background:#11141f;color:var(--text-lead);font-style:italic;border-radius:0 6px 6px 0}
+.tbl-wrap{overflow-x:auto;margin:1.25rem 0 1.75rem;border:1px solid var(--border-sheet);border-radius:8px}
+.doc-table{width:100%;border-collapse:collapse;font-size:.93rem;line-height:1.6}
+.doc-table th{text-align:left;font-family:var(--font-pixel);font-size:.72rem;background:#181c2b;color:var(--text-muted);padding:.6rem .9rem;border-bottom:1px solid var(--border-sheet)}
+.doc-table td{padding:.6rem .9rem;border-bottom:1px solid var(--border-subtle);vertical-align:top}
+.doc-table tr:last-child td{border-bottom:none}
+  </style>
+</head>
+<body>
+
+  <!-- Clean Header -->
+  <header class="clean-header">
+    <div class="header-left">
+      <button id="mobileMenuBtn" style="color: #fff; font-size: 1.3rem; margin-right: 0.5rem; display: none;">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <a href="#regulamin-administracji" class="brand-wrap">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFHUlEQVR4Xu2bW4scRRTH6zKT4BcQnwT1w/jgJxDUh5BsNG8xioiaIIKLinGFvZmL4+XBaMCA2XV1Q4wh0ayuSiCCrwo+iUR8UVChPf/uru2a01VnenumZzYzXfBjqqurTp3z77p1Z6NU/fQL8WcNHkTjSFpQ5fpVWEbjcafbRFKDh9A4klZVuX4Vemg87tQKoMqOVKEVAI0jqRVAletXoYfGY02aBCCSGkQFoHurgfpVaESA/cSPEW6d7+7/b912kk+tTdnIf1HmylHGyw90Oj8H7KW83unejrWLlYOFTvcPbsvjtKqZ7iL4UEuB6ldsN9lWJvmO8t8TPxDIbyvdVw6ycpPyBDnP7TlOUTCSPZRxe+AsteO2PC6pmmmAAHBWiw7vXgAr2gsJAB/eFmyqpgT4kjr1Ha2KJMDp3CZvM4iJCHCVOkXwuxXgiODsmdwmbyOB+j3BpmpKAIwA7kwVJAEwAnj9KkxkBBRrQLYOVEUSIFsDdmdvFGvAZyHu03rzg+6+5CMyfj4H+Q8p8HO0A7xmbPKqNjm6j6s6HsRFag8bsOVsu/xlAwGyBY9zIdAPeEXbZNGzx1nsdH/nsXmkWyRXLOUBMr6VOsRXc518S848Sffn6DrEZUEAPDHY8HcQ/15sBLwv9Lck9AeBeWweP4kCfGNMcFXepntHiUOUB9whWYB6xAQ4TCwL/TUqwEHKA+7U1AiwZcLzEQLUnwL1iAkAGpkC95PRG6Y47flAgGME1AfcoXEKcIj8W9LhBwVqC4ARMPMC1J0CJ8khzMsQkjgfC+1eFPprZAoMswhKrAnOrgpBxmh0EYQA3CAYtA1K3FEC3MgPQpxBU0Bi1AKARqYAdoGvByyCj1MecIckRi3AQTo6N7YIDhoBsV1AYtQCjGEXgMP4LTpxa4Bzwo2EKmKMWgDQyBS4l/iERsA6CbBGCmcgn/EeifMufhnYrzE9uJOOugLM57ZdP+jb9X/O9Pvms1JXgHuIJTK8Sr+ct4gtIZATQiB1BXiHtdvOQX6T7hX+IV9cn6AYeGyVBVg0vuFqAsCp40Igwwrggi7QuQBhX4cTwIaNTkKAnsZ3hJAAhgTASA37OpQAe3kKFGAENCTAcg0BcHRuQgAseP6XKZ/+NWCEAqxomwbLjUoC4DN1UwK4z/BchGEFwIfBEncr3TtmO8lTZIDzNHGR+Jw6BnBgE0ORuEScpe1zhcr6MSlfCALgbbDcLgNbHWyDtC/Xr862ZO6jY87aX3lsHi9BgFgSP4uftHC2GBGncnB9LXgyc4epuAAS6zr+lPFAuI8eAz+Lx1IrgCob2xHgDZMtkG6NwK/LXwsOc5SFyqux5wRYoE79p+4TFmA49pwAb866AJgC/rCfRgH2qezfzzY4JMDGM9b+c5w6DoE3xyvkcIgtFpjPdYLXd2Cr4/048q2u5GfOfBpNAyn6V2Ivm/AJEkjngAvCUz4iP+Ve6tGYUyuAKjvSCgBaAVoBZkOAr4hbIZ619u95cjgEtsjrFOgOqshjq+P1HQes/Y334yG+1U0i3fT+jncHKk+eN8VLFMBJ0h2mHqV7vI3Xds8FKaWbKg+YIwnwiBGH+XQI8ILpXx/8ozRGAK/vMR0C4Ojqvh/4QuD6sVkQAN/oQm+RMyOAGwH8LRLX0zQF6MWu9H/7Uugt8l98TAnxsLV/8foez6WW7/RklFojkhC03c3x+tOY1lR5eDsOe/WmNrUCqHLgrQA5rQBevalN66oc+MQE+B/BSCiwdHmGaAAAAABJRU5ErkJggg==" alt="Mcextreme" class="brand-logo">
+        <span class="brand-name">MC<span class="red">EXTREME</span>.PL</span>
+      </a>
+    </div>
+
+    <div class="header-right">
+      <button class="search-btn-trigger" id="searchTrigger" title="Szukaj (Ctrl K)">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Szukaj...</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+    </div>
+  </header>
+
+  <!-- Layout Container -->
+  <div class="docs-layout">
+
+    <!-- Left Sidebar with Icons -->
+    <aside class="docs-sidebar" id="sidebar">
+      
+      <div class="sidebar-group" id="group-zasady">
+        <div class="sidebar-group-header" onclick="toggleSidebarGroup('group-zasady')">
+          <div class="sidebar-group-header-left">
+            <i class="fa-solid fa-shield-halved" style="color: var(--red-main);"></i>
+            <span class="group-title">Zasady administracyjne</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sidebar-group-toggle"></i>
+        </div>
+        <ul class="sidebar-group-list">
+          <li class="sidebar-item">
+            <a href="#regulamin-administracji" class="sidebar-link active" data-target="regulamin-administracji">
+              <i class="fa-solid fa-book-bookmark" style="color: #ff5555;"></i>
+              <span class="item-title">Regulamin administracji</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#taryfikator-minecraft" class="sidebar-link" data-target="taryfikator-minecraft">
+              <i class="fa-solid fa-cubes" style="color: #55ff55;"></i>
+              <span class="item-title">Taryfikator Minecraft</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#taryfikator-discord" class="sidebar-link" data-target="taryfikator-discord">
+              <i class="fa-brands fa-discord" style="color: #55ffff;"></i>
+              <span class="item-title">Taryfikator Discord</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#regulamin-backupow" class="sidebar-link" data-target="regulamin-backupow">
+              <i class="fa-solid fa-box-archive" style="color: #5dc733;"></i>
+              <span class="item-title">Regulamin backupów</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#obowiazki-i-permisje" class="sidebar-link" data-target="obowiazki-i-permisje">
+              <i class="fa-solid fa-user-shield" style="color: #06bef1;"></i>
+              <span class="item-title">Obowiązki i permisje</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-group" id="group-informacje">
+        <div class="sidebar-group-header" onclick="toggleSidebarGroup('group-informacje')">
+          <div class="sidebar-group-header-left">
+            <i class="fa-solid fa-folder-open" style="color: #ffaa00;"></i>
+            <span class="group-title">Informacje administracyjne</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sidebar-group-toggle"></i>
+        </div>
+        <ul class="sidebar-group-list">
+          <li class="sidebar-item">
+            <a href="#problemy-graczy-i-obsluga" class="sidebar-link" data-target="problemy-graczy-i-obsluga">
+              <i class="fa-solid fa-headset" style="color: #ffaa00;"></i>
+              <span class="item-title">Problemy graczy i obsługa</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#pomoc-graczom-serwera" class="sidebar-link" data-target="pomoc-graczom-serwera">
+              <i class="fa-solid fa-hands-holding-child" style="color: #ff55ff;"></i>
+              <span class="item-title">Pomoc graczom serwera</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#proces-sprawdzania" class="sidebar-link" data-target="proces-sprawdzania">
+              <i class="fa-solid fa-magnifying-glass-chart" style="color: #ffff55;"></i>
+              <span class="item-title">Proces sprawdzania</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
+            <a href="#komendy-powershell" class="sidebar-link" data-target="komendy-powershell">
+              <i class="fa-solid fa-terminal" style="color: #55ff99;"></i>
+              <span class="item-title">Komendy PowerShell</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
+            <a href="#linux" class="sidebar-link" data-target="linux">
+              <i class="fa-brands fa-linux" style="color: #ffaaaa;"></i>
+              <span class="item-title">Linux</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
+            <a href="#mac" class="sidebar-link" data-target="mac">
+              <i class="fa-brands fa-apple" style="color: #ffffff;"></i>
+              <span class="item-title">MAC</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 2.5rem; padding: 1rem 0.5rem; border-top: 2px solid var(--border-sheet); font-family: var(--font-pixel); font-size: 0.65rem; color: var(--text-muted); text-align: center;">
+        MCEXTREME.PL &copy; 2026
+        <div class="sidebar-author">
+          <img src="https://mc-heads.net/avatar/nveisk/64" onerror="this.onerror=null;this.src='https://minotar.net/avatar/nveisk/64';" alt="Głowa nveisk" width="40" height="40">
+          <span>Autor: nveisk</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center Content -->
+    <main class="docs-content">
+      <div class="docs-content-inner">
+        
+  <!-- PAGE: Regulamin administracji -->
+  <section id="regulamin-administracji" class="doc-page-section" style="display: block;">
+    <div class="breadcrumbs">
+      <span class="breadcrumb-item">Mcextreme</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Zasady administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item active">Regulamin administracji</span>
+    </div>
+
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">REGULAMIN ADMINISTRACJI</h1>
+        <p class="doc-lead">
+          Oficjalny zbiór zasad i wytycznych dla wszystkich członków ekipy serwera MCEXTREME.PL. Każdy administrator ma obowiązek ich bezwzględnego przestrzegania.
+        </p>
+      </header>
+
+            <p class="doc-p">1. Administratorzy zobowiązani są do zachowania kultury osobistej. Zabrania się obrażania, poniżania, wyśmiewania oraz używania wulgaryzmów wobec graczy i pozostałych członków administracji.</p>
+      <p class="doc-p">2. Niedozwolone jest ujawnianie osobom spoza administracji jakichkolwiek informacji pochodzących z wewnętrznego Discorda administracyjnego lub serwera Minecraft.</p>
+      <p class="doc-p">3. Każdy administrator ma obowiązek przestrzegać obowiązującego taryfikatora kar. Niestosowanie się do niego może skutkować ostrzeżeniem lub innymi konsekwencjami.</p>
+      <p class="doc-p">4. Zabrania się podejmowania samowolnych decyzji i działań bez odpowiednich uprawnień lub zgody wyższej administracji.</p>
+      <p class="doc-p">5. Nie wolno faworyzować znajomych, członków własnej gildii ani innych osób. Każdy gracz powinien być traktowany na równych zasadach, bez wyjątków.</p>
+      <p class="doc-p">6. Zabronione jest przyjmowanie jakichkolwiek korzyści majątkowych lub innych profitów w zamian za szybsze rozpatrzenie sprawy bądź udzielenie pomocy.</p>
+      <p class="doc-p">7. Administrator nie może wykorzystywać swojego stanowiska, wizerunku ani rangi do reklamowania lub promowania jakichkolwiek produktów, usług czy projektów.</p>
+      <p class="doc-p">8. Zabrania się posiadania niestosownego nicku, wulgarnego lub obraźliwego statusu na Discordzie, a także umieszczania w opisie treści reklamowych bądź obrażających inne osoby.</p>
+      <p class="doc-p">9. Administratorzy nie mogą bezpodstawnie teleportować się do graczy, twórców ani właścicieli serwera. Wszelkie próby trollowania, przeszkadzania lub zwracania na siebie uwagi w taki sposób będą odpowiednio karane.</p>
+      <p class="doc-p">10. Szczególną ochroną należy objąć twórców serwera oraz <span class="rank-badge rank-doknes">Doknesa</span>. Zakazuje się teleportowania do nich bez uzasadnienia, nękania ich lub utrudniania im wykonywania obowiązków.</p>
+      <p class="doc-p">11. Zabrania się publikowania reklam własnych transmisji, filmów lub materiałów należących do znajomych.</p>
+      <p class="doc-p">12. Administratorzy posiadający rangę <span class="rank-badge rank-pomocnik">POMOCNIK</span> lub wyższą nie mogą prowadzić zwykłej rozgrywki na serwerze.</p>
+      <p class="doc-p">13. Niedozwolone jest pozostawanie na serwerze w trybie AFK przez dłuższy czas, szczególnie gdy administrator nie odpowiada na zgłoszenia i nie reaguje na łamanie regulaminu przez graczy. W przypadku dłuższej nieobecności należy opuścić serwer.</p>
+      <p class="doc-p">14. Zabrania się spamowania i wysyłania niepotrzebnych wiadomości zarówno na czacie Minecraft, jak i na Discordzie. Od członków administracji oczekuje się profesjonalnego zachowania, neutralności oraz unikania konfliktów.</p>
+      <p class="doc-p">15. Jeżeli zgłosi się do Ciebie gracz z problemem wykraczającym poza Twoje kompetencje, nie podejmuj samodzielnych działań. Przekaż sprawę osobie posiadającej odpowiednią wiedzę lub wyższą rangę.</p>
+      <p class="doc-p">16. Nie należy ingerować w tickety, które są już obsługiwane przez innego administratora. Wyjątkiem jest sytuacja, w której osoba prowadząca zgłoszenie przez dłuższy czas nie wykazuje aktywności.</p>
+      <p class="doc-p">17. Jeżeli przejmujesz ticket i jesteś w stanie samodzielnie rozwiązać problem, nie oznaczaj bez potrzeby pozostałych członków administracji. Wyjątek stanowią sprawy wymagające obecności administratora w grze, gdy aktualnie nie masz możliwości wejścia na serwer. W takim przypadku pozostaw zgłoszenie osobie, która będzie mogła sprawnie je obsłużyć.</p>
+      <p class="doc-p">18. Osoba, która rozpoczęła obsługę danego ticketa, jest zobowiązana doprowadzić go do zakończenia, chyba że wystąpi uzasadniona konieczność przekazania sprawy innemu administratorowi.</p>
+      <p class="doc-p">19. Tickety, w których gracz nie wykazuje żadnej aktywności przez okres 48 godzin, powinny zostać zamknięte lub usunięte (Nie dotyczy ticketów, które czekają na odpowiedz Admina+, backup, błąd serwera)</p>
+      <p class="doc-p">20. Podczas oczekiwania na pomoc innych członków administracji należy zachować umiar w oznaczaniu ich. Jedno lub maksymalnie dwa powiadomienia powinny być wystarczające.</p>
+      <p class="doc-p">21. Zabrania się udzielania pomocy na kanałach głosowych w obecności osób nieposiadających rangi administracyjnej. Zasada ta obowiązuje również podczas przeprowadzania sprawdzeń graczy.</p>
+      <p class="doc-p">22. Nie wolno udostępniać osobom spoza administracji widoku ekranu przedstawiającego panel sesji na stronie mcextreme.pl ani żadnych prywatnych kanałów lub materiałów z administracyjnego Discorda.</p>
+      <p class="doc-p">23. Wszelka pomoc graczom powinna odbywać się wyłącznie za pośrednictwem oficjalnego centrum pomocy głosowej lub systemu ticketów. Zabrania się rozwiązywania spraw w innych, nieprzeznaczonych do tego miejscach.</p>
+      <p class="doc-p">24. Zgłoszenia dotyczące podejrzenia używania cheatów, oparte wyłącznie na zrzutach ekranu, nie mogą stanowić podstawy do nałożenia kary. Zaleca się samodzielne sprawdzenie podejrzanego gracza, ponieważ przedstawione materiały mogą być niewiarygodne lub zmanipulowane. Nawet nagranie nie zawsze stanowi jednoznaczny dowód.</p>
+      <p class="doc-p">25. Zabrania się udostępniania graczom jakichkolwiek fragmentów niniejszego podręcznika. Złamanie tej zasady może skutkować natychmiastowym usunięciem z administracji bez możliwości ponownego dołączenia.</p>
+      <p class="doc-p">26. Członkowie administracji są zobowiązani do zachowania pełnej poufności oraz profesjonalizmu podczas wykonywania swoich obowiązków.</p>
+
+      <p class="doc-p">Każde naruszenie powyższych zasad, taryfikatora lub pozostałych wytycznych administracyjnych może skutkować usunięciem z administracji.</p>
+    </article>
+
+    <footer class="doc-pagination">
+      <div></div>
+      <a href="#taryfikator-minecraft" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Taryfikator Minecraft <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <!-- PAGE: Taryfikator Minecraft -->
+  <section id="taryfikator-minecraft" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs">
+      <span class="breadcrumb-item">Mcextreme</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Zasady administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item active">Taryfikator Minecraft</span>
+    </div>
+
+    <article class="doc-article-body">
+      <h1 class="doc-title">Taryfikator Minecraft</h1>
+
+      <h2 class="doc-h2" id="taryfikator-minecraft-h2-1">Kary Permanentne</h2>
+
+      <p class="doc-p">Nazwy użytkowników grających na serwerze: - <strong>Ban Permanentny</strong><br>
+      <mark class="mark-info">Reklamujące w nim serwer minecraft/serwer discord, obrażające administracje, twórców, właścicieli, zawierające wulgaryzmy i inne niestosowne słowa, które mają wpływ na mniejszych graczy</mark></p>
+
+      <p class="doc-p">Reklama innego serwera minecraft – <strong>Ban Permanentny</strong><br>
+      <mark class="mark-info">Gracz by został ukarany musi podać na /msg, lub na głównym chacie pełny adres serwera z końcówką (na przykład: .pl .gg .net)</mark></p>
+
+      <p class="doc-p">Wykorzystywanie błędów serwera, które prowadzą do zniszczenia ekonomii serwera, wzbogacenia się a także do mniejszym uszczerbku na serwerze – <strong>Ban Permanentny</strong><br>
+      <mark class="mark-info">Osoba posiadająca takiego bana, jest w stanie się odwołać, jednak nie możemy tego graczowi obiecać w jakikolwiek sposób, w większości przypadkach jest możliwość odwołania się (z resetem konta) do osoby, która nadała mu bana po 3 miesiącach, taki czas może się przedłużyć nawet na zawsze.</mark></p>
+
+      <p class="doc-p">Podszywanie się pod administratora w przeróżnych postaciach – <strong>Ban Permanentny</strong></p>
+      <p class="doc-p">Wypychanie graczy poza linie spawna lub GTP – <strong>Ban Permanentny</strong></p>
+      <p class="doc-p">Upublicznianie danych osobowych (Nazwisko, Numer Telefonu, Adres Zamieszkania, Adres IP, Hasła, pesel itp.) – <strong>Ban Permanentny</strong></p>
+
+      <h2 class="doc-h2" id="taryfikator-minecraft-h2-2">Kary Tymczasowe</h2>
+      <p class="doc-p">Jeżeli podejrzany gracz podczas sprawdzania:<br>
+      <mark class="mark-info">Przyzna się do oszukiwania - Otrzymuje blokadę</mark> 10 Dni<br>
+      <mark class="mark-info">Wykryjemy jego oszustwo - Otrzymuje blokadę</mark> 20 Dni<br>
+      <mark class="mark-info">Nie będzie współpracować - Otrzymuje blokadę</mark> 30 Dni<br>
+      <mark class="mark-info">Wyloguje się z serwera - Otrzymuje blokadę</mark> 45 Dni</p>
+
+      <h2 class="doc-h2" id="taryfikator-minecraft-h2-3">Kary Wyciszeń</h2>
+      <p class="doc-p">Toksyczne zachowanie – 30 minut <mark class="mark-info">(prowokowanie konfliktów bez wulgaryzmów)</mark><br>
+      Wulgaryzmy – Wyciszenie 1 godzina<br>
+      Obrażanie innych graczy – Wyciszenie 2h <mark class="mark-info">(bez wulgaryzmów)</mark><br>
+      Omijanie cenzury – Wyciszenie 1 godzina</p>
+    </article>
+
+    <footer class="doc-pagination">
+      <a href="#regulamin-administracji" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin administracji</span></a>
+      <a href="#taryfikator-discord" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Taryfikator Discord <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <!-- PAGE: Taryfikator Discord -->
+  <section id="taryfikator-discord" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs">
+      <span class="breadcrumb-item">Mcextreme</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Zasady administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item active">Taryfikator Discord</span>
+    </div>
+
+    <article class="doc-article-body">
+      <h1 class="doc-title">Taryfikator Discord</h1>
+      <p class="doc-p">Wszystkie kary na naszym serwerze Discord są nakładane wyłącznie ręcznie przez administrację za pomocą wbudowanego narzędzia timeout (wyciszenia). Na serwerze nie ma bota automatycznie nadającego kary. Każda kara musi być zawsze nadawana wraz z jasnym powodem jej otrzymania.</p>
+      <h2 class="doc-h2" id="td-1">1. Kary wyciszenia</h2>
+      <p class="doc-p">Kary na Discordzie są stopniowane. Poniższe wykroczenia wiążą się z wyciszeniem użytkownika:</p>
+      <p class="doc-p"><strong>1.1. Wulgaryzmy</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzinę</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.2. Obraza gracza</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzinę</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.3. Prowokacje i wywoływanie kłótni</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzinę</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.4. Masowe pingowanie graczy / administracji</strong></p>
+      <ul class="bul"><li>1. przewinienie: Warn pisemny</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.5. Spamowanie, floodowanie oraz pisanie Caps Lockiem</strong></p>
+      <ul class="bul"><li>1. przewinienie: Warn pisemny</li><li>2. przewinienie: Mute na 1 godzinę</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.6. Ustawianie obraźliwych pseudonimów / nicków / avatarów</strong></p>
+      <ul class="bul"><li>1. przewinienie: Warn pisemny (brak zmiany w ciągu 12h = Ban permanentny)</li><li>2. przewinienie: Ban permanentny</li></ul>
+      <p class="doc-p"><strong>1.7. Marnowanie czasu administracji / fałszywe zgłoszenia</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzinę</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.8. Trollowanie / Wprowadzanie graczy w błąd</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzinę</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.9. Puszczanie bindów / przesterów / psucie dźwięku na kanałach głosowych</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzinę</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.10. Przeszkadzanie i wykrzykiwanie na kanałach głosowych</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzinę</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.11. Nagrywanie na kanałach głosowych bez zgody obecnych</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 12 godzin</li><li>2. przewinienie: Mute na 3 dni</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.12. Pisanie na złych kanałach (Offtopic poza wyznaczonym miejscem)</strong></p>
+      <ul class="bul"><li>1. przewinienie: Warn pisemny</li><li>2. przewinienie: Mute na 1 godzinę</li><li>3. przewinienie: Mute na 24 godziny</li></ul>
+      <p class="doc-p"><strong>1.13. Poruszanie tematów kontrowersyjnych (polityka, religia, światopogląd)</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzina</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.14. Szerzenie dezinformacji i plotek na temat graczy</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 1 godzina</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.15. Podszywanie się pod innych graczy (nick, avatar)</strong></p>
+      <ul class="bul"><li>1. przewinienie: Warn pisemny</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.16. Handlowanie rzeczami poza grą / spam ofertami</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 6 godzin</li><li>2. przewinienie: Mute na 24 godziny</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.17. Nękanie i nasyłanie innych graczy na konkretną osobę</strong></p>
+      <ul class="bul"><li>1. przewinienie: Mute na 24 godziny</li><li>2. przewinienie: Mute na 1 dzień</li><li>3. przewinienie: Mute na 7 dni</li></ul>
+      <p class="doc-p"><strong>1.18. Prośby o rangi, przedmioty lub przywileje od administracji</strong></p>
+      <ul class="bul"><li>1. przewinienie: Warn pisemny</li><li>2. przewinienie: Mute na 1 godzinę</li><li>3. przewinienie: Mute na 24 godziny</li></ul>
+      <h2 class="doc-h2" id="td-2">2. Kary permanentne (Permanentny ban)</h2>
+      <p class="doc-p">Poniższe złamania regulaminu skutkują <strong>natychmiastowym i trwałym zablokowaniem</strong> konta:</p>
+      <p class="doc-p"><strong>2.1.</strong> Reklamowanie konkurencyjnego serwera na kanałach publicznych (linki zaproszeniowe, podawanie IP, zachęcanie do przejścia).</p>
+      <p class="doc-p"><strong>2.2.</strong> Udostępnianie danych osobowych (Doxxing) innych użytkowników bez ich zgody.</p>
+      <p class="doc-p"><strong>2.3.</strong> Podszywanie się pod członków Administracji.</p>
+      <p class="doc-p"><strong>2.4.</strong> Działanie na szkodę serwera oraz graczy.</p>
+      <p class="doc-p"><strong>2.5.</strong> Udostępnianie treści NSFW (pornografia, materiały jednoznacznie seksualne, rozmowy o zbliżeniach).</p>
+      <div class="callout warn"><div class="callout-title">Uwaga dla administracji</div>Pamiętajcie, że nie mamy bota do kar – każdą karę (timeout) nakładacie ręcznie i <strong>zawsze musicie wpisać powód</strong> jej nadania. Gdy osoba użyła wulgaryzmu lub czegoś innego pisemnego, co jest zabronione, usuwajcie wiadomość z zawartością, żeby potem nie było nieprzyjemności. Gdy macie osobę do bana, spingujcie gracza do bana, powod i oznaczcie Rangę <span class="rank-badge rank-cmd">CMD</span> lub <span class="rank-badge rank-gcmd">GCMD</span>.</div>
+      <p class="doc-p">Administrator ma prawo do zbanowania lub wyciszenia z powodem niewymienionym w regulaminie.</p>
+    </article>
+
+    <footer class="doc-pagination">
+      <a href="#taryfikator-minecraft" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Taryfikator Minecraft</span></a>
+      <a href="#regulamin-backupow" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Regulamin backupów <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  
+  <!-- PAGE: Regulamin backupów -->
+  <section id="regulamin-backupow" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs">
+      <span class="breadcrumb-item">Mcextreme</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Zasady administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item active">Regulamin backupów</span>
+    </div>
+
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">REGULAMIN BACKUPÓW</h1>
+        <p class="doc-lead">
+          Backupy są dostępne dopiero od rangi <span class="rank-badge rank-jrmod">JrMod+</span>. Jeżeli nie posiadasz tej rangi, ta wiedza nie jest Ci potrzebna.
+        </p>
+      </header>
+
+      <h2 class="doc-h2" id="rb-1">Kiedy gracz nie otrzyma backupa</h2>
+      <p class="doc-p">Gracz nie otrzyma backupa lub zwrotu przedmiotów w przypadku:</p>
+
+      <div class="rules-list">
+        <div class="rule-item"><span class="rule-num">1.</span><div><strong>Braku posiadania nagrania.</strong></div></div>
+        <div class="rule-item"><span class="rule-num">2.</span><div><strong>Posiadania nagrania, jednak:</strong>
+          <ul class="bul" style="margin-top:.6rem"><li>Jest ono nagraniem z replay moda.</li><li>Nie jest ono autorstwa gracza, który ma dostać backupa.</li><li>Jest nieczytelne.</li><li>Nie zostało nagrane za pomocą programu komputerowego.</li><li>Nie jest wystarczająco długie, żeby zrozumieć, co dokładnie się wydarzyło (np. krótkie nagranie, na którym trudno zrozumieć, co się wydarzyło).</li><li>Jest edytowane (np. zawiera cięcia).</li><li>Nie widać na nim nicku cheatera.</li><li>Trudno określić, czy osoba cheatuje.</li></ul></div></div>
+        <div class="rule-item"><span class="rule-num">3.</span><div><strong>Śmierci wynikłej z własnego błędu</strong>, np. nadużycia błędów gry lub serwera, bugowania się w blokach, problemów z Internetem lub launcherem.</div></div>
+        <div class="rule-item"><span class="rule-num">4.</span><div><strong>Oszustwa.</strong> W przypadku wymiany z graczem robisz to na własną odpowiedzialność.</div></div>
+        <div class="rule-item"><span class="rule-num">5.</span><div><strong>Próby wyłudzenia backupa.</strong> W takim przypadku wszystkie powiązane konta takiej osoby zostaną zablokowane permanentnie.</div></div>
+        <div class="rule-item"><span class="rule-num">6.</span><div><strong>Włamania na konto gracza.</strong> Nie ponosimy za to odpowiedzialności.</div></div>
+        <div class="rule-item"><span class="rule-num">7.</span><div><strong>Naruszenia regulaminu serwera.</strong></div></div>
+      </div>
+
+      <h2 class="doc-h2" id="rb-2">Zasady ogólne</h2>
+      <div class="callout warn"><div class="callout-title">Pamiętaj</div>
+        Te warunki mają na celu zapewnienie uczciwości i spójności rozgrywki na serwerze. Decyzja o przyznaniu backupa może zależeć od indywidualnych okoliczności. W każdym przypadku administrator ma prawo nie przyznać zwrotu przedmiotów.
+      </div>
+    </article>
+
+    <footer class="doc-pagination">
+      <a href="#taryfikator-discord" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Taryfikator Discord</span></a>
+      <a href="#obowiazki-i-permisje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Obowiązki i permisje <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <!-- PAGE: Obowiązki i permisje -->
+  <section id="obowiazki-i-permisje" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs">
+      <span class="breadcrumb-item">Mcextreme</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Zasady administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item active">Obowiązki i permisje</span>
+    </div>
+
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">OBOWIĄZKI I PERMISJE</h1>
+        <p class="doc-lead">
+          Zakres obowiązków każdej rangi administracyjnej oraz permisje, jakie posiada na serwerze Minecraft i na Discordzie. Każda ranga posiada również uprawnienia rang niższych.
+        </p>
+      </header>
+
+      <h2 class="doc-h2" id="op-1">Obowiązki administracji</h2>
+      <div class="perm-grid"><div class="perm-card duty-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Odpowiadanie na tickety wg: <a href="#pomoc-graczom-serwera">Pomoc graczom</a>, <a href="#taryfikator-minecraft">Taryfikator MC</a>, <a href="#taryfikator-discord">Taryfikator DC</a>.</li><li>Pomaganie graczom na CP oraz na kanałach głosowych „pomagam”.</li><li>Nauka sprawdzania wg: <a href="#proces-sprawdzania">Proces sprawdzania</a>.</li></ul></div><div class="perm-card duty-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Odpowiadanie na tickety.</li><li>Pomaganie graczom na CP.</li><li>Moderowanie czatu w grze, czyli wyciszanie graczy:<ul class="sub-bul"><li>Survival Extreme: <code>/mute &lt;nick&gt; &lt;czas&gt; &lt;powód&gt;</code></li><li>Skyblock: <code>/mute &lt;nick&gt; false &lt;czas&gt; &lt;powód&gt;</code></li></ul></li><li>Odpisywanie graczom na <code>/helpop</code> (odpisujemy komendą <code>/msg &lt;gracz&gt; &lt;wiadomość&gt;</code>).</li><li>Sprawdzanie graczy: <code>/sprawdz gracz/czysty/cheater/brakwsp &lt;nick&gt;</code><ul class="sub-bul"><li><code>gracz</code> – bierze gracza na sprawdzanie</li><li><code>czysty</code> – daje graczowi status czystego</li><li><code>cheater</code> – banuje gracza za cheaty</li><li><code>brakwsp</code> – banuje za brak współpracy</li><li>Ban zostaje nadany automatycznie (również gdy gracz się wyloguje).</li></ul></li></ul></div><div class="perm-card duty-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Supporta.</li><li>Nadawanie banów wg <a href="#taryfikator-minecraft">Taryfikator MC</a>: <code>/ban &lt;nick&gt; &lt;true/false&gt; &lt;czas&gt; &lt;powód&gt;</code> (<code>true</code> – niewidoczny dla graczy, <code>false</code> – widoczny dla graczy).</li><li>Teleportowanie się do graczy na serwerze i sprawdzanie ich na <code>/gm 3</code> / vanishu.</li><li>Zajmowanie się ticketami z działem cheaterów.</li><li>Zajmowanie się sprawami na <code>/helpop</code>, jeśli to wymaga (np. gdy gracz pisze, że znalazł błąd).</li></ul></div><div class="perm-card duty-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">Jr Mod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Pomocnika.</li><li>Nadawanie backupów: <code>/backup &lt;nick&gt;</code>, czyli realizowanie ticketów z sekcji „błąd”. Przy nadawaniu backupa należy stosować się do <a href="#regulamin-backupow">Regulaminu backupów</a>.</li><li>Nadawanie unbanów: <code>/unban &lt;nick&gt; &lt;true/false&gt;</code>, czyli realizowanie ticketów z sekcji „niesłuszny ban”.</li></ul></div><div class="perm-card duty-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Mod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Jr Moda.</li></ul></div></div>
+      <div class="callout warn"><div class="callout-title">Pamiętaj</div>
+        Obowiązki wymienione powyżej należy wykonywać wg <a href="#taryfikator-discord">Taryfikator DC</a> oraz <a href="#taryfikator-minecraft">Taryfikator MC</a>.
+      </div>
+
+      <h2 class="doc-h2" id="op-2">Permisje Minecraft</h2>
+      <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Op</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Za niedługo zostaną podane dokładniejsze permisje.</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>InvSee (<code>/invsee</code>)</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportowanie graczy do siebie (<code>/tphere</code>)</li><li>Odbanowywanie użytkowników (<code>/unban</code>)</li><li>Nadawanie backupów (<code>/backup</code>)</li><li>Nieśmiertelność (<code>/god</code>)</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportacja (<code>/tp</code>)</li><li>Banowanie (<code>/ban</code>)</li><li>Kickowanie (<code>/kick</code>)</li><li>Latanie (<code>/fly</code>)</li><li>Vanish (<code>/v</code>)</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Odmutowywanie (<code>/unmute</code>)</li><li>Sprawdzanie (<code>/sprawdz</code>)</li><li>Mutowanie (<code>/mute</code>)</li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><p class="perm-none">Brak dodatkowych permisji.</p></div></div>
+
+      <h2 class="doc-h2" id="op-3">Permisje Discord</h2>
+      <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Administrator.</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Zarządzanie rolami – dodawanie, usuwanie.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Dziennik zdarzeń.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Zarządzanie kanałami ticketów (zmiana nazwy, przesuwanie).</li><li class="inherit">To co ranga niżej (uprawnienia ADMINISTRACJA MCEXTREME.PL)</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Wyciszanie dźwięku oraz mikrofonu graczom na kanałach głosowych.</li><li>Uprawnienia rangi <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span></li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Uprawnienia rangi <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span></li></ul></div><div class="perm-card rank-adminrole"><div class="perm-head"><span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Nakładanie przerw (timeoutów).</li><li>Zarządzanie wiadomościami.</li><li>Wyciszanie dźwięku członkom kanału głosowego.</li><li>Możliwość wejścia na kanał Pomocy oraz przenoszenie graczy na pomoc i inne kanały.</li></ul></div><div class="perm-card rank-admindc"><div class="perm-head"><span class="rank-badge rank-admindc">Administrator Discord</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-gcmd"><div class="perm-head"><span class="rank-badge rank-gcmd">Global ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Dziennik zdarzeń.</li><li>Zarządzanie pseudonimami.</li><li>Zarządzanie kanałami ticketów (zmiana nazwy, przesuwanie).</li><li>Dostęp do wszystkich ticketów.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-cmdplus"><div class="perm-head"><span class="rank-badge rank-cmdplus">ChatMod+</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Możliwość banowania użytkowników.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-cmd"><div class="perm-head"><span class="rank-badge rank-cmd">ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Nadawanie przerw (timeoutów).</li><li>Usuwanie przerw.</li><li>Wchodzenie na pełne kanały głosowe.</li><li>Wyłączanie dźwięku członkom na kanałach głosowych.</li><li>Wyciszanie członków na kanałach głosowych.</li><li>Zarządzanie wiadomościami.</li><li>Możliwość wejścia na kanał Pomocy oraz przenoszenie graczy na pomoc i inne kanały.</li></ul></div></div>
+    </article>
+
+    <footer class="doc-pagination">
+      <a href="#regulamin-backupow" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin backupów</span></a>
+      <a href="#problemy-graczy-i-obsluga" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Problemy graczy i obsługa <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+<!-- PAGE: Problemy graczy i obsługa -->
+  <section id="problemy-graczy-i-obsluga" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs">
+      <span class="breadcrumb-item">Mcextreme</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Informacje administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item active">Problemy graczy i obsługa</span>
+    </div>
+
+    <article class="doc-article-body">
+      <h1 class="doc-title">Problemy graczy i obsługa</h1>
+      <p class="doc-p">Wszelkie podstawowe informacje, które pomogą wam w lepszy sposób interpretować sprawy zgłaszane do nas przez graczy.</p>
+
+      <h2 class="doc-h2" id="pgio-1">Problemy z kontem graczy</h2>
+      <div class="problem-list"><div class="problem-card"><div class="pc-title">„Weryfikacja odrzuciła twoje połączenie”</div><p class="pc-row"><span class="pc-label">Opis</span>Błąd ten zazwyczaj wynika z problemów z łączem internetowym lub stabilnością połączenia z serwerem.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>błąd</strong>, gdzie otrzyma formułkę do wypełnienia.</p></div><div class="problem-card"><div class="pc-title">„Brak możliwości wejścia na serwer pomimo konta premium”</div><p class="pc-row"><span class="pc-label">Opis</span>Jeśli gracz posiada konto Premium, ale nie może się zalogować, wymagany jest ręczny reset przez administrację.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia (<strong>Instrukcja resetu konta</strong>).</p></div><div class="problem-card"><div class="pc-title">„Wymóg wpisywania hasła pomimo konta premium”</div><p class="pc-row"><span class="pc-label">Opis</span>Gracz może wejść na serwer (do lobby), ale gra prosi go o hasło mimo posiadania konta Premium.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia (<strong>Instrukcja resetu konta</strong>).</p></div><div class="problem-card"><div class="pc-title">„Jesteś już aktywny na serwerze”</div><p class="pc-row"><span class="pc-label">Opis</span>Gracz widzi komunikat, że jego profil jest już zalogowany, mimo że nie może wejść do gry.</p><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi stworzyć ticketa w kategorii <strong>konto</strong>, gdzie otrzyma formułkę do wypełnienia.</p></div><div class="problem-card"><div class="pc-title">„Nie udało się połączyć z serwerem LIMBO”</div><p class="pc-row"><span class="pc-label">Opis</span>Ten komunikat oznacza, że gracz ma niepoprawną wersję gry. Serwer działa na wersjach <code>1.21.4</code> – <code>1.21.9</code>. Po aktualizacji Survivala będzie to <code>1.21.4</code> – <code>26.2</code>*.</p></div><div class="problem-card"><div class="pc-title">„Nie pamiętam hasła do konta nonpremium”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Haseł dla kont nonpremium nie resetujemy, ale istnieje możliwość odzyskania hasła w sposób plikowy w folderze <code>.minecraft</code>. Trzeba wysłać graczowi formułkę „zapomnianego hasła”.</p></div><div class="problem-card"><div class="pc-title">„Twój nick jest niepoprawny, zmień z doknes na Doknes!”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Należy poinformować gracza, że ten komunikat pojawia się, gdy zmienia nick, a nowy nick grał już na serwerze na nonpremium. Gdy zresetujemy takie konto, gracz nie utraci postępu, tylko odzyska go na nowym nicku (nie dajemy gwarancji odzyskania postępu konta).</p></div><div class="problem-card"><div class="pc-title">„Twój adres IP jest zablokowany”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Trzeba zapytać, czy gracz mieszka w Polsce lub czy gra na VPN. Jeśli się zgadza, oznaczcie kosiare, a on spróbuje rozwiązać problem. Nie możemy jednak zapewnić, że gracz wróci na serwer.</p></div><div class="problem-card"><div class="pc-title">„Gracz otrzymał mute na zawsze na voicechacie za brak weryfikacji wieku”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Zaleca się wysłanie formułki przypisanej w sekcji „formułki”.</p></div><div class="problem-card"><div class="pc-title">„Gracz chce otrzymać unbana, bo używał kiedyś cheatów”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Unbana można otrzymać tylko przez zgłoszenie się do projektu nadzórów na extremeplusie. Zaleca się wysłanie formułki z nadzorem.</p></div><div class="problem-card"><div class="pc-title">„Gracz nie widzi swojego skina i nie ma logowania premium / Gracz zakupił konto premium i nie ma skina ani logowania premium”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Trzeba poinformować gracza, że zalecany jest reset konta, który zresetuje wszystkie postępy. Następnie wysyłasz formułkę z instrukcją resetu konta.</p></div><div class="problem-card"><div class="pc-title">„Jak pobrać extremeplusa”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Informujemy gracza o stronie z instrukcją: <a href="https://extremeplus.pl/help">extremeplus.pl/help</a>. Możemy również wysłać formułkę.</p></div><div class="problem-card"><div class="pc-title">„Nie otrzymałem swojej rangi/klucza, mimo że pobrało mi pieniądze”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Prosimy gracza o wysłanie potwierdzenia zakupu z e-maila, podanie adresu e-mail oraz nicku z gry. Następnie oznaczamy <strong>w1eloo</strong> oraz <strong>xKredka</strong>.</p></div><div class="problem-card"><div class="pc-title">„Zakupiłem przedmiot z itemshopa na inny nick”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Prosimy o wysłanie potwierdzenia zakupu z e-maila, podanie adresu e-mail, nicku, na który został zakupiony przedmiot, oraz nicku, na który gracz chce go otrzymać. Oznaczamy <strong>w1eloo</strong> oraz <strong>xKredka</strong>.</p></div><div class="problem-card"><div class="pc-title">„Zbyt długo czekam na odpowiedź administratora, żeby dał mi klucz, chcę zwrot”</div><p class="pc-row"><span class="pc-label">Rozwiązanie</span>Gracz musi napisać wiadomość na e-mail <a href="mailto:Mcextreme@spacehouse.pl">Mcextreme@spacehouse.pl</a> oraz zapoznać się z regulaminem zakupu: <a href="https://mcextreme.pl/dokumenty/regulamin-sklepu#sekcja-11">regulamin sklepu, sekcja 11</a>.</p></div></div>
+
+      <h2 class="doc-h2" id="problemy-graczy-i-obsluga-h2-1">Problemy z itemkami gracza</h2>
+      <p class="doc-p">Po sprawdzeniu wiarygodności problemu z itemkami eventowymi, sprawę przekazujemy do rang <span class="rank-badge rank-admin">ADMIN+</span>.</p>
+
+      <h2 class="doc-h2" id="pgio-3">Informacje o odwołaniach</h2>
+      <ul class="bul"><li>Blokady serwerowe są nadawane tymczasowo lub permanentnie.</li><li>Blokady są nadawane na wybranym trybie przez administratora.</li><li>Blokady niesłuszne powinny być wyjaśniane jedynie na ticketach.</li><li>Blokady słuszne, które zostały nadane na konto z zakupionymi produktami ze strony, nie podlegają zwrotowi, zgodnie z regulaminem zaakceptowanym przy zakupie.</li><li>Blokady powinny mieć odpowiedni wymiar kary i powód.</li><li>Jeśli gracz postanowi omijać bana, nie ma prawa do odwołania od jakiegokolwiek bana.</li></ul>
+      <div class="callout ban"><div class="callout-title">Nigdy na PW!</div>Blokady niesłuszne wyjaśniamy wyłącznie na ticketach, nigdy w wiadomościach prywatnych.</div>
+
+      <h3 class="doc-h3">Kary nadane NA ZAWSZE mogą podlegać odwołaniu, jeśli:</h3>
+      <ul class="bul"><li>Powód „Kopiowanie”: możliwość odwołania po <strong>4 miesiącach</strong> z resetem konta.</li><li>Powód „Wykorzystywanie błędów serwera”: możliwość odwołania po <strong>3 miesiącach</strong> z resetem konta.</li><li>Powód „Blacklista” oraz „Cheaty”: <strong>brak możliwości odwołania się na zawsze</strong>.</li></ul>
+
+      <h3 class="doc-h3">Kary TYMCZASOWE</h3>
+      <p class="doc-p">Kary tymczasowe nie podlegają skróceniu, jeśli blokada jest prawidłowa.</p>
+
+      <h3 class="doc-h3">Kary od techników i Doknesa</h3>
+      <p class="doc-p">Kary nadane przez techników lub <span class="rank-badge rank-doknes">Doknesa</span> najlepiej kierować do <strong>xKredka</strong> lub <strong>w1eloo</strong>.</p>
+    </article>
+
+    <footer class="doc-pagination">
+      <a href="#obowiazki-i-permisje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Obowiązki i permisje</span></a>
+      <a href="#pomoc-graczom-serwera" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Pomoc graczom serwera <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <!-- PAGE: Pomoc graczom serwera -->
+  <section id="pomoc-graczom-serwera" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs">
+      <span class="breadcrumb-item">Mcextreme</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item">Informacje administracyjne</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-item active">Pomoc graczom serwera</span>
+    </div>
+
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">Pomoc graczom serwera</h1>
+        <p class="doc-lead">Zawarte są tu wszystkie informacje o pomocy dla naszej społeczności serwerowej.</p>
+      </header>
+
+      <h2 class="doc-h2" id="pgs-1">Ogólne</h2>
+      <ul class="bul"><li>W czasie udzielanej pomocy administrator ma obowiązek zachować bezstronność w przypadku konfliktów dwóch stron, a także udzielić poprawnie i sprawiedliwie pomocy.</li><li>Traktuj graczy z szacunkiem i nie daj się sprowokować. Jeśli rozmowa przechodzi w poważniejszą wymianę zdań, warto opanować sytuację lub zakończyć udzielanie pomocy graczowi.</li><li>Oczekujemy, że administrator zwinnie radzi sobie z udzielaniem pomocy. Jakiekolwiek celowe olewanie spraw graczy czy długi brak odpowiedzi może mieć dla Ciebie konsekwencje.</li><li>Szanuj anonimowość zgłoszeń graczy (jeśli zostaniesz o to poproszony, a nawet jeśli nie). Tyczy się to wszelkich zgłoszeń: za cheaty, sprzedaż lub kupno w itemshopie, prośby o sprawdzenie i inne.</li><li>Gracze nie mają prawa widzieć jakiejkolwiek kłótni między osobami z zespołu administracji.</li></ul>
+
+      <h2 class="doc-h2" id="pgs-2">Tickety oraz ich realizacja</h2>
+      <ul class="bul"><li>Tickety, które stoją bez odpowiedzi gracza, powinny zostać zamknięte w ciągu 48 godzin, by nie blokować linii ticketów.</li><li>Tickety o treści: screeny/rozmowy z właścicielami, podpis, podarowanie itemków lub podobne, powinny otrzymać wiadomość zwrotną o zaprzestaniu tworzenia ticketów w takich sprawach i zostać natychmiast zamknięte.</li><li>Jeśli gracz, z którym rozwiązałeś sprawę nadanego mu bana, natarczywie tworzy kolejne tickety, możesz ostrzec go przed karą i zamknąć ticket. Jeśli pojawi się trzeci ticket, należy mu się kara przerwy na Discordzie.</li><li>Gracz, który żąda pomocy techników na tickecie, nie otrzyma jej. Te sprawy są rozwiązywane przez rangi <span class="rank-badge rank-admin">ADMIN+</span>.</li><li>Jeśli gracz prosi o dowód, za który został zbanowany, nie musisz go ukazywać, chyba że wyższa administracja zażąda wysłania go w prywatnej wiadomości.</li><li>Wszelkie poważne sprawy związane z naszym itemshopem powinny być kierowane na odpowiedni adres e-mail: <a href="mailto:mcextreme@spacehouse.pl">mcextreme@spacehouse.pl</a>.</li><li>Wszelkie zgłoszenia na Media/YT/MiniYT powinny być przekazywane do wiela lub kredki w celu oceny stanu kanału, wstępnego przeglądu i ustalenia tego z odpowiednimi osobami.</li><li>Jakakolwiek skarga na administratora powinna zostać sprawdzona przez rangi <span class="rank-badge rank-admin">ADMIN+</span>. Najlepiej, by skarga posiadała uzasadnione argumenty w danym temacie oraz jakiekolwiek dowody.</li><li>Administrator sprawdzający apelacje o reset konta (screeny) powinien dokładnie sprawdzić ich wiarygodność, a następnie oznaczyć kosiare.</li><li>Gracz ma prawo wezwać wyższego administratora, który oceni sytuację, jeśli decyzja wydaje mu się nieprawidłowa. Gdy do tego dojdzie i okaże się to zwykłym sztucznym przedłużaniem i kłamstwem na tickecie, ticket powinien zostać zakończony.</li><li>Gracz nie ma prawa „zachować sobie ticketa na później”. Inni gracze także potrzebują pomocy, a czasami nie mogą założyć ticketa właśnie przez takie sytuacje.</li></ul>
+
+      <h2 class="doc-h2" id="pgs-3">Centrum pomocy głosowej i realizacja</h2>
+      <ul class="bul"><li>Administracja nie ma możliwości urządzania pogadanek ani grania na kanałach przeznaczonych do pomocy dla graczy.</li><li>Prosimy, by gracze odsyłani z centrum pomocy nie otrzymywali odpowiedzi „zrób ticket gdzie chcesz”. Wskaż mu po prostu odpowiednią kategorię.</li><li>Gdy na pomoc zawita jeden z rodziców gracza naszego serwera, najlepiej od razu wezwać kogoś wyższego (wielo lub kredka), by spokojnie opanował sytuację.</li><li>Gdy sprawdzasz podejrzanego o cheaty, gracz nie może być wtedy na kanale.</li></ul>
+
+      <h2 class="doc-h2" id="pgs-4">Jak prawidłowo przyjąć i zweryfikować skargę wraz z dowodami?</h2>
+      <p class="doc-p">Jeśli chodzi o skargę na użytkownika, który łamie regulamin na czacie, zalecany jest:</p>
+      <ul class="bul"><li>Screen pełnego ekranu wraz z paskiem zadań, na którym widoczna jest data, godzina oraz wykroczenie.</li><li>Wszelkie próby oszukania administracji w celu niesłusznego ukarania innego gracza kończą się banem.</li></ul>
+
+      <h3 class="doc-h3">Co jeśli mam tylko urywek czatu?</h3>
+      <ul class="bul"><li>Jeśli masz tylko urywek czatu, możesz sprawdzić na extremeplusie, czy dany gracz rzeczywiście napisał daną rzecz. Wystarczy, że wejdziesz w czat → Wszystko i ostatni 1 dzień, wciśniesz <kbd>Ctrl</kbd> + <kbd>F</kbd>, wpiszesz nick gracza i sprawdzisz, czy coś pisał.</li><li>W przypadku doxingu na czacie, gdy posiadamy tylko urywek czatu, zapraszamy gracza na centrum pomocy, aby przyszedł i pokazał logi. Sprawdzamy, czy były edytowane.</li></ul>
+    </article>
+
+    <footer class="doc-pagination">
+      <a href="#problemy-graczy-i-obsluga" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Problemy graczy i obsługa</span></a>
+      <a href="#proces-sprawdzania" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Proces sprawdzania <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <section id="proces-sprawdzania" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Proces sprawdzania</span></div>
+    <article class="doc-article-body">
+      <h1 class="doc-title">Proces sprawdzania</h1>
+<p class="doc-p">Ten poradnik pokazuje krok po kroku, jak sprawdzić gracza podejrzanego o cheaty. Idź po kolei i nie pomijaj punktów.</p>
+<div class="callout info"><div class="callout-title">Gdzie są komendy?</div>Wszystkie komendy do wklejenia (PowerShell, CMD, Win + R) są zebrane na osobnej stronie: <a href="#komendy-powershell">Komendy PowerShell</a>.</div>
+<h2 class="doc-h2" id="ps-1">1. Zasady na start</h2>
+<ol class="steps"><li>Upewnij się w 100%, że gracz <strong>nie jest AFK</strong> (rusza się, reaguje na czacie). Gracz AFK = czysty. Gracz, który udaje AFK = ban za brak współpracy.</li><li>Wyślij graczowi formułkę (kopiuj bez zmian):</li></ol>
+<blockquote class="quote">Jestes sprawdzany/a, masz 3 minuty, aby dolaczyc na Discorda: dc.mcextreme.pl -> #potrzebuje-pomocy - przyznajesz sie do uzywania cheatow?</blockquote>
+<ol class="steps"><li>Sprawdzeń <strong>nie nagrywamy</strong>. Obowiązuje ogólny zakaz nagrywania administracji.</li><li>Bez rangi JrMod+ <strong>nie używaj i nie pobieraj</strong> SystemInformer ani ProcessHacker.</li></ol>
+<h2 class="doc-h2" id="ps-2">2. Przygotowanie komputera gracza</h2>
+<div class="callout warn"><div class="callout-title">Bez tego nie zaczynamy</div><ul class="bul"><li>Poproś o wyłączenie wszystkich programów nagrywających i zamknięcie przeglądarek. Odmowa = brak współpracy.</li></ul>
+</div>
+<ol class="steps"><li><kbd>Win + D</kbd> – pokaż pulpit, żeby nic nie było zasłonięte.</li><li>Kliknij strzałkę przy zegarze (prawy dolny róg) i zobacz aplikacje w tle. Poproś o zamknięcie: Medal, Nvidia, Epic Games, Steam itp.</li><li><kbd>Win + P</kbd> – jeśli jest „Rozszerz” lub „Tylko drugi ekran”, poproś o „Duplikuj”. Dzięki temu gracz nie użyje drugiego monitora. Po zmianie stream może paść – poproś o jego restart.</li><li><kbd>Win + Tab</kbd> – jeśli gracz ma więcej niż 1 pulpit wirtualny, poproś o usunięcie dodatkowych.</li><li>Wróć do Minecrafta.</li></ol>
+<h2 class="doc-h2" id="ps-3">3. Sprawdzanie w Minecraft</h2>
+<div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Skrót / miejsce</th><th>Co sprawdzasz</th><th>Decyzja</th></tr></thead><tbody><tr><td><kbd>F3</kbd></td><td>Wersja gry</td><td>Nazwa cheata w wersji (np. „…-Doomsday”) = ban</td></tr><tr><td><kbd>F3 + T</kbd></td><td>Przeładowanie tekstur – czy pojawi się logo cheata</td><td>Logo (np. ThunderHack) = ban</td></tr><tr><td><kbd>F3 + B</kbd></td><td>Hitboxy gracza</td><td>Mają wyglądać normalnie</td></tr><tr><td><kbd>ESC</kbd> → Statystyki</td><td>Czy po lewej jest „Enable Wurst”</td><td>Jest = ban</td></tr><tr><td><kbd>ESC</kbd> → Options → Controls → Key Binds (na dół)</td><td>Dziwne bindy: elytraswapper, minimapa, Meteor, freecam, baritone, clickgui</td><td>Freecam/baritone = perm. Minimapa, MouseTweaks i inne lekkie mody = ban 20 dni</td></tr><tr><td>Texturepacki</td><td>Załadowane i posiadane paczki</td><td>Durability zbroi przeciwnika, duże itemy, X-Ray = ban 20 dni</td></tr></tbody></table></div>
+<p class="doc-p">Podejrzewasz paczkę pokazującą zużycie zbroi? Wejdź: <code>resourcepacks</code> → (nazwa paczki) → <code>assets</code> → <code>minecraft</code> → <code>optifine</code> → <code>cit</code>. Szukaj nazw typu „zniszczony netherite”, „zbroja”, „zniszczenie”. Nazwa folderu może być zmieniona, więc otwieraj też pliki <code>.properties</code>.</p>
+<h2 class="doc-h2" id="ps-4">4. Pliki Minecrafta</h2>
+<p class="doc-p">Klikamy open folder pack, nastepnie trzeba odkryć ukryte pliki i dyski, żeby nic się nie schowało przed Tobą.</p>
+<h3 class="doc-h3">Windows 11</h3>
+<ol class="steps"><li>Na górze kliknij <strong>Wyświetl</strong> → <strong>Pokaż</strong> → zaznacz „Rozszerzenia nazw plików” i „Ukryte elementy”.</li><li>Trzy kropki obok „Wyświetl” → <strong>Opcje</strong> → zakładka <strong>Widok</strong>.</li><li>Odznacz „Ukryj chronione pliki systemu operacyjnego (zalecane)” i „Ukryj puste dyski”.</li><li>Zaznacz „Pokaż litery dysków”. Kliknij <strong>Zastosuj</strong> → <strong>OK</strong>.</li></ol>
+<h3 class="doc-h3">Windows 10</h3>
+<ol class="steps"><li>Zakładka <strong>Widok</strong> → zaznacz „Rozszerzenia nazw plików” i „Ukryte elementy”.</li><li><strong>Opcje</strong> → Zmień opcje folderów i wyszukiwania → zakładka <strong>Widok</strong>.</li><li>Odznacz „Ukryj chronione pliki systemu operacyjnego” i „Ukryj puste dyski”.</li><li>Zaznacz „Pokaż litery dysków”. <strong>Zastosuj</strong> → <strong>OK</strong>.</li></ol>
+<p class="doc-p">Ścieżka do gry: <kbd>Win + R</kbd> → <code>%appdata%</code> → <code>.minecraft</code>. Niektóre launchery (Ogulniega, Dawn, Lunar i inne) mają inne ścieżki – lista jest w punkcie 6.</p>
+<div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Folder / plik w .minecraft</th><th>Co tam jest</th></tr></thead><tbody><tr><td><code>mods</code>, <code>mods.orig</code>, <code>mods-orig</code>, <code>feather mods</code></td><td>Mody</td></tr><tr><td><code>versions</code></td><td>Wersje gry, np. Aristois</td></tr><tr><td><code>config</code></td><td>Konfiguracje modów</td></tr><tr><td><code>.meteor-client</code>, <code>wurst</code>, <code>baritone</code>, <code>ThunderHack</code></td><td>Foldery cheatów. Mogą być w modach, ale <strong>sam folder nie jest dowodem na bana</strong></td></tr><tr><td><code>logs</code></td><td>Logi (punkt 6)</td></tr><tr><td><code>screenshots</code></td><td>Zrzuty ekranu</td></tr><tr><td><code>resourcepacks</code></td><td>Texturepacki</td></tr><tr><td><code>launcher_profiles.json</code>, <code>launcher_log.txt</code></td><td>Profile i log launchera</td></tr><tr><td><code>logs\debug.log</code></td><td>Pełne polecenie startu Javy</td></tr></tbody></table></div>
+<h2 class="doc-h2" id="ps-5">5. Mody, wersje i screenshoty</h2>
+<h3 class="doc-h3">Mody</h3>
+<p class="doc-p">Wejdź do <code>mods</code>, <code>mods.orig</code>, <code>mods-orig</code>, <code>feather mods</code>, a także sprawdź <code>versions</code> i <code>weaver.log</code>. Szukaj: <code>meteor-client.jar</code>, <code>ThunderHack.jar</code>, <code>ThunderHack-Recode.jar</code>, <code>ThunderHackPlus.jar</code>, <code>Wurst-Client.jar</code>, <code>liquidbounce</code>, <code>rusherhack-loader</code>, <code>baritone-meteor.jar</code>, <code>CatLean</code>, <code>Aristois</code>. W <code>.minecraft</code> szukaj też podejrzanych folderów, np. <code>baritone</code>.</p>
+<p class="doc-p"><strong>Dziwne nazwy</strong> (np. <code>meaqa2234234.jar</code>, <code>xyz-final.jar</code>) = podejrzenie Doomsdaya. Doomsday może leżeć w modach i normalnie działać, a po selfdestrukcie znika z gry, ale plik zostaje. Sprawdź jego właściwości (kiedy był używany) i zajrzyj do środka – jak, opisano w punkcie 7. Jeśli to Doomsday = ban za cheaty.</p>
+<h3 class="doc-h3">Versions</h3>
+<p class="doc-p">Usuń wszystko z folderu <code>versions</code> i zobacz, co zostanie – zostanie tylko wersja używana teraz. <strong>Od razu przywróć pliki graczowi</strong> (<kbd>Ctrl + Z</kbd>). Folder <code>aristois-1.x</code> używany teraz = ban. Folder o losowej nazwie z samym <code>.jar</code> = dopytaj gracza i sprawdź dokładniej (np. WinRAR).</p>
+<h3 class="doc-h3">Screenshoty</h3>
+<div class="callout warn"><div class="callout-title">Banujemy za screen TYLKO gdy</div><ul class="bul"><li>screen jest z mcextreme.pl,</li><li>wyraźnie widać cheata (blockesp, nametag, tracers).</li><li>Data nie ma znaczenia – screeny z cheatami się nie przedawniają.</li></ul>
+</div>
+<h2 class="doc-h2" id="ps-6">6. Logi</h2>
+<p class="doc-p">Gdzie szukać logów, zależnie od launchera:</p>
+<div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Launcher</th><th>Ścieżka (Win + R)</th></tr></thead><tbody><tr><td>Zwykły Minecraft</td><td><code>%appdata%\.minecraft\logs</code></td></tr><tr><td>Lunar Client</td><td><code>%appdata%\.lunarclient\profiles\lunar\&lt;wersja&gt;\Logs</code> (w starszych: <code>.lunarclient</code> → offline → multiver → logs → latest)</td></tr><tr><td>Badlion</td><td><code>%appdata%\.minecraft\logs\blclient\minecraft</code></td></tr><tr><td>Crystal</td><td><code>%appdata%\Crystal-Launcher\instances\Vanilla_latest\.minecraft\logs</code></td></tr><tr><td>Ogulniega</td><td><code>%appdata%\.ogulniega\profile\logs</code></td></tr><tr><td>Modrinth</td><td><code>%appdata%\ModrinthApp\profiles\[profil]\logs</code></td></tr></tbody></table></div>
+<ol class="steps"><li>Znajdź plik <code>latest.log</code>.</li><li>Poproś gracza o próbę jego usunięcia. Jeśli się nie da, log jest w użyciu, czyli jest aktualny (krok nieobowiązkowy).</li><li>Otwórz log i <strong>zapamiętaj godzinę startu Minecrafta</strong> (pierwsze linijki). Przyda się do porównań.</li><li><kbd>Ctrl + F</kbd> → „zawijanie wokół” <strong>zaznaczone</strong>, „uwzględnij wielkość liter” <strong>wyłączone</strong>.</li><li>Wpisz frazę <code>ResourceManager</code>. <strong>Dół listy</strong> = texturepacki załadowane na końcu (aktywne w grze). <strong>Środek</strong> = załadowane mody. <strong>Początek</strong> = godzina startu gry lub przeładowania paczki.</li><li>Wpis <code>missing metadata in pack file/nazwa.zip</code> tuż przed lub po wpisach = w paczce może być schowany cheat.</li><li>Porównaj godziny wpisów. Ostatnia paczka o 19:40, a gracz na serwerze od 21:00 = gracz <strong>wyładował paczki przed sprawdzeniem</strong> (dopytaj, czemu je wyłączał). Wiele wpisów o różnych godzinach = gracz zmieniał paczki w trakcie.</li><li>Paczka, której teraz nie ma, ale wcześniej była załadowana: poproś gracza o ponowne włączenie. To najprostszy sposób na sprawdzenie X-Raya.</li><li>Nie sprawdzaj tylko jednego loga. Przejrzyj wszystkie od momentu połączenia z serwerem, także starsze (np. <code>2026-10-29-1.log.gz</code>) – cheat mógł działać we wcześniejszej sesji.</li><li>Wyszukaj po kolei frazy: <code>meteor</code>, <code>thunderhack</code>, <code>liquidbounce</code>, <code>catlean</code>, <code>wurst</code>, <code>rusherhack</code>, <code>aristois</code>, <code>baritone</code>, <code>ventura</code>, <code>doomsday</code>, <code>inject</code>, <code>java.lang.instrument</code>, <code>-Dfabric.addMods</code>, <code>OptiFine</code> (OptiFine jest obojętny, to tylko wskazówka).</li></ol>
+<div class="callout warn"><div class="callout-title">Uwaga</div>Dobrze ukryty ghost client (Doomsday, Ventura z selfdestruct) <strong>nie zostawia wpisu w latest.log</strong>. Dlatego sprawdzamy też programem od JrMod+ albo komendą w PowerShell. W <code>debug.log</code> wpis typu <code>javaagent:cos.jar</code> = podejrzenie selfdestructa.</div>
+<h2 class="doc-h2" id="ps-7">7. Przeszukanie komputera</h2>
+<h3 class="doc-h3">Eksplorator i wyszukiwarka</h3>
+<p class="doc-p">W Eksploratorze szukaj <code>*.jar</code>, <code>*.exe</code>, <code>*.zip</code>, <code>*.rar</code> w: Pulpit, Pobrane, Dokumenty, Szybki dostęp i <strong>wszystkie dyski</strong>. Podejrzane nazwy: <code>meaqa2.jar</code>, <code>123.jar</code>, <code>client-final.jar</code>, <code>update.jar</code>, <code>ventura.exe</code>, <code>loader.exe</code>, <code>injector.exe</code>, <code>Rusherhack.exe</code>, <code>ThunderHack.zip</code>, <code>Doomsday.zip</code>.</p>
+<p class="doc-p">W wyszukiwarce Windows wpisz <code>.jar</code> i <code>.exe</code> i wejdź w zakładkę <strong>Aplikacje</strong>. Pliki <strong>bez ikonki</strong> (biała, pusta) są typowe dla cheatów – sprawdź ich właściwości.</p>
+<div class="callout warn"><div class="callout-title">Podejrzanego pliku nie otwieraj dwuklikiem!</div>Kliknij prawym → „Otwórz lokalizację pliku” → prawym → <strong>Właściwości</strong>. Sprawdź datę ostatniego użycia. Jeśli plik był otwarty dzisiaj o godzinie z początku logu (start sesji), a w środku jest Doomsday = ban.</div>
+<p class="doc-p"><strong>Jak sprawdzić, czy to Doomsday:</strong> prawy klik na plik → Otwórz za pomocą WinRAR → wejdź w <code>net\java</code>. Pliki klas <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code> = Doomsday.</p>
+<h3 class="doc-h3">Win + R – szybkie miejsca</h3>
+<div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Wpisz</th><th>Co daje / czego szukać</th></tr></thead><tbody><tr><td><code>prefetch</code></td><td>Szukaj „javaw”. <strong>Dwie różne akcje Javy</strong> = podejrzenie injectora. Porównaj godziny z odpaleniem pliku Doomsday – te same = ban</td></tr><tr><td><code>shell:recent</code></td><td>Skróty do ostatnio otwieranych plików (zostają nawet po usunięciu pliku!)</td></tr><tr><td><code>shell:history</code></td><td>Historia otwieranych plików wg daty</td></tr><tr><td><code>shell:::{22877a6d-37a1-461a-91b0-dbda5aaebc99}</code></td><td>Ostatnio otwierane foldery</td></tr><tr><td><code>c:$recycle.bin</code></td><td>Data ostatniego opróżnienia kosza. Kosz czyszczony tuż przed sprawdzeniem = gracz sprząta ślady, dopytaj</td></tr><tr><td><code>%Temp%</code> lub <code>%localappdata%\Temp</code></td><td>Sortuj po dacie. Szukaj <code>.jar</code>, <code>.exe</code>, folderów typu <code>DoomsdayCache</code>, <code>ventura_tmp</code></td></tr><tr><td><code>%appdata%\Local\CrashDumps</code></td><td>Sortuj po dacie. Nazwa <code>.dmp</code> = nazwa procesu. Losowe litery i cyfry <code>.exe</code> = Grim, <code>ventura.exe.dmp</code> = dowód podejrzanego procesu</td></tr><tr><td><code>C:\ProgramData\Microsoft\Windows\WER\ReportArchive</code></td><td>Foldery <code>AppCrash_nazwa.exe_xxx</code>. Plik <code>Report.wer</code> otwórz Notatnikiem (jest ścieżka pliku)</td></tr></tbody></table></div>
+<p class="doc-p">Jeśli program wywala się po wejściu do folderu – ignoruj i sprawdzaj dalej.</p>
+<h3 class="doc-h3">Przeglądarka i kosz</h3>
+<p class="doc-p">We <strong>każdej</strong> przeglądarce: <kbd>Ctrl + J</kbd> (pobrane) i <kbd>Ctrl + H</kbd> (historia). Szukaj: <code>Doomsday</code>, <code>Grim</code>, <code>.jar</code>, <code>.exe</code>, <code>github</code>, <code>ventura</code>. Wyczyszczona historia = dopytaj, czemu. Na koniec wejdź do <strong>Kosza</strong> i sprawdź podejrzane pliki.</p>
+<h2 class="doc-h2" id="ps-8">8. Jak wykryć konkretne cheaty</h2>
+<h3 class="doc-h3">Grim</h3>
+<ul class="bul"><li>Menu Start → wpisz <code>.exe</code> → zakładka Aplikacje. Plik Grima zwykle nie ma własnej ikonki (zwykła, domyślna).</li><li>Podejrzane nazwy <code>.exe</code> szukaj po dacie modyfikacji w: <code>%appdata%</code> → Local → <code>CrashDumps</code>; <code>searches</code> (Indeksowanie lokalizacji); <code>prefetch</code>; <code>%Temp%</code>.</li><li>Dysk C → ProgramData → Microsoft → Windows → WER → ReportArchive: raport z odpalenia, np. <code>AppCrash_NazwaGrima.exe_2538523</code>.</li><li>Na 100%: skan pamięci z zakładki Komendy PowerShell.</li></ul>
+<h3 class="doc-h3">Doomsday</h3>
+<ul class="bul"><li>Menu Start → wpisz <code>.jar</code> → Aplikacje/Pliki, szukaj podejrzanych nazw.</li><li><code>.minecraft</code> i inne foldery w Roaming (<code>%appdata%</code>) po dacie modyfikacji. <code>%localappdata%</code>, szczególnie <code>Temp</code>. <code>searches</code> → <code>.jar</code> po dacie.</li><li><code>prefetch</code>: wpisy <code>java.exe</code>/<code>javaw.exe</code> odpalane poza Minecraftem. WER → ReportArchive: raporty związane z java lub podejrzanym <code>.jar</code>.</li><li>Wpisz <code>*.jar</code> w Pobrane, Pulpit, Dokumenty, Szybki dostęp i na wszystkich dyskach.</li><li>Sprawdzenie pliku: WinRAR → <code>net\java</code> → pliki <code>a, b, c, d, e</code>. Można też wyszukać komendą (Komendy PowerShell).</li></ul>
+<h3 class="doc-h3">Wurst</h3>
+<ul class="bul"><li>Folder <code>.minecraft\mods</code>: pliki z „Wurst”, np. <code>Wurst-Client.jar</code>.</li><li>Statystyki w grze: przycisk „Enable Wurst”.</li><li>Folder <code>.minecraft\config</code>: pliki związane z Wurst.</li><li>Launcher: profil z „Fabric” sugeruje mody, ale <strong>to nie dowód</strong>.</li></ul>
+<h3 class="doc-h3">Aristois</h3>
+<ul class="bul"><li>Foldery <code>%appdata%\.minecraft\versions</code> oraz plik <code>launcher_profiles.json</code>: nazwy z „aristois” lub nietypowe.</li><li>Aristois zapisuje działanie w logach – przejrzyj logi.</li></ul>
+<h3 class="doc-h3">ThunderHack</h3>
+<ul class="bul"><li><code>mods</code>: <code>ThunderHack.jar</code>, <code>ThunderHack-Recode.jar</code>, <code>ThunderHackPlus.jar</code> lub podobne z wersją.</li><li><code>config</code> oraz główny folder <code>.minecraft</code>: <code>thunderhack</code>, <code>ThunderHack</code>, <code>thunderhack.json</code>.</li><li>Obok mogą leżeć wymagane biblioteki (np. <code>fabric-api.jar</code>). Profil Forge/Fabric w launcherze to tylko wskazówka, <strong>nie dowód</strong>.</li><li>Pobrane i historia przeglądarki: <code>ThunderHack.zip</code>, <code>ThunderHack-Recode.zip</code>.</li><li>W grze <kbd>F3 + T</kbd>: jeśli jest ThunderHack, wyświetli się logo.</li></ul>
+<h3 class="doc-h3">Meteor Client</h3>
+<ul class="bul"><li><code>mods</code>: <code>meteor-client.jar</code> i dodatki, np. <code>baritone-meteor.jar</code>.</li><li>Folder <code>.minecraft\.meteor-client</code> (pliki <code>config.nbt</code>, <code>modules.nbt</code>, <code>hud.nbt</code>, <code>friends.nbt</code>, <code>waypoints.nbt</code>, folder <code>profiles</code>).</li><li>Profil Fabric w launcherze to wskazówka. <code>latest.log</code> może zawierać wpis o Meteorze. Sprawdź też pobrane pliki.</li></ul>
+<h3 class="doc-h3">Ventura</h3>
+<ul class="bul"><li>Zwykle plik <code>.exe</code>: <code>ventura.exe</code>, <code>VenturaClient.exe</code>. Szukaj w Pobrane i innych miejscach.</li><li>Foldery <code>Ventura</code>, <code>ventura</code>, <code>VenturaClient</code> w <code>%appdata%</code>, <code>AppData\Local</code> i <code>LocalLow</code>.</li><li>Loadery/injectory: <code>injector.exe</code>, <code>loader.exe</code> w folderach użytkownika.</li><li>Gdy Minecraft działa: w Menedżerze zadań obok <code>javaw.exe</code> może być <code>ventura.exe</code> lub <code>loader.exe</code>.</li><li>Ostatnie pliki i historia pobierania: <code>ventura.zip</code> itp.</li></ul>
+<h3 class="doc-h3">Rusherhack</h3>
+<ul class="bul"><li>W modach (<code>mods</code>, <code>mods.orig</code>, <code>mods-orig</code>, <code>feather mods</code>) plik <code>rusherhack-loader</code>.</li><li>Zapisuje działanie w logach. Installer to <code>.exe</code> z nazwą Rusherhack, pokazuje charakterystyczny interfejs.</li></ul>
+<h2 class="doc-h2" id="ps-9">9. Ukrywanie i usuwanie śladów</h2>
+<ol class="steps"><li><code>shell:recent</code> zostawia skróty (<code>.lnk</code>) po usuniętych plikach. Foldery configów (<code>.meteor-client</code>, <code>ThunderHack</code>, <code>wurst</code>) <strong>zostają po usunięciu <code>.jar</code></strong> – data modyfikacji jest dowodem. Kosz opróżniony tuż przed sprawdzeniem = poszlaka.</li><li>Plik <code>.jar</code>: WinRAR → <code>META-INF\MANIFEST.MF</code> (Notatnik) – jest nazwa klienta. Plik <code>.exe</code>: Właściwości → Certyfikaty cyfrowe.</li><li>Przenośny launcher lub <code>.minecraft</code> poza <code>appdata</code>: prawy klik na skrót launchera → Właściwości → Element docelowy. Szukaj <code>.minecraft</code> też na pulpicie, w dokumentach i na pendrive.</li><li>Drugi dysk: sprawdź <strong>wszystkie</strong> dyski (dlatego „Pokaż litery dysków”).</li><li>Drugi ekran i pulpity wirtualne: dlatego <kbd>Win + P</kbd> i <kbd>Win + Tab</kbd>.</li><li>Antyforensyk: porównaj datę modyfikacji folderów configów z godziną startu MC z <code>latest.log</code>. Świeża modyfikacja = sprzątanie śladów.</li><li>Dodatkowo użyj komend z zakładki Komendy PowerShell (usunięte <code>.jar</code>, ostatnio używane <code>.jar</code>, USB, dyski).</li></ol>
+<h2 class="doc-h2" id="ps-10">10. Dowody i decyzja</h2>
+<div class="callout ban"><div class="callout-title">Dowód – ban natychmiast</div><ul class="bul"><li>Plik cheata w <code>mods</code>/<code>versions</code>/Pobrane <strong>z dzisiaj, z aktualnej sesji</strong>.</li><li>Folder configu cheata (<code>.meteor-client</code>, <code>thunderhack</code>, <code>wurst</code>, <code>baritone</code>) z dzisiaj, z aktualnej sesji.</li><li>Wpis w <code>latest.log</code> z nazwą cheata lub <code>javaagent:</code>.</li><li>Logo cheata przy <kbd>F3 + T</kbd>, „Enable Wurst” lub proces cheata w Menedżerze zadań.</li><li>Screenshot z mcextreme.pl z widocznym cheatem.</li><li><code>.jar</code> ze strukturą <code>net\java\a,b,c,d,e</code> (Doomsday), jeśli był włączany dzisiaj zgodnie z sesją i ma tę samą datę w <code>javaw</code>.</li><li>Wersja gry z nazwą klienta przy <kbd>F3</kbd>.</li><li>Wynik <code>True</code> w skanie pamięci (Komendy PowerShell).</li></ul>
+</div>
+<div class="callout warn"><div class="callout-title">Mocna poszlaka (nie wystarcza samotnie)</div><ul class="bul"><li>Profil Fabric bez innych modów niż extremeplus.</li><li>Wiele wpisów <code>ResourceManager</code> o różnych godzinach.</li><li>Świeżo opróżniony kosz lub świeżo zmodyfikowane configi.</li><li>Dwie akcje Javy w <code>prefetch</code>.</li><li>Podejrzane bindy sterowania i dziwne <code>.jar</code>.</li></ul>
+</div>
+<div class="callout ban"><div class="callout-title">Ban za brak współpracy</div><ul class="bul"><li>Odmowa wyłączenia programów nagrywających.</li><li>Odmowa wejścia na Discorda lub zerwanie połączenia.</li><li>Udawanie AFK.</li><li>Usunięcie plików <code>.jar</code> tuż przed sprawdzeniem (wykaże to komenda USN).</li></ul>
+</div>
+<p class="doc-p"><strong>Nie banuj za jedną niejasną rzecz.</strong> Najpierw dopytaj gracza i skonsultuj się z wyższą rangą. Wysokości kar są w Taryfikatorze Minecraft.</p>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#pomoc-graczom-serwera" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Pomoc graczom serwera</span></a>
+      <a href="#komendy-powershell" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Komendy PowerShell <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <section id="komendy-powershell" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Komendy PowerShell</span></div>
+    <article class="doc-article-body">
+      <h1 class="doc-title">Komendy PowerShell</h1>
+<p class="doc-p">Wszystkie komendy używane podczas sprawdzania w jednym miejscu. Każdą możesz skopiować przyciskiem „Kopiuj”. Komendy uruchamiasz na komputerze gracza, <strong>po tym jak gracz się zgodził i współpracuje</strong>.</p>
+<h2 class="doc-h2" id="ps-start">Jak uruchomić PowerShell</h2>
+<ol class="steps"><li>Kliknij Start, wpisz <code>PowerShell</code>, kliknij prawym → <strong>Uruchom jako administrator</strong>.</li><li>Sprawdź tytuł okna. Jeśli jest w nim „PowerShell (x86)”, zamknij je, otwórz <strong>CMD jako administrator</strong> i wpisz poniższą komendę. Otworzy się właściwy PowerShell.</li></ol>
+<div class="code-block-container"><div class="code-block-header"><span>CMD – otwarcie 64-bitowego PowerShella</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe</code></pre></div>
+<div class="callout warn"><div class="callout-title">Dyski</div>Komendy mogą nie działać na wszystkich dyskach. Jeśli gracz ma grę na innym dysku niż <code>C:</code>, zmień literę w komendzie ręcznie.</div>
+<h2 class="doc-h2" id="ps-skan">1. Skan pamięci – Doomsday, Grim, Ventura (na 100%)</h2>
+<p class="doc-p">Szuka w pamięci procesu <code>javaw</code> (włączony Minecraft) podpisów znanych cheatów. <strong>Minecraft musi być włączony.</strong> Wklej całość do PowerShella.</p>
+<div class="code-block-container"><div class="code-block-header"><span>PowerShell – Memory Scan</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+public class M7 {
+    [DllImport("kernel32.dll")]public static extern IntPtr OpenProcess(int d,bool b,int p);
+    [DllImport("kernel32.dll")]public static extern bool ReadProcessMemory(IntPtr h,IntPtr a,byte[] buf,int s,ref int r);
+    [DllImport("kernel32.dll")]public static extern int VirtualQueryEx(IntPtr h,IntPtr a,out MI m,uint l);
+    [DllImport("kernel32.dll")]public static extern bool CloseHandle(IntPtr h);
+    [StructLayout(LayoutKind.Sequential)]public struct MI {
+        public IntPtr BaseAddress,AllocationBase;public uint AllocationProtect;public IntPtr RegionSize;public uint State,Protect,Type;
+    }
+    public static bool Scan(int pid,string s) {
+        IntPtr h=OpenProcess(0x1F0FFF,false,pid);if(h==IntPtr.Zero)return false;
+        byte[] sb=Encoding.ASCII.GetBytes(s);long addr=0;MI mbi;
+        while(addr<0x7FFFFFFF0000) {
+            if(VirtualQueryEx(h,new IntPtr(addr),out mbi,(uint)Marshal.SizeOf(typeof(MI)))==0)break;
+            long sz=mbi.RegionSize.ToInt64();
+            if(sz>0&&sz<200000000&&mbi.State==0x1000&&(mbi.Protect==0x04||mbi.Protect==0x20||mbi.Protect==0x40)) {
+                byte[] buf=new byte[sz];int br=0;
+                if(ReadProcessMemory(h,mbi.BaseAddress,buf,(int)sz,ref br)&&br>sb.Length) {
+                    for(int i=0;i<=br-sb.Length;i++) {
+                        bool f=true;for(int j=0;j<sb.Length;j++)if(buf[i+j]!=sb[j]){f=false;break;}
+                        if(f){CloseHandle(h);return true;}
+                    }
+                }
+            }
+            addr+=sz>0?sz:4096;
+        }
+        CloseHandle(h);return false;
+    }
+}
+"@
+
+$p = Get-Process javaw -ErrorAction SilentlyContinue | Select-Object -First 1
+if ($p) {
+    [M7]::Scan($p.Id, "CoUOaW``ZWXnmEj\DkZ")
+    [M7]::Scan($p.Id, "InvokeAsync")
+    [M7]::Scan($p.Id, "#&G29<G6RUG@beG")
+    [M7]::Scan($p.Id, "MovePlayerPacketAccessor")
+    [M7]::Scan($p.Id, "bgsnezyf")
+} else {
+    "false";"false";"false";"false";"false"
+}</code></pre></div>
+<p class="doc-p">Wynik to 5 linijek <code>True</code> lub <code>False</code>, w tej kolejności:</p>
+<div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Linijka</th><th>Cheat</th></tr></thead><tbody><tr><td>1</td><td>Doomsday</td></tr><tr><td>2</td><td>Grim</td></tr><tr><td>3</td><td>Grim (Crack)</td></tr><tr><td>4</td><td>Ventura</td></tr><tr><td>5</td><td>Ventura (Crack)</td></tr></tbody></table></div>
+<ul class="bul"><li>Gracz czysty: samo <code>False</code> (5 razy).</li><li>Gracz z cheatem: <code>True</code> zamiast <code>False</code>. Przykład <code>True False False False False</code> = <strong>Doomsday</strong>.</li><li>Same <code>False</code> może też znaczyć, że Minecraft nie jest włączony (brak procesu <code>javaw</code>). Upewnij się, że gra działa.</li></ul>
+<h2 class="doc-h2" id="ps-doom">2. Szukanie plików Doomsday na wszystkich dyskach</h2>
+<p class="doc-p">Przeszukuje wszystkie dyski i pokazuje pliki <code>.jar</code> o strukturze Doomsdaya. Każdy znaleziony plik trzeba potem sprawdzić ręcznie (WinRAR → <code>net\java</code>). Skanowanie może chwilę potrwać.</p>
+<div class="code-block-container"><div class="code-block-header"><span>PowerShell – Doomsday Search</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>Add-Type -AssemblyName System.IO.Compression.FileSystem
+Get-PSDrive -PSProvider FileSystem | ForEach-Object {
+  foreach ($a in Get-ChildItem $_.Root -Recurse -Filter "*.jar" -Force -ErrorAction SilentlyContinue) {
+    try {
+      $zip = [System.IO.Compression.ZipFile]::OpenRead($a.FullName)
+      $zip.Entries | Where-Object { ($_.FullName -replace "\\","/") -match "^net/java/[f-y].class$" } | ForEach-Object { Write-Host "[ZNALEZIONO] $($a.FullName) -&gt; $($_.FullName)" -ForegroundColor Yellow }
+      $zip.Dispose()
+    } catch {}
+  }
+}
+Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
+<h2 class="doc-h2" id="ps-jar">3. Ostatnio używane pliki .jar</h2>
+<p class="doc-p">Pokazuje pliki <code>.jar</code> użyte w ciągu ostatniej godziny. Wartość <code>-1</code> zmieniasz, np. na <code>-10</code>, żeby sięgnąć dalej wstecz.</p>
+<div class="code-block-container"><div class="code-block-header"><span>PowerShell – Recent Jar Access</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>Get-ChildItem -Path C:\ -Filter "*.jar" -Recurse | Where-Object { $_.LastAccessTime -gt (Get-Date).AddHours(-1) } | Select-Object FullName, LastAccessTime | Sort-Object LastAccessTime -Descending | Format-Table -AutoSize</code></pre></div>
+<h2 class="doc-h2" id="ps-usn">4. Usunięte pliki (dziennik USN)</h2>
+<p class="doc-p">Tworzy plik tekstowy z informacją o ostatnio usuniętych plikach. Jeśli gracz usunął <code>.jar</code> przed sprawdzaniem = <strong>ban za brak współpracy</strong>.</p>
+<div class="code-block-container"><div class="code-block-header"><span>CMD / PowerShell – usunięte .jar (plik na pulpicie)</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>fsutil usn readjournal c: csv | findstr /i /C:.jar | FINDSTR /I /C:delete >> "%USERPROFILE%\Desktop\client1.txt"</code></pre></div>
+<div class="code-block-container"><div class="code-block-header"><span>Wariant – zapis w bieżącym folderze (np. system32)</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>fsutil usn readjournal c: csv | findstr /i /C:.jar | FINDSTR /I /C:delete &gt;&gt; client2.txt</code></pre></div>
+<div class="code-block-container"><div class="code-block-header"><span>Usunięte .exe (plik na pulpicie)</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>fsutil usn readjournal c: csv | findstr /i /C:.exe | FINDSTR /I /C:delete &gt;&gt; "%USERPROFILE%\Desktop\client3.txt"</code></pre></div>
+<div class="code-block-container"><div class="code-block-header"><span>Usunięte .exe – wariant (bieżący folder)</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>fsutil usn readjournal c: csv | findstr /i /C:.exe | FINDSTR /I /C:delete &gt;&gt; client4.txt</code></pre></div>
+<h2 class="doc-h2" id="ps-usb">5. Porty USB</h2>
+<p class="doc-p">Pokazuje urządzenia USB podłączone do komputera gracza.</p>
+<div class="code-block-container"><div class="code-block-header"><span>PowerShell – USB Devices</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>Get-PnpDevice -PresentOnly | Where-Object { $_.InstanceId -match '^USB' } | Select-Object Name, InstanceId</code></pre></div>
+<h2 class="doc-h2" id="ps-dyski">6. Historia podłączania dysków</h2>
+<p class="doc-p">Pokazuje, kiedy dyski były podłączane i odłączane (np. pendrive z cheatem).</p>
+<div class="code-block-container"><div class="code-block-header"><span>PowerShell – Partition Diagnostics</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>Get-WinEvent -LogName Microsoft-Windows-Partition/Diagnostic | Where-Object {$_.Id -eq 1006} | Select-Object TimeCreated, Message</code></pre></div>
+<h2 class="doc-h2" id="ps-winr">7. Szybkie komendy Win + R</h2>
+<p class="doc-p">To nie są komendy PowerShella, tylko skróty do wpisania w okno uruchamiania (<kbd>Win + R</kbd>). Opis, czego w nich szukać, jest w <a href="#proces-sprawdzania">Procesie sprawdzania</a> (punkt 7).</p>
+<div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Komenda</th><th>Do czego służy</th></tr></thead><tbody><tr><td><code>prefetch</code></td><td>Historia uruchomionych programów (szukaj <code>javaw</code>)</td></tr><tr><td><code>shell:recent</code></td><td>Ostatnio otwierane pliki</td></tr><tr><td><code>shell:history</code></td><td>Historia otwieranych plików wg daty</td></tr><tr><td><code>shell:::{22877a6d-37a1-461a-91b0-dbda5aaebc99}</code></td><td>Ostatnio otwierane foldery</td></tr><tr><td><code>c:$recycle.bin</code></td><td>Data ostatniego opróżnienia kosza</td></tr><tr><td><code>%Temp%</code></td><td>Pliki tymczasowe (<code>.jar</code>, <code>.exe</code>)</td></tr><tr><td><code>%appdata%\Local\CrashDumps</code></td><td>Zrzuty awarii procesów (<code>.dmp</code>)</td></tr><tr><td><code>C:\ProgramData\Microsoft\Windows\WER\ReportArchive</code></td><td>Raporty awarii programów (<code>Report.wer</code>)</td></tr><tr><td><code>%appdata%</code></td><td>Folder <code>.minecraft</code> i inne foldery użytkownika</td></tr></tbody></table></div>
+<p class="doc-p">Sprawdzasz Linuxa lub Maca? Komendy są na stronach <a href="#linux">Linux</a> i <a href="#mac">MAC</a>.</p>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#proces-sprawdzania" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Proces sprawdzania</span></a>
+      <a href="#linux" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Linux <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <section id="linux" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Linux</span></div>
+    <article class="doc-article-body">
+      <h1 class="doc-title">Linux</h1>
+<p class="doc-p">Sprawdzanie komputera z Linuxem. Zasady ogólne są takie same jak w Procesie sprawdzania.</p>
+<h2 class="doc-h2" id="lx-1">1. Przygotowanie</h2>
+<ol class="steps"><li>Poproś o wyłączenie aplikacji nagrywających (OBS itp.). Otwórz Monitor systemu (GNOME System Monitor, <code>htop</code> lub <code>top</code>) i szukaj procesów <code>obs</code>, <code>ffmpeg</code> itp.</li><li>Sprawdź wirtualne pulpity: poproś o podgląd wszystkich (klawisz <kbd>Super</kbd>/<kbd>Windows</kbd>). Linux pozwala skutecznie chować okna na innych obszarach roboczych.</li><li>Otwórz Terminal (<kbd>Ctrl + Alt + T</kbd>) i wpisuj komendy poniżej.</li></ol>
+<h2 class="doc-h2" id="lx-2">2. Komendy w terminalu</h2>
+<p class="doc-p"><strong>1. Procesy nagrywania.</strong> Jeśli wynik zawiera tylko linię z <code>grep</code>, gracz nie nagrywa.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>ps aux | grep -Ei "obs|ffmpeg|screen|capture|record"</code></pre></div>
+<p class="doc-p"><strong>2. Historia komend.</strong> Sprawdź, czy gracz nie czyścił śladów (<code>rm</code>, <code>shred</code>) i czy nie używał spacji przed komendą, co w niektórych konfiguracjach ukrywa ją w historii.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>history | tail -n 100</code></pre></div>
+<p class="doc-p"><strong>3. Aliasy.</strong> Upewnij się, że gracz nie podmienił komend systemowych (np. żeby <code>ls</code> nie pokazywało plików o nazwie „cheat”).</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>alias</code></pre></div>
+<p class="doc-p"><strong>4. Mapowanie pamięci (KLUCZOWE).</strong> Pokazuje wszystkie mody wczytane do RAM-u. Plik jest na liście, a nie ma go w <code>mods</code> = obowiązkowo sprawdź.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>grep -i ".jar" /proc/$(pgrep -x java)/maps</code></pre></div>
+<p class="doc-p"><strong>5. Otwarte pliki.</strong> Każdy plik fizycznie otwarty przez grę. Szukaj ścieżek z <code>/tmp</code>, <code>/dev/shm</code> lub ukrytych folderów.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>lsof -p $(pgrep -d, -x java) | grep -E ".jar|.so"</code></pre></div>
+<p class="doc-p"><strong>6. Pamięć współdzielona i foldery tymczasowe.</strong> </p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>ls -laR /dev/shm /tmp | grep ".jar"</code></pre></div>
+<p class="doc-p"><strong>7. Zmienne środowiskowe.</strong> Jeśli coś zwrócą, gracz prawdopodobnie wstrzykuje cheata przy starcie Javy.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>printenv | grep -E "LD_PRELOAD|JAVA_TOOL_OPTIONS"</code></pre></div>
+<h2 class="doc-h2" id="lx-3">3. W grze i w plikach</h2>
+<ul class="bul"><li><kbd>F3</kbd> (wersja), <kbd>F3 + B</kbd> (hitboxy), <kbd>F3 + T</kbd> (logo cheata). Statystyki: przycisk „Enable Wurst”.</li><li>Sterowanie: szukaj bindów typu minimapa, freecam, baritone. Freecam i baritone = perm, minimapa i lekkie cheaty = 20 dni.</li><li>Texturepacki: lista aktywnych i dostępnych paczek.</li><li>Ukryte pliki w menedżerze plików: <kbd>Ctrl + H</kbd>.</li></ul>
+<div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Instalacja</th><th>Ścieżka Minecrafta</th></tr></thead><tbody><tr><td>Standard</td><td><code>~/.minecraft</code></td></tr><tr><td>Flatpak</td><td><code>~/.var/app/com.mojang.Minecraft/.minecraft</code></td></tr><tr><td>Snap</td><td><code>~/snap/minecraft/common/.minecraft</code></td></tr></tbody></table></div>
+<p class="doc-p">Sprawdź foldery: <code>mods</code>, <code>mods.orig</code>, <code>mods-orig</code>, <code>feather mods</code>, <code>versions</code>, <code>weaver.log</code>, <code>.fabric</code> (jeśli istnieje, sprawdź daty modyfikacji). Kosz: <code>~/.local/share/Trash/files/</code>.</p>
+<p class="doc-p">Logi: wejdź do <code>logs</code>, znajdź <code>latest.log</code>, poproś gracza o próbę usunięcia (nie da się = log w użyciu). Na początku logu są mody i wersja gry. <kbd>Ctrl + F</kbd> (zawijanie wokół włączone, wielkość liter wyłączona), fraza <code>ResourceManager</code>: na dole są texturepacki załadowane przez gracza.</p>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#komendy-powershell" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Komendy PowerShell</span></a>
+      <a href="#mac" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">MAC <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <section id="mac" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">MAC</span></div>
+    <article class="doc-article-body">
+      <h1 class="doc-title">MAC</h1>
+<p class="doc-p">Sprawdzanie komputera z macOS. Zasady ogólne są takie same jak w Procesie sprawdzania.</p>
+<h2 class="doc-h2" id="mc-1">1. Przygotowanie</h2>
+<ol class="steps"><li>Poproś o wyłączenie aplikacji nagrywających. Jeśli pasek menu nie reaguje, użyj <kbd>Cmd + Spacja</kbd> → Monitor aktywności. W zakładce CPU szukaj procesów <code>obs</code> itp.</li><li>Poproś o przesunięcie trzema lub czterema palcami w górę po gładziku (zależnie od ustawień) albo klawisz <kbd>F3</kbd>. Każ usunąć wszystkie dodatkowe „Biurka” u góry ekranu.</li><li><kbd>Cmd + Option + Esc</kbd>: sprawdź listę aplikacji pod kątem ukrytych przeglądarek lub launcherów.</li><li>Otwórz Terminal (<kbd>Cmd + Spacja</kbd> → Terminal).</li></ol>
+<h2 class="doc-h2" id="mc-2">2. Komendy w terminalu</h2>
+<p class="doc-p"><strong>1. Procesy nagrywania.</strong> Tylko linia z <code>grep</code> = gracz nie nagrywa.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>ps aux | grep -Ei "obs|ffmpeg|screen|capture|record"</code></pre></div>
+<p class="doc-p"><strong>2. Historia komend.</strong> Sprawdź, czy gracz nie czyścił śladów komendą <code>rm</code>.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>history | tail -n 50</code></pre></div>
+<p class="doc-p"><strong>3. Pobrane pliki.</strong> Historia pobierania, nawet jeśli plik usunięto z kosza.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2 "select LSQuarantineDataURLString from LSQuarantineEvent"</code></pre></div>
+<p class="doc-p"><strong>4. DNS / Hosts.</strong> Szukamy blokad serwerów anty-cheat lub dziwnych przekierowań.</p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>cat /etc/hosts</code></pre></div>
+<p class="doc-p"><strong>5. Zmodyfikowane pliki (ostatnie 60 minut).</strong> </p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>find ~ -mmin -60 -type f</code></pre></div>
+<p class="doc-p"><strong>6. Pliki .jar.</strong> </p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>find ~ -maxdepth 3 -name "*.jar" 2&gt;/dev/null</code></pre></div>
+<p class="doc-p"><strong>7. Ukryte flagi w pobranych.</strong> </p>
+<div class="code-block-container"><div class="code-block-header"><span>Terminal</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>ls -laO ~/Downloads</code></pre></div>
+<h2 class="doc-h2" id="mc-3">3. W grze i w plikach</h2>
+<ul class="bul"><li><kbd>F3</kbd> (wersja), <kbd>F3 + B</kbd> (hitboxy), <kbd>F3 + T</kbd> (logo cheata). Statystyki: przycisk „Enable Wurst”.</li><li>Sterowanie: szukaj bindów freecam, autototem, elytraswapper, clickgui itp.</li><li>Texturepacki: lista aktywnych i dostępnych paczek.</li><li>Ukryte pliki w Finderze: <kbd>Cmd + Shift + .</kbd></li><li>Ścieżka Minecrafta: <kbd>Cmd + Shift + G</kbd> i wpisz <code>~/Library/Application Support/minecraft</code>. Kosz: <kbd>Cmd + Shift + G</kbd> i <code>~/.Trash</code>.</li><li>Foldery do sprawdzenia: <code>mods</code>, <code>mods.orig</code>, <code>mods-orig</code>, <code>feather mods</code>, <code>versions</code>, <code>weaver.log</code>.</li></ul>
+<p class="doc-p"><strong>Logi.</strong> Wejdź do <code>logs</code>, znajdź <code>latest.log</code> i poproś o próbę usunięcia (nie da się = jest w użyciu). Na początku logu są mody i wersja gry. <kbd>Ctrl + F</kbd> (zawijanie wokół włączone, wielkość liter wyłączona), fraza <code>ResourceManager</code>: na dole są texturepacki gracza, trochę wyżej mody, na początku godzina przeładowania. Wpisy <code>missing metadata in pack file</code> = w paczce może być cheat. Nie sprawdzaj jednego loga, tylko wszystkie od połączenia z serwerem.</p>
+<p class="doc-p"><strong>Paczka pokazująca zużycie zbroi:</strong> <code>resourcepacks</code> → (nazwa paczki) → <code>assets</code> → <code>minecraft</code> → <code>optifine</code> → <code>cit</code>. Szukaj nazw: zniszczony netherite, zbroja, zniszczenie. Sprawdzaj pliki <code>.properties</code>.</p>
+<p class="doc-p"><strong>Monitor aktywności:</strong> znajdź proces <code>java</code>, kliknij dwukrotnie → zakładka „Otwarte pliki i porty”. Szukaj bibliotek <code>.dylib</code> lub <code>.jar</code> ładowanych z <code>/Downloads/</code>, <code>/tmp/</code>, <code>/private/var/folders/</code> (pliki tymczasowe macOS) oraz „lib” i „native” przy nieznanych <code>.dylib</code> poza folderem gry.</p>
+<p class="doc-p"><strong>Logi systemowe:</strong> aplikacja Konsola, fraza <code>java</code>. Sprawdź, czy przy starcie gry nie podano podejrzanych parametrów lub ścieżek do zewnętrznych bibliotek.</p>
+<p class="doc-p"><strong>Wersja (JSON):</strong> otwórz folder wersji gracza, plik <code>.json</code> w TextEdit, szukaj <code>mainClass</code>. Jeśli wartość jest inna niż <code>net.minecraft.client.main.Main</code> (np. <code>LaunchWrapper</code>), klient jest zmodyfikowany.</p>
+<p class="doc-p"><strong>Przeglądarki:</strong> <kbd>Cmd + J</kbd> (historia pobierania). Logo Apple → Ostatnie rzeczy: szukaj nazw cheatów, instalatorów Javy, dziwnych <code>.dmp</code>/<code>.dmg</code>.</p>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#linux" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Linux</span></a>
+      <div></div>
+    </footer>
+  </section>
+
+      </div>
+    </main>
+
+    <!-- Right Table of Contents -->
+    <aside class="docs-toc" id="docsTocContainer">
+      <div class="toc-title">NA TEJ STRONIE</div>
+      <ul class="toc-links" id="tocLinks"></ul>
+    </aside>
+
+  </div>
+
+  <!-- Search Modal -->
+  <div class="search-modal-overlay" id="searchOverlay">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Szukaj w podręczniku i taryfikatorach..." autocomplete="off">
+        <button id="clearSearchBtn" class="clear-search-btn" title="Zamknij (ESC)">ESC</button>
+      </div>
+      <div class="search-results-list" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="toast-box" id="toastBox"></div>
+
+  <script>
+function toggleSidebarGroup(groupId) {
+  const groupEl = document.getElementById(groupId);
+  if (groupEl) {
+    groupEl.classList.toggle('collapsed');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const toastBox = document.getElementById('toastBox');
+
+  function showToast(message, icon = 'fa-circle-check') {
+    if (!toastBox) return;
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<i class="fa-solid ${icon}" style="color: var(--red-main);"></i><span>${message}</span>`;
+    toastBox.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(8px)';
+      toast.style.transition = 'all 0.25s ease';
+      setTimeout(() => toast.remove(), 250);
+    }, 2600);
+  }
+
+  document.querySelectorAll('.copy-code-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const container = btn.closest('.code-block-container');
+      const code = container.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Skopiowano skrypt do schowka!');
+      });
+    });
+  });
+
+  const pageSections = document.querySelectorAll('.doc-page-section');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const tocContainer = document.getElementById('docsTocContainer');
+  const tocLinks = document.getElementById('tocLinks');
+
+  function switchPage(pageId) {
+    if (!pageId) pageId = 'regulamin-administracji';
+
+    let found = false;
+    pageSections.forEach(sec => {
+      if (sec.id === pageId) {
+        sec.style.display = 'block';
+        found = true;
+      } else {
+        sec.style.display = 'none';
+      }
+    });
+
+    if (!found && pageSections.length > 0) {
+      pageSections[0].style.display = 'block';
+      pageId = pageSections[0].id;
+    }
+
+    sidebarLinks.forEach(link => {
+      if (link.getAttribute('href') === `#${pageId}`) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    updateToc(pageId);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  function updateToc(pageId) {
+    if (!tocLinks || !tocContainer) return;
+    tocLinks.innerHTML = '';
+
+    const activeSec = document.getElementById(pageId);
+    if (!activeSec) return;
+
+    const headings = activeSec.querySelectorAll('h2.doc-h2');
+    
+    if (headings.length === 0) {
+      tocContainer.style.display = 'none';
+      return;
+    } else {
+      tocContainer.style.display = 'block';
+    }
+
+    headings.forEach((h, idx) => {
+      if (!h.id) h.id = pageId + '-h2-' + idx;
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#${h.id}" class="toc-item-link">${h.innerText}</a>`;
+      li.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth' });
+      });
+      tocLinks.appendChild(li);
+    });
+  }
+
+  function onHashChange() {
+    const rawHash = window.location.hash.replace('#', '');
+    if (!rawHash) {
+      switchPage('regulamin-administracji');
+      return;
+    }
+
+    const isPage = Array.from(pageSections).some(s => s.id === rawHash);
+    if (isPage) {
+      switchPage(rawHash);
+    } else {
+      const el = document.getElementById(rawHash);
+      if (el) {
+        const parentSec = el.closest('.doc-page-section');
+        if (parentSec) {
+          switchPage(parentSec.id);
+          setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
+        }
+      }
+    }
+  }
+
+  window.addEventListener('hashchange', onHashChange);
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const targetId = href.replace('#', '');
+      const isPage = Array.from(pageSections).some(s => s.id === targetId);
+      if (isPage) {
+        e.preventDefault();
+        window.location.hash = targetId;
+        switchPage(targetId);
+        if (window.innerWidth <= 860) {
+          document.getElementById('sidebar')?.classList.remove('open');
+        }
+      }
+    }
+  });
+
+  onHashChange();
+
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const sidebar = document.getElementById('sidebar');
+
+  if (mobileMenuBtn && sidebar) {
+    mobileMenuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+  }
+
+  const searchTrigger = document.getElementById('searchTrigger');
+  const searchOverlay = document.getElementById('searchOverlay');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+
+  const searchIndex = [];
+  pageSections.forEach(sec => {
+    const pTitle = sec.querySelector('.doc-title')?.innerText || sec.id;
+    const bodyText = sec.querySelector('.doc-article-body')?.innerText || '';
+    const paragraphs = bodyText.split('\n').filter(t => t.trim().length > 15);
+
+    paragraphs.forEach(p => {
+      searchIndex.push({
+        pageId: sec.id,
+        pageTitle: pTitle,
+        snippet: p.trim()
+      });
+    });
+  });
+
+  function openSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.add('open');
+    searchInput.value = '';
+    searchInput.focus();
+    renderSearch('');
+  }
+
+  function closeSearch() {
+    if (!searchOverlay) return;
+    searchOverlay.classList.remove('open');
+  }
+
+  if (searchTrigger) searchTrigger.addEventListener('click', openSearch);
+  if (clearSearchBtn) clearSearchBtn.addEventListener('click', closeSearch);
+
+  if (searchOverlay) {
+    searchOverlay.addEventListener('click', (e) => {
+      if (e.target === searchOverlay) closeSearch();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (searchOverlay?.classList.contains('open')) closeSearch();
+      else openSearch();
+    } else if (e.key === 'Escape' && searchOverlay?.classList.contains('open')) {
+      closeSearch();
+    }
+  });
+
+  function renderSearch(query) {
+    if (!searchResults) return;
+    const q = query.toLowerCase().trim();
+
+    if (!q) {
+      const sample = searchIndex.slice(0, 6);
+      searchResults.innerHTML = sample.map(item => `
+        <div class="search-result-item" data-page="${item.pageId}">
+          <div class="search-result-top">
+            <span class="search-result-cat">${item.pageTitle}</span>
+          </div>
+          <div class="search-result-desc">${item.snippet.slice(0, 140)}...</div>
+        </div>
+      `).join('');
+    } else {
+      const matches = searchIndex.filter(item => 
+        item.pageTitle.toLowerCase().includes(q) || 
+        item.snippet.toLowerCase().includes(q)
+      ).slice(0, 10);
+
+      if (matches.length === 0) {
+        searchResults.innerHTML = `
+          <div style="padding: 2.5rem; text-align: center; color: var(--text-muted);">
+            Nie znaleziono wyników dla frazy: "<strong>${query}</strong>"
+          </div>
+        `;
+        return;
+      }
+
+      searchResults.innerHTML = matches.map(item => `
+        <div class="search-result-item" data-page="${item.pageId}">
+          <div class="search-result-top">
+            <span class="search-result-cat">${item.pageTitle}</span>
+          </div>
+          <div class="search-result-desc">${item.snippet.slice(0, 150)}...</div>
+        </div>
+      `).join('');
+    }
+
+    searchResults.querySelectorAll('.search-result-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const pageId = el.getAttribute('data-page');
+        closeSearch();
+        window.location.hash = pageId;
+        switchPage(pageId);
+      });
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => renderSearch(e.target.value));
+  }
+});
+  </script>
+</body>
+</html>
