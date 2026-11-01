@@ -944,6 +944,24 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
 .problem-list{display:grid;gap:.75rem}
 .breadcrumbs{flex-wrap:wrap;row-gap:.25rem}.breadcrumb-item{white-space:nowrap}
 .doc-h4{font-size:1rem;font-weight:600;color:var(--text-pure);margin:1.4rem 0 .5rem;padding-left:.7rem;border-left:3px solid var(--red-main)}
+
+/* Sidebar: trzeci poziom (Za co karac?) */
+.sidebar-item.sub-item.sub-sub{padding-left:2.9rem}
+.sidebar-item.sub-item.sub-sub::before{left:2rem}
+.sidebar-item.sub-item.sub-sub::after{left:2.5rem}
+.sidebar-item.sub-item.sub-sub .sidebar-link{font-size:.8rem}
+
+/* Strona: Za co karac? */
+.pun-kara{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.3rem 0 1rem}
+.pun-kara .lbl{font-size:.74rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-right:.15rem}
+.pun-sub{font-size:.86rem;font-weight:600;color:var(--text-pure);margin:1.1rem 0 .1rem}
+.ban-tag.mute{color:#60a5fa;background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.4)}
+.ban-tag.var{color:var(--text-muted);background:rgba(154,165,188,.10);border-color:rgba(154,165,188,.35)}
+html[data-theme="white"] .ban-tag.mute{color:#1d4ed8}
+html[data-theme="white"] .ban-tag.var{color:#475569}
+
+.last-updated{margin-top:1.75rem;padding-top:1rem;border-top:1px solid var(--border-subtle);font-size:.82rem;color:var(--text-muted);text-align:center}
+.last-updated strong{color:var(--text-body);font-weight:600}
 </style>
 </head>
 <body>
@@ -1037,6 +1055,12 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
             <a href="#nadawanie-kar-i-apelacje" class="sidebar-link" data-target="nadawanie-kar-i-apelacje">
               <i class="fa-solid fa-gavel" style="color: #f87171;"></i>
               <span class="item-title">Nadawanie kar i apelacje</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item sub-sub">
+            <a href="#za-co-karac" class="sidebar-link" data-target="za-co-karac">
+              <i class="fa-solid fa-scale-balanced" style="color: #fbbf24;"></i>
+              <span class="item-title">Za co karać?</span>
             </a>
           </li>
           <li class="sidebar-item sub-item">
@@ -1217,6 +1241,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
       <a href="#regulamin-administracji" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin administracji</span></a>
       <a href="#taryfikator-discord" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Taryfikator Discord <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+      <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 01.11.2026 · przez <strong>nveisk</strong></p>
   </section>
 
   <!-- PAGE: Taryfikator Discord -->
@@ -1285,6 +1310,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
       <a href="#taryfikator-minecraft" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Taryfikator Minecraft</span></a>
       <a href="#regulamin-backupow" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Regulamin backupów <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+      <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 01.11.2026 · przez <strong>nveisk</strong></p>
   </section>
 
   
@@ -1351,13 +1377,13 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
       </header>
 
       <h2 class="doc-h2" id="op-1">Obowiązki administracji</h2>
-      <div class="perm-grid"><div class="perm-card duty-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Odpowiadanie na tickety wg: <a href="#pomoc-graczom-serwera">Pomoc graczom</a>, <a href="#taryfikator-minecraft">Taryfikator MC</a>, <a href="#taryfikator-discord">Taryfikator DC</a>.</li><li>Pomaganie graczom na CP oraz na kanałach głosowych „pomagam”.</li><li>Nauka sprawdzania wg: <a href="#proces-sprawdzania">Proces sprawdzania</a>.</li></ul></div><div class="perm-card duty-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Odpowiadanie na tickety.</li><li>Pomaganie graczom na CP.</li><li>Moderowanie czatu w grze, czyli wyciszanie graczy:<ul class="sub-bul"><li>Survival Extreme: <code>/mute &lt;nick&gt; &lt;czas&gt; &lt;powód&gt;</code></li><li>Skyblock: <code>/mute &lt;nick&gt; false &lt;czas&gt; &lt;powód&gt;</code></li></ul></li><li>Odpisywanie graczom na <code>/helpop</code> (odpisujemy komendą <code>/msg &lt;gracz&gt; &lt;wiadomość&gt;</code>).</li><li>Sprawdzanie graczy: <code>/sprawdz gracz/czysty/cheater/brakwsp &lt;nick&gt;</code><ul class="sub-bul"><li><code>gracz</code> – bierze gracza na sprawdzanie</li><li><code>czysty</code> – daje graczowi status czystego</li><li><code>cheater</code> – banuje gracza za cheaty</li><li><code>brakwsp</code> – banuje za brak współpracy</li><li>Ban zostaje nadany automatycznie (również gdy gracz się wyloguje).</li></ul></li></ul></div><div class="perm-card duty-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Supporta.</li><li>Nadawanie banów wg <a href="#taryfikator-minecraft">Taryfikator MC</a>: <code>/ban &lt;nick&gt; &lt;true/false&gt; &lt;czas&gt; &lt;powód&gt;</code> (<code>true</code> – niewidoczny dla graczy, <code>false</code> – widoczny dla graczy).</li><li>Teleportowanie się do graczy na serwerze i sprawdzanie ich na <code>/gm 3</code> / vanishu.</li><li>Zajmowanie się ticketami z działem cheaterów.</li><li>Zajmowanie się sprawami na <code>/helpop</code>, jeśli to wymaga (np. gdy gracz pisze, że znalazł błąd).</li></ul></div><div class="perm-card duty-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">Jr Mod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Pomocnika.</li><li>Nadawanie backupów: <code>/backup &lt;nick&gt;</code>, czyli realizowanie ticketów z sekcji „błąd”. Przy nadawaniu backupa należy stosować się do <a href="#regulamin-backupow">Regulaminu backupów</a>.</li><li>Nadawanie unbanów: <code>/unban &lt;nick&gt; &lt;true/false&gt;</code>, czyli realizowanie ticketów z sekcji „niesłuszny ban”.</li></ul></div><div class="perm-card duty-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Mod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Jr Moda.</li></ul></div></div>
+      <div class="perm-grid"><div class="perm-card duty-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Odpowiadanie na tickety wg: <a href="#pomoc-graczom-serwera">Pomoc graczom</a>, <a href="#taryfikator-minecraft">Taryfikator MC</a>, <a href="#taryfikator-discord">Taryfikator DC</a>.</li><li>Pomaganie graczom na CP oraz na kanałach głosowych „pomagam”.</li><li>Nauka sprawdzania wg: <a href="#proces-sprawdzania">Proces sprawdzania</a>.</li></ul></div><div class="perm-card duty-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Odpowiadanie na tickety.</li><li>Pomaganie graczom na CP.</li><li>Moderowanie czatu w grze, czyli wyciszanie graczy:<ul class="sub-bul"><li>Survival Extreme: <code>/mute &lt;nick&gt; &lt;czas&gt; &lt;powód&gt;</code></li><li>Skyblock: <code>/mute &lt;nick&gt; false &lt;czas&gt; &lt;powód&gt;</code></li></ul></li><li>Odpisywanie graczom na <code>/helpop</code> (odpisujemy komendą <code>/msg &lt;gracz&gt; &lt;wiadomość&gt;</code>).</li><li>Sprawdzanie graczy: <code>/sprawdz gracz/czysty/cheater/brakwsp &lt;nick&gt;</code><ul class="sub-bul"><li><code>gracz</code> – bierze gracza na sprawdzanie</li><li><code>czysty</code> – daje graczowi status czystego</li><li><code>cheater</code> – banuje gracza za cheaty</li><li><code>brakwsp</code> – banuje za brak współpracy</li><li>Ban zostaje nadany automatycznie (również gdy gracz się wyloguje).</li></ul></li></ul></div><div class="perm-card duty-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Supporta.</li><li>Nadawanie banów wg <a href="#taryfikator-minecraft">Taryfikator MC</a>:<ul class="sub-bul"><li>Survival Extreme: <code>/ban &lt;nick&gt; &lt;true/false&gt; &lt;czas, 0d = perm&gt; &lt;powód&gt;</code></li><li>SkyBlock: <code>/ban &lt;nick&gt; &lt;true/false&gt; &lt;czas, 0 = perm&gt; &lt;powód&gt;</code></li><li><code>true</code> – ban niewidoczny dla graczy, <code>false</code> – widoczny dla graczy.</li></ul></li><li>Teleportowanie się do graczy na serwerze i sprawdzanie ich na <code>/gm 3</code> / vanishu.</li><li>Zajmowanie się ticketami z działem cheaterów.</li><li>Zajmowanie się sprawami na <code>/helpop</code>, jeśli to wymaga (np. gdy gracz pisze, że znalazł błąd).</li></ul></div><div class="perm-card duty-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">Jr Mod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Pomocnika.</li><li>Nadawanie backupów: <code>/backup &lt;nick&gt;</code>, czyli realizowanie ticketów z sekcji „błąd”. Przy nadawaniu backupa należy stosować się do <a href="#regulamin-backupow">Regulaminu backupów</a>.</li><li>Nadawanie unbanów: <code>/unban &lt;nick&gt; &lt;true/false&gt;</code>, czyli realizowanie ticketów z sekcji „niesłuszny ban”.</li></ul></div><div class="perm-card duty-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Mod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Zakres obowiązków Jr Moda.</li></ul></div><div class="perm-card duty-card rank-cmd"><div class="perm-head"><span class="rank-badge rank-cmd">ChatMod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Pilnowanie czatów przed łamaniem regulaminu oraz nadawanie poprawnych kar wg <a href="#taryfikator-discord">Taryfikatora DC</a>.</li><li>Pomaganie graczom na CP.</li><li>Pilnowanie kanałów głosowych przed demoralizacją młodszych osób, czyli wyciszanie graczy łamiących regulamin.</li><li>Zgłaszanie osób, które muszą otrzymać bana – należy podać powód i oznaczyć <span class="rank-badge rank-cmdplus">ChatMod+</span> oraz <span class="rank-badge rank-gcmd">Global ChatMod</span>.</li></ul></div><div class="perm-card duty-card rank-cmdplus"><div class="perm-head"><span class="rank-badge rank-cmdplus">ChatMod+</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Banowanie użytkowników wskazanych przez administrację.</li><li>Zakres obowiązków ChatModa.</li></ul></div><div class="perm-card duty-card rank-gcmd"><div class="perm-head"><span class="rank-badge rank-gcmd">Global ChatMod</span><span class="perm-domain">⚬ ZAKRES OBOWIĄZKÓW</span></div><ul><li>Odpowiadanie na tickety, jeśli sprawa dotyczy Discorda lub znasz odpowiedź na dane pytanie czy problem – wg <a href="#pomoc-graczom-serwera">Pomoc graczom</a>.</li><li>Zakres obowiązków ChatMod+.</li></ul></div></div>
       <div class="callout warn"><div class="callout-title">Pamiętaj</div>
         Obowiązki wymienione powyżej należy wykonywać wg <a href="#taryfikator-discord">Taryfikator DC</a> oraz <a href="#taryfikator-minecraft">Taryfikator MC</a>.
       </div>
 
       <h2 class="doc-h2" id="op-2">Permisje Minecraft</h2>
-      <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Op</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Za niedługo zostaną podane dokładniejsze permisje.</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>InvSee (<code>/invsee</code>)</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportowanie graczy do siebie (<code>/tphere</code>)</li><li>Odbanowywanie użytkowników (<code>/unban</code>)</li><li>Nadawanie backupów (<code>/backup</code>)</li><li>Nieśmiertelność (<code>/god</code>)</li><li>Możliwość pobierania ProcessHackera / SystemInformera podczas sprawdzania</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportacja (<code>/tp</code>)</li><li>Banowanie (<code>/ban</code>)</li><li>Kickowanie (<code>/kick</code>)</li><li>Latanie (<code>/fly</code>)</li><li>Vanish (<code>/v</code>)</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Odmutowywanie (<code>/unmute</code>)</li><li>Sprawdzanie (<code>/sprawdz</code>)</li><li>Mutowanie (<code>/mute</code>)</li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><p class="perm-none">Brak dodatkowych permisji.</p></div></div>
+      <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Op</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Za niedługo zostaną podane dokładniejsze permisje.</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>InvSee (<code>/invsee</code>)</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportowanie graczy do siebie (<code>/tphere</code>)</li><li>Odbanowywanie użytkowników (<code>/unban</code>)</li><li>Nadawanie backupów (<code>/backup</code>)</li><li>Nieśmiertelność (<code>/god</code>)</li><li>Możliwość pobierania ProcessHackera / SystemInformera podczas sprawdzania</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportacja (<code>/tp</code>)</li><li>Banowanie (<code>/ban</code>)</li><li>Kickowanie (<code>/kick</code>)</li><li>Latanie (<code>/fly</code>)</li><li>Vanish (<code>/v</code>)</li><li>Sprawdzanie historii kar gracza (<code>/punishhistory &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego bana (<code>/checkban &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego muta (<code>/checkmute &lt;nick&gt;</code>)</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Odmutowywanie (<code>/unmute</code>)</li><li>Sprawdzanie (<code>/sprawdz</code>)</li><li>Mutowanie (<code>/mute</code>)</li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><p class="perm-none">Brak dodatkowych permisji.</p></div></div>
 
       <h2 class="doc-h2" id="op-3">Permisje Discord</h2>
       <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Administrator.</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Zarządzanie rolami – dodawanie, usuwanie.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Dziennik zdarzeń.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Zarządzanie kanałami ticketów (zmiana nazwy, przesuwanie).</li><li class="inherit">To co ranga niżej (uprawnienia ADMINISTRACJA MCEXTREME.PL)</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Wyciszanie dźwięku oraz mikrofonu graczom na kanałach głosowych.</li><li>Uprawnienia rangi <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span></li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Uprawnienia rangi <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span></li></ul></div><div class="perm-card rank-adminrole"><div class="perm-head"><span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Nakładanie przerw (timeoutów).</li><li>Zarządzanie wiadomościami.</li><li>Wyciszanie dźwięku członkom kanału głosowego.</li><li>Możliwość wejścia na kanał Pomocy oraz przenoszenie graczy na pomoc i inne kanały.</li></ul></div><div class="perm-card rank-admindc"><div class="perm-head"><span class="rank-badge rank-admindc">Administrator Discord</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-gcmd"><div class="perm-head"><span class="rank-badge rank-gcmd">Global ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Dziennik zdarzeń.</li><li>Zarządzanie pseudonimami.</li><li>Zarządzanie kanałami ticketów (zmiana nazwy, przesuwanie).</li><li>Dostęp do wszystkich ticketów.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-cmdplus"><div class="perm-head"><span class="rank-badge rank-cmdplus">ChatMod+</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Możliwość banowania użytkowników.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-cmd"><div class="perm-head"><span class="rank-badge rank-cmd">ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Nadawanie przerw (timeoutów).</li><li>Usuwanie przerw.</li><li>Wchodzenie na pełne kanały głosowe.</li><li>Wyłączanie dźwięku członkom na kanałach głosowych.</li><li>Wyciszanie członków na kanałach głosowych.</li><li>Zarządzanie wiadomościami.</li><li>Możliwość wejścia na kanał Pomocy oraz przenoszenie graczy na pomoc i inne kanały.</li></ul></div></div>
@@ -1676,9 +1702,195 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
     </article>
     <footer class="doc-pagination">
       <a href="#podstawowe-informacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Podstawowe informacje</span></a>
-      <a href="#mentorstwo" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Mentorstwo <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="#za-co-karac" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Za co karać? <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
+
+<!-- PAGE: Za co karać? -->
+  <section id="za-co-karac" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Nadawanie kar i apelacje</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Za co karać?</span></div>
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">ZA CO KARAĆ?</h1>
+        <p class="doc-lead">Krótka ściąga: za co karzemy na Mcextreme.pl, a za co nie. Wymiary kar znajdziesz w <a href="#taryfikator-minecraft">Taryfikatorze Minecraft</a>.</p>
+      </header>
+      <h2 class="doc-h2" id="zck-zasady">Zanim ukarzesz</h2>
+      <ul class="bul">
+        <li>Patrz na kontekst, a nie na jedno słowo – sprawdź wcześniejsze wiadomości na czacie.</li>
+        <li>Gwiazdki, cyfry zamiast liter, skróty czy inna pisownia nie zmieniają tego, że to wulgaryzm albo obelga.</li>
+        <li>Spam to powtarzanie tej samej wiadomości, a flood to zalewanie czatu. To dwa różne przewinienia.</li>
+        <li>Jeśli wypowiedź może znaczyć coś innego i nie masz pewności, nie karz na siłę.</li>
+        <li>Nie jesteś pewien, jak to zakwalifikować? Zapytaj JrMod+.</li>
+      </ul>
+      <h2 class="doc-h2" id="za-co-karac-spam">1. Spam</h2>
+      <p class="doc-p">Powtarzanie tej samej wiadomości na czacie. Liczy się to, że treść się powtarza – nie to, jak duże są przerwy.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Kto kupi miecz?” wysłane kilka razy z rzędu,</li><li>ta sama oferta z drobnymi zmianami: „Sprzedam diaxy”, „Sprzedam diaxy!”, „SPRZEDAM DIAXY”,</li><li>wklejanie w kółko tego samego ogłoszenia albo prośby o itemy („Kto da itemy?”).</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>ponowienia pytania po dłuższej chwili, gdy nikt nie odpowiedział,</li><li>poprawionej wiadomości, jeśli pierwsza miała błąd,</li><li>przypadkowego podwójnego wysłania.</li></ul>
+      <div class="callout warn"><div class="callout-title">Spam a flood</div>Spam to powtarzanie tej samej treści. Masę różnych wiadomości pod rząd opisuje <a href="#za-co-karac-flood">flood</a>.</div>
+      <h2 class="doc-h2" id="za-co-karac-flood">2. Flood</h2>
+      <p class="doc-p">Zalewanie czatu wieloma wiadomościami pod rząd. Nie muszą być takie same.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>jedno zdanie rozbite na kilka wiadomości: „Siema” / „mam” / „pytanie” / „czy ktoś sprzedaje miecz?”,</li><li>pojedyncze litery, cyfry lub znaki jedno pod drugim („A”, „B”, „C”…),</li><li>seria różnych wiadomości w kilka sekund: „Halo”, „Ej”, „Odpiszcie”, „Kto gra?”,</li><li>rozciąganie liter, np. „DOKNESSSSSSSSSSSSSSSSS KIEDY EVENT”.</li></ul>
+      <div class="callout ban"><div class="callout-title">Litery</div>Flood zaczyna się od <strong>10 takich samych liter</strong> w jednej wiadomości.</div>
+      <div class="callout warn"><div class="callout-title">Spam + flood</div>Jeśli ktoś i powtarza wiadomości, i zalewa nimi czat, oceniamy całe zachowanie razem.</div>
+      <h2 class="doc-h2" id="zck-3">3. Obraza gracza</h2>
+      <p class="doc-p">Wyzywanie albo poniżanie konkretnego gracza. Wulgaryzmy nie są potrzebne – „idiota” czy „kretyn” też się liczy.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Ty idioto”, „Jesteś debilem”, „X to totalny śmieć”,</li><li>wyzwiska pod adresem rodziny („Twój stary to…”),</li><li>obrażanie przez nick albo aluzję, jeśli wiadomo, o kogo chodzi.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>zwykłego przekomarzania się,</li><li>wypowiedzi, których nie da się przypisać konkretnej osobie.</li></ul>
+      <div class="callout warn"><div class="callout-title">Nick nie jest potrzebny</div>Jeśli z rozmowy widać, do kogo poszła obelga, to wystarczy. Tłumaczenie „znamy się, nikogo to nie obraziło” nie ma znaczenia – kara zostaje.</div>
+      <h2 class="doc-h2" id="zck-4">4. Wulgaryzmy</h2>
+      <p class="doc-p">Przekleństwa, także zapisane inaczej.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„kurwa”, „chuj”, „pizda”, „spierdalaj”, „ja pierdolę”,</li><li>wersje z gwiazdką lub cyfrą: „k*rwa”, „c*huj”, „spierdal*j”,</li><li>ucięte słowa, o których wiadomo, jak się kończą.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>systemowej cenzury w postaci „***”,</li><li>samego „WTF” – karzemy dopiero za rozwinięcie,</li><li>skrótu z wyjaśnieniem, np. „Sprzedam JD” (Jedwabny Dotyk),</li><li>słów, które tylko brzmią podobnie do wulgaryzmu,</li><li>zacytowania wulgaryzmu w zgłoszeniu.</li></ul>
+      <div class="callout warn"><div class="callout-title">Dokańczanie wulgaryzmów</div>Gracz X pisze „kur”, gracz Y „wa”. Za pierwszym razem gracz Y dostaje warna. Jeśli obaj cwaniakują dalej, karę dostają obaj.</div>
+      <h2 class="doc-h2" id="zck-5">5. Obraza grup społecznych</h2>
+      <p class="doc-p">Wyzywanie albo wyśmiewanie całych grup ludzi – ze względu na narodowość, pochodzenie, niepełnosprawność itp. Nie trzeba wskazywać konkretnego gracza.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>rasistowskie teksty,</li><li>obrażanie całej narodowości,</li><li>wyśmiewanie osób z niepełnosprawnościami.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>zwykłej rozmowy o krajach, kulturze czy historii,</li><li>zacytowania obraźliwego tekstu w zgłoszeniu.</li></ul>
+      <h2 class="doc-h2" id="zck-6">6. Brak kultury</h2>
+      <p class="doc-p">Teksty, które nie są wyzwiskiem ani wulgaryzmem, ale na czacie nie powinny się pojawiać.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„japa”, „zamknij pysk”, „zamknij mordę”,</li><li>uporczywe wyśmiewanie cudzych wiadomości,</li><li>namawianie do wzajemnego wyzywania się,</li><li>szukanie zaczepki mimo zwróconej uwagi.</li></ul>
+      <div class="callout warn"><div class="callout-title">Nie za samo bycie niemiłym</div>Nie karzemy za to, że ktoś jest niemiły albo się z kimś nie zgadza. Im mocniejsze wykroczenie i im częściej się powtarza, tym wyższa kara.</div>
+      <h2 class="doc-h2" id="zck-7">7. Prowokacja</h2>
+      <p class="doc-p">Celowe zaczepianie i nakręcanie kłótni, ale bez wulgaryzmów.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>dogryzanie komuś, żeby wywołać kłótnię,</li><li>wracanie do tematu po zwróceniu uwagi,</li><li>wciąganie innych graczy w konflikt.</li></ul>
+      <div class="callout warn"><div class="callout-title">Granica z trollowaniem</div>Jeśli ktoś wmawia innym bzdury albo udaje sytuację, patrz <a href="#za-co-karac-trollowanie">Trollowanie na czacie</a>.</div>
+      <h2 class="doc-h2" id="zck-8">8. Wywołanie spamu</h2>
+      <p class="doc-p">Namawianie innych do spamowania.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Każdy pisze TERAZ SIEMA”,</li><li>„Wysyłajcie wszyscy literę A”,</li><li>„Kto napisze 20 razy XD, dostanie item”,</li><li>„Spamujcie, aż admin przyjdzie”.</li></ul>
+      <div class="callout warn"><div class="callout-title">Kara dla inicjatora</div>Karę dostaje ten, kto zaczął akcję – nawet jeśli sam nie spamował.</div>
+      <h2 class="doc-h2" id="za-co-karac-trollowanie">9. Trollowanie na czacie</h2>
+      <p class="doc-p">Robienie zamieszania dla zabawy: wprowadzanie innych w błąd, udawanie i prowokowanie.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>wmawianie graczowi, że dostał bana, kiedy to nieprawda,</li><li>napuszczanie dwóch osób na siebie,</li><li>udawanie administratora,</li><li>ciągłe zaczynanie konfliktów dla własnej rozrywki.</li></ul>
+      <div class="callout warn"><div class="callout-title">Jeden żart to nie trolling</div>Liczy się zamiar i to, czy gracz robi to ciągle.</div>
+      <h2 class="doc-h2" id="zck-10">10. Rozpowszechnianie fałszywych informacji</h2>
+      <p class="doc-p">Podawanie na czacie nieprawdy, która robi zamieszanie.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>wymyślone plotki o administracji, serwerze lub graczach, np. „jutro będzie wipe”, „ten admin bierze kasę za unbany”,</li><li>powtarzanie plotki mimo sprostowania.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>pomyłki w dobrej wierze, sprostowanej po zwróceniu uwagi,</li><li>wyrażania własnej opinii.</li></ul>
+      <div class="callout warn"><div class="callout-title">Gdy chodzi o szkodę</div>Jeśli ktoś robi to specjalnie, żeby zaszkodzić serwerowi, patrz <a href="#za-co-karac-szkoda-serwera">Działanie na szkodę serwera</a>.</div>
+      <h2 class="doc-h2" id="zck-11">11. Reklama kanału YouTube niepowiązanego z Mcextreme.pl</h2>
+      <p class="doc-p">Reklamowanie kanału, filmów albo streamów, które nie mają nic wspólnego z Mcextreme.pl.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Subskrybujcie mój kanał”, „Wbijajcie na mój nowy film”,</li><li>„Zostawcie suba, nagrywam Minecrafta”,</li><li>link do kanału na <code>/msg</code>,</li><li>ciągłe przypominanie o nowych filmach lub streamach.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>zwykłej rozmowy o YouTube i twórcach,</li><li>materiałów związanych z Mcextreme.pl,</li><li>odpowiedzi na pytanie o konkretny film bez reklamowania.</li></ul>
+      <div class="callout warn"><div class="callout-title">Samo „YouTube” to nie reklama</div>Karzemy za promowanie kanału, a nie za samo wspomnienie o nim.</div>
+      <h2 class="doc-h2" id="zck-12">12. Język obcy / inna czcionka</h2>
+      <p class="doc-p">Pisanie w obcym języku albo dziwnymi znakami, których nie da się normalnie przeczytać.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>cała rozmowa po angielsku,</li><li>ozdobne czcionki,</li><li>litery zastępowane specjalnymi znakami, żeby obejść filtr.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>nazw własnych oraz nazw itemów i mechanik z Minecrafta,</li><li>pojedynczych obcych słów,</li><li>polskich znaków,</li><li>zwykłych symboli, które nie przeszkadzają w czytaniu.</li></ul>
+      <div class="callout warn"><div class="callout-title">Sprawdź zasady</div>Zanim ukarzesz, upewnij się, jakie zasady językowe obowiązują na serwerze.</div>
+      <h2 class="doc-h2" id="zck-13">13. Nakłanianie do cheatowania</h2>
+      <p class="doc-p">Namawianie innych do używania cheatów.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Zainstaluj sobie cheaty, będziesz lepszy”,</li><li>„Wbij na huzuni, nie wykryją cię”,</li><li>„Każdy powinien grać na killaurze”,</li><li>„Mam program, który daje przewagę, pobierz go”.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>ostrzegania przed cheatami,</li><li>zgłaszania cheaterów,</li><li>rozmowy o oszustach na serwerze.</li></ul>
+      <h2 class="doc-h2" id="zck-14">14. Nadużywanie / trollowanie / nieodpowiednie użycie /helpop</h2>
+      <p class="doc-p"><code>/helpop</code> jest do zgłaszania prawdziwych problemów, nie do żartów.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Admin chodź, mam darmowe itemy”,</li><li>„HELP, HELP, HELP, HELP”,</li><li>obrażanie administratorów przez <code>/helpop</code>,</li><li>zmyślone sytuacje, np. „Ktoś mnie bije”,</li><li>wysyłanie w kółko tego samego bez żadnych nowych informacji.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>zgłaszania cheaterów, błędów i łamania regulaminu,</li><li>ponowienia zgłoszenia, gdy nikt nie zareagował,</li><li>doprecyzowania wcześniejszej wiadomości.</li></ul>
+      <h2 class="doc-h2" id="zck-15">15. Utrudnianie pracy administracji</h2>
+      <p class="doc-p">Celowe przeszkadzanie administratorowi, np. gdy sprawdza gracza albo zajmuje się zgłoszeniem.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>ciągłe pisanie do administratora, gdy sprawdza innego gracza,</li><li>ignorowanie jego poleceń podczas sprawdzania,</li><li>kłamanie i wprowadzanie administracji w błąd,</li><li>zagłuszanie rozmowy z administratorem masą wiadomości,</li><li>zbieranie grupy graczy, żeby przeszkadzali administratorowi.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>pytań o karę i próśb o wyjaśnienie decyzji,</li><li>składania odwołania,</li><li>kulturalnego wyrażania sprzeciwu.</li></ul>
+      <div class="callout warn"><div class="callout-title">Pytać można</div>Pytanie o decyzję administracji to nie utrudnianie pracy. Utrudnianiem jest celowe przeszkadzanie.</div>
+      <h2 class="doc-h2" id="zck-16">16. Obraza administracji Mcextreme.pl / serwera</h2>
+      <p class="doc-p">Wyzywanie administracji, właścicieli albo samego serwera.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Admini to debile”, „Administracja to banda idiotów”,</li><li>„Ten serwer to gówno”,</li><li>„Właściciel jest kretynem”.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>kulturalnej krytyki decyzji administracji,</li><li>mówienia, że coś na serwerze się nie podoba.</li></ul>
+      <div class="callout warn"><div class="callout-title">Krytyka to nie obraza</div>Karzemy za wyzywanie, nie za własną opinię.</div>
+      <h2 class="doc-h2" id="zck-17">17. Groźby / życzenie śmierci</h2>
+      <p class="doc-p">Zapowiadanie komuś krzywdy albo życzenie mu śmierci.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>„Jeszcze cię znajdę”, „Pożałujesz tego”, „Zrobię ci krzywdę”,</li><li>„Obyś umarł”, „Mam nadzieję, że coś ci się stanie”,</li><li>groźby wobec administracji i aluzje, o których jednoznacznie wiadomo, co znaczą.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>zwykłej rozmowy o śmierci,</li><li>zacytowania wypowiedzi w zgłoszeniu,</li><li>oczywistych żartów i gadania o walce w grze, np. „zaraz cię zabiję” przy PvP.</li></ul>
+      <h2 class="doc-h2" id="zck-18">18. Nieodpowiedni skin (liczy się też edycja mecha)</h2>
+      <p class="doc-p">Skin z treściami nieodpowiednimi dla młodszych graczy. Liczy się też edycja mecha.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>skin seksualny, wulgarny lub drastyczny,</li><li>skin z napisami obrażającymi graczy, administrację lub serwer,</li><li>skin z reklamą.</li></ul>
+      <div class="callout warn"><div class="callout-title">Nie jesteś pewien?</div>Jeśli nie wiesz, czy skin łamie zasady, zapytaj JrMod+.</div>
+      <h2 class="doc-h2" id="zck-19">19. Współpraca z cheaterem</h2>
+      <p class="doc-p">Świadome pomaganie komuś, kto używa cheatów, albo korzystanie z jego oszustwa.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>wspólne zdobywanie itemów z cheaterem, gdy gracz wie, że ten cheatuje,</li><li>przyjmowanie itemów lub waluty od cheatera, gdy wiadomo, skąd je ma,</li><li>pomaganie mu ukryć cheaty przed administracją.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>przypadkowej gry w jednej drużynie z cheaterem,</li><li>sytuacji, gdy gracz nie wiedział o cheatach,</li><li>zwykłej rozmowy z podejrzanym graczem.</li></ul>
+      <div class="callout warn"><div class="callout-title">Sam kontakt to nie współpraca</div>Trzeba pokazać, że gracz robił to świadomie.</div>
+      <h2 class="doc-h2" id="zck-20">20. Cheaty</h2>
+      <p class="doc-p">Używanie programów i klientów, które dają nieuczciwą przewagę.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>Doomsday, Grim, Ventura, Aristois, Wurst i inne klienty z cheatami,</li><li>cheaty wykryte podczas sprawdzania gracza.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>braku dowodów,</li><li>podejrzeń opartych tylko na dobrych umiejętnościach gracza,</li><li>sytuacji, które da się wyjaśnić zwykłą mechaniką Minecrafta,</li><li>fałszywych zgłoszeń.</li></ul>
+      <div class="callout ban"><div class="callout-title">100% pewności</div>Podejrzenie to powód do <a href="#proces-sprawdzania">sprawdzenia</a>, a nie do kary. Nigdy nie banujemy tylko na podstawie klipu ze skargi.</div>
+      <div class="callout warn"><div class="callout-title">Apelacja</div>Słuszna kara za cheaty nie podlega apelacji.</div>
+      <h2 class="doc-h2" id="zck-21">21. Niedozwolone modyfikacje</h2>
+      <p class="doc-p">Mody i texturepacki, które dają przewagę nad innymi graczami.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>mody pokazujące graczy, skrzynie lub moby,</li><li>automaty typu TinyTask, AutoFish, AutoPot,</li><li>texturepacki pokazujące rudy, skrzynie lub graczy przez ściany.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>modów dozwolonych, które są na liście,</li><li>modów poprawiających wygląd gry bez dawania przewagi,</li><li>braku dowodów.</li></ul>
+      <div class="callout warn"><div class="callout-title">Pełna lista</div>Wymiar kary zależy od konkretnego moda. Wszystko jest w <a href="#dozwolone-i-zakazane-modyfikacje">Dozwolone i zakazane modyfikacje</a>. Jeśli moda nie ma na liście, zapytaj JrMod+.</div>
+      <h2 class="doc-h2" id="zck-22">22. Omijanie bana</h2>
+      <p class="doc-p">Granie na innym koncie mimo bana.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>wejście na drugie konto po banie,</li><li>zakładanie nowych kont, żeby grać mimo blokady,</li><li>pożyczanie konta zbanowanemu,</li><li>pomaganie zbanowanemu w powrocie na serwer.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>błędu technicznego systemu kar,</li><li>multikont bez próby obejścia kary,</li><li>bana, który już wygasł lub został zdjęty.</li></ul>
+      <div class="callout warn"><div class="callout-title">Nicki to nie dowód</div>Podobne nicki nie wystarczą. Sprawdź, czy faktycznie doszło do obejścia kary.</div>
+      <div class="callout ban"><div class="callout-title">Brak odwołania</div>Kto omija bana, nie ma prawa do odwołania od żadnego bana.</div>
+      <h2 class="doc-h2" id="zck-23">23. Działanie na szkodę graczy</h2>
+      <p class="doc-p">Celowe robienie szkody innym graczom, na serwerze albo poza nim.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>publikowanie danych osobowych (nazwisko, telefon, adres zamieszkania, IP, hasła, PESEL itp.),</li><li>wrzucanie prywatnych rozmów, żeby komuś zaszkodzić,</li><li>grożenie ujawnieniem czyichś danych.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>przekazania informacji administracji, żeby wyjaśnić sprawę,</li><li>podawania własnych danych.</li></ul>
+      <h2 class="doc-h2" id="za-co-karac-szkoda-serwera">24. Działanie na szkodę serwera</h2>
+      <p class="doc-p">Celowe robienie szkody serwerowi Mcextreme.pl.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>organizowanie akcji przeciwko serwerowi,</li><li>celowe psucie działania serwera albo niszczenie jego zasobów,</li><li>namawianie graczy do masowego odejścia,</li><li>nadużywanie posiadanych uprawnień, żeby zaszkodzić serwerowi.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>normalnej krytyki serwera,</li><li>zgłaszania błędów,</li><li>rezygnacji z gry,</li><li>spokojnej rozmowy o innych serwerach.</li></ul>
+      <div class="callout warn"><div class="callout-title">Potrzebny zamiar</div>Krytyka, własna opinia czy odejście z serwera to nie szkoda. Trzeba pokazać, że ktoś działał celowo.</div>
+      <h2 class="doc-h2" id="zck-25">25. Wykorzystywanie błędów serwera</h2>
+      <p class="doc-p">Celowe korzystanie z błędu w grze lub pluginie, żeby coś na tym zyskać.</p>
+      <p class="pun-sub">Karzemy za:</p>
+      <ul class="bul"><li>kopiowanie itemów lub zdobywanie waluty dzięki błędowi,</li><li>powtarzanie błędu wiele razy,</li><li>ukrywanie błędu przed administracją, żeby dalej z niego korzystać,</li><li>rozpowiadanie innym, jak go wykorzystać.</li></ul>
+      <p class="pun-sub">Nie karzemy za:</p>
+      <ul class="bul"><li>przypadkowego trafienia na błąd,</li><li>zgłoszenia go administracji,</li><li>przestania korzystania z błędu po zauważeniu problemu.</li></ul>
+      <div class="callout ban"><div class="callout-title">Odwołanie</div>Odwołanie jest możliwe po <strong>3 miesiącach</strong> z resetem konta, ale nic nie obiecujemy graczowi – czas może się przedłużyć nawet na zawsze.</div>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#nadawanie-kar-i-apelacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Nadawanie kar i apelacje</span></a>
+      <a href="#mentorstwo" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Mentorstwo <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 01.11.2026 · przez <strong>nveisk</strong></p>
+  </section>
+
 
 <!-- PAGE: Mentorstwo -->
   <section id="mentorstwo" class="doc-page-section" style="display: none;">
@@ -1726,7 +1938,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
             <p class="doc-p">Mentor powinien przekazywać rzetelne informacje dotyczące przebiegu nauki, mocnych stron podopiecznego oraz zagadnień, nad którymi dana osoba powinna jeszcze popracować.</p>
     </article>
     <footer class="doc-pagination">
-      <a href="#nadawanie-kar-i-apelacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Nadawanie kar i apelacje</span></a>
+      <a href="#za-co-karac" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Za co karać?</span></a>
       <a href="#problemy-graczy-i-obsluga" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Problemy graczy i obsługa <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
