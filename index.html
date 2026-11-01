@@ -1,6 +1,23 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+   PRZERWA TECHNICZNA
+   Zmień wartość PRZERWA_TECHNICZNA w skrypcie poniżej:
+     true  = przerwa WŁĄCZONA  (strona nie działa, widać komunikat)
+     false = przerwa WYŁĄCZONA (strona działa normalnie)
+   Gdy przerwa jest włączona, administracja wchodzi na stronę
+   przez link /podrecznik/adminpo (zamiast /podrecznik) - tam
+   strona działa normalnie. Pozostali widzą komunikat.
+  ============================================================
+-->
 <html lang="pl">
 <head>
+  <script>
+    const PRZERWA_TECHNICZNA = true; // <-- true = włączona, false = wyłączona
+    // Podczas przerwy administracja wchodzi przez link /podrecznik/adminpo (zamiast /podrecznik)
+    const JEST_ADMINPO = /\/adminpo\/?$/i.test(location.pathname);
+    if (PRZERWA_TECHNICZNA && !JEST_ADMINPO) document.documentElement.classList.add('przerwa-on');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#141724">
@@ -974,9 +991,30 @@ html[data-theme="white"] .ban-tag.var{color:#475569}
 
 .last-updated{margin-top:1.75rem;padding-top:1rem;border-top:1px solid var(--border-subtle);font-size:.82rem;color:var(--text-muted);text-align:center}
 .last-updated strong{color:var(--text-body);font-weight:600}
+
+/* Przerwa techniczna */
+#przerwa{display:none}
+html.przerwa-on{overflow:hidden}
+html.przerwa-on body>*:not(#przerwa){display:none!important}
+html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;align-items:center;justify-content:center;padding:1.5rem;background:var(--bg-page);text-align:center}
+#przerwa .przerwa-box{max-width:520px}
+#przerwa .przerwa-icon{font-size:3rem;color:var(--red-main);margin-bottom:1rem}
+#przerwa h1{font-family:var(--font-pixel);font-size:1.5rem;color:var(--text-pure);margin:0 0 1rem}
+#przerwa p{color:var(--text-lead);line-height:1.7;margin:.4rem 0;font-size:1rem}
+#przerwa .przerwa-small{color:var(--text-muted);font-size:.92rem;margin-top:1.25rem}
 </style>
 </head>
 <body>
+
+  <!-- Komunikat przerwy technicznej (widoczny tylko gdy PRZERWA_TECHNICZNA = true) -->
+  <div id="przerwa">
+    <div class="przerwa-box">
+      <div class="przerwa-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+      <h1>PRZERWA TECHNICZNA</h1>
+      <p>Podręcznik administracji jest chwilowo niedostępny.</p>
+      <p class="przerwa-small">Jeśli uważasz, że to błąd, skontaktuj się z <span class="rank-badge rank-admin">nveisk</span>.</p>
+    </div>
+  </div>
 
   <!-- Clean Header -->
   <header class="clean-header">
@@ -1043,6 +1081,36 @@ html[data-theme="white"] .ban-tag.var{color:#475569}
             <a href="#obowiazki-i-permisje" class="sidebar-link" data-target="obowiazki-i-permisje">
               <i class="fa-solid fa-user-shield" style="color: #06bef1;"></i>
               <span class="item-title">Obowiązki i permisje</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-group" id="group-nowi">
+        <div class="sidebar-group-header" onclick="toggleSidebarGroup('group-nowi')">
+          <div class="sidebar-group-header-left">
+            <i class="fa-solid fa-user-plus" style="color: #4ade80;"></i>
+            <span class="group-title">Dla nowych</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sidebar-group-toggle"></i>
+        </div>
+        <ul class="sidebar-group-list">
+          <li class="sidebar-item">
+            <a href="#qa" class="sidebar-link" data-target="qa">
+              <i class="fa-solid fa-circle-question" style="color: #5b8def;"></i>
+              <span class="item-title">Q&amp;A</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
+            <a href="#supporci" class="sidebar-link" data-target="supporci">
+              <i class="fa-solid fa-headset" style="color: #06bef1;"></i>
+              <span class="item-title">Supporci</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
+            <a href="#chatmodzi" class="sidebar-link" data-target="chatmodzi">
+              <i class="fa-solid fa-comments" style="color: #f59e0b;"></i>
+              <span class="item-title">Chatmodzi</span>
             </a>
           </li>
         </ul>
@@ -1395,7 +1463,7 @@ html[data-theme="white"] .ban-tag.var{color:#475569}
       </div>
 
       <h2 class="doc-h2" id="op-2">Permisje Minecraft</h2>
-      <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Op</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Za niedługo zostaną podane dokładniejsze permisje.</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>InvSee (<code>/invsee</code>)</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportowanie graczy do siebie (<code>/tphere</code>)</li><li>Odbanowywanie użytkowników (<code>/unban</code>)</li><li>Nadawanie backupów (<code>/backup</code>)</li><li>Nieśmiertelność (<code>/god</code>)</li><li>Możliwość pobierania ProcessHackera / SystemInformera podczas sprawdzania</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportacja (<code>/tp</code>)</li><li>Banowanie (<code>/ban</code>)</li><li>Kickowanie (<code>/kick</code>)</li><li>Latanie (<code>/fly</code>)</li><li>Vanish (<code>/v</code>)</li><li>Sprawdzanie historii kar gracza (<code>/punishhistory &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego bana (<code>/checkban &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego muta (<code>/checkmute &lt;nick&gt;</code>)</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Odmutowywanie (<code>/unmute</code>)</li><li>Sprawdzanie (<code>/sprawdz</code>)</li><li>Mutowanie (<code>/mute</code>)</li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><p class="perm-none">Brak dodatkowych permisji.</p></div></div>
+      <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Op</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Za niedługo zostaną podane dokładniejsze permisje.</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>InvSee (<code>/invsee</code>)</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportowanie graczy do siebie (<code>/tphere</code>)</li><li>Odbanowywanie użytkowników (<code>/unban</code>)</li><li>Nadawanie backupów (<code>/backup</code>)</li><li>Nieśmiertelność (<code>/god</code>)</li><li>Możliwość pobierania ProcessHackera / SystemInformera podczas sprawdzania</li><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Teleportacja (<code>/tp</code>)</li><li>Banowanie (<code>/ban</code>)</li><li>Kickowanie (<code>/kick</code>)</li><li>Latanie (<code>/fly</code>)</li><li>Vanish (<code>/v</code>)</li><li>Sprawdzanie historii kar gracza (<code>/punishhistory &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego bana (<code>/checkban &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego muta (<code>/checkmute &lt;nick&gt;</code>)</li><li>O nowych permisjach na Extreme Plusie dowiesz się na egzaminie na Pomocnika.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Odmutowywanie (<code>/unmute</code>)</li><li>Sprawdzanie (<code>/sprawdz</code>)</li><li>Mutowanie (<code>/mute</code>)</li><li>Możliwość mutowania użytkowników na Extreme Plusie.</li><li>Możliwość odmutowania użytkowników na Extreme Plusie.</li><li>Dostęp do panelu z voicechatem na Extreme Plusie.</li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><p class="perm-none">Brak dodatkowych permisji.</p></div></div>
 
       <h2 class="doc-h2" id="op-3">Permisje Discord</h2>
       <div class="perm-grid"><div class="perm-card rank-admin"><div class="perm-head"><span class="rank-badge rank-admin">Administrator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Administrator.</li></ul></div><div class="perm-card rank-jradmin"><div class="perm-head"><span class="rank-badge rank-jradmin">JuniorAdmin</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Zarządzanie rolami – dodawanie, usuwanie.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-mod"><div class="perm-head"><span class="rank-badge rank-mod">Moderator</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Dziennik zdarzeń.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-jrmod"><div class="perm-head"><span class="rank-badge rank-jrmod">JuniorMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Zarządzanie kanałami ticketów (zmiana nazwy, przesuwanie).</li><li class="inherit">To co ranga niżej (uprawnienia ADMINISTRACJA MCEXTREME.PL)</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Wyciszanie dźwięku oraz mikrofonu graczom na kanałach głosowych.</li><li>Uprawnienia rangi <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span></li></ul></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Uprawnienia rangi <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span></li></ul></div><div class="perm-card rank-adminrole"><div class="perm-head"><span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Nakładanie przerw (timeoutów).</li><li>Zarządzanie wiadomościami.</li><li>Wyciszanie dźwięku członkom kanału głosowego.</li><li>Możliwość wejścia na kanał Pomocy oraz przenoszenie graczy na pomoc i inne kanały.</li></ul></div><div class="perm-card rank-admindc"><div class="perm-head"><span class="rank-badge rank-admindc">Administrator Discord</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li class="inherit">To co rangi niżej</li></ul></div><div class="perm-card rank-gcmd"><div class="perm-head"><span class="rank-badge rank-gcmd">Global ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Dziennik zdarzeń.</li><li>Zarządzanie pseudonimami.</li><li>Zarządzanie kanałami ticketów (zmiana nazwy, przesuwanie).</li><li>Dostęp do wszystkich ticketów.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-cmdplus"><div class="perm-head"><span class="rank-badge rank-cmdplus">ChatMod+</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Możliwość banowania użytkowników.</li><li class="inherit">To co ranga niżej</li></ul></div><div class="perm-card rank-cmd"><div class="perm-head"><span class="rank-badge rank-cmd">ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Nadawanie przerw (timeoutów).</li><li>Usuwanie przerw.</li><li>Wchodzenie na pełne kanały głosowe.</li><li>Wyłączanie dźwięku członkom na kanałach głosowych.</li><li>Wyciszanie członków na kanałach głosowych.</li><li>Zarządzanie wiadomościami.</li><li>Możliwość wejścia na kanał Pomocy oraz przenoszenie graczy na pomoc i inne kanały.</li></ul></div></div>
@@ -1403,7 +1471,7 @@ html[data-theme="white"] .ban-tag.var{color:#475569}
 
     <footer class="doc-pagination">
       <a href="#regulamin-backupow" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin backupów</span></a>
-      <a href="#podstawowe-informacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Podstawowe informacje <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="#qa" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Q&amp;A <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
 
@@ -1549,6 +1617,86 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
   </section>
 
   <!-- PAGE: Podstawowe informacje -->
+  <section id="qa" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Dla nowych</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Q&amp;A</span></div>
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">Q&amp;A</h1>
+        <p class="doc-lead">Odpowiedzi na najczęstsze pytania nowych członków administracji.</p>
+      </header>
+      <h2 class="doc-h2" id="qa-1">1. Jak poprawnie używać komend administracyjnych?</h2>
+      <p class="doc-p">Graczy mutujemy za łamanie regulaminu komendą <code>/mute</code>. Na Survivalu i na SkyBlocku komenda jest zbudowana inaczej:</p><ul class="bul"><li><span class="rank-badge rank-admin">Survival Extreme</span>: <code>/mute &lt;nick&gt; &lt;czas wyciszenia, np. 1d, 5h&gt; &lt;powód&gt;</code></li><li><span class="rank-badge rank-support">SkyBlock</span>: <code>/mute &lt;gracz&gt; true &lt;czas wyciszenia, np. 1d, 5h&gt; &lt;powód&gt;</code></li></ul>
+      <h2 class="doc-h2" id="qa-2">2. W jakich sytuacjach mam brać gracza na sprawdzanie?</h2>
+      <p class="doc-p">Jako <span class="rank-badge rank-support">Support</span> możesz wziąć gracza na sprawdzanie, gdy:</p><ul class="bul"><li>gracz mocno wyświetla się na antycheacie za Hitboxy, BadPacketsJ lub jakiekolwiek inne BadPackets, FailReach albo Reach – jeśli alerty mocno wyskakują,</li><li>inny gracz zgłosi go wraz z dowodami, nawet takimi jak wysłany screenshot,</li><li>sam masz podejrzenia, że ktoś używa cheatów.</li></ul><div class="callout warn"><div class="callout-title">Ważna uwaga</div>Zajrzyj na kanał <strong>#podejrzani-o-cheaty</strong>. Jeśli często pojawia się tam jeden gracz, możesz go wziąć na sprawdzanie. Na spawnie są boty z Extreme Plusa, które zbierają informacje i często wyświetlają się w alertach.</div>
+      <h2 class="doc-h2" id="qa-3">3. Czy mogę sam/a sprawdzać?</h2>
+      <p class="doc-p">Jako <span class="rank-badge rank-support">Support</span> możesz sprawdzać samodzielnie dopiero po <strong>3 sprawdzaniach ze swoim mentorem</strong>. Jeśli nie czujesz się na siłach, sprawdzaj dalej razem z mentorem – będzie dawał Ci wskazówki i uczył Cię na błędach. Szczegóły: <a href="#proces-sprawdzania">Proces sprawdzania</a>.</p>
+      <h2 class="doc-h2" id="qa-4">4. Jak mam przyjmować skargi na graczy?</h2>
+      <p class="doc-p">Jako <span class="rank-badge rank-support">Support</span> możesz przyjmować tylko skargi, które wymagają <strong>muta</strong>. Do skargi potrzebny jest dowód w postaci screenshota z paskiem zadań, na którym widać datę i godzinę. Taki dowód jest niepodważalny.</p><p class="doc-p">Karę nadajesz <strong>zgodnie z <a href="#taryfikator-minecraft">Taryfikatorem Minecraft</a></strong>, a obok powodu dopisujesz <code>//skarga</code>. Przykład: <code>Wulgaryzmy //skarga</code></p><p class="doc-p">Jeśli gracz zgłasza poważną sprawę, np. rozpowszechnianie jego danych osobowych albo życzenie śmierci, ale nie ma dowodu, a zna tylko datę i godzinę, zgłoś się do <span class="rank-badge rank-jrmod">JrMod+</span>. Sprawdzi on na Extreme Plusie w czacie, czy to zdarzenie faktycznie miało miejsce.</p>
+      <h2 class="doc-h2" id="qa-5">5. Za co zgłaszać innych na bana?</h2>
+      <p class="doc-p">Jako <span class="rank-badge rank-support">Support</span> nie masz permisji do banowania (zgodnie z <a href="#obowiazki-i-permisje">Obowiązkami i permisjami</a>). Gracza musisz zgłosić, gdy:</p><ul class="bul"><li>obraża członków administracji,</li><li>reklamuje inny serwer,</li><li>wykorzystuje błędy,</li><li>robi cokolwiek innego, za co jest ban.</li></ul><p class="doc-p">Do zgłoszenia potrzebujesz screena z paskiem zadań. Najlepiej zgłaszaj graczy osobom z permisjami do banowania, czyli od rangi <span class="rank-badge rank-pomocnik">Pomocnik+</span>.</p>
+      <h2 class="doc-h2" id="qa-6">6. Co mam zrobić, jak nie wiem, co robić?</h2>
+      <p class="doc-p">Wszystkie Twoje obowiązki są rozpisane w sekcji <a href="#obowiazki-i-permisje">Obowiązki i permisje</a>. Jeśli nudzisz się na serwerze i nic się nie dzieje, napisz do swojego mentora – wyznaczy Ci jakąś pracę.</p>
+      <h2 class="doc-h2" id="qa-7">7. W jakiej sytuacji mam pingować np. w1eloo, xKredkę, Kosiarę albo Doknesa?</h2>
+      <p class="doc-p">Rangę <span class="rank-badge rank-admin">Admin</span>, czyli <strong>xKredkę i w1eloo</strong>, oznaczamy, gdy:</p><ul class="bul"><li>jest zgłoszenie błędu z zakupami,</li><li>jest błąd, przez który ze skrzyni wypadł dirt z nazwą, że admin źle skonfigurował item (zalecany klip z tego),</li><li>jest błąd, przy którym trzeba nadać rangę lub item,</li><li>kompetencje rang niższych, czyli do <span class="rank-badge rank-mod">Moda</span> włącznie, są za niskie, żeby rozwiązać sprawę.</li></ul><p class="doc-p"><strong>Kosiarę</strong> oznaczamy tylko przy resecie konta, zablokowane ip albo gdy problem dotyczy tego, że gracz jest aktywny. Wszystko jest wyjaśnione w <a href="#problemy-graczy-i-obsluga">Problemy graczy i obsługa</a>. W skrajnych przypadkach pytajcie <span class="rank-badge rank-jrmod">JM+</span>.</p><div class="callout warn"><div class="callout-title">Ważna uwaga</div>Jeśli gracz chce pisać z technikiem (<span class="rank-badge rank-stazysta">Technik</span>) serwera, nie jest to możliwe. Wszystkie sprawy przekazujemy do rangi <span class="rank-badge rank-admin">Admin</span>.</div>
+      <h2 class="doc-h2" id="qa-8">8. Kiedy pingować JrMod+?</h2>
+      <p class="doc-p">Oznaczamy tylko wtedy, gdy uważasz, że jest potrzebny w aktualnym tickecie, np. do nadania backupu, albo gdy nie znasz odpowiedzi na pytanie lub czegoś nie możesz zrobić.</p>
+      <h2 class="doc-h2" id="qa-9">9. Jak mam się zwracać do graczy?</h2>
+      <p class="doc-p">Wystarczy, że będziesz kulturalny/a. Wszystkie informacje znajdziesz w sekcji <a href="#podstawowe-informacje">Podstawowe informacje</a>.</p>
+      <h2 class="doc-h2" id="qa-10">10. Co jeśli nadałem/am muta złej osobie?</h2>
+      <p class="doc-p">Natychmiast zdejmij muta komendą <code>/unmute</code> i przeproś gracza za pomyłkę na <code>/msg</code>.</p>
+      <h2 class="doc-h2" id="qa-11">11. Czy w okresie próbnym, czyli jako Support, mogę wziąć urlop?</h2>
+      <p class="doc-p">Jasne. Urlop możesz wziąć zawsze, jeśli nie możesz pełnić obowiązków, tylko musisz zgłosić to na Discordzie ekipy na kanale #Zgłoś-urlop.</p>
+      <h2 class="doc-h2" id="qa-12">12. Czy jako Support mogę brać udział w eventach Doknesa i eventach administracyjnych?</h2>
+      <p class="doc-p">Jasne, możesz brać udział we wszystkich takich eventach i nawet dostawać nagrody – oczywiście jeśli nie oszukiwałeś/aś.</p>
+      <h2 class="doc-h2" id="qa-13">13. Co jeśli chcę się przenieść z rangą?</h2>
+      <p class="doc-p">Jeśli chcesz przejść z rangi <span class="rank-badge rank-cmd">Chatmod</span> na <span class="rank-badge rank-support">Support</span>a, musisz to uzgodnić z <span class="rank-badge rank-admin">Admin</span> i najprawdopodobniej napisać ponownie podanie na rangę. Działa to też w drugą stronę.</p>
+      <h2 class="doc-h2" id="qa-14">14. Mam spory staż na randze i nie dostaję awansu. Co robię źle?</h2>
+      <p class="doc-p">Napisz do rangi <span class="rank-badge rank-admin">Admin</span> i wyjaśnij sytuację.</p>
+      <h2 class="doc-h2" id="qa-15">15. Czy banujemy graczy, którzy obrażają administrację na Discordzie?</h2>
+      <p class="doc-p">Tak. Banujemy za obrazę członków administracji także z Discorda.</p>
+      <h2 class="doc-h2" id="qa-16">16. Jak ukarać kogoś na voice chacie, jeśli nie ma go w pobliżu?</h2>
+      <p class="doc-p">Jeśli nie możesz znaleźć gracza, żeby nadać mu muta, wejdź na panel Extreme Plusa, w sekcję <strong>Voicechat</strong> po lewej stronie, a potem kliknij <strong>Wyciszenia</strong>. Tam na pewno się odnajdziesz.</p>
+      <h2 class="doc-h2" id="qa-17">17. Kiedy kończy mi się okres próbny?</h2>
+      <p class="doc-p">Wszystkie informacje o okresie próbnym znajdziesz w kategorii <strong>Dla nowych → <a href="#supporci">Supporci</a></strong>.</p>
+      <h2 class="doc-h2" id="qa-18">18. Ile ticketów dziennie mam robić?</h2>
+      <p class="doc-p">Cała nasza administracja jest bardzo aktywna, więc ticketów do zrobienia jest niewiele. Jeśli jakiś się pojawi, Twoim obowiązkiem jest go wziąć i pomóc graczowi. Nie ma określonej liczby ticketów, kar ani sprawdzeń do zrobienia.</p>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#obowiazki-i-permisje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Obowiązki i permisje</span></a>
+      <a href="#supporci" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Supporci <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <section id="supporci" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Dla nowych</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Supporci</span></div>
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">SUPPORCI</h1>
+        <p class="doc-lead">Informacje dla nowych Supportów, w tym o okresie próbnym.</p>
+      </header>
+      <div class="callout warn"><div class="callout-title">W przygotowaniu</div>Ta sekcja zostanie uzupełniona wkrótce.</div>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#qa" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Q&amp;A</span></a>
+      <a href="#chatmodzi" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Chatmodzi <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
+  <section id="chatmodzi" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Dla nowych</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Chatmodzi</span></div>
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">CHATMODZI</h1>
+        <p class="doc-lead">Informacje dla nowych Chatmodów.</p>
+      </header>
+      <div class="callout warn"><div class="callout-title">W przygotowaniu</div>Ta sekcja zostanie uzupełniona wkrótce.</div>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#supporci" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Supporci</span></a>
+      <a href="#podstawowe-informacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Podstawowe informacje <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+  </section>
+
   <section id="podstawowe-informacje" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Podstawowe informacje</span></div>
     <article class="doc-article-body">
@@ -1638,7 +1786,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <p class="doc-p"><strong>Administracja powinna być przykładem dla społeczności. Nie możemy wymagać od graczy kultury, przestrzegania zasad i odpowiedniego zachowania, jeżeli sami nie potrafimy stosować tych samych standardów.</strong></p>
     </article>
     <footer class="doc-pagination">
-      <a href="#obowiazki-i-permisje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Obowiązki i permisje</span></a>
+      <a href="#chatmodzi" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Chatmodzi</span></a>
       <a href="#nadawanie-kar-i-apelacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Nadawanie kar i apelacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
   </section>
