@@ -13,7 +13,7 @@
 <html lang="pl">
 <head>
   <script>
-    const PRZERWA_TECHNICZNA = true; // <-- true = włączona, false = wyłączona
+    const PRZERWA_TECHNICZNA = false; // <-- true = włączona, false = wyłączona
     // Podczas przerwy administracja wchodzi przez link /podrecznik/adminpo (zamiast /podrecznik)
     const JEST_ADMINPO = /\/adminpo\/?$/i.test(location.pathname);
     if (PRZERWA_TECHNICZNA && !JEST_ADMINPO) document.documentElement.classList.add('przerwa-on');
