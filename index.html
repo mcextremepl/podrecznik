@@ -86,6 +86,7 @@ button {
   font-family: inherit;
 }
 
+/* Header Navbar */
 .clean-header {
   height: var(--header-h);
   background: var(--bg-header);
@@ -168,6 +169,7 @@ button {
   border: 1px solid rgba(var(--ov-rgb), 0.15);
 }
 
+/* Rank Badges - tinted pill with soft glow */
 .rank-badge {
   --rc: #9aa5bc;
   display: inline-block;
@@ -204,6 +206,7 @@ button {
 .rank-cmdplus   { --rc: #ff7b00; }
 .rank-gcmd      { --rc: #c27c0e; }
 
+/* Permission / duties cards */
 .perm-grid { display: flex; flex-direction: column; gap: 0.9rem; margin: 1.25rem 0 2rem; }
 .perm-card {
   --rc: #9aa5bc;
@@ -235,12 +238,14 @@ button {
 .duty-card ul.bul { margin: 0.4rem 0 0; }
 .duty-card .sub-bul { margin: .3rem 0 .2rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: .25rem; list-style: circle; }
 
+/*x*/.sidebar-author-old { display:flex; flex-direction:column; align-items:center; gap:.5rem; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--border-subtle); color: var(--text-pure); font-size:.7rem; }
 .sidebar-author img { width:40px; height:40px; image-rendering:pixelated; border-radius:4px; border:2px solid var(--border-sheet); box-shadow:0 0 12px var(--red-glow); }
 .problem-list{display:flex;flex-direction:column;gap:.8rem;margin:1.25rem 0 2rem}
 .problem-card{background:var(--bg-card);border:1px solid var(--border-sheet);border-left:4px solid var(--red-main);border-radius:8px;padding:.85rem 1.1rem 1rem}
 .pc-title{font-family:var(--font-pixel);font-size:.85rem;color: var(--text-pure);line-height:1.5;margin-bottom:.5rem}
 .pc-row{margin:.3rem 0 0;line-height:1.7;font-size:.98rem}
 .pc-label{display:inline-block;font-family:var(--font-pixel);font-size:.66rem;color:var(--red-main);background:rgba(var(--accent-rgb),.12);border:1px solid rgba(var(--accent-rgb),.25);border-radius:4px;padding:.05rem .45rem;margin-right:.5rem;text-transform:uppercase;vertical-align:middle}
+/* Layout & Sidebar */
 .docs-layout {
   display: flex;
   max-width: none;
@@ -355,6 +360,7 @@ button {
   font-weight: 600;
 }
 
+/* Main Content Area */
 .docs-content {
   flex: 1;
   min-width: 0;
@@ -423,6 +429,7 @@ button {
   font-weight: 400;
 }
 
+/* Rules list */
 .rules-list {
   display: flex;
   flex-direction: column;
@@ -439,6 +446,7 @@ button {
   line-height: 1.8;
 }
 
+
 .rule-num {
   font-family: var(--font-pixel);
   color: var(--red-main);
@@ -446,6 +454,7 @@ button {
   margin-right: 0.2rem;
 }
 
+/* Code Block Styles with Copy Button */
 .code-block-container {
   position: relative;
   background: var(--bg-code);
@@ -512,6 +521,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   text-shadow: none;
 }
 
+/* Navigation Buttons */
 .doc-pagination {
   display: flex;
   justify-content: space-between;
@@ -560,6 +570,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   color: var(--text-pure);
 }
 
+/* Table of Contents */
 .docs-toc {
   width: 250px;
   flex-shrink: 0;
@@ -599,6 +610,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   padding-left: 4px;
 }
 
+/* Search Modal */
 .search-modal-overlay {
   position: fixed;
   inset: 0;
@@ -774,6 +786,7 @@ mark.mark-info, mark.mark-warning, mark.mark-primary, mark.mark-purple {
   .clean-header { padding: 0 1rem; }
 }
 
+/* Process pages */
 kbd{font-family:var(--font-pixel);font-size:.72rem;background:rgba(var(--ov-rgb),.1);border:1px solid rgba(var(--ov-rgb),.2);border-bottom-width:2px;border-radius:4px;padding:.1rem .4rem;color: var(--text-pure);white-space:nowrap}
 .doc-article-body code{font-family:Consolas,'Courier New',monospace;font-size:.88em;background:rgba(var(--ov-rgb),.07);border:1px solid var(--border-sheet);border-radius:4px;padding:.05rem .35rem;color:var(--code-inline);word-break:break-word}
 .code-block-container code{background:none;border:none;padding:0;color:inherit}
@@ -794,6 +807,7 @@ ul.bul{margin:.5rem 0 1.25rem;padding-left:1.4rem;display:flex;flex-direction:co
 .doc-table td{padding:.6rem .9rem;border-bottom:1px solid var(--border-subtle);vertical-align:top}
 .doc-table tr:last-child td{border-bottom:none}
   
+/* ===== THEMES ===== */
 :root{--accent-rgb:255,51,51;--ov-rgb:255,255,255;--bg-code:#11141f;--bg-active:#1d2233;--scroll:#2c3348;--scroll-hover:#3a4260;--code-text:#4ade80;--code-inline:#ffb4b4;--modal-bg:rgba(20,24,38,.94);--overlay:rgba(8,10,16,.82);--pattern:rgba(255,255,255,.015);--deco:"";--sw-a:#ff3333;--sw-b:#0f1118}
 html[data-theme="white"]{color-scheme:light;--red-main:#dc2626;--red-deep:#b91c1c;--accent-rgb:220,38,38;--red-glow:rgba(220,38,38,.25);--ov-rgb:15,20,40;--bg-page:#f3f5fa;--bg-sidebar:#fff;--bg-header:#fff;--bg-card:#fff;--border-sheet:#dde2ee;--text-pure:#0f1320;--text-body:#232a3b;--text-muted:#5d6779;--text-lead:#3a4356;--bg-code:#f0f3fa;--bg-active:#fdecec;--scroll:#c5ccdd;--scroll-hover:#a9b2c8;--code-text:#166534;--code-inline:#b91c1c;--modal-bg:rgba(255,255,255,.97);--overlay:rgba(30,35,55,.55);--pattern:transparent}
 html[data-theme="halloween"]{--red-main:#ff7a00;--red-deep:#d96200;--accent-rgb:255,122,0;--red-glow:rgba(255,122,0,.45);--bg-page:#120a1a;--bg-sidebar:#170d20;--bg-header:#1b1028;--bg-card:#211433;--border-sheet:#3b2456;--text-body:#f1e6ff;--text-muted:#b79fd1;--text-lead:#d9c6ef;--bg-code:#0d0714;--bg-active:#2c1a44;--scroll:#3b2456;--scroll-hover:#533377;--code-text:#b6ff5c;--code-inline:#ffb36b;--modal-bg:rgba(27,16,40,.95);--overlay:rgba(10,4,16,.85);--pattern:rgba(255,122,0,.03);--deco:"🎃"}
@@ -801,6 +815,7 @@ body{background-image:linear-gradient(45deg,var(--pattern) 25%,transparent 25%),
 body{overflow-x:clip}body{transition:background-color .25s,color .25s}
 
 :root{--red-main:#ff4d4d;--accent-rgb:255,77,77;--red-glow:rgba(255,77,77,.4);--bg-page:#000;--bg-sidebar:#050505;--bg-header:#0a0a0a;--bg-card:#0e0e0e;--border-sheet:#222;--bg-code:#070707;--bg-active:#161616;--scroll:#2a2a2a;--scroll-hover:#3a3a3a;--pattern:transparent;--modal-bg:rgba(10,10,10,.96);--overlay:rgba(0,0,0,.88);--text-body:#e8e8e8;--text-muted:#9a9a9a}
+/* ===== AESTHETICS ===== */
 :root{--header-h:calc(60px + env(safe-area-inset-top,0px))}
 *{-webkit-tap-highlight-color:transparent}
 .clean-header{height:var(--header-h);padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg-header) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-sheet)}
@@ -834,6 +849,7 @@ body{overflow-x:clip}body{transition:background-color .25s,color .25s}
 .doc-p mark{color:var(--text-muted)}
 :focus-visible{outline:2px solid var(--red-main);outline-offset:2px}
 
+/* ===== FOOTER + THEMES UI ===== */
 .site-footer{border-top:1px solid var(--border-sheet);background:var(--bg-sidebar);padding:2rem 1.5rem calc(2rem + env(safe-area-inset-bottom,0px))}
 .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.75rem 3rem;align-items:center;justify-content:space-between}
 .footer-label{font-family:var(--font-pixel);font-size:.68rem;color:var(--text-muted);letter-spacing:.06em;display:block;margin-bottom:.55rem}
@@ -851,6 +867,7 @@ body{overflow-x:clip}body{transition:background-color .25s,color .25s}
 #navBackdrop{display:none}
 @media(max-width:1200px){.docs-toc{display:none!important}}
 
+/* ===== MOBILE ===== */
 @media(max-width:860px){
   .menu-btn{display:inline-flex}
   .clean-header{padding-left:.75rem;padding-right:.75rem}
@@ -886,6 +903,7 @@ body{overflow-x:clip}body{transition:background-color .25s,color .25s}
   .theme-picker{width:100%}.theme-btn{flex:1 1 calc(50% - .5rem);justify-content:flex-start}
 }
 
+/* ===== RANGI ===== */
 .rank-cmd,.perm-card.rank-cmd,.rank-badge.rank-cmd{--rc:#c53f06}
 .rank-cmdplus,.perm-card.rank-cmdplus,.rank-badge.rank-cmdplus{--rc:#994006}
 .rank-gcmd,.perm-card.rank-gcmd,.rank-badge.rank-gcmd{--rc:#c27c0e}
@@ -913,6 +931,7 @@ body{overflow-x:clip}body{transition:background-color .25s,color .25s}
 .rank-badge.rank-doknes{background-image:url("https://files.catbox.moe/c9xg8u.gif")}
 html[data-theme="white"] .rank-adminrole{--rc:#64748b}
 
+/* naglowki stron jednolite (jak Taryfikator Discord) */
 .doc-header{background:none;border:none;border-radius:0;padding:0;margin-bottom:1.25rem}
 .doc-header .doc-title{margin-bottom:.85rem}
 .doc-header .doc-lead{font-size:1.05rem;color:var(--text-body);line-height:1.85;margin-bottom:1.25rem}
@@ -929,6 +948,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
 </head>
 <body>
 
+  <!-- Clean Header -->
   <header class="clean-header">
     <div class="header-left">
       <button id="mobileMenuBtn" class="menu-btn" aria-label="Menu">
@@ -950,8 +970,10 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </div>
   </header>
 
+  <!-- Layout Container -->
   <div class="docs-layout">
 
+    <!-- Left Sidebar with Icons -->
     <aside class="docs-sidebar" id="sidebar">
       
       <div class="sidebar-group" id="group-zasady">
@@ -1091,9 +1113,11 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
       </aside>
     <div id="navBackdrop"></div>
 
+    <!-- Center Content -->
     <main class="docs-content">
       <div class="docs-content-inner">
         
+  <!-- PAGE: Regulamin administracji -->
   <section id="regulamin-administracji" class="doc-page-section" style="display: block;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1147,6 +1171,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+  <!-- PAGE: Taryfikator Minecraft -->
   <section id="taryfikator-minecraft" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1194,6 +1219,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+  <!-- PAGE: Taryfikator Discord -->
   <section id="taryfikator-discord" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1262,6 +1288,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
   </section>
 
   
+  <!-- PAGE: Regulamin backupów -->
   <section id="regulamin-backupow" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1305,6 +1332,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+  <!-- PAGE: Obowiązki i permisje -->
   <section id="obowiazki-i-permisje" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1341,6 +1369,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+<!-- PAGE: Formułki -->
   <section id="formulki" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1360,9 +1389,119 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
         </p>
       </header>
 
-      <div class="callout warn"><div class="callout-title">W trakcie tworzenia</div>
-        Jesteśmy w trakcie roboty! Ta sekcja jest jeszcze w budowie – formułki pojawią się tutaj niebawem. :)
-      </div>
+            <h2 class="doc-h2" id="fm-1">Mute na zawsze – Regulamin VC (weryfikacja wieku)</h2>
+      <p class="doc-p"><strong>Kiedy:</strong> Gracz otrzymał permanentny mute na voicechacie z powodem „Regulamin VC” (brak zgody rodzica / weryfikacji wieku).</p>
+      <div class="code-block-container"><div class="code-block-header"><span>Mute na zawsze – Regulamin VC</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code># Zgoda rodzica / Weryfikacja wieku
+
+Jeśli otrzymałeś permanentne wyciszenie na czacie głosowym z powodem Regulamin VC na Extremeplus, oznacza to, że administrator podejrzewa złamanie regulaminu Voicechata:
+
+&gt; **Punkt 9. Osoby małoletnie:** Jeśli masz mniej niż 16 lat, do korzystania z moda wymagana jest zgoda rodzica lub opiekuna prawnego.
+
+### Jak rozwiązać ten problem?
+- **Jeśli masz ukończone 16 lat:**
+ Konieczna będzie weryfikacja wieku na podstawie dokumentu tożsamości. Umów się na rozmowę z administratorem &lt;@830044092083863592&gt; .
+- **Jeśli masz mniej niż 16 lat i posiadasz zgodę rodzica:**
+ Musisz przyjść na rozmowę głosową z administratorem &lt;@830044092083863592&gt; w obecności rodzica/opiekuna prawnego, aby ustnie potwierdził wyrażenie zgody na korzystanie przez Ciebie z Voicechata.
+-# Poczekaj, aż wieloo ustali termin rozmowy - nie pinguj!
+
+### Przydatne linki:
+- 🔗 **Polityka prywatności:** https://extremeplus.pl/prywatnosc
+- 🔗 **Informacje dla rodziców:** https://mcextreme.pl/dla-rodzicow#nadzor
+- 🔗 **Zasady bezpieczeństwa:** https://mcextreme.pl/dokumenty/bezpieczenstwo</code></pre></div>
+      
+      <h2 class="doc-h2" id="fm-2">Unban po banie za cheaty (nadzór)</h2>
+      <p class="doc-p"><strong>Kiedy:</strong> Gracz pyta, jak dostać unbana po banie za cheaty. Unbana można otrzymać tylko przez program nadzorów.</p>
+      <div class="code-block-container"><div class="code-block-header"><span>Jak otrzymać unbana (nadzór)</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code># Jak otrzymać unbana?
+
+Aby otrzymać unbana, należy zgłosić się do **programu nadzorów**. Nadzór to funkcja w ExtremePlus, która jest włączona tylko podczas jego trwania - ExtremePlus nadzoruje Twoją rozgrywkę i sprawdza, czy ponownie nie używasz cheatów. Funkcja nadzoru zbiera informacje o Twojej grze: sprawdza logi, zainstalowane mody oraz umożliwia zrobienie screenshota z Minecrafta (w tym automatycznie lub na żądanie moderacji). Pełną listę zbieranych danych znajdziesz podczas nadawania nadzoru.
+
+### Na czym polega nadzór?
+W ramach programu nadzorów dajemy drugą szansę graczom, którzy używali cheatów. Otrzymują oni czyszczenie ekwipunku oraz enderchesta, ale dostają unbana i grają pod nadzorem. Jeśli zmarnują tę szansę, już nigdy nie wrócą na serwer! Omijanie nadzoru skutkuje **permanentną karą bez możliwości odwołania** - dotyczy grania bez moda oraz na multikontach.
+
+### Jak złożyć prośbę o nadzór?
+
+1. Wejdź na oficjalny Discord Extremeplus: **https://discord.gg/YHQGKZnnmn**
+2. Przejdź na kanał **#tickety** i wybierz opcję **„Prośba o nadzór”**.
+3. Po otwarciu zgłoszenia wybierz osobę, która Cię zbanowała (jeśli nie ma jej na liście, wybierz administratora `nveisk` lub innego aktywnego administratora).
+4. Wypełnij formularz zgłoszeniowy i wyślij go, a następnie oczekuj na odpowiedź administracji.
+5. Po zatwierdzeniu prośby czekaj na ogłoszenie o nadawaniu nadzorów. Znajdziesz tam wszystkie szczegółowe instrukcje (terminy są zawsze ogłaszane z wyprzedzeniem).
+6. **Wymóg wiekowy:** Jeśli nie masz ukończonych 16 lat, nie możesz samodzielnie otrzymać nadzoru. W takiej sytuacji musisz pojawić się z rodzicem/opiekunem prawnym, aby wiedział, oprogramowanie o jakim charakterze instalujesz.
+
+### Przydatne linki:
+- https://mcextreme.pl/dla-rodzicow#nadzor
+- https://mcextreme.pl/dokumenty/bezpieczenstwo
+- https://extremeplus.pl/prywatnosc</code></pre></div>
+      
+      <h2 class="doc-h2" id="fm-3">Błąd „Nie udało się połączyć z serwerem Limbo”</h2>
+      <p class="doc-p"><strong>Kiedy:</strong> Gracz widzi „Nie udało się połączyć z serwerem Limbo” albo zostaje wyrzucony zaraz po wejściu za pakiety – używa niepoprawnej wersji gry.</p>
+      <div class="code-block-container"><div class="code-block-header"><span>Formułka – Limbo / niepoprawna wersja</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code># Co zrobić, gdy pojawia się błąd „Nie udało się połączyć z serwerem Limbo” lub wyrzuca Cię z serwera za pakiety?
+
+Jeśli wyskakuje Ci komunikat, że **nie udało się połączyć z serwerem Limbo** albo tuż po wejściu na serwer od razu wyrzuca Cię za pakiety, oznacza to, że używasz niepoprawnej wersji gry. Nasz serwer jest wspierany na wersjach: **od 1.21.4 do 26.2**.
+
+### Jak to naprawić?
+- **Krok #1:** Zamknij grę.
+- **Krok #2:** Zmień wersję gry w swoim launcherze na odpowiednią z zakresu **1.21.4 - 26.2**.
+- **Krok #3:** Uruchom grę ponownie i spróbuj wejść na serwer.</code></pre></div>
+      
+      <h2 class="doc-h2" id="fm-4">Oczekiwanie na potwierdzenie paczki zasobów</h2>
+      <p class="doc-p"><strong>Kiedy:</strong> Gracz nie może wejść na serwer i widzi komunikat „Czekamy na potwierdzenie paczki zasobów”.</p>
+      <div class="code-block-container"><div class="code-block-header"><span>Formułka – paczka zasobów</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>Jeśli masz problem z wejściem na serwer i wyświetla Ci się komunikat **Czekamy na potwierdzenie paczki zasobów**, to wystarczy:
+
+- Krok #1 Kliknąć na nasz serwer na liście.
+- Krok #2 Kliknij **„Edytuj”**.
+- Krok #3 Przy opcji **„Paczki zasobów”** klikajcie, aż ustawienie zmieni się na **„Enable”**.
+
+Po zapisaniu zmian spróbujcie ponownie dołączyć na serwer - problem powinien zniknąć.</code></pre></div>
+      
+      <h2 class="doc-h2" id="fm-5">Zapomniane hasło</h2>
+      <p class="doc-p"><strong>Kiedy:</strong> Gracz z kontem non-premium nie pamięta hasła. Haseł nie resetujemy – można je spróbować odzyskać z pliku.</p>
+      <div class="code-block-container"><div class="code-block-header"><span>Formułka – zapomniane hasło</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code># Nie pamiętasz hasła do naszego serwera?
+Jeśli posiadasz konto non-premium i nie pamiętasz swojego hasła, to niestety nie ma możliwości jego zresetowania ani zmiany. W takiej sytuacji jedynym rozwiązaniem jest przypomnienie sobie hasła.
+
+Jak spróbować odzyskać swoje hasło?
+- Krok #1 Naciśnij Win + R, wpisz %appdata% i OK.
+- Krok #2 Wejdź do folderu .minecraft, a następnie otwórz plik command_history.
+- Krok #3 W pliku znajdują się komendy wpisywane przez Ciebie w grze. Poszukaj komend takich jak: /login, /register
+
+Jeśli wpisywałeś tam swoje hasło, może ono znajdować się obok tych komend. Następnie wejdź na serwer i spróbuj zalogować się znalezionym hasłem.
+
+-# Jeśli posiadasz konto premium i na serwerze nie masz automatycznego logowania premium oraz nie wyświetla Ci się skin, konieczny będzie reset konta. Jeżeli posiadasz konto premium, poinformuj nas o tym - będziemy mogli pomóc w dalszej procedurze.
+
+-# **Uwaga:** Jeśli w pliku nie ma Twojego hasła lub nie uda Ci się go przypomnieć, niestety nie będziemy mogli go zresetować dla konta non-premium.</code></pre></div>
+      
+      <h2 class="doc-h2" id="fm-6">Reset konta</h2>
+      <p class="doc-p"><strong>Kiedy:</strong> Gracz z kontem premium potrzebuje resetu konta (brak logowania premium, brak skina, hasło mimo premium itp.).</p>
+      <div class="code-block-container"><div class="code-block-header"><span>Formułka – instrukcja resetu konta</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code># Instrukcja dotycząca - Resetu konta
+
+Jeśli widzisz tę wiadomość, oznacza to, że potrzebujesz u nas **resetu konta**. Cała procedura jest bardzo prosta - poniżej znajdziesz dokładne wyjaśnienie krok po kroku.
+Pamiętaj, że reset dostępny jest wyłącznie dla osób posiadających konto Premium.
+
+› Instrukcja krok po kroku:
+• Krok #1: Wykonaj zrzut ekranu z oficjalnego launchera Mojang, czyli **"Minecraft Launcher"**, **"Feather Client"** lub **"Lunar Client"** *(jeśli nie masz żadnego z nich, pobierz jeden)*. Na screenie musi być widoczny Twój nick. Wyślij go w tym tickecie.
+• Krok #2: Zaloguj się na swoje konto Premium na stronie **Minecrafta**. Następnie przejdź do sekcji **JAVA**, a potem do zakładki **Profile name / Nazwa profilu**. Zrób pełny zrzut ekranu i również wyślij go tutaj w tickecie.
+• Krok #3: Podaj swój **nick** w osobnej wiadomości.
+• Krok #4: Administracja oznaczy osobę uprawnioną do wykonania resetu konta. Musisz cierpliwie poczekać (czas oczekiwania nie jest określony). Po zakończeniu resetu otrzymasz informację, że został wykonany.
+
+## **Pamiętaj: Zrzut ekranu musi być pełny - widoczny nick, pasek zadań oraz aktualna data i godzina.**
+
+# WAŻNE: Reset konta usuwa wszystkie statystyki oraz przedmioty znajdujące się na koncie!</code></pre></div>
+      <div class="callout warn"><div class="callout-title">Dla administracji</div>Resety wykonywane są około raz w miesiącu. Twoim obowiązkiem jest sprawdzenie, czy screenshoty się zgadzają, i następnie oznaczenie <span class="rank-badge rank-head">kosiare</span> pod nickiem gracza.</div>
+      <h2 class="doc-h2" id="fm-7">Jak pobrać ExtremePlus</h2>
+      <p class="doc-p"><strong>Kiedy:</strong> Gracz pyta, jak pobrać i zainstalować ExtremePlus.</p>
+      <div class="code-block-container"><div class="code-block-header"><span>Formułka – jak pobrać ExtremePlus</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code># Jak pobrać ExtremePlus?
+
+Jeśli chcesz pobrać ExtremePlus na swoim komputerze, wykonaj poniższe kroki:
+
+- **Krok #1:** Otwórz przeglądarkę internetową i wejdź na oficjalną stronę: **extremeplus.pl**
+- **Krok #2:** Na stronie głównej przeczytaj politykę prywatności. Po jej zaakceptowaniu wybierz wersję ExtremePlusa: **1.21.8** lub **26.2** i zainstaluj.
+- **Krok #3:** Pobierz **Fabric API** oraz **Fabric Installer**. Po uruchomieniu Fabric Installera wybierz odpowiednią wersję (1.21.8 lub 26.2) i zainstaluj ją.
+- **Krok #4:** Naciśnij skrót klawiszowy **Win + R**, wpisz `%appdata%` i kliknij **OK**.
+- **Krok #5:** Wejdź do folderu `.minecraft` (lub folderu swojego launchera), otwórz folder **mods** i wklej tam pobrane pliki: **Fabric API** oraz **ExtremePlus**.
+- **Krok #6:** Uruchom launcher, wybierz profil **Fabric-loader (1.21.8 lub 26.2)** i włącz grę.
+
+### Potrzebujesz pomocy technicznej?
+Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub uruchamiania gry, sprawdź oficjalne centrum pomocy: **extremeplus.pl/help** lub Discord extremeplus.</code></pre></div>
+      
     </article>
 
     <footer class="doc-pagination">
@@ -1371,6 +1510,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+  <!-- PAGE: Podstawowe informacje -->
   <section id="podstawowe-informacje" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Podstawowe informacje</span></div>
     <article class="doc-article-body">
@@ -1465,6 +1605,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+    <!-- PAGE: Nadawanie kar i apelacje -->
   <section id="nadawanie-kar-i-apelacje" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Podstawowe informacje</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Nadawanie kar i apelacje</span></div>
     <article class="doc-article-body">
@@ -1487,6 +1628,19 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
 
       <h3 class="doc-h3">Treści nieodpowiednie dla dzieci</h3>
       <p class="doc-p">Minecraft jest grą, w którą grają także dzieci. Wszelkie treści nieodpowiednie dla dzieci mutujemy – również wtedy, gdy nie są skierowane do konkretnego gracza.</p>
+
+      <h3 class="doc-h3">Odniesienia</h3>
+      <h4 class="doc-h4">Wulgaryzmy</h4>
+      <ul class="bul"><li>Ucinanie lub zmiana/gwiazdkowanie liter podlega pod łamanie regulaminu (jeśli z kontekstu wyraźnie wynika, że chodzi o wulgaryzm).</li><li>Wulgarne skróty (np. JD, HWDP) – mutujemy, jeśli pojawiają się bez kontekstu lub z ewidentnym nakierowaniem na wulgaryzm. Jeśli jednak pojawia się obok wyjaśnienie (np. JD = Jest Dobrze / Jedwabny Dotyk, „Sprzedam JD”), nie karamy.</li><li>Dokańczanie wulgaryzmów (przykład: Gracz X: „kur”, Gracz Y: „wa”) – jeżeli jest to pierwsza i jednorazowa sytuacja, Gracz Y otrzymuje warna. Jeśli jednak obie osoby cwaniakują i robią to dalej, obie otrzymują karę.</li></ul>
+      <div class="callout warn"><div class="callout-title">Wyjątek: WTF</div>Za samo „WTF” nie karamy! Jednak za rozwinięcie (a więc użycie anglojęzycznego w tym przypadku przekleństwa) już tak.</div>
+
+      <h4 class="doc-h4">Brak kultury</h4>
+      <p class="doc-p">Wszelkie zwroty, które może per se nie są obraźliwe ani wulgarne oraz nie podpadają pod żaden inny punkt, jednak używanie ich na czacie nie powinno mieć miejsca – np. „zamknij pysk”, „zamknij mordę” – czy samo prowadzenie rozmowy w bardzo negatywnie nacechowany sposób, gdzie widać, że ktoś szuka zaczepki lub kombinuje.</p>
+      <p class="doc-p">Wielkość kary jest zależna od tego, jak mocne jest dane wykroczenie oraz jak często powtarza się u danego gracza (taki może od razu otrzymać większą karę).</p>
+
+      <h4 class="doc-h4">Reklama</h4>
+      <ul class="bul"><li>Próby ominięcia regulaminu przez podanie IP serwera na <code>/msg</code> liczą się jak zwykła reklama w przypadku masowej ilości wysłanych wiadomości do różnych graczy lub gdy jest to wyraźna reklama.</li><li>Gdy widać, że na PW piszą znajomi („ej, idziemy zagrać teraz na XXX”), to nie jest reklama.</li><li>Za pisanie IP dużych zagranicznych serwerów (np. Hypixel) nie karamy.</li><li>Karze za strony podlegają tylko witryny, które są podejrzane, zawierające reklamę (np. YT gracza) lub gry losowe (np. skrzynki w CS) itd.</li><li>W przypadku niepewności, czy za daną stronę lub dany przypadek na <code>/msg</code> lub czacie ogólnym należy ukarać, napisz do Adminów.</li></ul>
+      <div class="callout ban"><div class="callout-title">Crafted</div>Za napisanie „Crafted” karzemy.</div>
 
       <h3 class="doc-h3">Tłumaczenia i interpretacje graczy</h3>
       <ul class="bul"><li>Interpretacje i tłumaczenia graczy nie podlegają apelacji.</li><li>Jeśli gracz obraził innego gracza, ale w tickecie pisze, że zrobił to, bo się znają i drugą osobę to nie obraziło, <strong>nie ma to znaczenia</strong> – kara zostaje.</li></ul>
@@ -1526,6 +1680,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+<!-- PAGE: Mentorstwo -->
   <section id="mentorstwo" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Podstawowe informacje</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Mentorstwo</span></div>
     <article class="doc-article-body">
@@ -1533,7 +1688,42 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
         <h1 class="doc-title">MENTORSTWO</h1>
         <p class="doc-lead">Zasady mentorstwa i wprowadzania nowych osób do administracji.</p>
       </header>
-      <div class="callout warn"><div class="callout-title">W trakcie tworzenia</div>Ta sekcja jest jeszcze w budowie – treść pojawi się tutaj niebawem.</div>
+      <h2 class="doc-h2" id="ment-1">1. Czym jest mentorstwo?</h2>
+      <div class="callout warn"><div class="callout-title">Mentorstwo jest od stażu, a nie od rangi</div>O tym, kto jest mentorem, decyduje <strong>staż</strong>, a nie ranga. Od rangi <span class="rank-badge rank-jrmod">JrMod</span> mentorstwo jest <strong>obowiązkowe</strong>.</div>
+            <p class="doc-p">Mentorstwo to proces wdrażania nowych członków administracji, którego celem jest przygotowanie ich do prawidłowego, samodzielnego i odpowiedzialnego wykonywania obowiązków. Mentor jest osobą bardziej doświadczoną, która przekazuje swoją wiedzę, pomaga w rozwiązywaniu problemów oraz nadzoruje postępy nowego administratora.</p>
+            <p class="doc-p">Bycie mentorem to nie tylko pokazanie komend czy przesłanie regulaminu. Jest to przede wszystkim odpowiedzialna funkcja, która wymaga zaangażowania, cierpliwości, odpowiedniej wiedzy oraz umiejętności przekazywania informacji. Mentor powinien zadbać o to, aby jego podopieczny rozumiał zasady funkcjonowania serwera, znał swoje obowiązki i potrafił odpowiednio zachowywać się w różnych sytuacjach.</p>
+      <div class="callout ban"><div class="callout-title">Najważniejsze: sprawdzanie graczy</div>W mentorstwie najważniejsza jest <strong>nauka sprawdzania graczy</strong>. To ona w największym stopniu decyduje o tym, czy nowy administrator jest gotowy do samodzielnej pracy. Szczegóły znajdziesz w <a href="#proces-sprawdzania">Procesie sprawdzania</a>.</div>
+      <h2 class="doc-h2" id="ment-2">2. Zadania i obowiązki mentora</h2>
+            <p class="doc-p">Głównym zadaniem mentora jest odpowiednie przygotowanie nowego administratora do pełnienia powierzonych mu obowiązków. Powinien on dokładnie zapoznać podopiecznego ze strukturą administracji, regulaminami, zasadami komunikacji oraz procedurami obowiązującymi na serwerze.</p>
+            <p class="doc-p">Mentor powinien regularnie poświęcać czas swojemu podopiecznemu, odpowiadać na jego pytania i wyjaśniać wszelkie niejasności. Nie powinien ograniczać się do jednorazowego przekazania informacji, a następnie pozostawiać nowej osoby samej sobie.</p>
+            <p class="doc-p">Do obowiązków mentora należy również sprawdzanie wiedzy podopiecznego, obserwowanie jego zachowania podczas wykonywania obowiązków oraz wskazywanie obszarów wymagających poprawy. Szczególną uwagę mentor musi poświęcić <strong>nauce sprawdzania graczy</strong>.</p>
+      <h2 class="doc-h2" id="ment-3">3. Wdrażanie nowego administratora</h2>
+            <p class="doc-p">Proces wdrażania powinien odbywać się stopniowo. Na początku mentor powinien przedstawić podopiecznemu najważniejsze informacje dotyczące funkcjonowania serwera i administracji, a następnie przejść do praktycznych aspektów pracy.</p>
+            <p class="doc-p">Nowy administrator powinien poznać sposób obsługi zgłoszeń, zasady odpowiadania na kanale pomocy, regulamin karania graczy, <strong>proces sprawdzania graczy</strong> oraz procedury rozwiązywania konfliktów. Powinien również wiedzieć, jak komunikować się z pozostałymi członkami ekipy i do kogo zwracać się w przypadku trudniejszych sytuacji.</p>
+            <p class="doc-p">Mentor powinien przedstawiać konkretne przykłady i tłumaczyć, jak należy reagować w określonych sytuacjach. Ważne jest, aby podopieczny rozumiał nie tylko to, co powinien zrobić, ale również dlaczego dane rozwiązanie jest właściwe.</p>
+            <p class="doc-p">Mentor powinien także sprawdzić doświadczenie podopiecznego. Jeśli jest ono niewystarczające, jego celem jest takie nauczenie podopiecznego, aby zdał test na <span class="rank-badge rank-pomocnik">Pomocnika</span>.</p>
+      <h2 class="doc-h2" id="ment-4">4. Cierpliwość i podejście do podopiecznego</h2>
+            <p class="doc-p">Każdy człowiek uczy się w innym tempie, dlatego mentor powinien wykazywać się cierpliwością i indywidualnym podejściem. Nie należy oczekiwać, że nowy administrator od pierwszego dnia będzie posiadał taką samą wiedzę jak osoby z wielomiesięcznym doświadczeniem.</p>
+            <p class="doc-p">Podopieczny ma prawo popełniać błędy, zadawać pytania i prosić o ponowne wyjaśnienie określonych kwestii. Zadaniem mentora jest pomoc w zrozumieniu problemu, a nie wyśmiewanie czy krytykowanie za brak wiedzy.</p>
+            <p class="doc-p">Nie należy również porównywać podopiecznych między sobą ani wywierać na nich niepotrzebnej presji. Najważniejsze jest rzeczywiste zdobywanie wiedzy i umiejętności, a nie jak najszybsze zakończenie mentorstwa.</p>
+      <h2 class="doc-h2" id="ment-5">5. Nauka praktyczna</h2>
+            <p class="doc-p">Mentor powinien zadbać o to, aby podopieczny posiadał zarówno wiedzę teoretyczną, jak i praktyczną. Samo przeczytanie regulaminu nie oznacza jeszcze, że dana osoba potrafi prawidłowo reagować na sytuacje występujące na serwerze.</p>
+            <p class="doc-p">Warto omawiać rzeczywiste lub przykładowe sytuacje, takie jak zgłoszenia graczy, łamanie regulaminu, prowokacje, konflikty czy problemy techniczne. Podopieczny powinien mieć możliwość przedstawienia własnego rozwiązania, a mentor powinien ocenić je i w razie potrzeby wskazać właściwe postępowanie.</p>
+            <p class="doc-p">Szczególną uwagę należy zwrócić na prawidłowe nakładanie kar, <strong>sprawdzanie graczy</strong>, zachowanie obiektywizmu oraz komunikację z graczami.</p>
+      <h2 class="doc-h2" id="ment-6">6. Sprawdzanie graczy – najważniejsza umiejętność</h2>
+            <p class="doc-p">Nauka sprawdzania graczy jest <strong>najważniejszą częścią mentorstwa</strong>. Błędnie przeprowadzone sprawdzenie może skończyć się niesłusznym banem albo przepuszczeniem osoby używającej cheatów, dlatego mentor nie powinien kończyć mentorstwa, dopóki podopieczny nie opanuje tej umiejętności.</p>
+      <ul class="bul"><li>Mentor pokazuje cały <a href="#proces-sprawdzania">proces sprawdzania</a> krok po kroku, wraz z komendami dla systemów <a href="#komendy-powershell">Windows (PowerShell)</a>, <a href="#linux">Linux</a> i <a href="#mac">MAC</a>.</li><li>Podopieczny przeprowadza sprawdzenia pod okiem mentora, zanim zacznie robić je samodzielnie.</li><li>Mentor uczy, kiedy gracza należy wziąć na sprawdzanie: <strong>podejrzenie jest powodem do sprawdzenia, a nie do kary</strong>.</li><li>Ban za cheaty nadajemy wyłącznie wtedy, gdy mamy <strong>100% pewności</strong>. Nigdy nie banujemy wyłącznie na podstawie klipu ze skargi – zawsze sprawdzamy gracza. Zobacz: <a href="#nadawanie-kar-i-apelacje">Nadawanie kar i apelacje</a>.</li><li>Mentor zwraca uwagę na spokój, cierpliwość i profesjonalizm podopiecznego podczas sprawdzania oraz na zachowanie <strong>poufności</strong> wszystkich danych i materiałów gracza.</li></ul>
+      <h2 class="doc-h2" id="ment-7">7. Kontrola postępów</h2>
+            <p class="doc-p">Mentor powinien regularnie sprawdzać, czy podopieczny robi postępy i czy potrafi wykorzystać przekazaną mu wiedzę w praktyce. Nie chodzi o ciągłe kontrolowanie każdej jego czynności, lecz o upewnienie się, że jest odpowiednio przygotowany do samodzielnej pracy.</p>
+            <p class="doc-p">Należy zwracać uwagę na znajomość regulaminu, naukę sprawdzania graczy, aktywność, zaangażowanie, podejmowanie decyzji oraz umiejętność rozwiązywania problemów.</p>
+            <p class="doc-p">Jeżeli podopieczny popełnia błędy, mentor powinien je omówić i wyjaśnić, jak można ich uniknąć w przyszłości. Nie powinien ukrywać problemów ani przedstawiać postępów w sposób niezgodny z rzeczywistością.</p>
+      <h2 class="doc-h2" id="ment-8">8. Zachowanie mentora</h2>
+            <p class="doc-p">Mentor powinien być przykładem dla nowego administratora. Oznacza to, że sam musi przestrzegać regulaminów, zachowywać kulturę osobistą, unikać niepotrzebnych konfliktów i odpowiedzialnie wykonywać swoje obowiązki.</p>
+            <p class="doc-p">Nie może wykorzystywać swojej funkcji do wywyższania się, poniżania podopiecznych ani wywierania na nich presji. Nie powinien również przekazywać nieprawdziwych informacji, uczyć niezgodnych z regulaminem zachowań czy wykorzystywać podopiecznego do prywatnych celów.</p>
+            <p class="doc-p">Mentor powinien budować atmosferę, w której nowy administrator może swobodnie zadawać pytania i zgłaszać problemy. Właściwa komunikacja jest podstawą skutecznego mentorstwa.</p>
+      <h2 class="doc-h2" id="ment-9">9. Kontakt z wyższą administracją</h2>
+            <p class="doc-p">Jeżeli mentor zauważy poważniejsze problemy z zaangażowaniem, zachowaniem lub postępami podopiecznego, powinien poinformować o tym odpowiednie osoby z wyższej administracji.</p>
+            <p class="doc-p">Mentor powinien przekazywać rzetelne informacje dotyczące przebiegu nauki, mocnych stron podopiecznego oraz zagadnień, nad którymi dana osoba powinna jeszcze popracować.</p>
     </article>
     <footer class="doc-pagination">
       <a href="#nadawanie-kar-i-apelacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Nadawanie kar i apelacje</span></a>
@@ -1541,6 +1731,7 @@ html[data-theme="white"] .ban-tag{color:#92400e}html[data-theme="white"] .ban-ta
     </footer>
   </section>
 
+<!-- PAGE: Problemy graczy i obsługa -->
   <section id="problemy-graczy-i-obsluga" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1583,6 +1774,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
     </footer>
   </section>
 
+  <!-- PAGE: Pomoc graczom serwera -->
   <section id="pomoc-graczom-serwera" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1621,6 +1813,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
     </footer>
   </section>
 
+  <!-- PAGE: Dozwolone i zakazane modyfikacje -->
   <section id="dozwolone-i-zakazane-modyfikacje" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Informacje administracyjne</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Pomoc graczom serwera</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Dozwolone i zakazane modyfikacje</span></div>
     <article class="doc-article-body">
@@ -1907,6 +2100,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       </div>
     </main>
 
+    <!-- Right Table of Contents -->
     <aside class="docs-toc" id="docsTocContainer">
       <div class="toc-title">NA TEJ STRONIE</div>
       <ul class="toc-links" id="tocLinks"></ul>
@@ -1931,6 +2125,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
   </footer>
   <button id="toTop" aria-label="Do góry"><i class="fa-solid fa-chevron-up"></i></button>
 
+  <!-- Search Modal -->
   <div class="search-modal-overlay" id="searchOverlay">
     <div class="search-modal-box">
       <div class="search-modal-header">
@@ -1949,9 +2144,11 @@ const MAPC={'ą':'a','ć':'c','ę':'e','ł':'l','ń':'n','ó':'o','ś':'s','ź':
 function px(s){return s.replace(/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ„”“’–—…⚬→]/g,c=>MAPC[c]||c)}
 function nrm(s){return s.toLowerCase().replace(/[ąćęłńóśźż]/g,c=>MAPC[c])}
 (function(){
+  /* czcionka pikselowa nie ma polskich znakow -> zwykle litery */
   document.querySelectorAll('.brand-name,.doc-title,.doc-h2,.doc-h3,.rank-badge,.perm-domain,.pc-title,.pc-label,.callout-title,.code-block-header span,.group-title,.toc-title,.btn-sub,.btn-main,.doc-table th,kbd,.footer-label,.footer-copy').forEach(el=>{
     const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode())n.nodeValue=px(n.nodeValue);
   });
+  /* motywy */
   const btns=document.querySelectorAll('.theme-btn');
   function setTheme(t,save){
     document.documentElement.setAttribute('data-theme',t);
@@ -1963,6 +2160,7 @@ function nrm(s){return s.toLowerCase().replace(/[ąćęłńóśźż]/g,c=>MAPC[c
   btns.forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.theme,true)));
   let cur='default';try{cur=localStorage.getItem('mcx-theme')||'default'}catch(e){}
   if(!['white','halloween'].includes(cur))cur='default';setTheme(cur,false);
+  /* mobile: tlo menu, ESC, przycisk do gory */
   const sb=document.getElementById('sidebar');
   document.getElementById('navBackdrop').addEventListener('click',()=>sb.classList.remove('open'));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')sb.classList.remove('open')});
@@ -2003,7 +2201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const container = btn.closest('.code-block-container');
       const code = container.querySelector('code').innerText;
       navigator.clipboard.writeText(code).then(() => {
-        showToast('Skopiowano skrypt do schowka!');
+        showToast('Skopiowano do schowka!');
       });
     });
   });
