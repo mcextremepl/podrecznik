@@ -15,18 +15,7 @@
   <script>
     const PRZERWA_TECHNICZNA = false; // <-- true = włączona, false = wyłączona
     // Podczas przerwy administracja wchodzi przez link /podrecznik/adminpo (zamiast /podrecznik)
-    window.__mcxO = (function(){
-      function H(t,e){var a=3735928559^e,b=1103547991^e;for(var i=0,c;i<t.length;i++){c=t.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677);}a=Math.imul(a^(a>>>16),2246822507);a^=Math.imul(b^(b>>>13),3266489909);b=Math.imul(b^(b>>>16),2246822507);b^=Math.imul(a^(a>>>13),3266489909);return 4294967296*(2097151&b)+(a>>>0);}
-      var K='mcx-s',ok=false;
-      try{
-        var p=(location.pathname+'/'+location.hash.replace('#','/')).toLowerCase().split('/').filter(Boolean);
-        for(var i=0;i<p.length-1;i++){if(H(p[i]+'/'+p[i+1],7)===7551294239725815){ok=true;break;}}
-        if(ok)sessionStorage.setItem(K,'1');else ok=sessionStorage.getItem(K)==='1';
-      }catch(e){}
-      if(ok)document.documentElement.classList.add('mcx-o');
-      return ok;
-    })();
-    const JEST_ADMINPO = /\/adminpo\/?$/i.test(location.pathname) || window.__mcxO;
+    const JEST_ADMINPO = /\/adminpo\/?$/i.test(location.pathname);
     if (PRZERWA_TECHNICZNA && !JEST_ADMINPO) document.documentElement.classList.add('przerwa-on');
   </script>
   <meta charset="UTF-8">
@@ -1025,28 +1014,8 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
 .lb-overlay img{max-width:96vw;max-height:94vh;width:auto;height:auto;border:1px solid var(--border-sheet);box-shadow:0 10px 60px rgba(0,0,0,.7);transform:scale(.85);opacity:0;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .25s ease;cursor:zoom-out}
 .lb-overlay.open img{transform:scale(1);opacity:1}
 .lb-close{position:absolute;top:14px;right:20px;color:#fff;font-size:2rem;line-height:1;opacity:.8;user-select:none}
-
-/* ===== STOPKA / COPYRIGHT ===== */
-.footer-copy{font-size:.8rem!important;letter-spacing:.14em;color:var(--text-pure)!important}
-.footer-copy .cpy{font-family:var(--font-text);letter-spacing:0;padding:0 .2em}
-
-/* ===== OCHRONA TRESCI: zaznaczanie dozwolone, kopiowanie zablokowane ===== */
-html,body{-webkit-touch-callout:none}
-img{-webkit-user-drag:none}
-@media print{html:not(.mcx-o),html:not(.mcx-o) body{display:none!important}}
-
-/* ===== ANTYSCREENSHOT / ANTYDEVTOOLS (pixel) ===== */
-#ss-shield{position:fixed;inset:0;z-index:2147483647;display:none;align-items:center;justify-content:center;padding:1.5rem;background-color:#07080d;background-image:linear-gradient(rgba(255,51,51,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,51,51,.08) 1px,transparent 1px);background-size:16px 16px;font-family:'Silkscreen',monospace;color:#fff;text-align:center;cursor:none}
-#ss-shield.on{display:flex}
-#ss-shield::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 2px,transparent 2px 4px)}
-#ss-shield .ssb{position:relative;z-index:1;max-width:560px;width:100%;padding:2rem 1.5rem 1.6rem;border:4px solid #ff3333;background:#0d0f17;box-shadow:8px 8px 0 #991b1b}
-#ss-shield svg{width:96px;height:96px;shape-rendering:crispEdges;margin-bottom:1.1rem;animation:ssblink 1s steps(2) infinite}
-#ss-shield h1{font-family:'Silkscreen',monospace;font-weight:700;font-size:1.45rem;line-height:1.35;letter-spacing:.08em;color:#ff3333;text-shadow:3px 3px 0 #991b1b;margin:0 0 .85rem}
-#ss-shield p{font-size:.78rem;color:#cbd5e1;letter-spacing:.1em;line-height:1.9;margin:0}
-#ss-shield .ssc{margin-top:1.4rem;padding-top:1rem;border-top:2px dashed #262c3e;font-size:.66rem;color:#9aa5bc;letter-spacing:.14em}
-@keyframes ssblink{50%{opacity:.4}}
-html.mcx-lock body>*:not(#ss-shield){display:none!important}
-@media(max-width:520px){#ss-shield h1{font-size:1.05rem}#ss-shield p{font-size:.66rem}}
+.theme-btn i{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(var(--accent-rgb),.15);color:var(--red-main);font-size:.8rem}
+.theme-btn[aria-pressed="true"] i{background:var(--red-main);color:#fff}
 </style>
 </head>
 <body>
@@ -1349,6 +1318,8 @@ html.mcx-lock body>*:not(#ss-shield){display:none!important}
       <div></div>
       <a href="#taryfikator-minecraft" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Taryfikator Minecraft <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <!-- PAGE: Taryfikator Minecraft -->
@@ -1397,7 +1368,8 @@ html.mcx-lock body>*:not(#ss-shield){display:none!important}
       <a href="#regulamin-administracji" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin administracji</span></a>
       <a href="#taryfikator-discord" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Taryfikator Discord <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-      <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 01.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <!-- PAGE: Taryfikator Discord -->
@@ -1466,11 +1438,12 @@ html.mcx-lock body>*:not(#ss-shield){display:none!important}
       <a href="#taryfikator-minecraft" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Taryfikator Minecraft</span></a>
       <a href="#regulamin-backupow" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Regulamin backupów <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-      <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 01.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   
-  <!-- PAGE: Taryfikator Extremeplus -->
+    <!-- PAGE: Taryfikator Extremeplus -->
   <section id="taryfikator-extremeplus" class="doc-page-section" style="display: none;">
     <div class="breadcrumbs">
       <span class="breadcrumb-item">Mcextreme</span>
@@ -1483,8 +1456,12 @@ html.mcx-lock body>*:not(#ss-shield){display:none!important}
     <article class="doc-article-body">
       <h1 class="doc-title">Taryfikator Extremeplus</h1>
       <p class="doc-p">Kary obowiązujące w ramach Extremeplus (m.in. wyciszenia na kanałach głosowych – Regulamin VC). Każda kara musi być nadawana zgodnie z poniższymi zasadami i zawsze z jasnym powodem.</p>
-      <div class="callout warn"><div class="callout-title">Treść w przygotowaniu</div>Wykaz wykroczeń i kar Extremeplus zostanie uzupełniony w tej sekcji.</div>
+      <p class="doc-p">Poniżej znajduje się lista wykroczeń na kanałach głosowych wraz z czasem wyciszenia (mute na Voicechacie), podanym w minutach.</p>
+      <div style="overflow-x:auto"><table class="doc-table"><thead><tr><th>Wykroczenie</th><th>Kara</th><th>Opis</th></tr></thead><tbody><tr><td><strong>Wulgaryzmy</strong></td><td><span class="ban-tag mute">180 min</span></td><td>Używanie wulgarnych słów na kanale głosowym.</td></tr><tr><td><strong>Obraza gracza</strong></td><td><span class="ban-tag mute">360 min</span></td><td>Wyzywanie, poniżanie lub znieważanie innych graczy.</td></tr><tr><td><strong>Nieodpowiednie treści</strong></td><td><span class="ban-tag mute">300 min</span></td><td>Treści erotyczne, brutalne lub w inny sposób niestosowne.</td></tr><tr><td><strong>Brak kultury</strong></td><td><span class="ban-tag mute">240 min</span></td><td>Lekceważący, chamski lub agresywny sposób wypowiedzi.</td></tr><tr><td><strong>Prowokacje</strong></td><td><span class="ban-tag mute">240 min</span></td><td>Celowe wywoływanie kłótni i konfliktów.</td></tr><tr><td><strong>Rozpowszechnianie nieprawdziwych informacji</strong></td><td><span class="ban-tag mute">360 min</span></td><td>Świadome wprowadzanie graczy w błąd (np. fałszywe informacje o serwerze, administracji, karach).</td></tr><tr><td><strong>Język inny niż PL/ENG</strong></td><td><span class="ban-tag mute">360 min</span></td><td>Rozmowa w językach innych niż polski lub angielski.</td></tr><tr><td><strong>Puszczanie bindów / dźwięków</strong></td><td><span class="ban-tag mute">300 min</span></td><td>Odtwarzanie bindów, soundboardów i innych dźwięków przez mikrofon.</td></tr><tr><td><strong>Nakłanianie do cheatowania</strong></td><td><span class="ban-tag mute">2880 min</span></td><td>Zachęcanie innych graczy do używania cheatów lub reklamowanie zakazanego oprogramowania.</td></tr><tr><td><strong>Życzenie śmierci / groźby</strong></td><td><span class="ban-tag mute">10080 min</span></td><td>Życzenie śmierci, choroby oraz wszelkie groźby wobec graczy lub ich rodzin.</td></tr><tr><td><strong>Zakłócanie rozmów</strong></td><td><span class="ban-tag mute">120 min</span></td><td>Krzyki, hałasy, przeszkadzanie w rozmowie, wchodzenie i wychodzenie z kanału w celu zakłócania. <em>(propozycja)</em></td></tr><tr><td><strong>Mowa nienawiści / dyskryminacja</strong></td><td><span class="ban-tag mute">1440 min</span></td><td>Wypowiedzi dyskryminujące ze względu na pochodzenie, wyznanie, orientację itp. <em>(propozycja)</em></td></tr><tr><td><strong>Reklamowanie innych serwerów</strong></td><td><span class="ban-tag mute">360 min</span></td><td>Promowanie innych serwerów, projektów i społeczności na kanałach głosowych. <em>(propozycja)</em></td></tr><tr><td><strong>Podszywanie się pod administrację</strong></td><td><span class="ban-tag mute">720 min</span></td><td>Udawanie członka administracji w celu wywarcia wpływu na graczy. <em>(propozycja)</em></td></tr><tr><td><strong>Obraza administracji</strong></td><td><span class="ban-tag perm">BAN</span></td><td>W tym przypadku nie nadaje się muta na Voicechacie – gracz otrzymuje bana. Do zgłoszenia gracza na bana nagranie nie jest zalecane.</td></tr></tbody></table></div>
+      <div class="callout warn"><div class="callout-title">Uwaga</div>Pozycje oznaczone jako „propozycja” zostały dodane dodatkowo i wymagają zatwierdzenia przez zarząd.</div>
     </article>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <!-- PAGE: Regulamin backupów -->
@@ -1548,6 +1525,8 @@ html.mcx-lock body>*:not(#ss-shield){display:none!important}
       <a href="#taryfikator-discord" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Taryfikator Discord</span></a>
       <a href="#obowiazki-i-permisje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Obowiązki i permisje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <!-- PAGE: Obowiązki i permisje -->
@@ -1585,6 +1564,8 @@ html.mcx-lock body>*:not(#ss-shield){display:none!important}
       <a href="#regulamin-backupow" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin backupów</span></a>
       <a href="#qa" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Q&amp;A <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
 <!-- PAGE: Formułki -->
@@ -1726,6 +1707,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#problemy-graczy-i-obsluga" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Problemy graczy i obsługa</span></a>
       <a href="#pomoc-graczom-serwera" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Pomoc graczom serwera <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <!-- PAGE: Podstawowe informacje -->
@@ -1837,6 +1820,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#obowiazki-i-permisje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Obowiązki i permisje</span></a>
       <a href="#stazysci" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Stażyści <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="stazysci" class="doc-page-section" style="display: none;">
@@ -1869,6 +1854,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#qa" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Q&amp;A</span></a>
       <a href="#supporci" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Supporci <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="supporci" class="doc-page-section" style="display: none;">
@@ -1884,6 +1871,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#stazysci" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Stażyści</span></a>
       <a href="#chatmodzi" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Chatmodzi <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="chatmodzi" class="doc-page-section" style="display: none;">
@@ -1899,6 +1888,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#supporci" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Supporci</span></a>
       <a href="#pomocnicy" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Pomocnicy <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="pomocnicy" class="doc-page-section" style="display: none;">
@@ -1914,6 +1905,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#chatmodzi" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Chatmodzi</span></a>
       <a href="#antycheat" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Antycheat <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="antycheat" class="doc-page-section" style="display: none;">
@@ -2001,6 +1994,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#pomocnicy" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Pomocnicy</span></a>
       <a href="#podstawowe-informacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Podstawowe informacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="podstawowe-informacje" class="doc-page-section" style="display: none;">
@@ -2119,6 +2114,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#antycheat" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Antycheat</span></a>
       <a href="#nadawanie-kar-i-apelacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Nadawanie kar i apelacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
     <!-- PAGE: Nadawanie kar i apelacje -->
@@ -2184,6 +2181,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#podstawowe-informacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Podstawowe informacje</span></a>
       <a href="#za-co-karac" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Za co karać? <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
 <!-- PAGE: Za co karać? -->
@@ -2384,7 +2383,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#nadawanie-kar-i-apelacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Nadawanie kar i apelacje</span></a>
       <a href="#mentorstwo" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Mentorstwo <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 01.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
 
@@ -2438,6 +2438,8 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#za-co-karac" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Za co karać?</span></a>
       <a href="#problemy-graczy-i-obsluga" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Problemy graczy i obsługa <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
 <!-- PAGE: Problemy graczy i obsługa -->
@@ -2481,6 +2483,8 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#mentorstwo" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Mentorstwo</span></a>
       <a href="#formulki" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Formułki <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <!-- PAGE: Pomoc graczom serwera -->
@@ -2520,6 +2524,8 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#formulki" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Formułki</span></a>
       <a href="#dozwolone-i-zakazane-modyfikacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Dozwolone i zakazane modyfikacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <!-- PAGE: Dozwolone i zakazane modyfikacje -->
@@ -2552,6 +2558,8 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#pomoc-graczom-serwera" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Pomoc graczom serwera</span></a>
       <a href="#proces-sprawdzania" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Proces sprawdzania <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="proces-sprawdzania" class="doc-page-section" style="display: none;">
@@ -2636,6 +2644,8 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#dozwolone-i-zakazane-modyfikacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Dozwolone i zakazane modyfikacje</span></a>
       <a href="#komendy-powershell" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Komendy PowerShell <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="komendy-powershell" class="doc-page-section" style="display: none;">
@@ -2733,6 +2743,8 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#proces-sprawdzania" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Proces sprawdzania</span></a>
       <a href="#linux" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Linux <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="linux" class="doc-page-section" style="display: none;">
@@ -2767,6 +2779,8 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#komendy-powershell" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Komendy PowerShell</span></a>
       <a href="#mac" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">MAC <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="mac" class="doc-page-section" style="display: none;">
@@ -2804,6 +2818,8 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#linux" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Linux</span></a>
       <a href="#telefon" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Telefon <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
   <section id="telefon" class="doc-page-section" style="display: none;">
@@ -2859,6 +2875,8 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#mac" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> MAC</span></a>
       <div></div>
     </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
   </section>
 
       </div>
@@ -2876,15 +2894,15 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
     <div class="footer-inner">
       <div><span class="footer-label">MOTYW STRONY</span>
         <div class="theme-picker" id="themePicker">
-          <button class="theme-btn" data-theme="default" style="--a:#ff4d4d;--b:#000"><span class="sw"></span>Domyślny (czarny)</button>
-          <button class="theme-btn" data-theme="white" style="--a:#dc2626;--b:#f3f5fa"><span class="sw"></span>Biały</button>
-          <button class="theme-btn" data-theme="halloween" style="--a:#ff7a00;--b:#1b1028"><span class="sw"></span>Halloween</button>
+          <button class="theme-btn" data-theme="default" style="--a:#ff4d4d;--b:#000"><i class="fa-solid fa-moon"></i>Domyślny (czarny)</button>
+          <button class="theme-btn" data-theme="white" style="--a:#dc2626;--b:#f3f5fa"><i class="fa-solid fa-sun"></i>Biały</button>
+          <button class="theme-btn" data-theme="halloween" style="--a:#ff7a00;--b:#1b1028"><i class="fa-solid fa-ghost"></i>Halloween</button>
         </div></div>
       <div class="footer-author">
         <img src="https://mc-heads.net/avatar/nveisk/64" onerror="this.onerror=null;this.src='https://minotar.net/avatar/nveisk/64';" alt="nveisk" width="40" height="40">
         <div><span class="footer-label" style="margin:0">AUTOR</span><strong>nveisk</strong></div>
       </div>
-      <div class="footer-copy">mcextreme.pl <span class="cpy">&copy;</span> 2026</div>
+      <div class="footer-copy">MCEXTREME.PL &copy; 2026</div>
     </div>
   </footer>
   <button id="toTop" aria-label="Do góry"><i class="fa-solid fa-chevron-up"></i></button>
@@ -2962,7 +2980,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.copy-code-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      showToast('Kopiowanie jest wyłączone.');
+      const container = btn.closest('.code-block-container');
+      const code = container.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Skopiowano do schowka!');
+      });
     });
   });
 
@@ -3031,7 +3053,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function onHashChange() {
-    const rawHash = window.location.hash.replace('#', '').split('/')[0];
+    const rawHash = window.location.hash.replace('#', '');
     if (!rawHash) {
       switchPage('regulamin-administracji');
       return;
@@ -3207,90 +3229,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   ov.addEventListener('click',close);
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-})();
-</script>
-<script>
-/* Ochrona tresci: antyscreenshot, brak kopiowania, blokada DevTools (utrudnienie - przegladarka nie pozwala na 100% blokade) */
-(function(){
-  'use strict';
-  if(window.__mcxO)return;
-  var d=document, root=d.documentElement, locked=false, timer;
-
-  /* --- nakladka (pixelowa) --- */
-  var sh=d.createElement('div');sh.id='ss-shield';
-  sh.innerHTML='<div class="ssb">'
-   +'<svg viewBox="0 0 16 16" aria-hidden="true"><path fill="#ff3333" d="M5 1h6v2H5zM4 3h2v4H4zM10 3h2v4h-2zM2 7h12v8H2z"/><path fill="#0d0f17" d="M7 9h2v4H7z"/></svg>'
-   +'<h1 id="ss-title"></h1><p id="ss-sub"></p>'
-   +'<div class="ssc">mcextreme.pl &copy; 2026</div></div>';
-  d.body.appendChild(sh);
-  var T=sh.querySelector('#ss-title'), S=sh.querySelector('#ss-sub');
-  function msg(m){
-    if(m==='dt'){T.textContent='DEVTOOLS ZABLOKOWANE';S.textContent='ZAMKNIJ NARZEDZIA DEWELOPERA I ODSWIEZ STRONE (F5)';}
-    else{T.textContent='SCREENSHOTY ZABRONIONE';S.textContent='WROC DO OKNA STRONY ABY KONTYNUOWAC';}
-  }
-  msg('ss');
-  function hide(){clearTimeout(timer);if(!locked)msg('ss');sh.classList.add('on');}
-  function show(ms){clearTimeout(timer);timer=setTimeout(function(){if(!locked&&d.hasFocus()&&!d.hidden)sh.classList.remove('on');},ms||300);}
-  function wipeClip(){try{navigator.clipboard&&navigator.clipboard.writeText(' ');}catch(e){}}
-
-  /* --- blokada DevTools --- */
-  function lock(){
-    if(locked)return;locked=true;
-    root.classList.add('mcx-lock');msg('dt');sh.classList.add('on');
-  }
-  setInterval(function(){
-    var t=performance.now();
-    try{(function(){}).constructor('debugger')();}catch(e){}
-    if(performance.now()-t>120)lock();
-  },700);
-  var probe=new Image();
-  Object.defineProperty(probe,'id',{get:function(){lock();return '';}});
-  setInterval(function(){try{console.debug(probe);console.clear();}catch(e){}},1500);
-
-  /* --- skroty klawiszowe --- */
-  var DEV=['KeyI','KeyJ','KeyC','KeyK','KeyE','KeyM'];
-  function kill(e){e.preventDefault();e.stopPropagation();return false;}
-  d.addEventListener('keydown',function(e){
-    var c=e.code||'', k=(e.key||'').toLowerCase();
-    var ctrl=e.ctrlKey||e.metaKey, sh_=e.shiftKey;
-    var field=/^(input|textarea)$/i.test((e.target&&e.target.tagName)||'');
-
-    /* zrzuty ekranu */
-    if(c==='PrintScreen'||k==='printscreen'||k==='meta'||k==='os'||
-       (ctrl&&sh_&&(c==='KeyS'||c==='Digit3'||c==='Digit4'||c==='Digit5'))){
-      hide();wipeClip();
-    }
-    /* DevTools / zrodlo strony */
-    if(c==='F12'||e.keyCode===123||
-       (ctrl&&sh_&&DEV.indexOf(c)>-1)||
-       (e.metaKey&&e.altKey&&['KeyI','KeyJ','KeyC','KeyU'].indexOf(c)>-1)||
-       (e.ctrlKey&&e.altKey&&['KeyI','KeyJ','KeyC','KeyU'].indexOf(c)>-1)||
-       (ctrl&&c==='KeyU')){return kill(e);}
-    /* zapis, druk, zaznacz wszystko, kopiuj, wytnij */
-    if(ctrl&&(c==='KeyS'||c==='KeyP')){hide();wipeClip();return kill(e);}
-    if((ctrl&&(c==='KeyC'||c==='KeyX'||c==='Insert'))||(e.shiftKey&&c==='Delete')){if(!field)return kill(e);}
-  },true);
-  d.addEventListener('keyup',function(e){
-    if(e.key==='PrintScreen'||e.code==='PrintScreen'){wipeClip();hide();show(900);}
-    else show(300);
-  },true);
-
-  /* --- zdarzenia przegladarki --- */
-  window.addEventListener('blur',hide);
-  window.addEventListener('focus',function(){show(250);});
-  d.addEventListener('visibilitychange',function(){d.hidden?hide():show(250);});
-  window.addEventListener('beforeprint',hide);
-  window.addEventListener('afterprint',function(){show(250);});
-  d.addEventListener('contextmenu',kill,true);
-  d.addEventListener('dragstart',kill,true);
-  ['copy','cut'].forEach(function(n){
-    d.addEventListener(n,function(e){
-      if(/^(input|textarea)$/i.test((e.target&&e.target.tagName)||''))return;
-      e.preventDefault();
-      try{e.clipboardData.setData('text/plain',' ');}catch(x){}
-    },true);
-  });
-  if(!d.hasFocus())hide();
 })();
 </script>
 </body>
