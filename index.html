@@ -13,7 +13,7 @@
 <html lang="pl">
 <head>
   <script>
-    const PRZERWA_TECHNICZNA = false; // <-- true = włączona, false = wyłączona
+    const PRZERWA_TECHNICZNA = true; // <-- true = włączona, false = wyłączona
     // Podczas przerwy administracja wchodzi przez link /podrecznik/adminpo (zamiast /podrecznik)
     const JEST_ADMINPO = /\/adminpo\/?$/i.test(location.pathname);
     if (PRZERWA_TECHNICZNA && !JEST_ADMINPO) document.documentElement.classList.add('przerwa-on');
@@ -23,16 +23,16 @@
   <meta name="theme-color" content="#ff3333">
   <meta name="description" content="Regulamin, taryfikatory i poradniki dla ekipy Mcextreme.pl. Wszystko, czego potrzebujesz, żeby sprawnie i sprawiedliwie dbać o serwer.">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="» Mcextreme.pl">
+  <meta property="og:site_name" content="Mcextreme.pl">
   <meta property="og:locale" content="pl_PL">
-  <meta property="og:title" content="» Podręcznik administracji mcextreme.pl">
-  <meta property="og:description" content="» Regulamin, taryfikatory i poradniki dla ekipy Mcextreme.pl. Wszystko, czego potrzebujesz, żeby sprawnie i sprawiedliwie dbać o serwer.">
-  <meta property="og:image" content="https://imgur.com/a/KKLYVMV.png">
+  <meta property="og:title" content="Podręcznik administracji mcextreme.pl">
+  <meta property="og:description" content="Regulamin, taryfikatory i poradniki dla ekipy Mcextreme.pl. Wszystko, czego potrzebujesz, żeby sprawnie i sprawiedliwie dbać o serwer.">
+  <meta property="og:image" content="https://imgur.com/a/Fm8vtXB.png">
   <meta property="og:image:alt" content="Podręcznik administracji mcextreme.pl">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Podręcznik administracji mcextreme.pl">
-  <meta name="twitter:description" content="» Regulamin, taryfikatory i poradniki dla ekipy Mcextreme.pl.">
-  <meta name="twitter:image" content="https://imgur.com/a/KKLYVMV.png">
+  <meta name="twitter:description" content="Regulamin, taryfikatory i poradniki dla ekipy Mcextreme.pl.">
+  <meta name="twitter:image" content="https://imgur.com/a/Fm8vtXB.png">
   <script>try{var t=localStorage.getItem("mcx-theme");if(t==="white"||t==="halloween")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <title>Mcextreme.pl | Taryfikator Minecraft & Regulamin Administracji</title>
   <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFHUlEQVR4Xu2bW4scRRTH6zKT4BcQnwT1w/jgJxDUh5BsNG8xioiaIIKLinGFvZmL4+XBaMCA2XV1Q4wh0ayuSiCCrwo+iUR8UVChPf/uru2a01VnenumZzYzXfBjqqurTp3z77p1Z6NU/fQL8WcNHkTjSFpQ5fpVWEbjcafbRFKDh9A4klZVuX4Vemg87tQKoMqOVKEVAI0jqRVAletXoYfGY02aBCCSGkQFoHurgfpVaESA/cSPEW6d7+7/b912kk+tTdnIf1HmylHGyw90Oj8H7KW83unejrWLlYOFTvcPbsvjtKqZ7iL4UEuB6ldsN9lWJvmO8t8TPxDIbyvdVw6ycpPyBDnP7TlOUTCSPZRxe+AsteO2PC6pmmmAAHBWiw7vXgAr2gsJAB/eFmyqpgT4kjr1Ha2KJMDp3CZvM4iJCHCVOkXwuxXgiODsmdwmbyOB+j3BpmpKAIwA7kwVJAEwAnj9KkxkBBRrQLYOVEUSIFsDdmdvFGvAZyHu03rzg+6+5CMyfj4H+Q8p8HO0A7xmbPKqNjm6j6s6HsRFag8bsOVsu/xlAwGyBY9zIdAPeEXbZNGzx1nsdH/nsXmkWyRXLOUBMr6VOsRXc518S848Sffn6DrEZUEAPDHY8HcQ/15sBLwv9Lck9AeBeWweP4kCfGNMcFXepntHiUOUB9whWYB6xAQ4TCwL/TUqwEHKA+7U1AiwZcLzEQLUnwL1iAkAGpkC95PRG6Y47flAgGME1AfcoXEKcIj8W9LhBwVqC4ARMPMC1J0CJ8khzMsQkjgfC+1eFPprZAoMswhKrAnOrgpBxmh0EYQA3CAYtA1K3FEC3MgPQpxBU0Bi1AKARqYAdoGvByyCj1MecIckRi3AQTo6N7YIDhoBsV1AYtQCjGEXgMP4LTpxa4Bzwo2EKmKMWgDQyBS4l/iERsA6CbBGCmcgn/EeifMufhnYrzE9uJOOugLM57ZdP+jb9X/O9Pvms1JXgHuIJTK8Sr+ct4gtIZATQiB1BXiHtdvOQX6T7hX+IV9cn6AYeGyVBVg0vuFqAsCp40Igwwrggi7QuQBhX4cTwIaNTkKAnsZ3hJAAhgTASA37OpQAe3kKFGAENCTAcg0BcHRuQgAseP6XKZ/+NWCEAqxomwbLjUoC4DN1UwK4z/BchGEFwIfBEncr3TtmO8lTZIDzNHGR+Jw6BnBgE0ORuEScpe1zhcr6MSlfCALgbbDcLgNbHWyDtC/Xr862ZO6jY87aX3lsHi9BgFgSP4uftHC2GBGncnB9LXgyc4epuAAS6zr+lPFAuI8eAz+Lx1IrgCob2xHgDZMtkG6NwK/LXwsOc5SFyqux5wRYoE79p+4TFmA49pwAb866AJgC/rCfRgH2qezfzzY4JMDGM9b+c5w6DoE3xyvkcIgtFpjPdYLXd2Cr4/048q2u5GfOfBpNAyn6V2Ivm/AJEkjngAvCUz4iP+Ve6tGYUyuAKjvSCgBaAVoBZkOAr4hbIZ619u95cjgEtsjrFOgOqshjq+P1HQes/Y334yG+1U0i3fT+jncHKk+eN8VLFMBJ0h2mHqV7vI3Xds8FKaWbKg+YIwnwiBGH+XQI8ILpXx/8ozRGAK/vMR0C4Ojqvh/4QuD6sVkQAN/oQm+RMyOAGwH8LRLX0zQF6MWu9H/7Uugt8l98TAnxsLV/8foez6WW7/RklFojkhC03c3x+tOY1lR5eDsOe/WmNrUCqHLgrQA5rQBevalN66oc+MQE+B/BSCiwdHmGaAAAAABJRU5ErkJggg==">
@@ -1016,6 +1016,22 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
 .lb-close{position:absolute;top:14px;right:20px;color:#fff;font-size:2rem;line-height:1;opacity:.8;user-select:none}
 .theme-btn i{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(var(--accent-rgb),.15);color:var(--red-main);font-size:.8rem}
 .theme-btn[aria-pressed="true"] i{background:var(--red-main);color:#fff}
+
+.cl-embed{background:var(--bg-card);border:1px solid var(--border-subtle);border-left:4px solid #5865f2;border-radius:6px;padding:1rem 1.15rem;margin:1rem 0}
+.cl-embed-title{font-weight:700;font-size:1.05rem;color:var(--text-body);margin-bottom:.15rem}
+.cl-embed-desc{font-size:.85rem;color:var(--text-muted);margin-bottom:.9rem}
+.cl-list{list-style:none;margin:0;padding:0}
+.cl-item{padding:.7rem 0;border-top:1px solid var(--border-subtle)}
+.cl-item:first-child{border-top:none}
+.cl-line{font-size:.92rem;color:var(--text-body);line-height:1.5}
+.cl-line .cl-bullet{color:#5865f2;margin-right:.35rem}
+.cl-line .cl-meta{color:var(--text-muted)}
+.cl-line .cl-check{font-weight:700}
+.cl-item details{margin-top:.4rem;margin-left:1.1rem}
+.cl-item summary{cursor:pointer;font-size:.85rem;font-weight:600;color:#7c87ff;width:fit-content}
+.cl-item details>div{margin-top:.4rem;padding:.6rem .8rem;background:rgba(255,255,255,.04);border-radius:6px;font-size:.88rem;color:var(--text-body)}
+.cl-item details ul{margin:.3rem 0 0 1.1rem;padding:0}
+.cl-tag-edit{color:#f0b232}.cl-tag-add{color:#23a55a}.cl-tag-del{color:#f23f43}
 </style>
 </head>
 <body>
@@ -1258,6 +1274,23 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       </div>
 
 
+      <div class="sidebar-group" id="group-changelog">
+        <div class="sidebar-group-header" onclick="toggleSidebarGroup('group-changelog')">
+          <div class="sidebar-group-header-left">
+            <i class="fa-solid fa-clock-rotate-left" style="color: #5865f2;"></i>
+            <span class="group-title">Changelog</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sidebar-group-toggle"></i>
+        </div>
+        <ul class="sidebar-group-list">
+          <li class="sidebar-item">
+            <a href="#changelog" class="sidebar-link" data-target="changelog">
+              <i class="fa-solid fa-list-check" style="color: #5865f2;"></i>
+              <span class="item-title">Historia zmian</span>
+            </a>
+          </li>
+        </ul>
+      </div>
       </aside>
     <div id="navBackdrop"></div>
 
@@ -1310,6 +1343,7 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       <p class="doc-p">25. Zabrania się udostępniania graczom jakichkolwiek fragmentów niniejszego podręcznika. Złamanie tej zasady może skutkować natychmiastowym usunięciem z administracji bez możliwości ponownego dołączenia.</p>
       <p class="doc-p">26. Członkowie administracji są zobowiązani do zachowania pełnej poufności oraz profesjonalizmu podczas wykonywania swoich obowiązków.</p>
       <p class="doc-p">27. Zabrania się łamania regulaminu administracji również poza Discordem ekipy – dotyczy to także oficjalnego Discorda oraz serwera. Wszelkie wyzywanie i leakowanie graczy jest zabronione.</p>
+      <p class="doc-p">28. Ze względów bezpieczeństwa <span class="rank-badge rank-support">Support</span> oraz <span class="rank-badge rank-pomocnik">Pomocnik</span> nie mogą sprawdzać graczy na wiadomościach prywatnych (PW). Jeśli sprawdzenie na PW jest konieczne, ponieważ gracz nie może się zweryfikować lub ma bana na naszym Discordzie, może je przeprowadzić wyłącznie osoba z rangą <span class="rank-badge rank-jrmod">JrMod+</span>.</p>
 
       <p class="doc-p">Każde naruszenie powyższych zasad, taryfikatora lub pozostałych wytycznych administracyjnych może skutkować usunięciem z administracji.</p>
     </article>
@@ -1318,7 +1352,7 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       <div></div>
       <a href="#taryfikator-minecraft" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Taryfikator Minecraft <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1368,7 +1402,7 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       <a href="#regulamin-administracji" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin administracji</span></a>
       <a href="#taryfikator-discord" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Taryfikator Discord <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1438,7 +1472,7 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       <a href="#taryfikator-minecraft" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Taryfikator Minecraft</span></a>
       <a href="#regulamin-backupow" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Regulamin backupów <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1478,7 +1512,7 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       <h2 class="doc-h2" id="te-4">4. Wykroczenia nieujęte w taryfikatorze</h2>
       <p class="doc-p">Jeśli danego podpunktu nie ma na powyższej liście, zaleca się podpytać <span class="rank-badge rank-jrmod">JrMod+</span> oraz napisać do <strong>nveisk</strong>, aby dodał dany podpunkt z odpowiednim wyciszeniem.</p>
     </article>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1543,7 +1577,7 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       <a href="#taryfikator-discord" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Taryfikator Discord</span></a>
       <a href="#obowiazki-i-permisje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Obowiązki i permisje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1582,7 +1616,7 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
       <a href="#regulamin-backupow" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Regulamin backupów</span></a>
       <a href="#qa" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Q&amp;A <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1725,7 +1759,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#problemy-graczy-i-obsluga" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Problemy graczy i obsługa</span></a>
       <a href="#pomoc-graczom-serwera" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Pomoc graczom serwera <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1804,7 +1838,18 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <h2 class="doc-h2" id="qa-31">31. Co zrobić w sytuacji, gdy gracz prosi o nadzór?</h2>
       <p class="doc-p">Informujesz gracza, że jeśli chce unbana i nadzór, musi zgłosić się na Discorda Extreme Plusa – znajdzie go po wpisaniu <code>extremeplus.pl</code>, na stronie jest link do Discorda. Następnie otwiera ticket z prośbą i wypełnia w nim potrzebne informacje.</p>
       <h2 class="doc-h2" id="qa-32">32. Czym jest nadzór, kto może go nałożyć? Czy jest obowiązkowy?</h2>
-      <p class="doc-p">Opisz, czym jest nadzór (z formułki o unbana). Nadzór <strong>nie jest obowiązkowy</strong> – jest to program ochotniczy dla graczy, którzy cheatowali.</p>
+      <p class="doc-p"><strong>Czym jest nadzór?</strong> Nadzór <strong>nie jest obowiązkowy</strong> – to program ochotniczy dla graczy, którzy cheatowali i chcą dostać drugą szansę. Nie dostają jej jednak za darmo, tylko z nadzorem, czyli ich gra jest monitorowana. Opis dla gracza znajdziesz też w formułce o unbana (<a href="#formulki">Formułki</a>).</p>
+      <p class="doc-p"><strong>Co dokładnie robi nadzór?</strong></p>
+      <ul class="bul">
+        <li>Sprawdza, jakie gracz ma mody.</li>
+        <li>Widzi jego aktualne logi: co podnosi, kogo bije, co wyrzuca itp.</li>
+        <li>Może robić screenshoty z Minecrafta, a moderacja może zrobić screenshot na żądanie.</li>
+        <li>Wszystkie informacje o graczu są zbierane <strong>wyłącznie z serwera mcextreme.pl i plików Minecrafta</strong>.</li>
+      </ul>
+      <p class="doc-p"><strong>Jak gracz zgłasza się na nadzór?</strong> Pisze ticket na Discordzie Extreme Plusa, w kategorii próśb o nadzór (patrz pytanie 31). Na zatwierdzenie zgłoszenia czeka zwykle około 2 tygodni, a czasem dłużej.</p>
+      <p class="doc-p"><strong>Kiedy nadawane są nadzory?</strong> Zazwyczaj masowo, raz w miesiącu. Po ustaleniu daty bot wysyła do wszystkich zatwierdzonych zgłoszeń powiadomienie, że na serwerze są nakładane nadzory i że gracze mają być na pomocy z modem.</p>
+      <p class="doc-p"><strong>Kto może nadawać i kto musi być obecny?</strong> Nadzór może nałożyć <span class="rank-badge rank-pomocnik">Pomocnik</span> w panelu, ale <strong>zawsze musi być przy tym obecny <span class="rank-badge rank-doknes">Doknes</span></strong> oraz osoba nadająca nadzór. <span class="rank-badge rank-doknes">Doknes</span> nagrywa, że gracz został zapoznany ze wszystkimi informacjami o nadzorze, i pokazuje proces włączania nadzoru oraz to, że gracz zgodził się na jego nałożenie.</p>
+      <div class="callout ban"><div class="callout-title">Nigdy bez Doknesa</div><strong>NIGDY NIE DAJEMY NADZORU BEZ DOKNESA!</strong></div>
       <h2 class="doc-h2" id="qa-33">33. Co zrobić w sytuacji, gdy gracz ma wątpliwości co do moda Extreme Plusa i wysyła dowody na zainfekowanie trojanem itp.?</h2>
       <p class="doc-p">Zapewniamy gracza, że nie jest to żaden wirus, i oznaczamy <span class="rank-badge rank-doknes">Doknesa</span>. Nie wchodzimy w dyskusję z graczem.</p>
       <h2 class="doc-h2" id="qa-34">34. Czy mogę mieć więcej niż jednego gracza na pomocy?</h2>
@@ -1833,12 +1878,18 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <p class="doc-p">W takiej sytuacji musisz napisać do <span class="rank-badge rank-jradmin">JuniorAdmina</span>/<span class="rank-badge rank-admin">Admina</span>, a on na pewno zajmie się tym bez problemu.</p>
       <h2 class="doc-h2" id="qa-46">46. Co gdy wszyscy administratorzy mają urlop, a jest np. dużo zgłoszeń o jakiś błąd, gdzie wymaga nadania rangi?</h2>
       <p class="doc-p">Należy powiadomić gracza, że aktualnie każdy administrator ma urlop i czas odpowiedzi zostanie z tego powodu wydłużony. W tym czasie weź od gracza wszystkie ważne informacje oraz dowody.</p>
+      <h2 class="doc-h2" id="qa-47">47. Czy jako Support/Pomocnik mogę sprawdzić gracza na PW?</h2>
+      <p class="doc-p">Nie. Ze względów bezpieczeństwa <span class="rank-badge rank-support">Support</span> oraz <span class="rank-badge rank-pomocnik">Pomocnik</span> nie mogą sprawdzać graczy na wiadomościach prywatnych. Dotyczy to też sytuacji, gdy gracz nie może się zweryfikować albo ma bana na naszym Discordzie i nie może wejść na centrum pomocy.</p>
+      <p class="doc-p">Jeśli sprawdzenie na PW jest w takiej sytuacji konieczne, może je przeprowadzić wyłącznie osoba z rangą <span class="rank-badge rank-jrmod">JrMod+</span>. Przekaż jej sprawę na Discordzie ekipy wraz z nickiem gracza i informacją, dlaczego nie może on wejść na centrum pomocy. Szczegóły: <a href="#regulamin-administracji">Regulamin administracji</a>, punkt 28.</p>
+
+      <h2 class="doc-h2" id="qa-48">48. Co zrobić, gdy gracz na sprawdzaniu ma tylko niedozwolone mody (bez cheatów)?</h2>
+      <p class="doc-p">W <code>/sprawdz</code> nie ma sekcji z niedozwolonymi modami, więc nadajesz bana za cheaty komendą <code>/sprawdz cheater &lt;nick&gt;</code>. Później <span class="rank-badge rank-jrmod">JrMod+</span> zmienia karę na <strong>20 dni</strong> (za niedozwolone mody daje się bana na 20 dni, chyba że lista przewiduje permanentnego). Zalecane jest, żebyś wpisał/a na kanale <strong>#bany</strong>, że taka sytuacja miała miejsce i karę trzeba zmienić. Podaj nick gracza, nazwę moda i dowód. Listę modów znajdziesz w <a href="#dozwolone-i-zakazane-modyfikacje">Dozwolone i zakazane modyfikacje</a>, a opis krok po kroku w <a href="#supporci-mody">Supporci</a>.</p>
     </article>
     <footer class="doc-pagination">
       <a href="#obowiazki-i-permisje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Obowiązki i permisje</span></a>
       <a href="#stazysci" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Stażyści <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026, 23:34 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1864,6 +1915,56 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <p class="doc-p">Szczegółowy wykaz obowiązków oraz uprawnień Twojej rangi znajdziesz w odpowiednich sekcjach podręcznika:</p>
       <ul class="bul"><li><strong><a href="#obowiazki-i-permisje">Obowiązki</a></strong></li><li><strong><a href="#obowiazki-i-permisje">Permisje</a></strong></li></ul>
       <div class="callout ban"><div class="callout-title">Ważne!</div>Wszelkie rozpowszechnianie tego podręcznika, materiałów szkoleniowych lub innych poufnych informacji administracyjnych poza gronem uprawnionych osób będzie skutkowało automatycznym usunięciem z administracji oraz wpisaniem na Blacklistę bez możliwości apelacji.</div>
+      <h2 class="doc-h2" id="stazysci-wiedza">Co musisz przeczytać i znać</h2>
+      <p class="doc-p">Egzamin na <span class="rank-badge rank-support">Supporta</span> obejmuje <strong>cały podręcznik</strong>. Nie wystarczy znać jednej komendy albo kilku kar z taryfikatora. Jako <span class="rank-badge rank-stazysta">Stażysta</span> masz obowiązek <strong>przeczytać wszystkie regulaminy, taryfikatory, formułki i zasady pomocy</strong> i je zrozumieć. Osoba prowadząca egzamin może zapytać o każdy fragment, a to, ile wiesz, ma bezpośredni wpływ na wynik.</p>
+      <p class="doc-p">Zanim zgłosisz się na egzamin, upewnij się, że znasz:</p>
+      <ul class="bul">
+        <li><strong><a href="#regulamin-administracji">Regulamin administracji</a></strong> – zasady, których musi przestrzegać cała ekipa, i to, co grozi za ich złamanie.</li>
+        <li><strong>Taryfikatory</strong> – <a href="#taryfikator-minecraft">Minecraft</a>, <a href="#taryfikator-discord">Discord</a> i <a href="#taryfikator-extremeplus">Extremeplus</a>. Musisz wiedzieć, za co i jaka kara jest nadawana. Pomaga w tym dział <a href="#za-co-karac">Za co karać?</a>.</li>
+        <li><strong><a href="#obowiazki-i-permisje">Obowiązki i permisje</a></strong> – co możesz robić na swojej randze, a czego nie.</li>
+        <li><strong><a href="#formulki">Formułki</a></strong> – gotowe odpowiedzi dla graczy i informacja, kiedy których użyć.</li>
+        <li><strong>Zasady pomocy graczom</strong> – <a href="#pomoc-graczom-serwera">Pomoc graczom serwera</a>, <a href="#problemy-graczy-i-obsluga">Problemy graczy i obsługa</a> i <a href="#nadawanie-kar-i-apelacje">Nadawanie kar i apelacje</a>.</li>
+        <li><strong>Sprawdzanie graczy</strong> – <a href="#proces-sprawdzania">Proces sprawdzania</a>, <a href="#antycheat">Antycheat</a> i <a href="#dozwolone-i-zakazane-modyfikacje">Dozwolone i zakazane modyfikacje</a>.</li>
+        <li><strong><a href="#podstawowe-informacje">Podstawowe informacje</a></strong> – jak zachowywać się wobec graczy i innych osób z ekipy.</li>
+        <li><strong><a href="#qa">Q&amp;A</a></strong> – odpowiedzi na najczęstsze pytania nowych osób.</li>
+      </ul>
+      <h2 class="doc-h2" id="stazysci-jak-sie-uczyc">Jak się uczyć przez 2 tygodnie?</h2>
+      <ul class="bul">
+        <li>Czytaj podręcznik po kolei, a nie tylko to, co Cię akurat interesuje. Nie próbuj przeczytać wszystkiego w jeden dzień.</li>
+        <li>Nie ucz się na pamięć. Ważne jest, żebyś rozumiał/a, <strong>dlaczego</strong> dana kara się należy, a nie tylko jaka jest.</li>
+        <li>Odpowiadaj na tickety i pomagaj graczom na CP według zasad z podręcznika. To najlepsza praktyka.</li>
+        <li>Ucz się sprawdzania z <a href="#proces-sprawdzania">Procesu sprawdzania</a> i pytaj mentora o to, czego nie rozumiesz.</li>
+        <li>Jeśli czegoś nie wiesz, zajrzyj do podręcznika albo zapytaj mentora. Nigdy nie zgaduj, bo błąd może skrzywdzić gracza.</li>
+      </ul>
+      
+      <h2 class="doc-h2" id="stazysci-obowiazki">Twoje obowiązki</h2>
+      <ul class="bul">
+        <li><strong>Odpowiadasz na tickety</strong> według <a href="#pomoc-graczom-serwera">Pomocy graczom</a>, <a href="#taryfikator-minecraft">Taryfikatora MC</a> i <a href="#taryfikator-discord">Taryfikatora DC</a>. Gracz ma dostać spokojną, jasną i uprzejmą odpowiedź, nawet gdy jest zdenerwowany.</li>
+        <li><strong>Pomagasz graczom na CP</strong> oraz na kanałach głosowych „pomagam”.</li>
+        <li><strong>Uczysz się sprawdzania</strong> według <a href="#proces-sprawdzania">Procesu sprawdzania</a>, razem z mentorem.</li>
+        <li><strong>Czytasz podręcznik</strong> od początku do końca i zadajesz pytania mentorowi.</li>
+      </ul>
+      <h2 class="doc-h2" id="stazysci-permisje">Twoje permisje</h2>
+      <div class="perm-grid"><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ MINECRAFT</span></div><p class="perm-none">Brak dodatkowych permisji.</p></div><div class="perm-card rank-stazysta"><div class="perm-head"><span class="rank-badge rank-stazysta">Stażysta</span><span class="perm-domain">⚬ DISCORD</span></div><ul><li>Uprawnienia rangi <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span>.</li></ul></div></div>
+      <p class="doc-p">Nie możesz mutować, banować, kickować ani sprawdzać graczy samodzielnie. Gdy sprawa wymaga takiej permisji, przekaż ją mentorowi lub wyższej randze. Pomocnik+ może zostać przeniesiony na Twoje CP po wcześniejszym ustaleniu (Q&amp;A, pytanie 24). Pełną listę permisji znajdziesz w <a href="#obowiazki-i-permisje">Obowiązkach i permisjach</a>.</p>
+      <h2 class="doc-h2" id="stazysci-zasady">Ważne zasady Stażysty</h2>
+      <ul class="bul">
+        <li><strong>Pomagasz tylko przez CP i tickety.</strong> Nie rozwiązuj spraw graczy w innych miejscach i nie pomagaj na kanale głosowym, gdy jest tam ktoś bez rangi administracyjnej.</li>
+        <li><strong>Nie sprawdzasz graczy na PW</strong> (Regulamin administracji, punkt 28). Nie nagrywasz też sprawdzeń i nie używasz SystemInformera ani ProcessHackera.</li>
+        <li><strong>Nie wchodź w cudze tickety.</strong> Możesz przejąć ticket tylko wtedy, gdy osoba, która go prowadzi, od dłuższego czasu jest nieaktywna.</li>
+        <li><strong>Nie zgaduj.</strong> Gdy nie wiesz, zajrzyj do podręcznika albo zapytaj mentora.</li>
+        <li><strong>Nic nie pokazuj osobom spoza ekipy</strong> (podręcznik, kanały administracji, tickety).</li>
+        <li><strong>Nie zostawiaj się AFK na serwerze.</strong> Jeśli Cię nie ma, wyjdź z serwera (Regulamin administracji, punkt 13).</li>
+      </ul>
+      <h2 class="doc-h2" id="stazysci-bledy">Najczęstsze błędy Stażystów</h2>
+      <div class="tbl-wrap"><table class="doc-table"><thead><tr><th>BŁĄD</th><th>JAK TEGO UNIKNĄĆ</th></tr></thead><tbody>
+        <tr><td><strong>Czytanie tylko wybranych działów</strong></td><td>Egzamin obejmuje cały podręcznik. Czytaj po kolei.</td></tr>
+        <tr><td><strong>Nauka na pamięć</strong></td><td>Zrozum, dlaczego dana kara się należy, a nie tylko jaka jest.</td></tr>
+        <tr><td><strong>Odpowiedź na ticket „z głowy”</strong></td><td>Otwórz odpowiedni dział podręcznika i formułkę, zanim odpiszesz.</td></tr>
+        <tr><td><strong>Brak pytań do mentora</strong></td><td>Mentor jest po to, żeby pytać. Lepiej zapytać niż zrobić coś źle.</td></tr>
+        <tr><td><strong>Wchodzenie w cudze tickety</strong></td><td>Przejmuj tylko nieaktywne tickety, zgodnie z regulaminem.</td></tr>
+      </tbody></table></div>
+
       <h2 class="doc-h2" id="stazysci-4">Na zakończenie</h2>
       <p class="doc-p">Pamiętaj, że ranga Stażysty to czas nauki i zdobywania doświadczenia. Nie bój się zadawać pytań swojemu mentorowi, dokładnie analizuj omawiane sytuacje i staraj się wyciągać wnioski z popełnianych błędów.</p>
       <p class="doc-p">Twoim celem jest zdobycie wiedzy i umiejętności, które pozwolą Ci odpowiedzialnie pełnić funkcję Supporta.</p>
@@ -1872,7 +1973,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#qa" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Q&amp;A</span></a>
       <a href="#supporci" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Supporci <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026, 19:18 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1883,13 +1984,115 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
         <h1 class="doc-title">SUPPORCI</h1>
         <p class="doc-lead">Informacje dla nowych Supportów, w tym o okresie próbnym.</p>
       </header>
-      <div class="callout warn"><div class="callout-title">W przygotowaniu</div>Ta sekcja zostanie uzupełniona wkrótce.</div>
+      <h2 class="doc-h2" id="supporci-1">Czym jest okres próbny?</h2>
+      <p class="doc-p"><span class="rank-badge rank-support">Support</span> to okres próbny, który trwa <strong>30 dni</strong>. W tym czasie masz jak najlepiej wykonywać swoje obowiązki i cały czas się uczyć. Twoim celem jest zdanie <strong>egzaminu na <span class="rank-badge rank-pomocnik">Pomocnika</span></strong>.</p>
+      <p class="doc-p">Przez te 30 dni widać, jak pracujesz. Liczy się to, czy jesteś aktywny, czy znasz zasady, czy dobrze traktujesz graczy i resztę ekipy oraz czy umiesz wyciągać wnioski ze swoich błędów. Każdy może się pomylić, ale warto z tego wyciągać naukę (więcej w <a href="#qa">Q&amp;A</a>).</p>
+      <p class="doc-p">Cały czas masz obok siebie <a href="#mentorstwo">mentora</a>. Pomaga Ci, tłumaczy, co zrobiłeś/aś źle, i pokazuje, jak robić to dobrze. Jeśli czegoś nie wiesz, pytaj go. Lepiej zapytać niż zrobić coś źle.</p>
+
+      <h2 class="doc-h2" id="supporci-2">Co musisz przeczytać i znać</h2>
+      <div class="callout warn"><div class="callout-title">Przeczytaj wszystko</div>Jako Support <strong>musisz przeczytać i znać cały podręcznik</strong>: wszystkie informacje, regulaminy, taryfikatory, formułki, zasady pomocy graczom i resztę działów. Egzamin na <span class="rank-badge rank-pomocnik">Pomocnika</span> sprawdza wiedzę z całego podręcznika, a nie tylko z rzeczy, które robisz najczęściej.</div>
+      <p class="doc-p">Przeczytaj po kolei i upewnij się, że rozumiesz:</p>
+      <ul class="bul">
+        <li><strong><a href="#regulamin-administracji">Regulamin administracji</a></strong> – zasady, których musi przestrzegać każdy z ekipy. Za ich złamanie można wylecieć z administracji.</li>
+        <li><strong>Taryfikatory</strong> (<a href="#taryfikator-minecraft">Minecraft</a>, <a href="#taryfikator-discord">Discord</a>, <a href="#taryfikator-extremeplus">Extremeplus</a>) – za co jest jaka kara. Do tego <a href="#za-co-karac">Za co karać?</a>, gdzie jest opisane, jak rozpoznać każde wykroczenie.</li>
+        <li><strong><a href="#obowiazki-i-permisje">Obowiązki i permisje</a></strong> – co Ci wolno, a czego nie.</li>
+        <li><strong><a href="#formulki">Formułki</a></strong> – gotowe wiadomości dla graczy i informacja, kiedy których użyć.</li>
+        <li><strong>Zasady pomocy graczom</strong> – <a href="#pomoc-graczom-serwera">Pomoc graczom serwera</a>, <a href="#problemy-graczy-i-obsluga">Problemy graczy i obsługa</a> i <a href="#nadawanie-kar-i-apelacje">Nadawanie kar i apelacje</a>.</li>
+        <li><strong>Sprawdzanie graczy</strong> – <a href="#proces-sprawdzania">Proces sprawdzania</a>, <a href="#antycheat">Antycheat</a> i <a href="#dozwolone-i-zakazane-modyfikacje">Dozwolone i zakazane modyfikacje</a>.</li>
+        <li><strong><a href="#podstawowe-informacje">Podstawowe informacje</a></strong> – jak się zachowywać wobec graczy i ekipy.</li>
+        <li><strong><a href="#qa">Q&amp;A</a></strong> – odpowiedzi na pytania, które zadaje większość nowych osób.</li>
+      </ul>
+
+      <h2 class="doc-h2" id="supporci-3">Twoje obowiązki</h2>
+      <p class="doc-p">Jako Support robisz na co dzień te rzeczy:</p>
+      <ul class="bul">
+        <li><strong>Odpowiadasz na tickety</strong> i <strong>pomagasz graczom na centrum pomocy (CP)</strong>. Gracz ma dostać spokojną, jasną i uprzejmą odpowiedź, nawet jeśli jest zdenerwowany.</li>
+        <li><strong>Pilnujesz czatu w grze</strong> i wyciszasz graczy, którzy łamią regulamin:
+          <ul class="sub-bul">
+            <li>Survival Extreme: <code>/mute &lt;nick&gt; &lt;czas&gt; &lt;powód&gt;</code></li>
+            <li>Skyblock: <code>/mute &lt;nick&gt; false &lt;czas&gt; &lt;powód&gt;</code></li>
+          </ul>
+          Zanim wyciszysz, miej dowód i sprawdź w <a href="#taryfikator-minecraft">taryfikatorze</a>, jaka kara się należy. Wyciszenie bez powodu to błąd.
+        </li>
+        <li><strong>Zgłaszasz graczy, którym należy się ban.</strong> Sam nie możesz go nadać. Wpisujesz gracza na Discordzie ekipy na kanale <strong>#bany</strong>, a bana nadaje <span class="rank-badge rank-pomocnik">Pomocnicy+</span>.</li>
+        <li><strong>Zgłaszasz podejrzenia o cheaty.</strong> Jeśli gracz napisze na <code>/helpop</code> albo w tickecie, że ktoś ma cheaty, a Ty nie możesz go jeszcze sprawdzić, wpisz go na kanale <strong>#podejrzenie-o-cheaty</strong>. Tak samo robisz przy ticketach bez dowodów.</li>
+        <li><strong>Zgłaszasz błędy od graczy.</strong> Jeśli nie wiesz, czy błąd jest prawdziwy, opisz go i dopisz <strong>(niesprawdzony)</strong>. Jeśli gracz ma nagranie, wyślij je razem z opisem.</li>
+        <li><strong>Odpisujesz graczom na <code>/helpop</code></strong> komendą <code>/msg &lt;gracz&gt; &lt;wiadomość&gt;</code>.</li>
+        <li><strong>Sprawdzasz graczy</strong> komendą <code>/sprawdz</code>, według zasad z <a href="#proces-sprawdzania">Procesu sprawdzania</a>. Na początku robisz to razem z mentorem (patrz niżej).</li>
+        <li><strong>Uczysz się i jesteś aktywny</strong> przez cały okres próbny.</li>
+      </ul>
+
+      <h2 class="doc-h2" id="supporci-4">Permisje na Minecraftcie</h2>
+      <p class="doc-p">Jakie mam permisje na Minecraftcie:</p>
+      <div class="perm-grid"><div class="perm-card rank-support"><div class="perm-head"><span class="rank-badge rank-support">Support</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Odmutowywanie (<code>/unmute</code>)</li><li>Sprawdzanie (<code>/sprawdz</code>)</li><li>Mutowanie (<code>/mute</code>)</li><li>Admin chat (<code>/ac &lt;wiadomość&gt;</code>)</li><li>Możliwość mutowania użytkowników na Extreme Plusie.</li><li>Możliwość odmutowania użytkowników na Extreme Plusie.</li><li>Dostęp do panelu z voicechatem na Extreme Plusie.</li></ul></div></div>
+      <p class="doc-p">Nie masz permisji do banów, kicków ani teleportowania się do graczy. Te rzeczy robi <span class="rank-badge rank-pomocnik">Pomocnicy+</span>. Pełną listę permisji wszystkich rang znajdziesz w <a href="#obowiazki-i-permisje">Obowiązkach i permisjach</a>.</p>
+
+      <h2 class="doc-h2" id="supporci-5">Ważne zasady Supporta</h2>
+      <ul class="bul">
+        <li><strong>Nie sprawdzasz graczy na PW.</strong> Ze względów bezpieczeństwa Support i Pomocnik nie mogą tego robić. Jeśli gracz nie może się zweryfikować albo ma bana na naszym Discordzie, sprawdzić go na PW może tylko <span class="rank-badge rank-jrmod">JrMod+</span>. Patrz <a href="#regulamin-administracji">Regulamin administracji</a>, punkt 28.</li>
+        <li><strong>Nie możesz nadawać banów.</strong> Gracza, któremu należy się ban, zgłaszasz na <strong>#bany</strong> razem z dowodami, najlepiej ze screenem z paskiem zadań.</li>
+        <li><strong>Pomagasz tylko przez CP i tickety.</strong> Nie rozwiązuj spraw graczy w innych miejscach. Nie pomagaj też na kanałach głosowych, gdy jest tam ktoś bez rangi administracyjnej. Dotyczy to także sprawdzania.</li>
+        <li><strong>Nie nagrywasz sprawdzeń.</strong> Bez rangi <span class="rank-badge rank-jrmod">JrMod+</span> nie używaj i nie pobieraj programów SystemInformer ani ProcessHacker.</li>
+        <li><strong>Same screeny to za mało na karę za cheaty.</strong> Mogą być sfałszowane, dlatego najlepiej sprawdzić gracza samemu. Jeśli jeszcze nie możesz sprawdzać, wpisz go na <strong>#podejrzenie-o-cheaty</strong>.</li>
+        <li><strong>Nie wchodź w cudze tickety.</strong> Możesz przejąć ticket tylko wtedy, gdy osoba, która go prowadzi, od dłuższego czasu nie jest aktywna. Ticket, w którym gracz nie odpisuje przez 48 godzin, zamykamy.</li>
+        <li><strong>Nie oznaczaj innych w kółko.</strong> Gdy czekasz na pomoc, wystarczy jedno lub dwa oznaczenia.</li>
+        <li><strong>Gdy sprawa jest za trudna, przekaż ją wyżej.</strong> Nie rób nic na własną rękę, jeśli nie masz do tego uprawnień.</li>
+        <li><strong>Nic nie pokazuj osobom spoza ekipy.</strong> Dotyczy to podręcznika, kanałów administracji i rzeczy, które widzisz podczas sprawdzania. Za udostępnianie podręcznika graczom grozi natychmiastowe usunięcie z administracji.</li>
+        <li><strong>Zajmujesz się Minecraftem.</strong> Czat na Discordzie pilnują ChatModzi.</li>
+      </ul>
+
+      <h2 class="doc-h2" id="supporci-6">Sprawdzanie graczy</h2>
+      <p class="doc-p">Zanim zaczniesz sprawdzać sam/a, musisz mieć za sobą <strong>pierwsze 3 sprawdzania ze swoim mentorem</strong>. Mentor patrzy wtedy, jak sobie radzisz z całym procesem: jak rozmawiasz z graczem, jak go przygotowujesz, jak szukasz śladów cheatów i jak podejmujesz decyzję.</p>
+      <p class="doc-p"><strong>Bez tych 3 sprawdzań nie możesz przystąpić do egzaminu na <span class="rank-badge rank-pomocnik">Pomocnika</span>.</strong></p>
+      <p class="doc-p">Jeśli po trzech sprawdzeniach nadal nie czujesz się pewnie, nic się nie dzieje. Sprawdzaj dalej razem z mentorem, który będzie Ci podpowiadał i tłumaczył błędy. Gdy mentora nie ma, a gracz czeka na sprawdzenie, poproś o pomoc osobę z rangą <span class="rank-badge rank-jrmod">JrMod+</span>. Ma ona obserwować Twoje sprawdzanie i przekazać mentorowi, co zobaczyła.</p>
+      <p class="doc-p">Pamiętaj: nie sprawdzaj gracza, który jest AFK. Jeśli gracz jest AFK, jest czysty. Całą procedurę krok po kroku znajdziesz w <a href="#proces-sprawdzania">Procesie sprawdzania</a>.</p>
+
+      
+      <h2 class="doc-h2" id="supporci-mody">Gracz ma na sprawdzaniu tylko niedozwolone mody</h2>
+      <p class="doc-p">Zdarza się, że podczas sprawdzania nie znajdziesz żadnych cheatów, a gracz ma <strong>wyłącznie niedozwolone modyfikacje</strong> (listę znajdziesz w <a href="#dozwolone-i-zakazane-modyfikacje">Dozwolone i zakazane modyfikacje</a>). W komendzie <code>/sprawdz</code> nie ma osobnej sekcji na niedozwolone mody, więc robimy to tak:</p>
+      <ol class="steps">
+        <li><strong>Nadajesz bana za cheaty</strong> komendą <code>/sprawdz cheater &lt;nick&gt;</code>. To jedyna opcja, którą dają Ci permisje.</li>
+        <li><strong>Wpisujesz gracza na kanale #bany</strong> na Discordzie ekipy. Napisz, że gracz miał na sprawdzaniu <strong>tylko niedozwolone mody</strong> (bez cheatów), podaj jego nick, nazwę moda i dowód, a na końcu zaznacz, że <strong>kara wymaga zmiany</strong>.</li>
+        <li><strong><span class="rank-badge rank-jrmod">JrMod+</span> zmienia karę na 20 dni.</strong> Za niedozwolone modyfikacje daje się bana na 20 dni, a nie bana za cheaty. Wyjątkiem są mody, za które lista przewiduje bana permanentnego.</li>
+      </ol>
+      <div class="callout warn"><div class="callout-title">Nie pomiń wpisu na #bany</div>Jeśli nie wpiszesz gracza na <strong>#bany</strong>, ban za cheaty zostanie nadany i nikt nie będzie wiedział, że trzeba go zmienić. Gracz dostałby wtedy karę, na którą nie zasłużył. Zrób wpis od razu po sprawdzeniu.</div>
+
+      <h2 class="doc-h2" id="supporci-7">Egzamin na Pomocnika</h2>
+      <p class="doc-p">Egzamin na <span class="rank-badge rank-pomocnik">Pomocnika</span> pokazuje, czego nauczyłeś/aś się przez cały okres próbny, co umiesz i jakie zdobyłeś/aś doświadczenie. Pytania dotyczą całego podręcznika, dlatego tak ważne jest, żebyś go przeczytał/a od początku do końca.</p>
+      <p class="doc-p">Po zdaniu egzaminu dostajesz rangę Pomocnika. Jeśli osoba, która go prowadzi, uzna, że musisz jeszcze się podszkolić, uzupełnij wiedzę i umów się na kolejny egzamin. Jeśli drugi egzamin też się nie uda, niestety musisz odejść z administracji.</p>
+      <p class="doc-p">Do egzaminu możesz przystąpić dopiero wtedy, gdy masz za sobą pierwsze 3 sprawdzania z mentorem. Więcej pytań o egzamin i okres próbny znajdziesz w <a href="#qa">Q&amp;A</a>.</p>
+
+      <h2 class="doc-h2" id="supporci-skargi">Skargi graczy na muty</h2>
+      <p class="doc-p">Jako <span class="rank-badge rank-support">Support</span> możesz przyjmować tylko skargi, które wymagają <strong>muta</strong>. Do skargi potrzebny jest screenshot z paskiem zadań (widać datę i godzinę). Karę nadajesz zgodnie z <a href="#taryfikator-minecraft">Taryfikatorem MC</a>, a obok powodu dopisujesz <code>//skarga</code>, np. <code>Wulgaryzmy //skarga</code>. Gdy gracz zgłasza poważną sprawę (np. doxing albo życzenie śmierci) i nie ma dowodu, a zna tylko datę i godzinę, zgłoś się do <span class="rank-badge rank-jrmod">JrMod+</span>. Sprawdzi on to na Extreme Plusie w czacie.</p>
+      <h2 class="doc-h2" id="supporci-zgloszenia">Jak zgłaszać na #bany i #podejrzenie-o-cheaty</h2>
+      <ul class="bul">
+        <li><strong>#bany</strong> – nick gracza, powód zgodny z taryfikatorem i screen z paskiem zadań. Oznacz <span class="rank-badge rank-pomocnik">Pomocnik+</span>. Zgłaszasz m.in. obrazę członków administracji, reklamowanie innego serwera, wykorzystywanie błędów i wszystko inne, za co jest ban.</li>
+        <li><strong>#podejrzenie-o-cheaty</strong> – gdy nie możesz jeszcze sprawdzić gracza albo ticket nie ma dowodów. Wpisz np. <code>xKredka - zgłoszenie helpop</code>. Zajrzyj tam też, zanim kogoś weźmiesz na sprawdzanie: jeśli jeden gracz pojawia się często, możesz go sprawdzić.</li>
+        <li>Zgłoszenie z dobrym dowodem i jasnym powodem Pomocnik rozpatrzy szybciej. Gdy odrzuci je z wyjaśnieniem, potraktuj to jako naukę, a nie krytykę.</li>
+      </ul>
+      <h2 class="doc-h2" id="supporci-pomocnicy">Praca z Pomocnikami i mentorem</h2>
+      <ul class="bul">
+        <li><strong>Pomocnik jest Twoimi „oczami na serwerze”.</strong> Gdy widzisz serię alertów antycheata, napisz do niego na <code>/ac</code> lub na Discordzie ekipy. Podaj <strong>nick, jakie alerty się wyświetlają i mniej więcej od kiedy</strong>.</li>
+        <li><strong>Nie masz permisji do bana, kicka ani teleportu.</strong> Jeśli sytuacja wymaga bana, poproś Pomocnika+ o przeniesienie na Twoje CP po wcześniejszym ustaleniu (Q&amp;A, pytanie 24).</li>
+        <li><strong>Pytaj mentora.</strong> Lepiej zapytać niż zrobić coś źle. Support nie może być mentorem.</li>
+        <li><strong>Gdy nie masz pewności, nie karz.</strong> Poproś o drugą opinię wyższą rangę.</li>
+      </ul>
+      <h2 class="doc-h2" id="supporci-bledy">Najczęstsze błędy Supportów</h2>
+      <div class="tbl-wrap"><table class="doc-table"><thead><tr><th>BŁĄD</th><th>JAK TEGO UNIKNĄĆ</th></tr></thead><tbody>
+        <tr><td><strong>Zgłoszenie na #bany bez paska zadań</strong></td><td>Zawsze wysyłaj pełny screen z paskiem zadań, na którym widać datę, godzinę i całe wykroczenie.</td></tr>
+        <tr><td><strong>Kara za cheaty po samym screenie lub alercie</strong></td><td>Same screeny mogą być sfałszowane. Sprawdź gracza (po 3 sprawdzaniach z mentorem) albo wpisz go na #podejrzenie-o-cheaty.</td></tr>
+        <tr><td><strong>Brak wpisu na #bany po sprawdzeniu z samymi modami</strong></td><td>Po ban za cheaty z <code>/sprawdz cheater</code> wpisz na #bany, że to były tylko niedozwolone mody i karę trzeba zmienić na 20 dni.</td></tr>
+        <tr><td><strong>Sprawdzanie gracza na PW</strong></td><td>Support i Pomocnik nie mogą. Przekaż sprawę do <span class="rank-badge rank-jrmod">JrMod+</span>.</td></tr>
+        <tr><td><strong>Używanie ProcessHackera / SystemInformera</strong></td><td>Tylko od <span class="rank-badge rank-jrmod">JrMod+</span>. Poproś kogoś z tą rangą o pomoc.</td></tr>
+        <tr><td><strong>Wyciszenie bez powodu lub bez dowodu</strong></td><td>Sprawdź w taryfikatorze, jaka kara się należy, i miej dowód. Gdy się pomylisz, napisz do gracza na <code>/msg</code> i odmutuj go.</td></tr>
+        <tr><td><strong>Pilnowanie czatu na Discordzie zamiast Minecrafta</strong></td><td>Jako Support zajmujesz się Minecraftem. Czat na Discordzie pilnują ChatModzi.</td></tr>
+      </tbody></table></div>
     </article>
     <footer class="doc-pagination">
       <a href="#stazysci" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Stażyści</span></a>
       <a href="#chatmodzi" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Chatmodzi <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026, 19:18 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1914,13 +2117,48 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <h2 class="doc-h2" id="cm-3">Czemu nie mam permisji do ticketów? Chciałbym rozwiązywać tickety.</h2>
       <p class="doc-p"><span class="rank-badge rank-cmd">ChatMod</span> oraz <span class="rank-badge rank-cmdplus">ChatMod+</span> nie mają permisji do ticketów, ponieważ większa część ticketów dotyczy działu Minecrafta i nie widzimy powodu, aby Chatmodzi je widzieli, skoro i tak nie mogą w nich pomóc. Jest to także zabezpieczenie, aby nowi Chatmodzi nie wynosili informacji poza administrację z ticketów, błędów itp.</p>
 
+      
+      <h2 class="doc-h2" id="cm-perm">Twoje permisje na Discordzie</h2>
+      <div class="perm-grid"><div class="perm-card rank-cmd"><div class="perm-head"><span class="rank-badge rank-cmd">ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Nadawanie i usuwanie przerw (timeoutów).</li><li>Wchodzenie na pełne kanały głosowe.</li><li>Wyłączanie dźwięku i wyciszanie członków na kanałach głosowych.</li><li>Zarządzanie wiadomościami.</li><li>Wejście na kanał Pomocy i przenoszenie graczy na pomoc i inne kanały.</li></ul></div><div class="perm-card rank-cmdplus"><div class="perm-head"><span class="rank-badge rank-cmdplus">ChatMod+</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Możliwość banowania użytkowników.</li><li class="inherit">To co ChatMod</li></ul></div><div class="perm-card rank-gcmd"><div class="perm-head"><span class="rank-badge rank-gcmd">Global ChatMod</span><span class="perm-domain">⚬ MCEXTREME.PL</span></div><ul><li>Dziennik zdarzeń, zarządzanie pseudonimami.</li><li>Zarządzanie kanałami ticketów i dostęp do wszystkich ticketów.</li><li class="inherit">To co ChatMod+</li></ul></div></div>
+      <p class="doc-p">Pełną listę permisji wszystkich rang znajdziesz w <a href="#obowiazki-i-permisje">Obowiązkach i permisjach</a>.</p>
+      <h2 class="doc-h2" id="cm-kary">Nadawanie kar na Discordzie</h2>
+      <ol class="steps">
+        <li><strong>Ustal, co dokładnie zrobił użytkownik</strong> i znajdź to wykroczenie w <a href="#taryfikator-discord">Taryfikatorze DC</a>.</li>
+        <li><strong>Zabezpiecz dowód.</strong> Zrób pełny screen z paskiem zadań, na którym widać datę, godzinę i całe wykroczenie. Przeczytaj kontekst: kilka wiadomości przed i po.</li>
+        <li><strong>Nadaj karę zgodną z taryfikatorem</strong> (timeout albo wyciszenie na kanale głosowym). Nie karzemy ostrzej ani łagodniej z sympatii lub antypatii.</li>
+        <li><strong>Gdy należy się ban,</strong> zgłoś go na <strong>#bany</strong> (patrz wyżej). Sam nie masz do tego permisji.</li>
+      </ol>
+      <div class="callout info"><div class="callout-title">Neutralność</div>Znajomy z ekipy, stały gracz i nowa osoba dostają taką samą karę za to samo (Regulamin administracji, punkt 5). Nie przyjmuj też żadnych korzyści za szybsze rozpatrzenie sprawy.</div>
+      <h2 class="doc-h2" id="cm-glosowe">Kanały głosowe</h2>
+      <ul class="bul">
+        <li>Pilnujesz, żeby na kanałach głosowych nie dochodziło do <strong>demoralizacji młodszych osób</strong>. Gracza, który łamie regulamin, wyciszasz.</li>
+        <li>Gdy sprawa dotyczy ciężkiego wykroczenia, zgłoś gracza na <strong>#bany</strong> i oznacz <span class="rank-badge rank-cmdplus">ChatMod+</span> oraz <span class="rank-badge rank-gcmd">Global ChatMod</span>.</li>
+      </ul>
+      <h2 class="doc-h2" id="cm-zasady">Ważne zasady ChatModa</h2>
+      <ul class="bul">
+        <li><strong>Zajmujesz się wyłącznie Discordem.</strong> Sprawy z Minecrafta (muty, bany, sprawdzanie) należą do Supportów i Pomocników.</li>
+        <li><strong>Nie masz permisji do ticketów</strong> (patrz wyżej). Pomagasz graczom na CP według <a href="#pomoc-graczom-serwera">Pomocy graczom serwera</a>.</li>
+        <li><strong>Nie podejmujesz samowolnych decyzji.</strong> Gdy sprawa przekracza Twoje kompetencje, pytaj <span class="rank-badge rank-cmdplus">ChatMod+</span> lub <span class="rank-badge rank-gcmd">Global ChatMod</span>.</li>
+        <li><strong>Zachowuj się profesjonalnie i kulturalnie</strong> wobec graczy i ekipy.</li>
+        <li><strong>Poufność.</strong> Nic z Discorda ekipy ani z tego podręcznika nie trafia do osób spoza administracji.</li>
+        <li><strong>Mentor</strong> wdraża Cię w życie administracji Discorda. Pytaj go o wszystko, czego nie rozumiesz (<a href="#mentorstwo">Mentorstwo</a>).</li>
+      </ul>
+      <h2 class="doc-h2" id="cm-bledy">Najczęstsze błędy ChatModów</h2>
+      <div class="tbl-wrap"><table class="doc-table"><thead><tr><th>BŁĄD</th><th>JAK TEGO UNIKNĄĆ</th></tr></thead><tbody>
+        <tr><td><strong>Zła kara lub zły czas</strong></td><td>Otwórz Taryfikator DC przed nadaniem kary.</td></tr>
+        <tr><td><strong>Zgłoszenie na #bany bez paska zadań, ID lub powodu</strong></td><td>Podaj ID gracza, powód zgodny z taryfikatorem i dowód z paskiem zadań, a potem oznacz <span class="rank-badge rank-cmdplus">ChatMod+</span> i <span class="rank-badge rank-gcmd">Global ChatMod</span>.</td></tr>
+        <tr><td><strong>Ocena po jednej wyrwanej wiadomości</strong></td><td>Przeczytaj kontekst. Jedno zdanie potrafi znaczyć coś innego niż całość.</td></tr>
+        <tr><td><strong>Karanie z sympatii lub antypatii</strong></td><td>Za to samo każdy dostaje taką samą karę.</td></tr>
+        <tr><td><strong>Wchodzenie w sprawy z Minecrafta</strong></td><td>Przekaż je Supportowi lub Pomocnikowi.</td></tr>
+      </tbody></table></div>
+
       <div class="callout ban"><div class="callout-title">Ważna uwaga</div>Wszelkie wynoszenie informacji spoza administracji – z ticketów, z Discorda ekipy i z tego podręcznika – jest równoznaczne z <strong>blacklistą bez możliwości apelacji</strong>.</div>
     </article>
     <footer class="doc-pagination">
       <a href="#supporci" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Supporci</span></a>
       <a href="#pomocnicy" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Pomocnicy <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026, 19:18 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -1929,9 +2167,165 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
     <article class="doc-article-body">
       <header class="doc-header">
         <h1 class="doc-title">POMOCNICY</h1>
-        <p class="doc-lead">Informacje dla nowych Pomocników.</p>
+        <p class="doc-lead">Informacje dla nowych Pomocników: co się zmienia po awansie, jak nadawać bany, jak pracować z alertami i zgłoszeniami o cheaty oraz czego nie wolno Ci robić.</p>
       </header>
-      <div class="callout warn"><div class="callout-title">W przygotowaniu</div>Ta sekcja zostanie uzupełniona wkrótce.</div>
+
+      <h2 class="doc-h2" id="pomocnicy-1">Co oznacza ranga Pomocnika?</h2>
+      <p class="doc-p"><span class="rank-badge rank-pomocnik">Pomocnik</span> to pierwsza ranga, która ma uprawnienia do <strong>banowania</strong>, <strong>kickowania</strong> i <strong>teleportowania się do graczy</strong>. Jako <span class="rank-badge rank-support">Support</span> zgłaszałeś/aś sprawy na kanale <strong>#bany</strong> i <strong>#podejrzenie-o-cheaty</strong>. Teraz to Ty jesteś osobą, która te zgłoszenia przyjmuje, weryfikuje i rozpatruje.</p>
+      <p class="doc-p">Zdanie egzaminu oznacza, że ekipa uznała, iż znasz podręcznik i potrafisz podejmować decyzje samodzielnie. Z tym zaufaniem idzie większa odpowiedzialność: <strong>błędny ban zostawia konkretnego gracza z karą, której nie powinien dostać</strong>, a przepuszczony cheater psuje rozgrywkę reszcie serwera. Dlatego od Pomocnika oczekuje się spokoju, dokładności i konsekwentnego trzymania się taryfikatora.</p>
+      <div class="callout info"><div class="callout-title">Pamiętaj</div>Każda ranga posiada również uprawnienia i obowiązki rang niższych. Jako Pomocnik nadal odpowiadasz na tickety, pomagasz graczom na CP, mutujesz na czacie, odpisujesz na <code>/helpop</code> i sprawdzasz graczy tak samo jak Support. Doszły do tego nowe zadania opisane poniżej.</div>
+
+      <h2 class="doc-h2" id="pomocnicy-2">Twoje obowiązki</h2>
+      <p class="doc-p">Poza całym zakresem obowiązków Supporta robisz na co dzień te rzeczy:</p>
+      <ul class="bul">
+        <li><strong>Nadajesz bany</strong> zgodnie z <a href="#taryfikator-minecraft">Taryfikatorem MC</a>, zarówno za własne ustalenia, jak i na podstawie zgłoszeń od Supportów.</li>
+        <li><strong>Obsługujesz kanał #bany</strong> na Discordzie ekipy. Sprawdzasz zgłoszenia od Supportów, oceniasz dowody i nadajesz bana albo odrzucasz zgłoszenie z wyjaśnieniem.</li>
+        <li><strong>Pilnujesz kanału #podejrzenie-o-cheaty.</strong> Zaglądasz tam regularnie. Jeśli ten sam gracz pojawia się wiele razy, obserwujesz go, a w skrajnym przypadku bierzesz na sprawdzanie.</li>
+        <li><strong>Obserwujesz graczy na serwerze:</strong> teleportujesz się do nich i patrzysz, co robią, na <code>/v</code> (vanish) oraz <code>/gm 3</code>.</li>
+        <li><strong>Pomagasz niższym rangom przy alertach antycheata.</strong> Supporci i Stażyści pytają Cię, czy możesz zerknąć na gracza z serią alertów. Szczegóły w punkcie o antycheacie poniżej.</li>
+        <li><strong>Zajmujesz się ticketami z działem cheaterów</strong> oraz sprawami z <code>/helpop</code>, które wymagają Twoich permisji (np. gracz zgłasza błąd albo utknął w bloku).</li>
+        <li><strong>Przyjmujesz przeniesienia z CP</strong>, gdy Support lub Stażysta musi zrobić coś, do czego nie ma permisji (patrz Q&amp;A, pytanie 24).</li>
+        <li><strong>Możesz zostać mentorem</strong> nowej osoby w administracji (patrz niżej).</li>
+      </ul>
+
+      <h2 class="doc-h2" id="pomocnicy-3">Twoje permisje</h2>
+      <p class="doc-p">Poniżej permisje Pomocnika. Pełne zestawienie wszystkich rang znajdziesz w <a href="#obowiazki-i-permisje">Obowiązkach i permisjach</a>.</p>
+      <div class="perm-grid"><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ MINECRAFT</span></div><ul><li>Teleportacja (<code>/tp</code>)</li><li>Banowanie (<code>/ban</code>)</li><li>Kickowanie (<code>/kick</code>)</li><li>Latanie (<code>/fly</code>)</li><li>Vanish (<code>/v</code>)</li><li>Sprawdzanie historii kar gracza (<code>/punishhistory &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego bana (<code>/checkban &lt;nick&gt;</code>)</li><li>Sprawdzanie, czy gracz ma aktywnego muta (<code>/checkmute &lt;nick&gt;</code>)</li><li>O nowych permisjach na Extreme Plusie dowiesz się na egzaminie na Pomocnika.</li><li class="inherit">To co Support</li></ul></div><div class="perm-card rank-pomocnik"><div class="perm-head"><span class="rank-badge rank-pomocnik">Pomocnik</span><span class="perm-domain">⚬ DISCORD</span></div><ul><li class="inherit">Na Discordzie nie masz dodatkowych permisji względem Supporta (rola <span class="rank-badge rank-adminrole">ADMINISTRACJA MCEXTREME.PL</span> oraz wyciszanie dźwięku i mikrofonu graczom na kanałach głosowych).</li></ul></div></div>
+      <p class="doc-p">Nie masz jeszcze permisji do <code>/backup</code> i <code>/unban</code>, mimo że możesz banować. Backupy i unbany nadaje dopiero <span class="rank-badge rank-jrmod">JrMod+</span>. Gdy ticket wymaga jednego z nich, przekaż sprawę wyżej.</p>
+
+      <h2 class="doc-h2" id="pomocnicy-4">Nadawanie banów</h2>
+      <p class="doc-p">Ban to najpoważniejsza kara, jaką możesz nałożyć, więc zanim wpiszesz komendę, przejdź przez ten krótki schemat:</p>
+      <ol class="steps">
+        <li><strong>Ustal, co dokładnie zrobił gracz</strong> i znajdź to wykroczenie w <a href="#taryfikator-minecraft">Taryfikatorze MC</a>. Jeśli nie umiesz go nazwać, to znak, że trzeba jeszcze pomyśleć. Pomocne będzie też <a href="#za-co-karac">Za co karać?</a></li>
+        <li><strong>Sprawdź dowody.</strong> Dobry dowód to pełny ekran z paskiem zadań, na którym widać datę, godzinę i całe wykroczenie z nickiem gracza. Jeśli masz tylko urywek czatu, zweryfikuj go na ExtremePlusie (czat → Wszystko → ostatni 1 dzień → <kbd>Ctrl</kbd> + <kbd>F</kbd> → nick gracza).</li>
+        <li><strong>Sprawdź historię gracza</strong> komendami <code>/punishhistory &lt;nick&gt;</code> oraz <code>/checkban &lt;nick&gt;</code>. Dzięki temu wiesz, czy gracz nie ma już aktywnego bana i czy powtarza przewinienie.</li>
+        <li><strong>Nadaj bana</strong> komendą z poprawnym czasem i jasnym powodem:
+          <ul class="sub-bul">
+            <li>Survival Extreme: <code>/ban &lt;nick&gt; &lt;true/false&gt; &lt;czas, 0d = perm&gt; &lt;powód&gt;</code></li>
+            <li>SkyBlock: <code>/ban &lt;nick&gt; &lt;true/false&gt; &lt;czas, 0 = perm&gt; &lt;powód&gt;</code></li>
+            <li><code>true</code> – ban niewidoczny dla graczy, <code>false</code> – widoczny dla graczy.</li>
+          </ul>
+        </li>
+        <li><strong>Jeśli ban pochodzi ze zgłoszenia na #bany</strong>, wpisz w powodzie nick osoby, która zgłosiła, np. <code>Obraza administracji (xKredka)</code>. Dzięki temu każdy widzi, kto zgłosił, a kto nadał.</li>
+        <li><strong>Daj znać zgłaszającemu</strong>, że sprawa została załatwiona. To drobiazg, ale dzięki temu Support wie, że jego zgłoszenie było dobre, i uczy się na przyszłość.</li>
+      </ol>
+      <div class="callout warn"><div class="callout-title">Zasady, których nie wolno łamać</div><ul class="bul"><li><strong>Czas kary i powód muszą zgadzać się z taryfikatorem.</strong> Nie karzemy ostrzej ani łagodniej z sympatii lub antypatii.</li><li><strong>Powód ma być czytelny.</strong> Gracz powinien z niego zrozumieć, za co dostał karę.</li><li><strong>Nie banujesz po znajomości i nie oszczędzasz znajomych.</strong> Znajomy z ekipy, stały gracz i nowa osoba dostają taką samą karę za to samo (Regulamin administracji, punkt 5).</li><li><strong>Wątpliwości = konsultacja.</strong> Lepiej chwilę poczekać i zapytać <span class="rank-badge rank-jrmod">JrMod+</span>, niż nadać karę, którą trzeba będzie cofać.</li></ul></div>
+      <div class="callout ban"><div class="callout-title">Ban za cheaty tylko ze 100% pewnością</div>Nigdy nie banujesz za samo podejrzenie, za alert antycheata, za screen ani za klip ze skargi. Podejrzenie jest powodem do <strong>sprawdzenia</strong>, a nie do kary. Ban za cheaty nadajemy dopiero po sprawdzeniu gracza i tylko wtedy, gdy mamy pewność. Ban za cheaty nie podlega odwołaniu, więc pomyłka kosztuje bardzo dużo. Zobacz: <a href="#nadawanie-kar-i-apelacje">Nadawanie kar i apelacje</a>.</div>
+
+      <h2 class="doc-h2" id="pomocnicy-5">Kanał #bany – jak rozpatrywać zgłoszenia</h2>
+      <p class="doc-p">Zgłoszenia na <strong>#bany</strong> to codzienna praca Pomocnika. Poprawne zgłoszenie od Supporta zawiera nick gracza, powód zgodny z taryfikatorem i screen z paskiem zadań. Co robisz po kolei:</p>
+      <ol class="steps">
+        <li><strong>Przeczytaj zgłoszenie i obejrzyj dowód.</strong> Sprawdź, czy screen jest pełny (cały ekran, widać datę i godzinę, nick gracza i całe wykroczenie), a nie wycinek bez kontekstu.</li>
+        <li><strong>Przeczytaj kontekst.</strong> Zerknij na kilka wiadomości przed i po. Jedno zdanie wyrwane z rozmowy potrafi znaczyć coś zupełnie innego niż całość.</li>
+        <li><strong>Zdecyduj:</strong> czy ban jest zasadny i jaka kara należy się według taryfikatora.</li>
+        <li><strong>Nadaj bana</strong> (patrz wyżej) albo <strong>odrzuć zgłoszenie</strong> i krótko wyjaśnij Supportowi dlaczego, np. „za mało dowodów”, „to wystarczy na mute, nie na bana”. Robimy to uprzejmie, bo Support się uczy.</li>
+        <li><strong>Gdy zgłoszenie dotyczy cheatów,</strong> screen sam w sobie nie wystarczy. Weź gracza na sprawdzanie albo zaobserwuj go na serwerze.</li>
+      </ol>
+      <div class="callout info"><div class="callout-title">Uczysz, nie tylko wykonujesz</div>Supporci często zgłaszają za dużo albo za mało. Jeśli zgłoszenie jest niedopracowane (brak paska zadań, brak powodu, zła kwalifikacja), wytłumacz, co poprawić. Dzięki temu następne zgłoszenia będą lepsze, a Ty zaoszczędzisz czas. Nie wyśmiewaj błędów, bo każdy kiedyś zaczynał (patrz zasady mentorów w <a href="#mentorstwo">Mentorstwie</a>).</div>
+      <p class="doc-p"><strong>Powody, dla których zgłaszają Supporci</strong> (patrz Q&amp;A, pytanie 6): obraza członków administracji (także z Discorda), reklama innego serwera, wykorzystywanie błędów oraz wszystko inne, za co jest ban. Przy reklamowaniu innych serwerów i doxingu sprawdź zapis w taryfikatorze, bo wymiar kary zależy od konkretnej sytuacji.</p>
+
+      <h2 class="doc-h2" id="pomocnicy-6">Cheaty: alerty, obserwacja i #podejrzenie-o-cheaty</h2>
+      <p class="doc-p">Pomocnik jest dla niższych rang „oczami na serwerze”. Alert antycheata nie mówi, co się dzieje na ekranie gracza, a Ty możesz wejść na <code>/v</code>, przeteleportować się do niego i zobaczyć to na własne oczy.</p>
+      <h3 class="doc-h3">Kiedy ktoś prosi Cię o zerknięcie na gracza</h3>
+      <ul class="bul">
+        <li>Support powinien podać <strong>nick gracza, jakie alerty się wyświetlają i mniej więcej od kiedy</strong>. Jeśli tego nie zrobi, dopytaj.</li>
+        <li>Wejdź na <code>/v</code>, teleportuj się do gracza (<code>/tp</code>) i obserwuj go na <code>/gm 3</code> / vanishu, żeby Cię nie zauważył.</li>
+        <li>Zwróć uwagę na to, co faktycznie robi: czy walczy, czy rusza się naturalnie, czy lata, czy bije przez ściany. Porównaj to z alertami.</li>
+        <li>Jeśli zachowanie jest podejrzane, weź gracza na sprawdzanie. Jeśli wygląda normalnie (np. lagi, fajerwerki, elytra), napisz o tym osobie, która pytała.</li>
+      </ul>
+      <h3 class="doc-h3">Jak oceniać alerty</h3>
+      <ul class="bul">
+        <li>Najważniejsze jest <strong>jakie to sprawdzenie</strong>. Wysokie VL przy <strong>Reach, Hitboxes i BadPackets</strong> to mocny sygnał. Alerty <strong>Simulation</strong> ignorujemy, bo najczęściej powodują je lagi.</li>
+        <li>Patrz na znacznik <code>[xN]</code> i rosnące VL: seria jeden po drugim jest dużo ważniejsza niż pojedynczy alert.</li>
+        <li>Jeden alert o niczym nie świadczy, ale <strong>seria różnych alertów w krótkim czasie</strong> to już realne podejrzenie.</li>
+        <li>Pamiętaj o botach na spawnie z Extreme Plusa. Często wyświetlają się w alertach i nie są graczami do sprawdzania (lista w <a href="#antycheat">Antycheacie</a>).</li>
+      </ul>
+      <div class="callout warn"><div class="callout-title">Alert to nie dowód</div>Alert antycheata nie jest podstawą do nałożenia kary. To tylko powód, żeby gracza sprawdzić. Obserwacja na <code>/v</code> pomaga zdecydować, czy sprawdzać, ale sama też nie jest dowodem na bana. Dopiero sprawdzenie daje podstawę.</div>
+      <h3 class="doc-h3">Kanał #podejrzenie-o-cheaty</h3>
+      <ul class="bul">
+        <li>Zaglądaj tam regularnie i patrz na zgłoszonych graczy.</li>
+        <li>Jeśli <strong>ten sam nick pojawia się bardzo często</strong>, zalecana jest obserwacja. W skrajnym przypadku bierzesz gracza na sprawdzanie.</li>
+        <li>Wpisy od Supportów bywają bez dowodów (np. „zgłoszenie helpop”). To normalne: to dla Ciebie sygnał, a nie wyrok.</li>
+        <li>Gdy sprawdzisz kogoś z listy, daj o tym znać, żeby inni Pomocnicy nie robili tego samego drugi raz.</li>
+      </ul>
+      <h3 class="doc-h3">Cheaty widoczne na streamie na Discordzie</h3>
+      <p class="doc-p">Support przekazuje Ci sprawę, gdy ktoś na Discordzie streamuje ekran z cheatami. Nick widoczny na streamie <strong>nie jest dowodem</strong>, bo może to być NameProtect. Ustalasz, kto naprawdę gra na naszej sieci, i dopiero wtedy sprawdzasz właściwego gracza.</p>
+
+      <h2 class="doc-h2" id="pomocnicy-7">Sprawdzanie graczy</h2>
+      <p class="doc-p">Sprawdzasz graczy tak samo jak Support, według <a href="#proces-sprawdzania">Procesu sprawdzania</a>, komendą <code>/sprawdz gracz/czysty/cheater/brakwsp &lt;nick&gt;</code>. Po awansie jesteś jedną z osób, do których inni zgłaszają się z takimi sprawami, więc to musisz umieć naprawdę dobrze.</p>
+      <ul class="bul">
+        <li><strong>Nie sprawdzasz gracza, który jest AFK.</strong> Gracz AFK = czysty. Gracz, który udaje AFK, dostaje ban za brak współpracy.</li>
+        <li><strong>Wysyłasz formułkę bez zmian</strong> (z <a href="#proces-sprawdzania">Procesu sprawdzania</a>) i dajesz graczowi 3 minuty na dołączenie na Discorda.</li>
+        <li><strong>Nie nagrywasz sprawdzeń</strong> i nie pomagasz na kanale głosowym, gdy jest tam osoba bez rangi administracyjnej.</li>
+        <li><strong>Nie sprawdzasz graczy na PW.</strong> Ze względów bezpieczeństwa Support i Pomocnik nie mogą tego robić (Regulamin administracji, punkt 28). Gdy gracz nie może się zweryfikować albo ma bana na naszym Discordzie, przekaż sprawę osobie z rangą <span class="rank-badge rank-jrmod">JrMod+</span> na Discordzie ekipy wraz z nickiem gracza i informacją, dlaczego nie może wejść na CP.</li>
+        <li><strong>Nie używasz i nie pobierasz SystemInformera ani ProcessHackera.</strong> Te programy są dla <span class="rank-badge rank-jrmod">JrMod+</span>. Gdy sprawa wymaga takiego programu, poproś o pomoc JrModa+.</li>
+        <li><strong>Pamiętaj o komendach:</strong> <code>gracz</code> – bierze gracza na sprawdzanie, <code>czysty</code> – nadaje status czystego, <code>cheater</code> – banuje za cheaty, <code>brakwsp</code> – banuje za brak współpracy. Ban zostaje nadany automatycznie, również gdy gracz się wyloguje.</li>
+        <li><strong>Nie spiesz się.</strong> Błędnie przeprowadzone sprawdzenie kończy się niesłusznym banem albo przepuszczeniem cheatera. Spokój i dokładność są ważniejsze niż tempo.</li>
+        <li><strong>Gdy nie jesteś pewien/pewna wyniku,</strong> poproś o drugą parę oczu, np. <span class="rank-badge rank-jrmod">JrModa+</span>, zamiast banować „na wyczucie”.</li>
+      </ul>
+
+      <h2 class="doc-h2" id="pomocnicy-8">Tickety i /helpop</h2>
+      <p class="doc-p">Tickety i <code>/helpop</code> dalej należą do Twoich obowiązków, a Pomocnik zajmuje się tymi, które wymagają jego permisji:</p>
+      <ul class="bul">
+        <li><strong>Tickety z działem cheaterów</strong> – gracz zgłasza kogoś o cheaty albo prosi o pomoc w sprawie sprawdzenia. Pamiętaj, że sam screen i klip nie są podstawą do bana. Najpierw sprawdzasz gracza.</li>
+        <li><strong>Gracz utknął w bloku</strong> – teleportujesz się do niego i próbujesz pomóc. Jeśli wyteleportowanie nie pomoże, poinstruuj go, żeby wyszedł z serwera i zrobił reset internetu.</li>
+        <li><strong>Gracz pisze o błędzie</strong> – po przeczytaniu zgłoszenia odpisujesz, że sprawa zostanie przekazana technikowi, i przekazujesz ją na kanał <strong>zgłos-blad</strong>. Jeśli nie wiesz, czy błąd jest prawdziwy, dopisz <strong>(niesprawdzony)</strong>.</li>
+        <li><strong>Blokady niesłuszne i unbany</strong> wyjaśniamy wyłącznie na ticketach, nigdy na PW. Jeśli ticket wymaga unbana, przekaż go do <span class="rank-badge rank-jrmod">JrMod+</span>.</li>
+        <li><strong>Backupy</strong> (ticket „błąd”) nadaje dopiero <span class="rank-badge rank-jrmod">JrMod+</span>, według <a href="#regulamin-backupow">Regulaminu backupów</a>.</li>
+        <li>Przejmuj tickety zgodnie z regulaminem: nie wchodzimy w cudze tickety, chyba że osoba prowadząca od dłuższego czasu jest nieaktywna. Ticket, w którym gracz nie odpisuje 48 godzin, zamykamy (z wyjątkami wymienionymi w <a href="#regulamin-administracji">Regulaminie administracji</a>, punkt 19).</li>
+      </ul>
+
+      <h2 class="doc-h2" id="pomocnicy-9">Praca z Supportami i Stażystami</h2>
+      <p class="doc-p">Jako Pomocnik jesteś dla nowych osób punktem odniesienia. To od Ciebie w dużej mierze zależy, czy Support będzie pewnie pracował i czy nauczy się dobrych nawyków.</p>
+      <ul class="bul">
+        <li><strong>Odpowiadaj na pytania i prośby.</strong> Jeśli Support prosi o pomoc na <code>/ac</code> albo na Discordzie ekipy, nie ignoruj go. Lepiej szybko odpisać, że nie możesz teraz, niż zostawić go bez odpowiedzi.</li>
+        <li><strong>Tłumacz, nie tylko wykonuj.</strong> Gdy odrzucasz zgłoszenie albo poprawiasz Supporta, napisz krótko dlaczego. Tak jak mówi zasada mentoringu: ważne, żeby ktoś rozumiał nie tylko co zrobić, ale też dlaczego.</li>
+        <li><strong>Przenoszenie z CP.</strong> Jeśli Support lub Stażysta potrzebuje Twojej permisji (np. do bana), może poprosić o przeniesienie Cię na jego CP. Ustalcie to wcześniej, tak jak opisano w Q&amp;A, pytanie 24.</li>
+        <li><strong>Pomagaj przy sprawdzaniach.</strong> Support, który nie ma jeszcze za sobą 3 sprawdzań z mentorem, nie sprawdza sam. Gdy mentora nie ma, a gracz czeka, Support prosi o pomoc osobę z rangą <span class="rank-badge rank-jrmod">JrMod+</span> (Q&amp;A, pytanie 29). Jeśli to Ty jesteś mentorem, pilnuj, żeby podopieczny nie został z tym sam.</li>
+        <li><strong>Bądź przykładem.</strong> Niższe rangi patrzą, jak się zachowujesz: jak piszesz do graczy, jak karzesz, jak reagujesz na krytykę. Profesjonalizm, kultura i neutralność (Regulamin administracji, punkty 1 i 14) dotyczą Ciebie w szczególności.</li>
+      </ul>
+
+      <h2 class="doc-h2" id="pomocnicy-10">Mentorstwo</h2>
+      <p class="doc-p">Pomocnik może zostać <a href="#mentorstwo">mentorem</a>. Jeśli uważasz, że jesteś w stanie przyjąć osobę do mentorstwa i ta funkcja Cię nie przytłoczy, napisz do rangi <span class="rank-badge rank-admin">Admin</span>. <span class="rank-badge rank-support">Support</span> nie może być mentorem. Od rangi <span class="rank-badge rank-jrmod">JrMod</span> mentorstwo jest obowiązkowe. O tym, kto jest mentorem, decyduje staż, a nie ranga.</p>
+      <ul class="bul">
+        <li><strong>Najważniejsze jest sprawdzanie graczy.</strong> Mentor musi być przy 3 pierwszych sprawdzaniach podopiecznego. Pokazujesz cały proces krok po kroku, razem z komendami dla Windowsa (PowerShell), Linuxa i Maca.</li>
+        <li><strong>Uczysz, kiedy brać gracza na sprawdzanie</strong> (podejrzenie to powód do sprawdzenia, a nie do kary) i że ban za cheaty nadajemy tylko przy pełnej pewności.</li>
+        <li><strong>Jesteś cierpliwy/a.</strong> Podopieczny ma prawo do błędów i pytań. Nie porównujesz go z innymi i nie wywierasz presji.</li>
+        <li><strong>Mówisz prawdę o postępach.</strong> Jeśli widzisz poważne problemy z zaangażowaniem albo zachowaniem, informujesz wyższą administrację. Nie ukrywasz ich i nie koloryzujesz.</li>
+      </ul>
+
+      <h2 class="doc-h2" id="pomocnicy-11">Ważne zasady i ograniczenia</h2>
+      <ul class="bul">
+        <li><strong>Nie prowadzisz zwykłej rozgrywki na serwerze</strong> (nie dotyczy Skyblocka). Jeśli zależy Ci na grze, napisz do rangi Admin i ustal, czy możesz. Jeśli nadużyjesz choćby jednej permisji rangi Pomocnik w celu faworyzowania multikonta, zostaniesz od razu usunięty z administracji (Regulamin administracji, punkt 12).</li>
+        <li><strong>Nie teleportujesz się bezpodstawnie.</strong> Wolno Ci się teleportować do graczy tylko w konkretnym celu: obserwacja, sprawdzenie, pomoc. Nie teleportujesz się do twórców serwera ani Doknesa bez uzasadnienia, ani po to, żeby trollować lub zwracać na siebie uwagę (punkty 9 i 10).</li>
+        <li><strong>Nie podejmujesz samowolnych decyzji</strong> bez uprawnień lub zgody wyższej administracji (punkt 4). Jeśli sprawa przekracza Twoje kompetencje, przekaż ją wyżej (punkt 15).</li>
+        <li><strong>Nie banujesz za cheaty na podstawie samych screenów.</strong> Nawet nagranie nie zawsze jest jednoznacznym dowodem (punkt 24).</li>
+        <li><strong>Nie zostawiaj się AFK na serwerze.</strong> Jeśli Cię nie ma, wyjdź z serwera. Administrator, który nie reaguje na zgłoszenia, a „stoi” na serwerze, to problem (punkt 13).</li>
+        <li><strong>Nie karz i nie ułaskawiaj z sympatii lub antypatii.</strong> Nie przyjmuj też żadnych korzyści za szybsze rozpatrzenie sprawy (punkty 5 i 6).</li>
+        <li><strong>Poufność.</strong> Nic z ticketów, Discorda ekipy, panelu ExtremePlusa ani tego podręcznika nie trafia do osób spoza ekipy. Udostępnienie podręcznika graczom może skutkować natychmiastowym usunięciem z administracji, a wynoszenie informacji to blacklista bez apelacji.</li>
+        <li><strong>Ciągle się ucz.</strong> Taryfikatory i podręcznik się zmieniają. Zaglądaj do nich regularnie, zwłaszcza po aktualizacjach.</li>
+        <li><strong>Szanuj anonimowość zgłaszającego gracza,</strong> także wtedy, gdy nikt o to nie prosi.</li>
+      </ul>
+
+      <h2 class="doc-h2" id="pomocnicy-12">Najczęstsze błędy Pomocników</h2>
+      <div class="tbl-wrap"><table class="doc-table"><thead><tr><th>BŁĄD</th><th>JAK TEGO UNIKNĄĆ</th></tr></thead><tbody>
+        <tr><td><strong>Ban za cheaty po samym alercie, screenie lub klipie</strong></td><td>Alert i screen to tylko powód do sprawdzenia. Weź gracza na sprawdzanie i banuj dopiero przy pełnej pewności.</td></tr>
+        <tr><td><strong>Zły czas lub powód bana</strong></td><td>Zawsze otwórz taryfikator przed nadaniem kary. Powód ma być jasny i zgodny z wykroczeniem.</td></tr>
+        <tr><td><strong>Brak nicku Supporta w powodzie</strong></td><td>Przy banie ze zgłoszenia dopisz w nawiasie nick osoby, która zgłosiła, np. <code>Obraza administracji (xKredka)</code>.</td></tr>
+        <tr><td><strong>Ban bez sprawdzenia historii</strong></td><td>Użyj <code>/punishhistory</code> i <code>/checkban</code>. Gracz może już mieć aktywną karę albo to jego kolejne przewinienie.</td></tr>
+        <tr><td><strong>Sprawdzanie na PW</strong></td><td>Support i Pomocnik nie mogą. Przekaż sprawę do <span class="rank-badge rank-jrmod">JrMod+</span>.</td></tr>
+        <tr><td><strong>Używanie ProcessHackera / SystemInformera</strong></td><td>Tylko od <span class="rank-badge rank-jrmod">JrMod+</span>. Poproś o pomoc kogoś z tą rangą.</td></tr>
+        <tr><td><strong>Zbędne teleportowanie się do graczy</strong></td><td>Teleportuj się tylko z konkretnego powodu. Szczególnie ostrożnie wobec twórców serwera i Doknesa.</td></tr>
+        <tr><td><strong>Rozstrzyganie spraw poza CP i ticketami</strong></td><td>Pomoc graczom odbywa się tylko na CP lub w ticketach. Niesłusznych blokad nie wyjaśniamy na PW.</td></tr>
+        <tr><td><strong>Ignorowanie pytań Supportów</strong></td><td>Szybka, uprzejma odpowiedź i krótkie wyjaśnienie. To inwestycja w lepszą ekipę.</td></tr>
+        <tr><td><strong>Zgadywanie, gdy nie wiesz</strong></td><td>Lepiej dopytać wyższą rangę niż podjąć błędną decyzję i ją potem cofać.</td></tr>
+      </tbody></table></div>
+
+      <h2 class="doc-h2" id="pomocnicy-13">Co dalej? Awans na JrMod</h2>
+      <p class="doc-p">Następną rangą jest <span class="rank-badge rank-jrmod">JrMod</span>. Daje m.in. nadawanie backupów (<code>/backup</code>), unbanów (<code>/unban</code>), teleportowanie graczy do siebie (<code>/tphere</code>), nieśmiertelność (<code>/god</code>) oraz możliwość pobierania ProcessHackera i SystemInformera podczas sprawdzania. Od tej rangi mentorstwo jest obowiązkowe.</p>
+      <p class="doc-p">Awans zależy od decyzji administracji i tego, jak pracujesz: aktywność, znajomość podręcznika, rzetelność przy banach i sprawdzaniach, kultura wobec graczy i ekipy oraz to, jak pomagasz niższym rangom. Jeśli masz spory staż i nie dostajesz awansu, napisz do rangi <span class="rank-badge rank-admin">Admin</span> i wyjaśnij sytuację (Q&amp;A, pytanie 17).</p>
+
+      <div class="callout info"><div class="callout-title">Masz pytanie?</div>Jeśli nie wiesz, co zrobić, zapytaj mentora, <span class="rank-badge rank-jrmod">JrMod+</span> albo wyższą rangę. Lepiej dopytać niż podjąć błędną decyzję. Odpowiedzi na wiele często zadawanych pytań znajdziesz w <a href="#qa">Q&amp;A</a>.</div>
     </article>
     <footer class="doc-pagination">
       <a href="#chatmodzi" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Chatmodzi</span></a>
@@ -2026,7 +2420,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#pomocnicy" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Pomocnicy</span></a>
       <a href="#podstawowe-informacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Podstawowe informacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2146,7 +2540,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#antycheat" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Antycheat</span></a>
       <a href="#nadawanie-kar-i-apelacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Nadawanie kar i apelacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2213,7 +2607,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#podstawowe-informacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Podstawowe informacje</span></a>
       <a href="#za-co-karac" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Za co karać? <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2415,7 +2809,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#nadawanie-kar-i-apelacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Nadawanie kar i apelacje</span></a>
       <a href="#mentorstwo" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Mentorstwo <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2470,7 +2864,7 @@ Jeśli napotkasz jakiekolwiek problemy podczas pobierania, instalacji lub urucha
       <a href="#za-co-karac" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Za co karać?</span></a>
       <a href="#problemy-graczy-i-obsluga" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Problemy graczy i obsługa <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2515,7 +2909,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#mentorstwo" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Mentorstwo</span></a>
       <a href="#formulki" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Formułki <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2556,7 +2950,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#formulki" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Formułki</span></a>
       <a href="#dozwolone-i-zakazane-modyfikacje" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Dozwolone i zakazane modyfikacje <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2590,7 +2984,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#pomoc-graczom-serwera" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Pomoc graczom serwera</span></a>
       <a href="#proces-sprawdzania" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Proces sprawdzania <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2676,7 +3070,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#dozwolone-i-zakazane-modyfikacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Dozwolone i zakazane modyfikacje</span></a>
       <a href="#komendy-powershell" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Komendy PowerShell <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2775,7 +3169,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#proces-sprawdzania" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Proces sprawdzania</span></a>
       <a href="#linux" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Linux <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2811,7 +3205,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#komendy-powershell" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Komendy PowerShell</span></a>
       <a href="#mac" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">MAC <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2850,7 +3244,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#linux" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Linux</span></a>
       <a href="#telefon" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Telefon <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -2907,9 +3301,39 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
       <a href="#mac" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> MAC</span></a>
       <div></div>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
+
+  <!-- PAGE: Changelog -->
+  <section id="changelog" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Changelog</span></div>
+    <article class="doc-article-body">
+      <header class="doc-header">
+        <h1 class="doc-title">CHANGELOG</h1>
+        <p class="doc-lead">Lista wszystkich zmian w podręczniku: kto, kiedy i którą sekcję zmienił. Sprawdzaj go po każdej aktualizacji.</p>
+      </header>
+      <div class="cl-embed">
+        <div class="cl-embed-title">📝 Zmiany w podręczniku</div>
+        <div class="cl-embed-desc">Od najnowszych. Kliknij „Zobacz zmianę”, żeby zobaczyć, co dokładnie się zmieniło.</div>
+        <ul class="cl-list">
+<li class="cl-item"><div class="cl-line"><span class="cl-bullet">•</span><strong>nveisk</strong><span class="cl-meta">, 04.11.2026, 23:57,</span> <span class="cl-tag-add">dodał</span> sekcję <a href="#changelog">Changelog</a> <span class="cl-check">- sprawdź!</span></div><details><summary>Zobacz zmianę</summary><div><ul><li>Nowa sekcja na samym dole podręcznika z historią zmian.</li><li>Każdy wpis ma autora, datę, godzinę, nazwę sekcji i rozwijany opis zmiany.</li></ul></div></details></li>
+<li class="cl-item"><div class="cl-line"><span class="cl-bullet">•</span><strong>nveisk</strong><span class="cl-meta">, 04.11.2026, 23:34,</span> <span class="cl-tag-edit">edytował</span> sekcję <a href="#qa">Q&amp;A</a> <span class="cl-check">- sprawdź!</span></div><details><summary>Zobacz zmianę</summary><div><ul><li>Pytanie 32 „Czym jest nadzór, kto może go nałożyć?” rozbudowane: czym jest nadzór (program ochotniczy, druga szansa z monitorowaniem gry), co robi (mody, logi, screenshoty), jak się zgłosić, kiedy są nadawane (masowo, raz w miesiącu), kto nadaje i kto musi być obecny.</li><li>Dodane ostrzeżenie: NIGDY NIE DAJEMY NADZORU BEZ DOKNESA!</li></ul></div></details></li>
+<li class="cl-item"><div class="cl-line"><span class="cl-bullet">•</span><strong>nveisk</strong><span class="cl-meta">, 04.11.2026, 19:18,</span> <span class="cl-tag-add">dodał</span> sekcję <a href="#qa">Q&amp;A (pytanie 48)</a> <span class="cl-check">- sprawdź!</span></div><details><summary>Zobacz zmianę</summary><div><ul><li>Nowe pytanie 48: co zrobić, gdy gracz na sprawdzaniu ma tylko niedozwolone mody. Ban za cheaty z <code>/sprawdz cheater</code>, potem JrMod+ zmienia karę na 20 dni, zalecany wpis na #bany.</li></ul></div></details></li>
+<li class="cl-item"><div class="cl-line"><span class="cl-bullet">•</span><strong>nveisk</strong><span class="cl-meta">, 04.11.2026, 19:18,</span> <span class="cl-tag-edit">edytował</span> sekcję <a href="#supporci">Supporci</a> <span class="cl-check">- sprawdź!</span></div><details><summary>Zobacz zmianę</summary><div><ul><li>Nowa sekcja „Gracz ma na sprawdzaniu tylko niedozwolone mody” (w <code>/sprawdz</code> nie ma sekcji z modami).</li><li>Dodane: skargi na muty, zgłaszanie na #bany i #podejrzenie-o-cheaty, praca z Pomocnikami i mentorem, tabela najczęstszych błędów.</li></ul></div></details></li>
+<li class="cl-item"><div class="cl-line"><span class="cl-bullet">•</span><strong>nveisk</strong><span class="cl-meta">, 04.11.2026, 19:18,</span> <span class="cl-tag-edit">edytował</span> sekcję <a href="#chatmodzi">Chatmodzi</a> <span class="cl-check">- sprawdź!</span></div><details><summary>Zobacz zmianę</summary><div><ul><li>Dodane: permisje na Discordzie (ChatMod, ChatMod+, Global ChatMod), nadawanie kar, kanały głosowe, ważne zasady, tabela błędów.</li></ul></div></details></li>
+<li class="cl-item"><div class="cl-line"><span class="cl-bullet">•</span><strong>nveisk</strong><span class="cl-meta">, 04.11.2026, 19:18,</span> <span class="cl-tag-edit">edytował</span> sekcję <a href="#stazysci">Stażyści</a> <span class="cl-check">- sprawdź!</span></div><details><summary>Zobacz zmianę</summary><div><ul><li>Dodane: obowiązki, permisje, ważne zasady Stażysty i tabela najczęstszych błędów.</li></ul></div></details></li>
+        </ul>
+      </div>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#telefon" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Telefon</span></a>
+      <div></div>
+    </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 04.11.2026, 23:57 · przez <strong>nveisk</strong></p>
+
+  </section>
+
 
       </div>
     </main>
