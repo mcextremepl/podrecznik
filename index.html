@@ -1253,6 +1253,12 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
             </a>
           </li>
           <li class="sidebar-item sub-item">
+            <a href="#wykrywanie-100" class="sidebar-link" data-target="wykrywanie-100">
+              <i class="fa-solid fa-shield-halved" style="color: #ff5555;"></i>
+              <span class="item-title">Wykrywanie 100%</span>
+            </a>
+          </li>
+          <li class="sidebar-item sub-item">
             <a href="#linux" class="sidebar-link" data-target="linux">
               <i class="fa-brands fa-linux" style="color: #ffaaaa;"></i>
               <span class="item-title">Linux</span>
@@ -3185,6 +3191,7 @@ if ($p) {
 <p class="doc-p">Wynik to 5 linijek <code>True</code> lub <code>False</code>, w tej kolejności:</p>
 <div class="tbl-wrap"><table class="doc-table"><thead><tr><th>Linijka</th><th>Cheat</th></tr></thead><tbody><tr><td>1</td><td>Doomsday</td></tr><tr><td>2</td><td>Grim</td></tr><tr><td>3</td><td>Grim (Crack)</td></tr><tr><td>4</td><td>Ventura</td></tr><tr><td>5</td><td>Ventura (Crack)</td></tr></tbody></table></div>
 <ul class="bul"><li>Gracz czysty: samo <code>False</code> (5 razy).</li><li>Gracz z cheatem: <code>True</code> zamiast <code>False</code>. Przykład <code>True False False False False</code> = <strong>Doomsday</strong>.</li><li>Same <code>False</code> może też znaczyć, że Minecraft nie jest włączony (brak procesu <code>javaw</code>). Upewnij się, że gra działa.</li></ul>
+<div class="callout info"><div class="callout-title">Skaner 100%</div>Pełny skrypt „Oficjalne Sprawdzanie Klienta” znajdziesz na stronie <a href="#wykrywanie-100">Wykrywanie 100%</a>.</div>
 <h2 class="doc-h2" id="ps-doom">2. Szukanie plików Doomsday na wszystkich dyskach</h2>
 <p class="doc-p">Przeszukuje wszystkie dyski i pokazuje pliki <code>.jar</code> o strukturze Doomsdaya. Każdy znaleziony plik trzeba potem sprawdzić ręcznie (WinRAR → <code>net\java</code>). Skanowanie może chwilę potrwać.</p>
 <div class="code-block-container"><div class="code-block-header"><span>PowerShell – Doomsday Search</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -3220,9 +3227,334 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
     </article>
     <footer class="doc-pagination">
       <a href="#proces-sprawdzania" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Proces sprawdzania</span></a>
-      <a href="#linux" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Linux <i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="#wykrywanie-100" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Wykrywanie 100% <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
     <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+
+  </section>
+
+  <section id="wykrywanie-100" class="doc-page-section" style="display: none;">
+    <div class="breadcrumbs"><span class="breadcrumb-item">Mcextreme</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item">Strefa sprawdzania</span><span class="breadcrumb-sep">/</span><span class="breadcrumb-item active">Wykrywanie 100%</span></div>
+    <article class="doc-article-body">
+      <h1 class="doc-title">Wykrywanie 100%</h1>
+<p class="doc-p"><strong>MCEXTREME.PL - Oficjalne Sprawdzanie Klienta v1.0</strong> – skrypt, który skanuje pamięć gry pod kątem znanych cheatów i daje wynik na 100%.</p>
+<h2 class="doc-h2">Co robi ta komenda?</h2>
+<p class="doc-p">Skrypt uruchamiany w PowerShell odczytuje pamięć procesu gry (<code>javaw</code>/<code>java</code>) i przeszukuje ją pod kątem znanych sygnatur kodu klientów cheatów (np. Nursultan, Ventura, Meteor, ThunderHack, Wurst, LiquidBounce, Grim, Doomsday i inne).</p>
+<div class="callout warn"><div class="callout-title">Ważne</div><ul class="bul"><li>To jest wyłącznie odczyt pamięci (funkcja <code>ReadProcessMemory</code>). Skrypt niczego nie modyfikuje, nie zapisuje i nie usuwa na komputerze gracza.</li><li>Nie wykonuje żadnych połączeń sieciowych – nie wysyła danych do nikogo, nie pobiera plików, nie komunikuje się z żadnym serwerem.</li><li>Nie czyta plików konta – nie dotyka loginów, haseł, sesji ani folderów Minecrafta.</li><li>Jedyny dostęp do systemu poza procesem gry to odczyt liczby plików <code>javaw</code> w folderze <code>C:\Windows\Prefetch</code> (informacja diagnostyczna, ile razy Java była uruchamiana na tym komputerze) – wymaga uprawnień administratora, a bez nich po prostu wyświetli „brak dostępu”.</li></ul></div>
+<h2 class="doc-h2">Kto jest właścicielem kodu?</h2>
+<p class="doc-p">Autorem i właścicielem skryptu jest <strong>nveisk</strong>. Jedyne zaufane źródło tego skryptu to oficjalny podręcznik administracji mcextreme.pl. Nie uruchamiaj wersji przesłanych przez innych graczy ani pobranych z zewnętrznych stron – mogą być zmodyfikowane.</p>
+<h2 class="doc-h2">Jak poprawnie użyć komendy?</h2>
+<ol class="steps"><li>Otwórz PowerShell jako administrator.</li><li>Skopiuj cały skrypt w całości z oficjalnego źródła.</li><li>Wklej go do okna PowerShell i zatwierdź Enterem.</li><li>Odczekaj kilka sekund – skrypt pokaże animację skanowania, a następnie wynik:<ul class="bul"><li><strong>CZYSTO</strong> – nie znaleziono żadnych sygnatur cheatów.</li><li><strong>WYKRYTO CHEATY</strong> – wyświetli nazwę wykrytego klienta i adres w pamięci (<code>0x...</code>).</li></ul></li></ol>
+<h2 class="doc-h2">Jak poprawnie utrzymać tajność komendy?</h2>
+<p class="doc-p">Przy każdym sprawdzaniu gracz nie może mieć komendy. Usuwamy ją z PW oraz każemy graczowi skopiować byle jaką literkę, aby nie miał jej w schowku.</p>
+<div class="callout ban"><div class="callout-title">UWAGA</div>JEST ZAKAZ WPISYWANIA GRACZOM NIEZWERYFIKOWANYCH KODÓW DO POWERSHELLA PRZEZ MOD+!</div>
+<div class="code-block-container"><div class="code-block-header"><span>PowerShell – MCEXTREME.PL Oficjalne Sprawdzanie Klienta</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre style="max-height:22rem;overflow:auto"><code># ==============================================================================
+#    MCEXTREME.PL  ·  OFICJALNE SPRAWDZANIE KLIENTA  ·  v4.2
+# ==============================================================================
+
+Add-Type -TypeDefinition @"
+using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Text;
+public class MX {
+    [DllImport("kernel32.dll")]public static extern IntPtr OpenProcess(int d,bool b,int p);
+    [DllImport("kernel32.dll")]public static extern bool ReadProcessMemory(IntPtr h,IntPtr a,byte[] buf,int s,ref int r);
+    [DllImport("kernel32.dll")]public static extern int VirtualQueryEx(IntPtr h,IntPtr a,out MI m,uint l);
+    [DllImport("kernel32.dll")]public static extern bool CloseHandle(IntPtr h);
+    [StructLayout(LayoutKind.Sequential)]public struct MI {
+        public IntPtr BaseAddress,AllocationBase;public uint AllocationProtect;public IntPtr RegionSize;public uint State,Protect,Type;
+    }
+    static byte[][] pats; static int[][] buckets;
+    // JEDNO przejscie po pamieci szuka wszystkich sygnatur naraz
+    public static void Build(string[] sigs) {
+        var pl=new List&lt;byte[]&gt;();
+        foreach(var s in sigs) pl.Add(Encoding.ASCII.GetBytes(s));
+        pats=pl.ToArray();
+        var b=new List&lt;int&gt;[65536];
+        for(int i=0;i&lt;pats.Length;i++){
+            if(pats[i].Length&lt;2)continue;
+            int k=(pats[i][0]&lt;&lt;8)|pats[i][1];
+            if(b[k]==null)b[k]=new List&lt;int&gt;();
+            b[k].Add(i);
+        }
+        buckets=new int[65536][];
+        for(int i=0;i&lt;65536;i++)buckets[i]=(b[i]==null)?null:b[i].ToArray();
+    }
+    public static List&lt;int&gt; Scan(int pid,ref long[] addr) {
+        var hits=new List&lt;int&gt;();
+        IntPtr h=OpenProcess(0x0410,false,pid);if(h==IntPtr.Zero)return hits;
+        long a=0;MI m;
+        while(a&lt;0x7FFFFFFF0000){
+            if(VirtualQueryEx(h,new IntPtr(a),out m,(uint)Marshal.SizeOf(typeof(MI)))==0)break;
+            long sz=m.RegionSize.ToInt64();
+            if(sz&gt;0&amp;&amp;sz&lt;200000000&amp;&amp;m.State==0x1000&amp;&amp;(m.Protect==0x04||m.Protect==0x20||m.Protect==0x40)){
+                var buf=new byte[sz];int br=0;
+                if(ReadProcessMemory(h,m.BaseAddress,buf,(int)sz,ref br)&amp;&amp;br&gt;2){
+                    for(int i=0;i+1&lt;br;i++){
+                        var cand=buckets[(buf[i]&lt;&lt;8)|buf[i+1]];
+                        if(cand==null)continue;
+                        for(int c=0;c&lt;cand.Length;c++){
+                            int pi=cand[c];
+                            if(hits.Contains(pi))continue;
+                            byte[] p=pats[pi];
+                            if(i+p.Length&gt;br)continue;
+                            int j=2;bool f=true;
+                            while(j&lt;p.Length){if(buf[i+j]!=p[j]){f=false;break;}j++;}
+                            if(f){hits.Add(pi);addr[pi]=m.BaseAddress.ToInt64()+i;}
+                        }
+                    }
+                }
+            }
+            a+=sz&gt;0?sz:4096;
+        }
+        CloseHandle(h);return hits;
+    }
+}
+"@
+
+$RED    = [ConsoleColor]::Red
+$DRED   = [ConsoleColor]::DarkRed
+$WHITE  = [ConsoleColor]::White
+$GRAY   = [ConsoleColor]::DarkGray
+$YEL    = [ConsoleColor]::Yellow
+
+function Line { param([ConsoleColor]$c=$DRED)
+    Write-Host ("  " + [string]::new([char]0x2550, 60)) -ForegroundColor $c }      # ══════
+function Top    { Write-Host ("  " + [char]0x2554 + [string]::new([char]0x2550,58) + [char]0x2557) -ForegroundColor $DRED }
+function Mid    { Write-Host ("  " + [char]0x2560 + [string]::new([char]0x2550,58) + [char]0x2563) -ForegroundColor $DRED }
+function Bot    { Write-Host ("  " + [char]0x255A + [string]::new([char]0x2550,58) + [char]0x255D) -ForegroundColor $DRED }
+function BoxRow { param([string]$txt,[ConsoleColor]$c=$WHITE)
+    # wiersz w ramce podwojnej, tekst wycentrowany
+    $inner = 58
+    $pad = [math]::Max(0, $inner - $txt.Length)
+    $l = [math]::Floor($pad / 2); $r = $pad - $l
+    Write-Host ("  " + [char]0x2551) -ForegroundColor $DRED -NoNewline
+    Write-Host (" " * $l + $txt + " " * $r) -ForegroundColor $c -NoNewline
+    Write-Host ([char]0x2551) -ForegroundColor $DRED }
+function Row  { param([string]$k,[string]$v,[ConsoleColor]$vc=$WHITE)
+    Write-Host ("   " + $k.PadRight(16)) -ForegroundColor DarkRed -NoNewline
+    Write-Host ([string]::new([char]0x2502,1)) -ForegroundColor DarkGray -NoNewline
+    Write-Host (" " + $v) -ForegroundColor $vc }
+
+Write-Host ""
+Write-Host "   ███████╗███╗   ███╗███████╗██╗  ██╗████████╗██████╗ ███████╗███╗   ███╗███████╗" -ForegroundColor Red
+Write-Host "   ██╔════╝████╗ ████║██╔════╝╚██╗██╔╝╚══██╔══╝██╔══██╗██╔════╝████╗ ████║██╔════╝" -ForegroundColor Red
+Write-Host "   █████╗  ██╔████╔██║█████╗   ╚███╔╝    ██║   ██████╔╝█████╗  ██╔████╔██║█████╗" -ForegroundColor DarkRed
+Write-Host "   ██╔══╝  ██║╚██╔╝██║██╔══╝   ██╔██╗    ██║   ██╔══██╗██╔══╝  ██║╚██╔╝██║██╔══╝" -ForegroundColor Red
+Write-Host "   ███████╗██║ ╚═╝ ██║███████╗██╔╝ ██╗   ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗" -ForegroundColor Red
+Write-Host ("   " + (" " * 41) + "") -ForegroundColor DarkRed -NoNewline
+Write-Host ""
+Write-Host ""
+Write-Host "            OFICJALNE SPRAWDZANIE KLIENTA  ·  v1.0" -ForegroundColor White
+Write-Host "      Tylko odczyt pamieci gry. Bez sieci, bez plikow konta." -ForegroundColor Gray
+Write-Host ""
+
+Top
+BoxRow "BEZPIECZENSTWO / SECURITY NOTICE" $YEL
+Mid
+BoxRow "Ta komenda NIE zbiera zadnych danych do zewnetrznych zrodel." $WHITE
+BoxRow "Nie wykonuje polaczen sieciowych, nie czyta plikow konta,"   $WHITE
+BoxRow "nie pobiera ani nie uruchomia programow zadnych osob trzecich." $WHITE
+BoxRow "Jedynym zrodlem skryptu jest administracja MCEXTREME.PL."     $WHITE
+BoxRow "Korzystaj wylacznie z zaufanych zrodel: mcextreme.pl"        $YEL
+BoxRow "Skrypt tylko ODCZYTUJE pamiec procesu gry (ReadProcessMemory)." $GRAY
+Bot
+Write-Host ""
+
+$session = ([guid]::NewGuid().ToString('N').Substring(0,8)).ToUpper()
+$start   = Get-Date
+
+Row "ID SESJI"     $session $YEL
+Row "DATA I CZAS"  $start.ToString('yyyy-MM-dd HH:mm:ss')
+Row "KOMPUTER"     ($env:COMPUTERNAME + " \ " + $env:USERNAME)
+
+$pfCount = 0
+try {
+    $pfCount = @(Get-ChildItem "$env:SystemRoot\Prefetch\JAVAW*.pf" -ErrorAction Stop).Count
+} catch { $pfCount = -1 }
+$pfText = if ($pfCount -ge 0) { "$pfCount wpisow" } else { "brak dostepu (uruchom jako administrator)" }
+$pfCol  = if ($pfCount -ge 0) { $WHITE } else { $YEL }
+Row "JAVAW PREFETCH" $pfText $pfCol
+
+Write-Host ""
+Line $DRED
+
+$sig = @(
+    @{ N='Nursultan';    S='nursultan' },
+    @{ N='Ventura';      S='venturaclient' },
+    @{ N='Catlean';      S='su/catlean' },
+    @{ N='Meteor';       S='meteordevelopment' },
+    @{ N='Vanadium';     S='nl/vanadium' },
+    @{ N='VanadiumJNI';  S='jnicLoader' },
+    @{ N='ThunderHack';  S='ThunderHack' },
+    @{ N='BleachHack';   S='BleachHack' },
+    @{ N='Wurst';        S='net/wurstclient' },
+    @{ N='Wurst2';       S='Wurst Client' },
+    @{ N='Impact';       S='com/impactclient' },
+    @{ N='Aristois';     S='me/earth2bendotdev' },
+    @{ N='LiquidBounce'; S='net/ccbluex/liquidbounce' },
+    @{ N='Inertia';      S='me/zeroeightysix' },
+    @{ N='Baritone';     S='baritone/api' },
+    @{ N='InvMove';      S='net/blay/invmove' },
+    @{ N='Lambda';       S='xyz/lambdaclient' },
+    @{ N='grim';         S='InvokeAsync' },
+    @{ N='grim2';        S='#&amp;G29&lt;G6RUG@beG' },
+    @{ N='Grim';         S='MovePlayerPacketAccessor' },
+    @{ N='ventura2';     S='bgsnezyf' },
+    @{ N='Doomsday01';   S='8iPyo?L!?8+;uH&amp;U' },
+    @{ N='Doomsday02';   S='-csV1xiXfWlVHR\a9M' },
+    @{ N='Doomsday03';   S='^NOJXfrg' },
+    @{ N='Doomsday04';   S='vTqLhqmjemo`' },
+    @{ N='Doomsday05';   S='avuKOfIUmAEUQ' },
+    @{ N='Doomsday06';   S='uJtxDyLtJ`Mh' },
+    @{ N='Doomsday07';   S='TU\vebgkJdfH' },
+    @{ N='Doomsday08';   S='!&amp;cWI2d''&lt;m@m"sT03Ky' },
+    @{ N='Doomsday09';   S='&amp;ueGp?j?+BX%' },
+    @{ N='Doomsday10';   S='\WJ;B9Y!so+-i' },
+    @{ N='Doomsday11';   S='UnJUh`Fa_W' },
+    @{ N='Doomsday12';   S='(RYor`Id%&amp;8e_W6A' },
+    @{ N='Doomsday13';   S='FaypNWKaeAJK[BGY' },
+    @{ N='Doomsday14';   S='#p''s"RCk' },
+    @{ N='Doomsday15';   S='Mh\`CfHWyWaDlStk' },
+    @{ N='Doomsday16';   S='#;Nq[2&lt;' },
+    @{ N='Doomsday17';   S='UdWmF:MFJK''W,aO4' },
+    @{ N='Doomsday18';   S='mPC#M[c' },
+    @{ N='Doomsday19';   S='aIVJiy\' },
+    @{ N='Doomsday20';   S='WMZSCnYnUYWO' },
+    @{ N='Doomsday21';   S='#"x#SY&amp;s' },
+    @{ N='Doomsday22';   S='dcGQ^xPsaQJ' },
+    @{ N='Doomsday23';   S='Rlr]aLg' },
+    @{ N='Doomsday24';   S='9guHdM,"l' },
+    @{ N='Doomsday25';   S='K6LaM6t:AU' },
+    @{ N='Doomsday26';   S='\VIFDCpHe' },
+    @{ N='Doomsday27';   S='nBmtQifkPA`O_hJq\' },
+    @{ N='Doomsday28';   S='+0!E4JZ3K$.8d' }
+)
+
+Write-Host ""
+Write-Host "   [*] LOKALIZOWANIE PROCESU GRY..." -ForegroundColor Red
+
+$p = Get-Process javaw,java -ErrorAction SilentlyContinue | Sort-Object WorkingSet64 -Descending | Select-Object -First 1
+if (-not $p) {
+    Write-Host ""
+    Write-Host "   [X] NIE ZNALEZIONO PROCESU GRY (javaw/java)" -ForegroundColor Red
+    Write-Host ""
+    return
+}
+Row "PROCES GRY"  ("{0}  (PID {1})" -f $p.ProcessName, $p.Id) ([ConsoleColor]::Green)
+
+[MX]::Build(@($sig | ForEach-Object { $_.S }))
+$addrs = New-Object 'long[]' $sig.Count
+
+Clear-Host
+Write-Host ""
+Write-Host "   ███████╗███╗   ███╗███████╗██╗  ██╗████████╗██████╗ ███████╗███╗   ███╗███████╗" -ForegroundColor Red
+Write-Host "   ██╔════╝████╗ ████║██╔════╝╚██╗██╔╝╚══██╔══╝██╔══██╗██╔════╝████╗ ████║██╔════╝" -ForegroundColor Red
+Write-Host "   █████╗  ██╔████╔██║█████╗   ╚███╔╝    ██║   ██████╔╝█████╗  ██╔████╔██║█████╗" -ForegroundColor DarkRed
+Write-Host "   ██╔══╝  ██║╚██╔╝██║██╔══╝   ██╔██╗    ██║   ██╔══██╗██╔══╝  ██║╚██╔╝██║██╔══╝" -ForegroundColor Red
+Write-Host "   ███████╗██║ ╚═╝ ██║███████╗██╔╝ ██╗   ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗" -ForegroundColor Red
+Write-Host ("   " + (" " * 41) + "MCEXTREME.PL") -ForegroundColor DarkRed
+Write-Host ""
+Write-Host "            SPRAWDZANIE KLIENTA W TOKU..." -ForegroundColor White
+Write-Host ""
+Write-Host ("   Sesja: " + $session + "   |   Proces: " + $p.ProcessName + " (PID " + $p.Id + ")") -ForegroundColor DarkGray
+Write-Host ""
+
+$ps = [PowerShell]::Create()
+$ps.AddScript({
+    param($pid_, $addrArr)
+    $t0 = Get-Date
+    $hits = [MX]::Scan($pid_, [ref]$addrArr)
+    $dur = ((Get-Date) - $t0).TotalSeconds
+    @{ Hits = $hits; Addr = $addrArr; Dur = $dur } | ConvertTo-Json -Depth 3
+}).AddArgument($p.Id).AddArgument($addrs) | Out-Null
+$handle = $ps.BeginInvoke()
+
+$spin  = [char[]]@(0x25DC,0x25DE,0x25E0,0x25E2,0x25E4,0x25E6)   # obroty
+$steps = @(
+    'Ladowanie sygnatur...',
+    'Otwieranie procesu gry...',
+    'Mapowanie pamieci wirtualnej...',
+    'Skanowanie regionow pamieci...',
+    'Porownywanie wzorcow...',
+    'Finalizacja wynikow...'
+)
+$w = 40
+$t0 = Get-Date
+$si = 0
+while (-not $handle.IsCompleted) {
+    $t   = ((Get-Date) - $t0).TotalSeconds
+    $est = 8.0                                     # przyblizony czas skanu
+    $frac = [math]::Min(1.0, $t / $est)
+    $shown = [math]::Floor($frac * $w)
+    if ($shown -ge $w) { $shown = $w - 1 }
+    $step = $steps[[math]::Min([math]::Floor($t / $est * $steps.Count), $steps.Count - 1)]
+
+    Write-Host ("   " + $spin[$si % $spin.Count] + " ") -ForegroundColor Red -NoNewline
+    Write-Host $step.PadRight(34) -ForegroundColor White -NoNewline
+    Write-Host "[" -ForegroundColor DarkGray -NoNewline
+    for ($i = 0; $i -lt $w; $i++) {
+        if ($i -lt $shown) { Write-Host ([char]0x2588) -ForegroundColor Red -NoNewline }
+        elseif ($i -eq $shown) { Write-Host ([char]0x2592) -ForegroundColor DarkRed -NoNewline }
+        else { Write-Host ([char]0x2591) -ForegroundColor DarkGray -NoNewline }
+    }
+    Write-Host "] " -ForegroundColor DarkGray -NoNewline
+    Write-Host ("{0,4:P0}" -f $frac) -ForegroundColor Red -NoNewline
+    Write-Host ("  [{0:N1}s]" -f $t) -ForegroundColor DarkGray -NoNewline
+    Write-Host ""
+    $si++
+    Start-Sleep -Milliseconds 180
+}
+
+$out  = $ps.EndInvoke($handle) | Select-Object -First 1
+$ps.Dispose()
+$res  = $out | ConvertFrom-Json
+$hits = @($res.Hits)
+$dur  = [double]$res.Dur
+$addrsArr = $res.Addr
+
+Write-Host ("   " + [char]0x2713 + " ") -ForegroundColor Green -NoNewline
+Write-Host "Skanowanie zakonczone".PadRight(34) -ForegroundColor White -NoNewline
+Write-Host "[" -ForegroundColor DarkGray -NoNewline
+Write-Host ([string]::new([char]0x2588, $w)) -ForegroundColor Green -NoNewline
+Write-Host "] " -ForegroundColor DarkGray -NoNewline
+Write-Host "100%" -ForegroundColor Green -NoNewline
+Write-Host ("  [{0:N1}s]" -f $dur) -ForegroundColor DarkGray
+Write-Host ""
+Start-Sleep -Milliseconds 700
+
+Write-Host ""
+if ($hits.Count -eq 0) {
+    Top
+    BoxRow ([string][char]0x2713 + "  CZYSTO - BRAK WYKRYTYCH CHEATOW") ([ConsoleColor]::Green)
+    Bot
+} else {
+    Top
+    BoxRow ([string][char]0x0021 + "  WYKRYTO CHEATY - SZCZEGOLY NIZEJ") $RED
+    Bot
+    Write-Host ""
+    Write-Host ("   " + "Nazwa".PadRight(14) + " Adres w pamieci") -ForegroundColor DarkGray
+    foreach ($i in $hits) {
+        Write-Host ("   [{0}] {1}  {2}" -f [char]0x00D7, $sig[$i].N.PadRight(12), ("0x{0:X}" -f ($addrsArr[$i] -as [long]))) -ForegroundColor Red
+    }
+}
+
+Write-Host ""
+Row "Statystyka skanu"  ("{0:N1} s" -f $dur)      $GRAY
+Row "Liczba sygnatur"   "$($sig.Count)"           $GRAY
+Row "Wykryte sygnatury" "$($hits.Count)"          $GRAY
+Row "ID sesji"          $session                  $GRAY
+
+Write-Host ""
+Line $DRED
+Write-Host ""</code></pre></div>
+    </article>
+    <footer class="doc-pagination">
+      <a href="#komendy-powershell" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Komendy PowerShell</span></a>
+      <a href="#linux" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Linux <i class="fa-solid fa-arrow-right"></i></span></a>
+    </footer>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 07.11.2026 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -3255,7 +3587,7 @@ Write-Host "`nSkanowanie zakończone." -ForegroundColor Green</code></pre></div>
 <p class="doc-p">Logi: wejdź do <code>logs</code>, znajdź <code>latest.log</code>, poproś gracza o próbę usunięcia (nie da się = log w użyciu). Na początku logu są mody i wersja gry. <kbd>Ctrl + F</kbd> (zawijanie wokół włączone, wielkość liter wyłączona), fraza <code>ResourceManager</code>: na dole są texturepacki załadowane przez gracza.</p>
     </article>
     <footer class="doc-pagination">
-      <a href="#komendy-powershell" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Komendy PowerShell</span></a>
+      <a href="#wykrywanie-100" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Wykrywanie 100%</span></a>
       <a href="#mac" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">MAC <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
     <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
