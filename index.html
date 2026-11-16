@@ -1030,6 +1030,20 @@ html.przerwa-on #przerwa{display:flex;position:fixed;inset:0;z-index:2147483647;
 #przerwa p{color:var(--text-lead);line-height:1.7;margin:.4rem 0;font-size:1rem}
 #przerwa .przerwa-small{color:var(--text-muted);font-size:.92rem;margin-top:1.25rem}
 
+/* Aktualizacja strony */
+html.upd-open{overflow:hidden}
+#updateOverlay{position:fixed;inset:0;z-index:2147483000;display:none;align-items:center;justify-content:center;padding:1.5rem;background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+#updateOverlay.on{display:flex}
+#updateOverlay .upd-box{max-width:460px;width:100%;text-align:center;padding:2rem 1.75rem;background:var(--bg-card);border:1px solid var(--border-sheet);border-top:3px solid var(--red-main);border-radius:12px;box-shadow:0 10px 60px rgba(0,0,0,.6)}
+#updateOverlay .upd-icon{font-size:2.4rem;color:var(--red-main);margin-bottom:.9rem}
+#updateOverlay .upd-icon i{animation:updSpin 1.4s linear infinite}
+@keyframes updSpin{to{transform:rotate(360deg)}}
+#updateOverlay h2{font-family:var(--font-pixel);font-size:1.25rem;color:var(--text-pure);margin:0 0 .9rem}
+#updateOverlay p{color:var(--text-lead);line-height:1.65;margin:.35rem 0;font-size:.98rem}
+#updateOverlay .upd-count{color:var(--text-muted);font-size:.9rem;margin-top:1rem}
+#updateOverlay .upd-btn{margin-top:1.25rem;padding:.65rem 1.4rem;font-family:var(--font-text);font-weight:600;font-size:.95rem;color:#fff;background:var(--red-deep);border:0;border-radius:8px;cursor:pointer;transition:background .2s}
+#updateOverlay .upd-btn:hover{background:var(--red-main)}
+
 /* Lightbox */
 .doc-article-body img{cursor:zoom-in;transition:filter .2s}
 .doc-article-body img:hover{filter:brightness(1.1)}
@@ -4204,6 +4218,65 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(function(){ov.classList.remove('on');busy=false},3000);
     }
   });
+})();
+</script>
+
+<div id="updateOverlay" role="alertdialog" aria-live="assertive" aria-labelledby="updTitle">
+  <div class="upd-box">
+    <div class="upd-icon"><i class="fa-solid fa-rotate"></i></div>
+    <h2 id="updTitle">Aktualizacja strony</h2>
+    <p>Przepraszamy za utrudnienia, ale raz na jakiś czas potrzebna jest aktualizacja strony.</p>
+    <p class="upd-count">Odświeżam stronę za <strong id="updSec">6</strong> s…</p>
+    <button type="button" class="upd-btn" id="updNow">Odśwież teraz</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(location.protocol==='file:')return;
+  var CHECK_MS=5*60*1000, MIN_GAP=60*1000, COUNTDOWN=6, GUARD_MS=10*60*1000;
+  var url=location.pathname+location.search, base=null, lastCheck=0, shown=false, busy=false;
+
+  function hash(str){var h=2166136261;for(var i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0).toString(16)+':'+str.length}
+  function bodySig(){return fetch(url,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){return 'b:'+hash(t)})}
+  function getSig(){
+    return fetch(url,{method:'HEAD',cache:'no-store'}).then(function(r){
+      if(!r.ok)throw 0;
+      var e=r.headers.get('etag'),l=r.headers.get('last-modified');
+      if(e||l)return 'h:'+e+'|'+l;
+      return bodySig();
+    }).catch(function(){return bodySig()}).catch(function(){return null});
+  }
+
+  function doReload(){try{sessionStorage.setItem('mcx-upd',String(Date.now()))}catch(e){}location.reload()}
+
+  function showUpdate(){
+    if(shown)return;shown=true;
+    // podczas przerwy technicznej nic nie widać, więc odświeżamy od razu
+    if(document.documentElement.classList.contains('przerwa-on')){doReload();return}
+    var ov=document.getElementById('updateOverlay'),sec=document.getElementById('updSec'),btn=document.getElementById('updNow');
+    if(!ov){doReload();return}
+    var left=COUNTDOWN;sec.textContent=left;
+    document.documentElement.classList.add('upd-open');ov.classList.add('on');
+    btn.addEventListener('click',doReload);
+    setInterval(function(){left--;if(left<=0)doReload();else sec.textContent=left},1000);
+  }
+
+  function check(){
+    if(shown||busy||base===null)return;
+    busy=true;lastCheck=Date.now();
+    getSig().then(function(s){
+      busy=false;
+      if(s&&s!==base){
+        // zabezpieczenie przed pętlą odświeżania, gdyby serwer zmieniał odpowiedź przy każdym żądaniu
+        try{var g=parseInt(sessionStorage.getItem('mcx-upd')||'0',10);if(g&&Date.now()-g<GUARD_MS){base=s;return}}catch(e){}
+        showUpdate();
+      }
+    });
+  }
+
+  function init(){getSig().then(function(s){if(s){base=s;setInterval(check,CHECK_MS)}})}
+  if(document.readyState==='complete')setTimeout(init,2000);else window.addEventListener('load',function(){setTimeout(init,2000)});
+  document.addEventListener('visibilitychange',function(){if(!document.hidden&&Date.now()-lastCheck>MIN_GAP)check()});
 })();
 </script>
 
