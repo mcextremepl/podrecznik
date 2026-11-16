@@ -13,7 +13,7 @@
 <html lang="pl">
 <head>
   <script>
-    const PRZERWA_TECHNICZNA = true; // <-- true = włączona, false = wyłączona
+    const PRZERWA_TECHNICZNA = false; // <-- true = włączona, false = wyłączona
     // Podczas przerwy administracja wchodzi przez link /podrecznik/adminpo (zamiast /podrecznik)
     const JEST_ADMINPO = /\/adminpo\/?$/i.test(location.pathname);
     if (PRZERWA_TECHNICZNA && !JEST_ADMINPO) document.documentElement.classList.add('przerwa-on');
@@ -29,8 +29,8 @@
         const start = new Date(AKTUALIZACJA_CZAS || document.lastModified).getTime();
         if (isNaN(start)) return;
         // bez nagłówka Last-Modified przeglądarka podaje „teraz” – wtedy nie blokujemy
-        if (!AKTUALIZACJA_CZAS && Math.abs(teraz - start) < 5000) return;
-        const koniec = start + AKTUALIZACJA_MINUT * 60000;
+        if (!AKTUALIZACJA_CZAS && Math.abs(teraz - start) < 500) return;
+        const koniec = start + AKTUALIZACJA_MINUT * 6000;
         if (teraz >= start && teraz < koniec && !JEST_ADMINPO && !document.documentElement.classList.contains('przerwa-on')) {
           document.documentElement.classList.add('akt-on');
           window.__aktKoniec = koniec;
