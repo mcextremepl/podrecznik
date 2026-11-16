@@ -3050,6 +3050,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <h1 class="doc-title">Proces sprawdzania</h1>
 <p class="doc-p">Ten poradnik pokazuje krok po kroku, jak sprawdzić gracza podejrzanego o cheaty. Idź po kolei i nie pomijaj punktów. Jeśli znasz już cały proces i potrzebujesz tylko przypomnienia, skorzystaj z części <a href="#ps-short">Skrócone sprawdzanie</a> na końcu tej strony.</p>
 <p class="doc-p">Wszystkie komendy do wklejenia (PowerShell, CMD, Win + R) są zebrane na osobnej stronie: <a href="#komendy-powershell">Komendy PowerShell</a>. W tym poradniku opisujemy to, co robisz ręcznie, a przy każdym kroku, który wymaga komendy, odsyłamy do tamtej strony.</p>
+<div class="callout info"><div class="callout-title">Jak korzystać z tego poradnika</div><ul class="bul"><li>To <strong>rozbudowany poradnik, z którego możesz się uczyć</strong>. Nie musisz zapamiętać wszystkiego, np. komend PowerShell. Musisz za to znać <strong>podstawy sprawdzania</strong> i <strong>wykrywanie cheatów</strong>.</li><li><strong>Mentor ma obowiązek przedstawić Ci proces sprawdzania</strong> i pokazać, jak poprawnie sprawdzać graczy. Poradnik uzupełnia jego naukę, a jej nie zastępuje.</li><li>Komendy PowerShell uruchamiasz <strong>tylko wtedy, gdy masz do czegoś podejrzenie</strong>.</li><li>Jedyna komenda <strong>wymagana</strong>: jeśli niczego nie znajdziesz, wykonaj <strong>skan pamięci z cheatów</strong>.</li><li>Poradnik jest dość obszerny i wykracza poza obowiązki zwykłego Supporta. Wszelkie pytania kieruj do swoich mentorów.</li></ul></div>
 <h2 class="doc-h2" id="ps-zasady">Zasady sprawdzania</h2>
 <p class="doc-p"><strong>Kto sprawdza.</strong> Jako Support możesz sprawdzać samodzielnie dopiero po 3 sprawdzaniach ze swoim mentorem. Do tego czasu sprawdzaj razem z nim, a on będzie dawał Ci wskazówki i uczył Cię na błędach. Komendę <code>/sprawdz</code> mają Supporci i wyżej.</p>
 <p class="doc-p"><strong>AFK.</strong> Zanim zaczniesz, upewnij się w 100%, że gracz nie jest AFK. Powinien się ruszać i reagować na czacie. Gracz AFK jest czysty, natomiast gracz, który tylko udaje AFK, dostaje ban za brak współpracy.</p>
@@ -3220,7 +3221,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
       <a href="#dozwolone-i-zakazane-modyfikacje" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Dozwolone i zakazane modyfikacje</span></a>
       <a href="#komendy-powershell" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Komendy PowerShell <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 16.11.2026, 21:25 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 16.11.2026, 21:53 · przez <strong>nveisk</strong></p>
 
   </section>
 
@@ -3229,6 +3230,7 @@ Mod jest darmowy. Pobierzesz go ze strony mcextreme.pl, a pełną instrukcję zn
     <article class="doc-article-body">
       <h1 class="doc-title">Komendy PowerShell</h1>
 <p class="doc-p">Wszystkie komendy używane podczas sprawdzania w jednym miejscu. Każdą możesz skopiować przyciskiem „Kopiuj”. Komendy uruchamiasz na komputerze gracza, <strong>po tym jak gracz się zgodził i współpracuje</strong>.</p>
+<div class="callout warn"><div class="callout-title">Nie zalecamy innych komend</div>Nie zalecamy używania innych komend niż <strong>przeszukiwanie pamięci Javy</strong> (skan pamięci). Pozostałe komendy uruchamiaj tylko wtedy, gdy masz do czegoś podejrzenie.</div>
 <h2 class="doc-h2" id="ps-start">Jak uruchomić PowerShell</h2>
 <ol class="steps"><li>Kliknij Start, wpisz <code>PowerShell</code>, kliknij prawym → <strong>Uruchom jako administrator</strong>.</li><li>Sprawdź tytuł okna. Jeśli jest w nim „PowerShell (x86)”, zamknij je, otwórz <strong>CMD jako administrator</strong> i wpisz poniższą komendę. Otworzy się właściwy PowerShell.</li></ol>
 <div class="code-block-container"><div class="code-block-header"><span>CMD – otwarcie 64-bitowego PowerShella</span><button class="copy-code-btn"><i class="fa-regular fa-copy"></i> Kopiuj</button></div><pre><code>%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe</code></pre></div>
@@ -3415,7 +3417,7 @@ $zip.Dispose()</code></pre></div>
       <a href="#proces-sprawdzania" class="nav-prev-btn"><span class="btn-sub">POPRZEDNIA STRONA</span><span class="btn-main"><i class="fa-solid fa-arrow-left"></i> Proces sprawdzania</span></a>
       <a href="#wykrywanie-100" class="nav-next-btn"><span class="btn-sub">NASTĘPNA STRONA</span><span class="btn-main">Wykrywanie 100% <i class="fa-solid fa-arrow-right"></i></span></a>
     </footer>
-    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 03.11.2026 · przez <strong>nveisk</strong></p>
+    <p class="last-updated"><i class="fa-regular fa-clock"></i> Ostatnio aktualizowane: 16.11.2026, 21:53 · przez <strong>nveisk</strong></p>
 
   </section>
 
